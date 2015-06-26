@@ -49,7 +49,7 @@
 #define PRIORITY 1
 
 // Optional features
-#define CONFIGURE_PDOS  1
+#define CONFIGURE_PDOS  0
 #define SDO_ACCESS      0
 
 /****************************************************************************/
@@ -100,7 +100,8 @@ static unsigned int off_ek1818_out1;
 //};
 
 const static ec_pdo_entry_reg_t domain1_regs[] = {
-    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 1, &off_ek1818_out1}
+    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 1, &off_ek1818_out1},
+	{}
 };
 
 static unsigned int counter = 0;
@@ -357,12 +358,13 @@ int main(int argc, char **argv)
         fprintf(stderr, "Failed to configure PDOs.\n");
         return -1;
     }
-#endif
 
-    // Create configuration EK1818
     sc = ecrt_master_slave_config(master, EK1818Pos, Beckhoff_EK1818);
-    if (!sc)
+    if (!sc) {
+    	fprintf(stderr, "Failed to get slave configuration.\n");
         return -1;
+    }
+#endif
 
     if (ecrt_domain_reg_pdo_entry_list(domain1, domain1_regs)) {
         fprintf(stderr, "PDO entry registration failed!\n");
