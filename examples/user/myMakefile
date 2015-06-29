@@ -1,0 +1,6 @@
+CC=gcc
+CFLAGS=-m64 -I/opt/etherlab/include
+LFLAGS=-L/opt/etherlab/lib  -lethercat -Wl,--rpath -Wl,/opt/etherlab/lib
+
+ek1818: main_ek1818.c
+	@$(CC) main_ek1818.c -o ek1818 $(CFLAGS) $(LFLAGS)
