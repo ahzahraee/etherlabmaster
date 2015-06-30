@@ -49,7 +49,7 @@
 #define PRIORITY 1
 
 // Optional features
-#define CONFIGURE_PDOS  0
+#define CONFIGURE_PDOS  1
 #define SDO_ACCESS      0
 
 /****************************************************************************/
@@ -61,8 +61,6 @@ static ec_master_state_t master_state = {};
 static ec_domain_t *domain1 = NULL;
 static ec_domain_state_t domain1_state = {};
 
-//static ec_slave_config_t *sc_ana_in = NULL;
-//static ec_slave_config_state_t sc_ana_in_state = {};
 static ec_slave_config_t *sc_ek1818 = NULL;
 static ec_slave_config_state_t sc_ek1818_state = {};
 
@@ -75,33 +73,20 @@ static unsigned int user_alarms = 0;
 // process data
 static uint8_t *domain1_pd = NULL;
 
-//#define BusCouplerPos  0, 0
-//#define DigOutSlavePos 0, 2
-//#define AnaInSlavePos  0, 3
-//#define AnaOutSlavePos 0, 4
+// Slaves position on the bus
 #define EK1818Pos  0, 0
 
-//#define Beckhoff_EL3102 0x00000002, 0x0c1e3052
-#define Beckhoff_EK1818 0x00000002, 0x071a2c52	 //Vendor ID, Product Code
+//Vendor ID, Product Code
+#define Beckhoff_EK1818 0x00000002, 0x071a2c52
 
-// offsets for PDO entries
-//static unsigned int off_ana_in_status;
-//static unsigned int off_ana_in_value;
-//static unsigned int off_ana_out;
-//static unsigned int off_dig_out;
-static unsigned int off_ek1818_out1;
-
-//const static ec_pdo_entry_reg_t domain1_regs[] = {
-//    {AnaInSlavePos,  Beckhoff_EL3102, 0x3101, 1, &off_ana_in_status},
-//    {AnaInSlavePos,  Beckhoff_EL3102, 0x3101, 2, &off_ana_in_value},
-//    {AnaOutSlavePos, Beckhoff_EL4102, 0x3001, 1, &off_ana_out},
-//    {DigOutSlavePos, Beckhoff_EL2032, 0x3001, 1, &off_dig_out},
-//    {}
-//};
+// PDO entries' byte offset in the process data
+static unsigned int off_ek1818_out;
+static unsigned int off_ek1818_in;
 
 const static ec_pdo_entry_reg_t domain1_regs[] = {
-    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 1, &off_ek1818_out1},
-	{}
+    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 1, &off_ek1818_out},
+	{EK1818Pos,  Beckhoff_EK1818, 0x6000, 1, &off_ek1818_in},
+	{}	// ?
 };
 
 static unsigned int counter = 0;
@@ -110,72 +95,7 @@ static unsigned int blink = 0;
 /*****************************************************************************/
 
 #if CONFIGURE_PDOS
-
-// Analog in --------------------------
-
-//static ec_pdo_entry_info_t el3102_pdo_entries[] = {
-//    {0x3101, 1,  8}, // channel 1 status
-//    {0x3101, 2, 16}, // channel 1 value
-//    {0x3102, 1,  8}, // channel 2 status
-//    {0x3102, 2, 16}, // channel 2 value
-//    {0x6401, 1, 16}, // channel 1 value (alt.)
-//    {0x6401, 2, 16}  // channel 2 value (alt.)
-//};
-//
-//static ec_pdo_info_t el3102_pdos[] = {
-//    {0x1A00, 2, el3102_pdo_entries},
-//    {0x1A01, 2, el3102_pdo_entries + 2}
-//};
-//
-//static ec_sync_info_t el3102_syncs[] = {
-//    {2, EC_DIR_OUTPUT},
-//    {3, EC_DIR_INPUT, 2, el3102_pdos},
-//    {0xff}
-//};
-
-
-/* Master 0, Slave 0, "EK1818"
- * Vendor ID:       0x00000002
- * Product code:    0x071a2c52
- * Revision number: 0x00110000
- */
-
-ec_pdo_entry_info_t slave_0_pdo_entries[] = {
-    {0x7000, 0x01, 1}, /* Output */
-    {0x7010, 0x01, 1}, /* Output */
-    {0x7020, 0x01, 1}, /* Output */
-    {0x7030, 0x01, 1}, /* Output */
-    {0x6000, 0x01, 1}, /* Input */
-    {0x6010, 0x01, 1}, /* Input */
-    {0x6020, 0x01, 1}, /* Input */
-    {0x6030, 0x01, 1}, /* Input */
-    {0x6040, 0x01, 1}, /* Input */
-    {0x6050, 0x01, 1}, /* Input */
-    {0x6060, 0x01, 1}, /* Input */
-    {0x6070, 0x01, 1}, /* Input */
-};
-
-ec_pdo_info_t slave_0_pdos[] = {
-    {0x1600, 1, slave_0_pdo_entries + 0}, /* Channel 9 */
-    {0x1601, 1, slave_0_pdo_entries + 1}, /* Channel 10 */
-    {0x1602, 1, slave_0_pdo_entries + 2}, /* Channel 11 */
-    {0x1603, 1, slave_0_pdo_entries + 3}, /* Channel 12 */
-    {0x1a00, 1, slave_0_pdo_entries + 4}, /* Channel 1 */
-    {0x1a01, 1, slave_0_pdo_entries + 5}, /* Channel 2 */
-    {0x1a02, 1, slave_0_pdo_entries + 6}, /* Channel 3 */
-    {0x1a03, 1, slave_0_pdo_entries + 7}, /* Channel 4 */
-    {0x1a04, 1, slave_0_pdo_entries + 8}, /* Channel 5 */
-    {0x1a05, 1, slave_0_pdo_entries + 9}, /* Channel 6 */
-    {0x1a06, 1, slave_0_pdo_entries + 10}, /* Channel 7 */
-    {0x1a07, 1, slave_0_pdo_entries + 11}, /* Channel 8 */
-};
-
-ec_sync_info_t slave_0_syncs[] = {
-    {0, EC_DIR_OUTPUT, 4, slave_0_pdos + 0, EC_WD_ENABLE},
-    {1, EC_DIR_INPUT, 8, slave_0_pdos + 4, EC_WD_DISABLE},
-    {0xff}
-};
-
+#include "cstruct_ek1818.h"
 #endif
 
 /*****************************************************************************/
@@ -227,11 +147,11 @@ void check_slave_config_states(void)
     ecrt_slave_config_state(sc_ek1818, &s);
 
     if (s.al_state != sc_ek1818_state.al_state)
-        printf("AnaIn: State 0x%02X.\n", s.al_state);
+        printf("EK1818: State 0x%02X.\n", s.al_state);
     if (s.online != sc_ek1818_state.online)
-        printf("AnaIn: %s.\n", s.online ? "online" : "offline");
+        printf("EK1818: %s.\n", s.online ? "online" : "offline");
     if (s.operational != sc_ek1818_state.operational)
-        printf("AnaIn: %soperational.\n",
+        printf("EK1818: %soperational.\n",
                 s.operational ? "" : "Not ");
 
     sc_ek1818_state = s;
@@ -271,7 +191,7 @@ void cyclic_task()
     ecrt_domain_process(domain1);
 
     // check process data state (optional)
-    check_domain1_state();
+    //check_domain1_state();
 
     if (counter) {
         counter--;
@@ -282,10 +202,10 @@ void cyclic_task()
         blink = !blink;
 
         // check for master state (optional)
-        check_master_state();
+       // check_master_state();
 
         // check for islave configuration state(s) (optional)
-        check_slave_config_states();
+        // check_slave_config_states();
 
 #if SDO_ACCESS
         // read process data SDO
@@ -294,16 +214,24 @@ void cyclic_task()
 
     }
 
-#if 0
+#if 1
     // read process data
-    printf("AnaIn: state %u value %u\n",
-            EC_READ_U8(domain1_pd + off_ana_in_status),
-            EC_READ_U16(domain1_pd + off_ana_in_value));
+    printf("EK1818: In1 %u \n In2 %u \n In3 %u \n In4 %u \n In5 %u \n In6 %u \n In7 %u \n In8 %u \n",
+    		EC_READ_BIT(domain1_pd + off_ek1818_in, 0),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 1),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 2),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 3),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 4),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 5),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 6),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 7),
+			EC_READ_BIT(domain1_pd + off_ek1818_in, 8)
+    );
 #endif
 
 #if 1
     // write process data
-    EC_WRITE_U8(domain1_pd + off_ek1818_out1, blink ? 0x06 : 0x09);
+    EC_WRITE_U8(domain1_pd + off_ek1818_out1, blink ? 0x06 : 0x09); //write 1 to out2, out3 OR write 1 to out1, and out4
 #endif
 
     // send process data
