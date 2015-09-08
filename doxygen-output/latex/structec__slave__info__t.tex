@@ -1,0 +1,261 @@
+\section{ec\-\_\-slave\-\_\-info\-\_\-t Struct Reference}
+\label{structec__slave__info__t}\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+
+
+Slave information.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t {\bf position}
+\begin{DoxyCompactList}\small\item\em Offset of the slave in the ring. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf vendor\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Vendor-\/\-I\-D stored on the slave. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf product\-\_\-code}
+\begin{DoxyCompactList}\small\item\em Product-\/\-Code stored on the slave. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf revision\-\_\-number}
+\begin{DoxyCompactList}\small\item\em Revision-\/\-Number stored on the slave. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf serial\-\_\-number}
+\begin{DoxyCompactList}\small\item\em Serial-\/\-Number stored on the slave. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf alias}
+\begin{DoxyCompactList}\small\item\em The slaves alias if not equal to 0. \end{DoxyCompactList}\item 
+int16\-\_\-t {\bf current\-\_\-on\-\_\-ebus}
+\begin{DoxyCompactList}\small\item\em Used current in m\-A. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>{\bf ec\_slave\_port\_desc\_t} {\bf desc}\\
+\>\>{\em Physical port type. }\\
+\>{\bf ec\_slave\_port\_link\_t} {\bf link}\\
+\>\>{\em Port link state. }\\
+\>uint32\_t {\bf receive\_time}\\
+\>\>{\em Receive time on DC transmission delay measurement. }\\
+\>uint16\_t {\bf next\_slave}\\
+\>\>{\em Ring position of next DC slave on that port. }\\
+\>uint32\_t {\bf delay\_to\_next\_dc}\\
+\>\>{\em Delay [ns] to next DC slave. }\\
+\} {\bf ports} [{\bf EC\_MAX\_PORTS}]\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Port information. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf al\-\_\-state}
+\begin{DoxyCompactList}\small\item\em Current state of the slave. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf error\-\_\-flag}
+\begin{DoxyCompactList}\small\item\em Error flag for that slave. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf sync\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of sync managers. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf sdo\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of S\-D\-Os. \end{DoxyCompactList}\item 
+char {\bf name} [{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}]
+\begin{DoxyCompactList}\small\item\em Name of the slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Slave information. 
+
+This is used as an output parameter of \doxyref{ecrt\-\_\-master\-\_\-get\-\_\-slave()}{p.}{group__ApplicationInterface_ga8a1a9398f7c1e17e4da8243fe03a7a80}.
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ecrt\-\_\-master\-\_\-get\-\_\-slave()}{p.}{group__ApplicationInterface_ga8a1a9398f7c1e17e4da8243fe03a7a80}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 364 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!position@{position}}
+\index{position@{position}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::position}\label{structec__slave__info__t_a6001f55881e2cd363a4c0749c0096cd6}
+
+
+Offset of the slave in the ring. 
+
+
+
+Definition at line 365 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!vendor\-\_\-id@{vendor\-\_\-id}}
+\index{vendor\-\_\-id@{vendor\-\_\-id}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{vendor\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::vendor\-\_\-id}\label{structec__slave__info__t_aa944602e60e4735b59b51a351e673205}
+
+
+Vendor-\/\-I\-D stored on the slave. 
+
+
+
+Definition at line 366 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!product\-\_\-code@{product\-\_\-code}}
+\index{product\-\_\-code@{product\-\_\-code}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{product\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::product\-\_\-code}\label{structec__slave__info__t_a7cfe4847a1d2108726e2f811b17ae9ff}
+
+
+Product-\/\-Code stored on the slave. 
+
+
+
+Definition at line 367 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!revision\-\_\-number@{revision\-\_\-number}}
+\index{revision\-\_\-number@{revision\-\_\-number}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{revision\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::revision\-\_\-number}\label{structec__slave__info__t_a228e2613b426dd2ec3796788aa0c5141}
+
+
+Revision-\/\-Number stored on the slave. 
+
+
+
+Definition at line 368 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!serial\-\_\-number@{serial\-\_\-number}}
+\index{serial\-\_\-number@{serial\-\_\-number}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{serial\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::serial\-\_\-number}\label{structec__slave__info__t_abff228c0f3c4b869ba2624937b1ff89a}
+
+
+Serial-\/\-Number stored on the slave. 
+
+
+
+Definition at line 369 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!alias@{alias}}
+\index{alias@{alias}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{alias}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::alias}\label{structec__slave__info__t_aaebdddfdbaa1be6b70fbfc455fe7f8dd}
+
+
+The slaves alias if not equal to 0. 
+
+
+
+Definition at line 370 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!current\-\_\-on\-\_\-ebus@{current\-\_\-on\-\_\-ebus}}
+\index{current\-\_\-on\-\_\-ebus@{current\-\_\-on\-\_\-ebus}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{current\-\_\-on\-\_\-ebus}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::current\-\_\-on\-\_\-ebus}\label{structec__slave__info__t_a48cbaae771c8dc5c818caea3db35ec52}
+
+
+Used current in m\-A. 
+
+
+
+Definition at line 371 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!desc@{desc}}
+\index{desc@{desc}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{desc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-port\-\_\-desc\-\_\-t} ec\-\_\-slave\-\_\-info\-\_\-t\-::desc}\label{structec__slave__info__t_ac48f62ba6858bbbf0c0238858667e2d2}
+
+
+Physical port type. 
+
+
+
+Definition at line 373 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!link@{link}}
+\index{link@{link}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-port\-\_\-link\-\_\-t} ec\-\_\-slave\-\_\-info\-\_\-t\-::link}\label{structec__slave__info__t_a9d7a2d7fa4ff23cdf6c8c842f484e904}
+
+
+Port link state. 
+
+
+
+Definition at line 374 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!receive\-\_\-time@{receive\-\_\-time}}
+\index{receive\-\_\-time@{receive\-\_\-time}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{receive\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::receive\-\_\-time}\label{structec__slave__info__t_aedf2a04fab36cffaff880d42a3776c35}
+
+
+Receive time on D\-C transmission delay measurement. 
+
+
+
+Definition at line 375 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!next\-\_\-slave@{next\-\_\-slave}}
+\index{next\-\_\-slave@{next\-\_\-slave}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{next\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::next\-\_\-slave}\label{structec__slave__info__t_a613d9a5dfd21667e9b4f21ed435b760a}
+
+
+Ring position of next D\-C slave on that port. 
+
+
+
+Definition at line 377 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!delay\-\_\-to\-\_\-next\-\_\-dc@{delay\-\_\-to\-\_\-next\-\_\-dc}}
+\index{delay\-\_\-to\-\_\-next\-\_\-dc@{delay\-\_\-to\-\_\-next\-\_\-dc}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{delay\-\_\-to\-\_\-next\-\_\-dc}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::delay\-\_\-to\-\_\-next\-\_\-dc}\label{structec__slave__info__t_a1ba1f3946bd5c56275f929bb0bd0ba0c}
+
+
+Delay [ns] to next D\-C slave. 
+
+
+
+Definition at line 379 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!ports@{ports}}
+\index{ports@{ports}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{ports}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   ec\-\_\-slave\-\_\-info\-\_\-t\-::ports[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-P\-O\-R\-T\-S}]}\label{structec__slave__info__t_ab5f40c5593214eb0b279aedbf7c91ddb}
+
+
+Port information. 
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!al\-\_\-state@{al\-\_\-state}}
+\index{al\-\_\-state@{al\-\_\-state}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{al\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::al\-\_\-state}\label{structec__slave__info__t_a769449958ad04e2a7eb6c27d0052d1cf}
+
+
+Current state of the slave. 
+
+
+
+Definition at line 381 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!error\-\_\-flag@{error\-\_\-flag}}
+\index{error\-\_\-flag@{error\-\_\-flag}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{error\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::error\-\_\-flag}\label{structec__slave__info__t_a37c3c84b314c3d8636fb9da670721d33}
+
+
+Error flag for that slave. 
+
+
+
+Definition at line 382 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!sync\-\_\-count@{sync\-\_\-count}}
+\index{sync\-\_\-count@{sync\-\_\-count}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{sync\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::sync\-\_\-count}\label{structec__slave__info__t_aed1ca44de274226ae39ba19e4243a907}
+
+
+Number of sync managers. 
+
+
+
+Definition at line 383 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!sdo\-\_\-count@{sdo\-\_\-count}}
+\index{sdo\-\_\-count@{sdo\-\_\-count}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{sdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-info\-\_\-t\-::sdo\-\_\-count}\label{structec__slave__info__t_ad5b269e24db07fd6721d4df031515bc0}
+
+
+Number of S\-D\-Os. 
+
+
+
+Definition at line 384 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-info\-\_\-t@{ec\-\_\-slave\-\_\-info\-\_\-t}!name@{name}}
+\index{name@{name}!ec_slave_info_t@{ec\-\_\-slave\-\_\-info\-\_\-t}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char ec\-\_\-slave\-\_\-info\-\_\-t\-::name[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-L\-E\-N\-G\-T\-H}]}\label{structec__slave__info__t_ad1ff91d12fdc13b813ab69b657a7249c}
+
+
+Name of the slave. 
+
+
+
+Definition at line 385 of file ecrt.\-h.
+

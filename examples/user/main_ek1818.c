@@ -45,7 +45,7 @@
 /****************************************************************************/
 
 // Application parameters
-#define FREQUENCY 100
+#define PERIOD 1000		// cyclic tasks period in ms
 #define PRIORITY 1
 
 // Optional features
@@ -84,8 +84,8 @@ static unsigned int off_ek1818_out;
 static unsigned int off_ek1818_in;
 
 const static ec_pdo_entry_reg_t domain1_regs[] = {
-    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 1, &off_ek1818_out},
-	{EK1818Pos,  Beckhoff_EK1818, 0x6000, 1, &off_ek1818_in},
+    {EK1818Pos,  Beckhoff_EK1818, 0x7000, 0x01, &off_ek1818_out},
+	{EK1818Pos,  Beckhoff_EK1818, 0x6000, 1, &off_ek1818_in, 0},
 	{}	// ?
 };
 
@@ -105,6 +105,28 @@ static ec_sdo_request_t *sdo;
 #endif
 
 /*****************************************************************************/
+
+
+/* horloge */
+static double periodeBaseHorloge = (double)128.0/(double)1024.0;;
+
+int t_delay(double secondes) {
+	  struct timespec delai;
+	  struct timespec reste;
+
+	  delai.tv_sec = (time_t)secondes;
+	  delai.tv_nsec = (long)((secondes - delai.tv_sec) * 1.e9);
+
+	  while(nanosleep(&delai, &reste) != 0) {
+	    if ( errno ==  EINTR ) {
+	      delai = reste;
+	      continue;
+	    }
+	    else return -1;
+	  }
+
+	  return 0;
+}
 
 void check_domain1_state(void)
 {
@@ -191,48 +213,41 @@ void cyclic_task()
     ecrt_domain_process(domain1);
 
     // check process data state (optional)
-    //check_domain1_state();
+    check_domain1_state();
 
-    if (counter) {
-        counter--;
-    } else { // do this at 1 Hz
-        counter = FREQUENCY;
+    // calculate new process data
+    blink = !blink;
 
-        // calculate new process data
-        blink = !blink;
+    // check for master state (optional)
+    check_master_state();
 
-        // check for master state (optional)
-       // check_master_state();
+    // check for islave configuration state(s) (optional)
+    check_slave_config_states();
 
-        // check for islave configuration state(s) (optional)
-        // check_slave_config_states();
+if (sc_ek1818_state.operational) {
+		#if SDO_ACCESS
+				// read process data SDO
+				read_sdo();
+		#endif
 
-#if SDO_ACCESS
-        // read process data SDO
-        read_sdo();
-#endif
+		#if 1
+			// write process data
+			EC_WRITE_U8(domain1_pd + off_ek1818_out, blink ? 0x08 : 0x00); //write 1 to out2, out3 OR write 1 to out1, and out4
+		#endif
 
-    }
-
-#if 1
-    // read process data
-    printf("EK1818: In1 %u \n In2 %u \n In3 %u \n In4 %u \n In5 %u \n In6 %u \n In7 %u \n In8 %u \n",
-    		EC_READ_BIT(domain1_pd + off_ek1818_in, 0),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 1),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 2),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 3),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 4),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 5),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 6),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 7),
-			EC_READ_BIT(domain1_pd + off_ek1818_in, 8)
-    );
-#endif
-
-#if 1
-    // write process data
-    EC_WRITE_U8(domain1_pd + off_ek1818_out1, blink ? 0x06 : 0x09); //write 1 to out2, out3 OR write 1 to out1, and out4
-#endif
+		#if 0
+			// read process data
+		   printf("EK1818 inputs: \n In1 %u \n In2 %u \n In3 %u \n In4 %u \n In5 %u \n In6 %u \n In7 %u \n In8 %u \n",
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 0),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 1),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 2),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 3),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 4),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 5),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 6),
+					EC_READ_BIT(domain1_pd + off_ek1818_in, 7) );
+		#endif
+	}
 
     // send process data
     ecrt_domain_queue(domain1);
@@ -253,7 +268,6 @@ void signal_handler(int signum) {
 
 int main(int argc, char **argv)
 {
-    ec_slave_config_t *sc;
     struct sigaction sa;
     struct itimerval tv;
 
@@ -282,13 +296,13 @@ int main(int argc, char **argv)
 
 #if CONFIGURE_PDOS
     printf("Configuring PDOs...\n");
-    if (ecrt_slave_config_pdos(sc_ek1818, EC_END, slave_0_syncs)) {
+    if (ecrt_slave_config_pdos(sc_ek1818, EC_END, ek1818_syncs)) {
         fprintf(stderr, "Failed to configure PDOs.\n");
         return -1;
     }
 
-    sc = ecrt_master_slave_config(master, EK1818Pos, Beckhoff_EK1818);
-    if (!sc) {
+    sc_ek1818 = ecrt_master_slave_config(master, EK1818Pos, Beckhoff_EK1818);
+    if (!sc_ek1818) {
     	fprintf(stderr, "Failed to get slave configuration.\n");
         return -1;
     }
@@ -307,12 +321,15 @@ int main(int argc, char **argv)
         return -1;
     }
 
+    //t_delay(30);
+
 #if PRIORITY
     pid_t pid = getpid();
     if (setpriority(PRIO_PROCESS, pid, -19))
         fprintf(stderr, "Warning: Failed to set priority: %s\n",
                 strerror(errno));
 #endif
+
 
     sa.sa_handler = signal_handler;
     sigemptyset(&sa.sa_mask);
@@ -323,8 +340,8 @@ int main(int argc, char **argv)
     }
 
     printf("Starting timer...\n");
-    tv.it_interval.tv_sec = 0;
-    tv.it_interval.tv_usec = 1000000 / FREQUENCY;
+    tv.it_interval.tv_sec = 2;
+    tv.it_interval.tv_usec = 0;
     tv.it_value.tv_sec = 0;
     tv.it_value.tv_usec = 1000;
     if (setitimer(ITIMER_REAL, &tv, NULL)) {

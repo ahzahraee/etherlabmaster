@@ -1,0 +1,154 @@
+\section{sdo\-\_\-request.\-h File Reference}
+\label{sdo__request_8h}\index{sdo\-\_\-request.\-h@{sdo\-\_\-request.\-h}}
+
+
+Ether\-C\-A\-T C\-A\-Nopen S\-D\-O request structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-sdo\-\_\-request}
+\begin{DoxyCompactList}\small\item\em C\-A\-Nopen S\-D\-O request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-sdo\-\_\-request\-\_\-init} ({\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$)\label{sdo__request_8h_ad8aff35de00f93957ff85baafa8fd4e7}
+
+\begin{DoxyCompactList}\small\item\em S\-D\-O request constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-sdo\-\_\-request\-\_\-clear} ({\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$)\label{sdo__request_8h_a74443922a8e3286319551f013ca4a497}
+
+\begin{DoxyCompactList}\small\item\em S\-D\-O request destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-sdo\-\_\-request\-\_\-copy} ({\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$, const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Copy another S\-D\-O request. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-sdo\-\_\-request\-\_\-alloc} ({\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Pre-\/allocates the data memory. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data} ({\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Copies S\-D\-O data from an external source. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out} (const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Checks, if the timeout was exceeded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T C\-A\-Nopen S\-D\-O request structure. 
+
+Definition in file {\bf sdo\-\_\-request.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{sdo\-\_\-request.\-h@{sdo\-\_\-request.\-h}!ec\-\_\-sdo\-\_\-request\-\_\-copy@{ec\-\_\-sdo\-\_\-request\-\_\-copy}}
+\index{ec\-\_\-sdo\-\_\-request\-\_\-copy@{ec\-\_\-sdo\-\_\-request\-\_\-copy}!sdo_request.h@{sdo\-\_\-request.\-h}}
+\subsubsection[{ec\-\_\-sdo\-\_\-request\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sdo\-\_\-request\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\label{sdo__request_8h_a45646d530be29f32d4519c8dbba47426}
+
+
+Copy another S\-D\-O request. 
+
+\begin{DoxyAttention}{Attention}
+Only the index subindex and data are copied.
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & S\-D\-O request. \\
+\hline
+{\em other} & Other S\-D\-O request to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 91 of file sdo\-\_\-request.\-c.
+
+\index{sdo\-\_\-request.\-h@{sdo\-\_\-request.\-h}!ec\-\_\-sdo\-\_\-request\-\_\-alloc@{ec\-\_\-sdo\-\_\-request\-\_\-alloc}}
+\index{ec\-\_\-sdo\-\_\-request\-\_\-alloc@{ec\-\_\-sdo\-\_\-request\-\_\-alloc}!sdo_request.h@{sdo\-\_\-request.\-h}}
+\subsubsection[{ec\-\_\-sdo\-\_\-request\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sdo\-\_\-request\-\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{sdo__request_8h_a231aeb547727a89b100f02284637f8d6}
+
+
+Pre-\/allocates the data memory. 
+
+If the {\itshape mem\-\_\-size} is already bigger than {\itshape size}, nothing is done.
+
+\begin{DoxyReturn}{Returns}
+0 on success, otherwise -\/\-E\-N\-O\-M\-E\-M. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & S\-D\-O request. \\
+\hline
+{\em size} & Data size to allocate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file sdo\-\_\-request.\-c.
+
+\index{sdo\-\_\-request.\-h@{sdo\-\_\-request.\-h}!ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data@{ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data}}
+\index{ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data@{ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data}!sdo_request.h@{sdo\-\_\-request.\-h}}
+\subsubsection[{ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sdo\-\_\-request\-\_\-copy\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{const uint8\-\_\-t $\ast$}]{source, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{sdo__request_8h_a0aaf97fcc7f73f88d76a44e8d12499c2}
+
+
+Copies S\-D\-O data from an external source. 
+
+If the {\itshape mem\-\_\-size} is to small, new memory is allocated.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & S\-D\-O request. \\
+\hline
+{\em source} & Source data. \\
+\hline
+{\em size} & Number of bytes in {\itshape source}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file sdo\-\_\-request.\-c.
+
+\index{sdo\-\_\-request.\-h@{sdo\-\_\-request.\-h}!ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out@{ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out}}
+\index{ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out@{ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out}!sdo_request.h@{sdo\-\_\-request.\-h}}
+\subsubsection[{ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sdo\-\_\-request\-\_\-timed\-\_\-out (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{sdo__request_8h_aeb06bad8f9b2fb2379b274c2bb3d7b69}
+
+
+Checks, if the timeout was exceeded. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if the timeout was exceeded, else zero. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & S\-D\-O request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file sdo\-\_\-request.\-c.
+

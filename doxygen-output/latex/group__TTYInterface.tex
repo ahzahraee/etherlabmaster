@@ -1,0 +1,129 @@
+\section{Ether\-C\-A\-T Virtual T\-T\-Y Interface}
+\label{group__TTYInterface}\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-tty\-\_\-operations\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Operations on the virtual T\-T\-Y interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct ec\-\_\-tty {\bf ec\-\_\-tty\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-tty\-\_\-t} $\ast$ {\bf ectty\-\_\-create} (const {\bf ec\-\_\-tty\-\_\-operations\-\_\-t} $\ast$ops, void $\ast$cb\-\_\-data)
+\begin{DoxyCompactList}\small\item\em Create a virtual T\-T\-Y interface. \end{DoxyCompactList}\item 
+void {\bf ectty\-\_\-free} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty)
+\begin{DoxyCompactList}\small\item\em Releases a virtual T\-T\-Y interface. \end{DoxyCompactList}\item 
+unsigned int {\bf ectty\-\_\-tx\-\_\-data} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty, uint8\-\_\-t $\ast$buffer, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Reads data to send from the T\-T\-Y interface. \end{DoxyCompactList}\item 
+void {\bf ectty\-\_\-rx\-\_\-data} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty, const uint8\-\_\-t $\ast$buffer, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Pushes received data to the T\-T\-Y interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Typedef Documentation}
+\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}!ec\-\_\-tty\-\_\-t@{ec\-\_\-tty\-\_\-t}}
+\index{ec\-\_\-tty\-\_\-t@{ec\-\_\-tty\-\_\-t}!EtherCAT Virtual TTY Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsubsection[{ec\-\_\-tty\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct ec\-\_\-tty {\bf ec\-\_\-tty\-\_\-t}}\label{group__TTYInterface_gabf4bbf300a5c451d7fe82b65e17f097d}
+\begin{DoxySeeAlso}{See Also}
+ec\-\_\-tty 
+\end{DoxySeeAlso}
+
+
+Definition at line 52 of file ectty.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}!ectty\-\_\-create@{ectty\-\_\-create}}
+\index{ectty\-\_\-create@{ectty\-\_\-create}!EtherCAT Virtual TTY Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsubsection[{ectty\-\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-tty\-\_\-t}$\ast$ ectty\-\_\-create (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-tty\-\_\-operations\-\_\-t} $\ast$}]{ops, }
+\item[{void $\ast$}]{cb\-\_\-data}
+\end{DoxyParamCaption}
+)}\label{group__TTYInterface_ga64244c8ea384d633c3f8edfadeecffb3}
+
+
+Create a virtual T\-T\-Y interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ops} & Set of callbacks. \\
+\hline
+{\em cb\-\_\-data} & Arbitrary data, that is passed to any callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the interface object, otherwise an E\-R\-R\-\_\-\-P\-T\-R value. 
+\end{DoxyReturn}
+\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}!ectty\-\_\-free@{ectty\-\_\-free}}
+\index{ectty\-\_\-free@{ectty\-\_\-free}!EtherCAT Virtual TTY Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsubsection[{ectty\-\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void ectty\-\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-tty\-\_\-t} $\ast$}]{tty}
+\end{DoxyParamCaption}
+)}\label{group__TTYInterface_ga03d764370f5d76bec71412ea1124a156}
+
+
+Releases a virtual T\-T\-Y interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tty} & T\-T\-Y interface. \\
+\hline
+\end{DoxyParams}
+\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}!ectty\-\_\-tx\-\_\-data@{ectty\-\_\-tx\-\_\-data}}
+\index{ectty\-\_\-tx\-\_\-data@{ectty\-\_\-tx\-\_\-data}!EtherCAT Virtual TTY Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsubsection[{ectty\-\_\-tx\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ectty\-\_\-tx\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-tty\-\_\-t} $\ast$}]{tty, }
+\item[{uint8\-\_\-t $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{group__TTYInterface_ga71580e6fbab0aa678073c139bf516dae}
+
+
+Reads data to send from the T\-T\-Y interface. 
+
+If there are data to send, they are copied into the {\itshape buffer}. At maximum, {\itshape size} bytes are copied. The actual number of bytes copied is returned.
+
+\begin{DoxyReturn}{Returns}
+Number of bytes copied. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em tty} & T\-T\-Y interface. \\
+\hline
+{\em buffer} & Buffer for data to transmit. \\
+\hline
+{\em size} & Available space in {\itshape buffer}. \\
+\hline
+\end{DoxyParams}
+\index{Ether\-C\-A\-T Virtual T\-T\-Y Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}!ectty\-\_\-rx\-\_\-data@{ectty\-\_\-rx\-\_\-data}}
+\index{ectty\-\_\-rx\-\_\-data@{ectty\-\_\-rx\-\_\-data}!EtherCAT Virtual TTY Interface@{Ether\-C\-A\-T Virtual T\-T\-Y Interface}}
+\subsubsection[{ectty\-\_\-rx\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ectty\-\_\-rx\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-tty\-\_\-t} $\ast$}]{tty, }
+\item[{const uint8\-\_\-t $\ast$}]{buffer, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{group__TTYInterface_ga9d2e53ca7492e1a71a26cbbc7d51af52}
+
+
+Pushes received data to the T\-T\-Y interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tty} & T\-T\-Y interface. \\
+\hline
+{\em buffer} & Buffer with received data. \\
+\hline
+{\em size} & Number of bytes in {\itshape buffer}. \\
+\hline
+\end{DoxyParams}

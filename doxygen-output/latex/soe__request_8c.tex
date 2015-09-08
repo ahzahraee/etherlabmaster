@@ -1,0 +1,318 @@
+\section{soe\-\_\-request.\-c File Reference}
+\label{soe__request_8c}\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}}
+
+
+Sercos-\/over-\/\-Ether\-C\-A\-T request functions.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-S\-O\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}~1000\label{soe__request_8c_a4a6708f336ebb21896abbd6b9c272ec2}
+
+\begin{DoxyCompactList}\small\item\em Default timeout in ms to wait for So\-E responses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req)
+\begin{DoxyCompactList}\small\item\em Free allocated memory. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-init} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req)
+\begin{DoxyCompactList}\small\item\em So\-E request constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-clear} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req)
+\begin{DoxyCompactList}\small\item\em So\-E request destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-soe\-\_\-request\-\_\-copy} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, const {\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$other)
+\begin{DoxyCompactList}\small\item\em Copy another So\-E request. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, uint8\-\_\-t drive\-\_\-no)
+\begin{DoxyCompactList}\small\item\em Set drive number. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, uint16\-\_\-t idn)
+\begin{DoxyCompactList}\small\item\em Set I\-D\-N. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-soe\-\_\-request\-\_\-alloc} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Pre-\/allocates the data memory. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, const uint8\-\_\-t $\ast$source, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Copies So\-E data from an external source. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req, const uint8\-\_\-t $\ast$source, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Copies So\-E data from an external source. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-read} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req)
+\begin{DoxyCompactList}\small\item\em Request a read operation. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-soe\-\_\-request\-\_\-write} ({\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$req)
+\begin{DoxyCompactList}\small\item\em Request a write operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sercos-\/over-\/\-Ether\-C\-A\-T request functions. 
+
+Definition in file {\bf soe\-\_\-request.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-clear\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a061dca3585d23f3b16ca46a90b53b9de}
+
+
+Free allocated memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-init@{ec\-\_\-soe\-\_\-request\-\_\-init}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-init@{ec\-\_\-soe\-\_\-request\-\_\-init}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_ac48c2c807e1193b309dc20b08db88af1}
+
+
+So\-E request constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-clear@{ec\-\_\-soe\-\_\-request\-\_\-clear}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-clear@{ec\-\_\-soe\-\_\-request\-\_\-clear}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_af363b99bdce32c73c89bcec7520b5d01}
+
+
+So\-E request destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-copy@{ec\-\_\-soe\-\_\-request\-\_\-copy}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-copy@{ec\-\_\-soe\-\_\-request\-\_\-copy}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-soe\-\_\-request\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{const {\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a0aed2b2f97cf1436f7f778ccfb8c5553}
+
+
+Copy another So\-E request. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em other} & Other So\-E request to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no@{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no@{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-drive\-\_\-no (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{uint8\-\_\-t}]{drive\-\_\-no}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a33b01e254978df8b620d4dccc1d42569}
+
+
+Set drive number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em drive\-\_\-no} & Drive Number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn@{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn@{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-set\-\_\-idn (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{uint16\-\_\-t}]{idn}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a1433bb1213a1ae25b9f9e5fdd9002668}
+
+
+Set I\-D\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em idn} & I\-D\-N. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-alloc@{ec\-\_\-soe\-\_\-request\-\_\-alloc}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-alloc@{ec\-\_\-soe\-\_\-request\-\_\-alloc}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-soe\-\_\-request\-\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_aebb7a81aa9fea2e882edce1bb4ccc8b6}
+
+
+Pre-\/allocates the data memory. 
+
+If the {\itshape mem\-\_\-size} is already bigger than {\itshape size}, nothing is done.
+
+\begin{DoxyReturn}{Returns}
+0 on success, otherwise -\/\-E\-N\-O\-M\-E\-M. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em size} & Data size to allocate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-soe\-\_\-request\-\_\-copy\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{const uint8\-\_\-t $\ast$}]{source, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a814c93a03b31ee5cc53ea6eec96a1bbc}
+
+
+Copies So\-E data from an external source. 
+
+If the {\itshape mem\-\_\-size} is to small, new memory is allocated.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em source} & Source data. \\
+\hline
+{\em size} & Number of bytes in {\itshape source}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 179 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data@{ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-soe\-\_\-request\-\_\-append\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req, }
+\item[{const uint8\-\_\-t $\ast$}]{source, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a8a925ba4a167337f982e2af3cc94fe5b}
+
+
+Copies So\-E data from an external source. 
+
+If the {\itshape mem\-\_\-size} is to small, new memory is allocated.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+{\em source} & Source data. \\
+\hline
+{\em size} & Number of bytes in {\itshape source}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-read@{ec\-\_\-soe\-\_\-request\-\_\-read}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-read@{ec\-\_\-soe\-\_\-request\-\_\-read}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a9eef801a2dec94ecd2ea20fa3b9bb3c2}
+
+
+Request a read operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file soe\-\_\-request.\-c.
+
+\index{soe\-\_\-request.\-c@{soe\-\_\-request.\-c}!ec\-\_\-soe\-\_\-request\-\_\-write@{ec\-\_\-soe\-\_\-request\-\_\-write}}
+\index{ec\-\_\-soe\-\_\-request\-\_\-write@{ec\-\_\-soe\-\_\-request\-\_\-write}!soe_request.c@{soe\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-request\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-soe\-\_\-request\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{req}
+\end{DoxyParamCaption}
+)}\label{soe__request_8c_a02f5e4b5047b8722d5df2096860807bb}
+
+
+Request a write operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file soe\-\_\-request.\-c.
+

@@ -1,0 +1,204 @@
+\section{Ether\-C\-A\-T Device Interface}
+\label{group__DeviceInterface}\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}}
+
+
+Master interface for Ether\-C\-A\-T-\/capable network device drivers.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ecdev\-\_\-withdraw} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Withdraws an Ether\-C\-A\-T device from the master. \end{DoxyCompactList}\item 
+int {\bf ecdev\-\_\-open} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Opens the network device and makes the master enter I\-D\-L\-E phase. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-close} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Makes the master leave I\-D\-L\-E phase and closes the network device. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-receive} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, const void $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Accepts a received frame. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-set\-\_\-link} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, uint8\-\_\-t state)
+\begin{DoxyCompactList}\small\item\em Sets a new link state. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf ecdev\-\_\-get\-\_\-link} (const {\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Reads the link state. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-t} $\ast$ {\bf ecdev\-\_\-offer} (struct net\-\_\-device $\ast$net\-\_\-dev, {\bf ec\-\_\-pollfunc\-\_\-t} poll, struct module $\ast$module)
+\begin{DoxyCompactList}\small\item\em Offers an Ether\-C\-A\-T device to a certain master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master interface for Ether\-C\-A\-T-\/capable network device drivers. Through the Ether\-C\-A\-T device interface, Ether\-C\-A\-T-\/capable network device drivers are able to connect their device(s) to the master, pass received frames and notify the master about status changes. The master on his part, can send his frames through connected devices. 
+
+\subsection{Function Documentation}
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-withdraw@{ecdev\-\_\-withdraw}}
+\index{ecdev\-\_\-withdraw@{ecdev\-\_\-withdraw}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-withdraw}]{\setlength{\rightskip}{0pt plus 5cm}void ecdev\-\_\-withdraw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_ga3934f8a07aa394d558147d790fc60a8b}
+
+
+Withdraws an Ether\-C\-A\-T device from the master. 
+
+The device is disconnected from the master and all device ressources are freed.
+
+\begin{DoxyAttention}{Attention}
+Before calling this function, the ecdev\-\_\-stop() function has to be called, to be sure that the master does not use the device any more. 
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 543 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-open@{ecdev\-\_\-open}}
+\index{ecdev\-\_\-open@{ecdev\-\_\-open}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ecdev\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_ga34eceaecfe6ab4fe8f0ecde1a3b311c4}
+
+
+Opens the network device and makes the master enter I\-D\-L\-E phase. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 574 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-close@{ecdev\-\_\-close}}
+\index{ecdev\-\_\-close@{ecdev\-\_\-close}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}void ecdev\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_ga0a6b26b2397aa49cc82915a12b8cc854}
+
+
+Makes the master leave I\-D\-L\-E phase and closes the network device. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 612 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-receive@{ecdev\-\_\-receive}}
+\index{ecdev\-\_\-receive@{ecdev\-\_\-receive}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-receive}]{\setlength{\rightskip}{0pt plus 5cm}void ecdev\-\_\-receive (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_gaf02497a3d6bb0e43dcefc1802f8666a5}
+
+
+Accepts a received frame. 
+
+Forwards the received data to the master. The master will analyze the frame and dispatch the received commands to the sending instances. 
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+{\em data} & pointer to received data \\
+\hline
+{\em size} & number of bytes received \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 634 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-set\-\_\-link@{ecdev\-\_\-set\-\_\-link}}
+\index{ecdev\-\_\-set\-\_\-link@{ecdev\-\_\-set\-\_\-link}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-set\-\_\-link}]{\setlength{\rightskip}{0pt plus 5cm}void ecdev\-\_\-set\-\_\-link (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{uint8\-\_\-t}]{state}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_gac1d0e31b8b60ad4e94c03148aac88499}
+
+
+Sets a new link state. 
+
+If the device notifies the master about the link being down, the master will not try to send frames using this device. 
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+{\em state} & new link state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 678 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-get\-\_\-link@{ecdev\-\_\-get\-\_\-link}}
+\index{ecdev\-\_\-get\-\_\-link@{ecdev\-\_\-get\-\_\-link}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-get\-\_\-link}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ecdev\-\_\-get\-\_\-link (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_gaa31bc8d955fea01e8430105c61064589}
+
+
+Reads the link state. 
+
+\begin{DoxyReturn}{Returns}
+Link state. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 704 of file device.\-c.
+
+\index{Ether\-C\-A\-T Device Interface@{Ether\-C\-A\-T Device Interface}!ecdev\-\_\-offer@{ecdev\-\_\-offer}}
+\index{ecdev\-\_\-offer@{ecdev\-\_\-offer}!EtherCAT Device Interface@{Ether\-C\-A\-T Device Interface}}
+\subsubsection[{ecdev\-\_\-offer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-device\-\_\-t}$\ast$ ecdev\-\_\-offer (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{net\-\_\-dev, }
+\item[{{\bf ec\-\_\-pollfunc\-\_\-t}}]{poll, }
+\item[{struct module $\ast$}]{module}
+\end{DoxyParamCaption}
+)}\label{group__DeviceInterface_ga522b0264934a68d51cc5b67f2c76ef30}
+
+
+Offers an Ether\-C\-A\-T device to a certain master. 
+
+The master decides, if it wants to use the device for Ether\-C\-A\-T operation, or not. It is important, that the offered net\-\_\-device is not used by the kernel I\-P stack. If the master, accepted the offer, the address of the newly created Ether\-C\-A\-T device is returned, else {\itshape N\-U\-L\-L} is returned.
+
+\begin{DoxyReturn}{Returns}
+Pointer to device, if accepted, or N\-U\-L\-L if declined. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em net\-\_\-dev} & net\-\_\-device to offer \\
+\hline
+{\em poll} & device poll function \\
+\hline
+{\em module} & pointer to the module \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 473 of file module.\-c.
+

@@ -1,0 +1,491 @@
+\section{ethernet.\-c File Reference}
+\label{ethernet_8c}\index{ethernet.\-c@{ethernet.\-c}}
+
+
+Ethernet over Ether\-C\-A\-T (Eo\-E).  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L}~1
+\begin{DoxyCompactList}\small\item\em Defines the debug level of Eo\-E processing. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-E\-O\-E\-\_\-\-T\-X\-\_\-\-Q\-U\-E\-U\-E\-\_\-\-S\-I\-Z\-E}~100\label{ethernet_8c_a70c1d2d995c7441a4f6e24aa46c08939}
+
+\begin{DoxyCompactList}\small\item\em Size of the Eo\-E tx queue. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-E\-O\-E\-\_\-\-T\-R\-I\-E\-S}~100\label{ethernet_8c_a0e63bd7f607fd32315eef69b1f66835f}
+
+\begin{DoxyCompactList}\small\item\em Number of tries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-eoe\-\_\-flush} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Empties the transmit queue. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em State\-: R\-X\-\_\-\-S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em State\-: R\-X\-\_\-\-C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em State\-: R\-X\-\_\-\-F\-E\-T\-C\-H. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em State\-: T\-X S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em State\-: T\-X S\-E\-N\-T. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoedev\-\_\-open} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Opens the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoedev\-\_\-stop} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Stops the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoedev\-\_\-tx} (struct sk\-\_\-buff $\ast$skb,struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Transmits data via the virtual network device. \end{DoxyCompactList}\item 
+struct net\-\_\-device\-\_\-stats $\ast$ {\bf ec\-\_\-eoedev\-\_\-stats} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Gets statistics about the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoe\-\_\-init} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Eo\-E constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-clear} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Eo\-E destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoe\-\_\-send} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Sends a frame or the next fragment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-run} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Runs the Eo\-E state machine. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-eoe\-\_\-queue} ({\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Queues the datagram, if necessary. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoe\-\_\-is\-\_\-open} (const {\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Returns the state of the device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-eoe\-\_\-is\-\_\-idle} (const {\bf ec\-\_\-eoe\-\_\-t} $\ast$eoe)
+\begin{DoxyCompactList}\small\item\em Returns the idle state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static struct net\-\_\-device\-\_\-ops {\bf ec\-\_\-eoedev\-\_\-ops}
+\begin{DoxyCompactList}\small\item\em Device operations for Eo\-E interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ethernet over Ether\-C\-A\-T (Eo\-E). 
+
+Definition in file {\bf ethernet.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{ethernet.\-c@{ethernet.\-c}!E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L@{E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L}}
+\index{E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L@{E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-O\-E\-\_\-\-D\-E\-B\-U\-G\-\_\-\-L\-E\-V\-E\-L~1}\label{ethernet_8c_a6e67793856d7614e89ecdf6bd55c59de}
+
+
+Defines the debug level of Eo\-E processing. 
+
+0 = No debug messages. 1 = Output warnings. 2 = Output actions. 3 = Output actions and frame data. 
+
+Definition at line 56 of file ethernet.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-flush@{ec\-\_\-eoe\-\_\-flush}}
+\index{ec\-\_\-eoe\-\_\-flush@{ec\-\_\-eoe\-\_\-flush}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-flush}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-flush (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a970fad1d21f02be260525eecca75dfea}
+
+
+Empties the transmit queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start}}
+\index{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a0c3f0cfe4de9ea263299cca79a514fe2}
+
+
+State\-: R\-X\-\_\-\-S\-T\-A\-R\-T. 
+
+Starts a new receiving sequence by queueing a datagram that checks the slave's mailbox for a new Eo\-E datagram.
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Use both devices. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check}}
+\index{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_aeb363618e311593a3ba9162d048b9c4a}
+
+
+State\-: R\-X\-\_\-\-C\-H\-E\-C\-K. 
+
+Processes the checking datagram sent in R\-X\-\_\-\-S\-T\-A\-R\-T and issues a receive datagram, if new data is available. 
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 415 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch}}
+\index{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch@{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-state\-\_\-rx\-\_\-fetch (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a9022acd1ebb43ff1cad0a079f58e1264}
+
+
+State\-: R\-X\-\_\-\-F\-E\-T\-C\-H. 
+
+Checks if the requested data of R\-X\-\_\-\-C\-H\-E\-C\-K was received and processes the Eo\-E datagram. 
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 446 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start@{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start}}
+\index{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start@{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a4b1876fbf6c3be4f5b8e432207b2b5e5}
+
+
+State\-: T\-X S\-T\-A\-R\-T. 
+
+Starts a new transmit sequence. If no data is available, a new receive sequence is started instead.
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Use both devices. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 623 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent@{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent}}
+\index{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent@{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-state\-\_\-tx\-\_\-sent (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_ac4a0bc15df72c6d646fbcb9ad9e3d552}
+
+
+State\-: T\-X S\-E\-N\-T. 
+
+Checks is the previous transmit datagram succeded and sends the next fragment, if necessary. 
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 698 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoedev\-\_\-open@{ec\-\_\-eoedev\-\_\-open}}
+\index{ec\-\_\-eoedev\-\_\-open@{ec\-\_\-eoedev\-\_\-open}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoedev\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoedev\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a6d276523f5d753ec334b8b8e8f21d7e9}
+
+
+Opens the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & Eo\-E net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 764 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoedev\-\_\-stop@{ec\-\_\-eoedev\-\_\-stop}}
+\index{ec\-\_\-eoedev\-\_\-stop@{ec\-\_\-eoedev\-\_\-stop}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoedev\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoedev\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_aead802b75eda8893b75fe909bf5250d3}
+
+
+Stops the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & Eo\-E net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 786 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoedev\-\_\-tx@{ec\-\_\-eoedev\-\_\-tx}}
+\index{ec\-\_\-eoedev\-\_\-tx@{ec\-\_\-eoedev\-\_\-tx}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoedev\-\_\-tx}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoedev\-\_\-tx (
+\begin{DoxyParamCaption}
+\item[{struct sk\-\_\-buff $\ast$}]{skb, }
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_acc5460a0f098d04c8b9fa280e4e0135a}
+
+
+Transmits data via the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, non-\/zero on failure. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em skb} & transmit socket buffer \\
+\hline
+{\em dev} & Eo\-E net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 808 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoedev\-\_\-stats@{ec\-\_\-eoedev\-\_\-stats}}
+\index{ec\-\_\-eoedev\-\_\-stats@{ec\-\_\-eoedev\-\_\-stats}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoedev\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}struct net\-\_\-device\-\_\-stats $\ast$ ec\-\_\-eoedev\-\_\-stats (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [read]}}\label{ethernet_8c_a66606d2d064e12129cc3a99c7e84fa74}
+
+
+Gets statistics about the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Statistics. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & Eo\-E net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 860 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-init@{ec\-\_\-eoe\-\_\-init}}
+\index{ec\-\_\-eoe\-\_\-init@{ec\-\_\-eoe\-\_\-init}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoe\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a938c671559b99ddc9f09f689457ff2bf}
+
+
+Eo\-E constructor. 
+
+Initializes the Eo\-E handler, creates a net\-\_\-device and registers it.
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-clear@{ec\-\_\-eoe\-\_\-clear}}
+\index{ec\-\_\-eoe\-\_\-clear@{ec\-\_\-eoe\-\_\-clear}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a44f532d9502383805937d7843240a0d0}
+
+
+Eo\-E destructor. 
+
+Unregisteres the net\-\_\-device and frees allocated memory. 
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-send@{ec\-\_\-eoe\-\_\-send}}
+\index{ec\-\_\-eoe\-\_\-send@{ec\-\_\-eoe\-\_\-send}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoe\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a634e85c58d58049c893721b7bd27f217}
+
+
+Sends a frame or the next fragment. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-run@{ec\-\_\-eoe\-\_\-run}}
+\index{ec\-\_\-eoe\-\_\-run@{ec\-\_\-eoe\-\_\-run}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-run (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a236cd1c306b14db3c71ed94e233ee23b}
+
+
+Runs the Eo\-E state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 324 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-queue@{ec\-\_\-eoe\-\_\-queue}}
+\index{ec\-\_\-eoe\-\_\-queue@{ec\-\_\-eoe\-\_\-queue}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-eoe\-\_\-queue (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_aa96fc479a7b625718b2502a201563e44}
+
+
+Queues the datagram, if necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 352 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-is\-\_\-open@{ec\-\_\-eoe\-\_\-is\-\_\-open}}
+\index{ec\-\_\-eoe\-\_\-is\-\_\-open@{ec\-\_\-eoe\-\_\-is\-\_\-open}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-is\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoe\-\_\-is\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_a13b38b2204c153ade2d9c0b942cd49b1}
+
+
+Returns the state of the device. 
+
+\begin{DoxyReturn}{Returns}
+1 if the device is \char`\"{}up\char`\"{}, 0 if it is \char`\"{}down\char`\"{} 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 366 of file ethernet.\-c.
+
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoe\-\_\-is\-\_\-idle@{ec\-\_\-eoe\-\_\-is\-\_\-idle}}
+\index{ec\-\_\-eoe\-\_\-is\-\_\-idle@{ec\-\_\-eoe\-\_\-is\-\_\-idle}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoe\-\_\-is\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-eoe\-\_\-is\-\_\-idle (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-eoe\-\_\-t} $\ast$}]{eoe}
+\end{DoxyParamCaption}
+)}\label{ethernet_8c_abfb958afb1ae5c90c9753664345b3e59}
+
+
+Returns the idle state. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & The device is idle. \\
+\hline
+{\em 0} & The device is busy. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em eoe} & Eo\-E handler \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 378 of file ethernet.\-c.
+
+
+
+\subsection{Variable Documentation}
+\index{ethernet.\-c@{ethernet.\-c}!ec\-\_\-eoedev\-\_\-ops@{ec\-\_\-eoedev\-\_\-ops}}
+\index{ec\-\_\-eoedev\-\_\-ops@{ec\-\_\-eoedev\-\_\-ops}!ethernet.c@{ethernet.\-c}}
+\subsubsection[{ec\-\_\-eoedev\-\_\-ops}]{\setlength{\rightskip}{0pt plus 5cm}struct net\-\_\-device\-\_\-ops ec\-\_\-eoedev\-\_\-ops\hspace{0.3cm}{\ttfamily [static]}}\label{ethernet_8c_ae658955578950f1fc0392f45e7a7d5f5}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+    .ndo\_open = ec_eoedev_open,
+    .ndo\_stop = ec_eoedev_stop,
+    .ndo\_start\_xmit = ec_eoedev_tx,
+    .ndo\_get\_stats = ec_eoedev_stats,
+\}
+\end{DoxyCode}
+
+
+Device operations for Eo\-E interfaces. 
+
+
+
+Definition at line 88 of file ethernet.\-c.
+

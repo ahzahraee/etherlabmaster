@@ -1,0 +1,829 @@
+\section{globals.\-h File Reference}
+\label{globals_8h}\index{globals.\-h@{globals.\-h}}
+
+
+Global definitions and macros.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-sii\-\_\-coe\-\_\-details\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Slave information interface C\-A\-Nopen over Ether\-C\-A\-T details flags. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-sii\-\_\-general\-\_\-flags\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Slave information interface general flags. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-sync\-\_\-signal\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T slave sync signal configuration. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-code\-\_\-msg\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Code/\-Message pair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T}~500
+\begin{DoxyCompactList}\small\item\em Datagram timeout in microseconds. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}~10000
+\begin{DoxyCompactList}\small\item\em S\-D\-O injection timeout in microseconds. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S}~80
+\begin{DoxyCompactList}\small\item\em Time to send a byte in nanoseconds. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S}~3
+\begin{DoxyCompactList}\small\item\em Number of state machine retries on datagram timeout. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T}~3
+\begin{DoxyCompactList}\small\item\em Seconds to wait before fetching S\-D\-O dictionary after slave entered P\-R\-E\-O\-P state. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}~32
+\begin{DoxyCompactList}\small\item\em Minimum size of a buffer used with \doxyref{ec\-\_\-state\-\_\-string()}{p.}{globals_8h_a5492e579e30e1bb9351cd601a89e238b}. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E}~4096
+\begin{DoxyCompactList}\small\item\em Maximum S\-I\-I size in words, to avoid infinite reading. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}~3
+\begin{DoxyCompactList}\small\item\em Number of statistic rate intervals to maintain. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}~2
+\begin{DoxyCompactList}\small\item\em Size of an Ether\-C\-A\-T frame header. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}~10
+\begin{DoxyCompactList}\small\item\em Size of an Ether\-C\-A\-T datagram header. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E}~2
+\begin{DoxyCompactList}\small\item\em Size of an Ether\-C\-A\-T datagram footer. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}~4
+\begin{DoxyCompactList}\small\item\em Size of the Ether\-C\-A\-T address field. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}
+\begin{DoxyCompactList}\small\item\em Resulting maximum data size of a single datagram in a frame. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}~6
+\begin{DoxyCompactList}\small\item\em Mailbox header size. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T}~0x40
+\begin{DoxyCompactList}\small\item\em Word offset of first S\-I\-I category. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}~8
+\begin{DoxyCompactList}\small\item\em Size of a sync manager configuration page. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}~16
+\begin{DoxyCompactList}\small\item\em Maximum number of F\-M\-M\-Us per slave. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}~16
+\begin{DoxyCompactList}\small\item\em Size of an F\-M\-M\-U configuration page. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}~2
+\begin{DoxyCompactList}\small\item\em Number of D\-C sync signals. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}~20
+\begin{DoxyCompactList}\small\item\em Size of the datagram description string. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K}~0x0\-F
+\begin{DoxyCompactList}\small\item\em Slave state mask. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-I\-N\-F\-O}(fmt, args...)~printk(K\-E\-R\-N\-\_\-\-I\-N\-F\-O \char`\"{}Ether\-C\-A\-T\-: \char`\"{} fmt, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing Ether\-C\-A\-T-\/specific information to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-E\-R\-R}(fmt, args...)~printk(K\-E\-R\-N\-\_\-\-E\-R\-R \char`\"{}Ether\-C\-A\-T E\-R\-R\-O\-R\-: \char`\"{} fmt, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing Ether\-C\-A\-T-\/specific errors to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-W\-A\-R\-N}(fmt, args...)~printk(K\-E\-R\-N\-\_\-\-W\-A\-R\-N\-I\-N\-G \char`\"{}Ether\-C\-A\-T W\-A\-R\-N\-I\-N\-G\-: \char`\"{} fmt, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing Ether\-C\-A\-T-\/specific warnings to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-B\-G}(fmt, args...)~printk(K\-E\-R\-N\-\_\-\-D\-E\-B\-U\-G \char`\"{}Ether\-C\-A\-T D\-E\-B\-U\-G\-: \char`\"{} fmt, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing Ether\-C\-A\-T debug messages to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-A\-B\-S}(X)~((X) $>$= 0 ? (X) \-: -\/(X))\label{globals_8h_a13c6887b44e71940bf7c8bdde8075d82}
+
+\begin{DoxyCompactList}\small\item\em Absolute value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-slave} {\bf ec\-\_\-slave\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-slave\-\_\-state\-\_\-t} \{ \\*
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N} =  0x00, 
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T} =  0x01, 
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P} =  0x02, 
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T} =  0x03, 
+\\*
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P} =  0x04, 
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P} =  0x08, 
+{\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R} =  0x10
+ \}
+\begin{DoxyCompactList}\small\item\em State of an Ether\-C\-A\-T slave. \end{DoxyCompactList}\item 
+enum \{ \\*
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E} =  0x01, 
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E} =  0x02, 
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E} =  0x04, 
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E} =  0x08, 
+\\*
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E} =  0x10, 
+{\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E} =  0x20
+ \}
+\begin{DoxyCompactList}\small\item\em Supported mailbox protocols. \end{DoxyCompactList}\item 
+enum {\bf ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t} \{ {\bf E\-C\-\_\-\-D\-C\-\_\-32}, 
+{\bfseries E\-C\-\_\-\-D\-C\-\_\-64}
+ \}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T slave distributed clocks range. \end{DoxyCompactList}\item 
+enum \{ {\bf E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P}, 
+{\bf E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P}, 
+{\bf E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P}, 
+{\bf E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em Access states for S\-D\-O entries. \end{DoxyCompactList}\item 
+enum {\bf ec\-\_\-device\-\_\-index\-\_\-t} \{ {\bf E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N}, 
+{\bf E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P}
+ \}
+\begin{DoxyCompactList}\small\item\em Master devices. \end{DoxyCompactList}\item 
+enum {\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} \{ \\*
+{\bfseries E\-C\-\_\-\-I\-N\-T\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-I\-N\-I\-T}, 
+{\bfseries E\-C\-\_\-\-I\-N\-T\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-Q\-U\-E\-U\-E\-D}, 
+{\bfseries E\-C\-\_\-\-I\-N\-T\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-B\-U\-S\-Y}, 
+{\bfseries E\-C\-\_\-\-I\-N\-T\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+\\*
+{\bfseries E\-C\-\_\-\-I\-N\-T\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-F\-A\-I\-L\-U\-R\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em Generic request state. \end{DoxyCompactList}\item 
+enum {\bf ec\-\_\-origin\-\_\-t} \{ {\bf E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L}, 
+{\bf E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}
+ \}
+\begin{DoxyCompactList}\small\item\em Origin type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf ec\-\_\-master\-\_\-count} (void)\label{globals_8h_a4262f13e24a72428a0760f9e4e910597}
+
+\begin{DoxyCompactList}\small\item\em Get the number of masters. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-print\-\_\-data} (const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Outputs frame contents for debugging purposes. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-print\-\_\-data\-\_\-diff} (const uint8\-\_\-t $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)\label{globals_8h_a2e3a18636f05dd048ddd4fd455d07983}
+
+\begin{DoxyCompactList}\small\item\em Outputs frame contents and differences for debugging purposes. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ec\-\_\-state\-\_\-string} (uint8\-\_\-t, char $\ast$, uint8\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Prints slave states in clear text. \end{DoxyCompactList}\item 
+ssize\-\_\-t {\bf ec\-\_\-mac\-\_\-print} (const uint8\-\_\-t $\ast$, char $\ast$)
+\begin{DoxyCompactList}\small\item\em Print a M\-A\-C address to a buffer. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-mac\-\_\-is\-\_\-zero} (const uint8\-\_\-t $\ast$)
+\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf ecrt\-\_\-request\-\_\-master\-\_\-err} (unsigned int)
+\begin{DoxyCompactList}\small\item\em Request a master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ {\bf ec\-\_\-device\-\_\-names} [2]\label{globals_8h_ab60dd3400b4ae7f326c3edb327505829}
+
+\begin{DoxyCompactList}\small\item\em Device names. \end{DoxyCompactList}\item 
+char $\ast$ {\bf ec\-\_\-master\-\_\-version\-\_\-str}
+\begin{DoxyCompactList}\small\item\em Version string. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-request\-\_\-state\-\_\-t} {\bf ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table} [$\,$]
+\begin{DoxyCompactList}\small\item\em Global request state type translation table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global definitions and macros. 
+
+Definition in file {\bf globals.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T@{E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T@{E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-I\-O\-\_\-\-T\-I\-M\-E\-O\-U\-T~500}\label{globals_8h_a58d5397d9106471647af3135e26fa09b}
+
+
+Datagram timeout in microseconds. 
+
+
+
+Definition at line 47 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T@{E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T@{E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-D\-O\-\_\-\-I\-N\-J\-E\-C\-T\-I\-O\-N\-\_\-\-T\-I\-M\-E\-O\-U\-T~10000}\label{globals_8h_adfd4f1137907ae9ac52dd2cd4524d775}
+
+
+S\-D\-O injection timeout in microseconds. 
+
+
+
+Definition at line 50 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S@{E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S}}
+\index{E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S@{E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-B\-Y\-T\-E\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N\-\_\-\-T\-I\-M\-E\-\_\-\-N\-S~80}\label{globals_8h_a0947a510c37156d1f69ff64903579631}
+
+
+Time to send a byte in nanoseconds. 
+
+t\-\_\-ns = 1 / (100 M\-Bit/s / 8 bit/byte) = 80 ns/byte 
+
+Definition at line 56 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S}}
+\index{E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-F\-S\-M\-\_\-\-R\-E\-T\-R\-I\-E\-S~3}\label{globals_8h_a23a5e3d7f269f14bea7017438c72d208}
+
+
+Number of state machine retries on datagram timeout. 
+
+
+
+Definition at line 59 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T@{E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T}}
+\index{E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T@{E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-W\-A\-I\-T\-\_\-\-S\-D\-O\-\_\-\-D\-I\-C\-T~3}\label{globals_8h_a54806e076fcb6f09b945393273530c13}
+
+
+Seconds to wait before fetching S\-D\-O dictionary after slave entered P\-R\-E\-O\-P state. 
+
+
+
+Definition at line 63 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E~32}\label{globals_8h_a1de201db5fcf72a3acf152700008e083}
+
+
+Minimum size of a buffer used with \doxyref{ec\-\_\-state\-\_\-string()}{p.}{globals_8h_a5492e579e30e1bb9351cd601a89e238b}. 
+
+
+
+Definition at line 66 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-I\-I\-\_\-\-S\-I\-Z\-E~4096}\label{globals_8h_a01c6518f4ab51df91aca7b61d56c4035}
+
+
+Maximum S\-I\-I size in words, to avoid infinite reading. 
+
+
+
+Definition at line 69 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}}
+\index{E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T~3}\label{globals_8h_a00b477d166c2d09b9fea5d43c0c1cd48}
+
+
+Number of statistic rate intervals to maintain. 
+
+
+
+Definition at line 72 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-F\-R\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E~2}\label{globals_8h_a5adae0638188319662b058ab045226fa}
+
+
+Size of an Ether\-C\-A\-T frame header. 
+
+
+
+Definition at line 79 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E~10}\label{globals_8h_a6c4982c6eac314abb0768e05774237a8}
+
+
+Size of an Ether\-C\-A\-T datagram header. 
+
+
+
+Definition at line 82 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-O\-O\-T\-E\-R\-\_\-\-S\-I\-Z\-E~2}\label{globals_8h_aaec3f4b21567ed1271af111a6b09f43a}
+
+
+Size of an Ether\-C\-A\-T datagram footer. 
+
+
+
+Definition at line 85 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N@{E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}}
+\index{E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N@{E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N~4}\label{globals_8h_a636410fd74a8e87229296654da52d250}
+
+
+Size of the Ether\-C\-A\-T address field. 
+
+
+
+Definition at line 88 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-S\-I\-Z\-E}\label{globals_8h_a1e04c301942ee12b54c2caa25d3caab5}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(ETH\_DATA\_LEN - EC_FRAME_HEADER_SIZE \(\backslash\)
+                          - EC_DATAGRAM_HEADER_SIZE - EC_DATAGRAM_FOOTER_SIZE)
+\end{DoxyCode}
+
+
+Resulting maximum data size of a single datagram in a frame. 
+
+
+
+Definition at line 91 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E~6}\label{globals_8h_a189582ffd5ea94b41b00482c04968291}
+
+
+Mailbox header size. 
+
+
+
+Definition at line 95 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T@{E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T@{E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-F\-I\-R\-S\-T\-\_\-\-S\-I\-I\-\_\-\-C\-A\-T\-E\-G\-O\-R\-Y\-\_\-\-O\-F\-F\-S\-E\-T~0x40}\label{globals_8h_a53e014f821fa17635fa4ad260fce2512}
+
+
+Word offset of first S\-I\-I category. 
+
+
+
+Definition at line 98 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E~8}\label{globals_8h_a094d565a4898d8ed65222fcd6f96f6fb}
+
+
+Size of a sync manager configuration page. 
+
+
+
+Definition at line 101 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S@{E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}}
+\index{E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S@{E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S~16}\label{globals_8h_a7ef0b04594f3ae62859391b9307cbb1f}
+
+
+Maximum number of F\-M\-M\-Us per slave. 
+
+
+
+Definition at line 104 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E~16}\label{globals_8h_a1e0360410ca3cc2357e27b566951d52d}
+
+
+Size of an F\-M\-M\-U configuration page. 
+
+
+
+Definition at line 107 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}}
+\index{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T~2}\label{globals_8h_a5fd0d53ff30f80384b0d7f26a159a79e}
+
+
+Number of D\-C sync signals. 
+
+
+
+Definition at line 110 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E~20}\label{globals_8h_ac67cff75d900b9f1112a4c1a635e495d}
+
+
+Size of the datagram description string. 
+
+This is also used as the maximum lenth of Eo\-E device names. 
+
+Definition at line 116 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K}}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K~0x0\-F}\label{globals_8h_a372d9b2d6575b0a9550533be831424c2}
+
+
+Slave state mask. 
+
+Apply this mask to a slave state byte to get the slave state without the error flag. 
+
+Definition at line 123 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-I\-N\-F\-O}}
+\index{E\-C\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-I\-N\-F\-O}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-I\-N\-F\-O(
+\begin{DoxyParamCaption}
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-I\-N\-F\-O \char`\"{}Ether\-C\-A\-T\-: \char`\"{} fmt, \#\#args)}\label{globals_8h_af96ee5cdd88c3c45a899d15ce40f371c}
+
+
+Convenience macro for printing Ether\-C\-A\-T-\/specific information to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T\-: \char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-E\-R\-R@{E\-C\-\_\-\-E\-R\-R}}
+\index{E\-C\-\_\-\-E\-R\-R@{E\-C\-\_\-\-E\-R\-R}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-E\-R\-R \char`\"{}Ether\-C\-A\-T E\-R\-R\-O\-R\-: \char`\"{} fmt, \#\#args)}\label{globals_8h_aed23297031f2f23bb5d005bb586790cf}
+
+
+Convenience macro for printing Ether\-C\-A\-T-\/specific errors to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T E\-R\-R\-O\-R\-: \char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-W\-A\-R\-N}}
+\index{E\-C\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-W\-A\-R\-N}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-W\-A\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-W\-A\-R\-N(
+\begin{DoxyParamCaption}
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-W\-A\-R\-N\-I\-N\-G \char`\"{}Ether\-C\-A\-T W\-A\-R\-N\-I\-N\-G\-: \char`\"{} fmt, \#\#args)}\label{globals_8h_a268d5c7947aba061aee9ba26ae5e54cf}
+
+
+Convenience macro for printing Ether\-C\-A\-T-\/specific warnings to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T W\-A\-R\-N\-I\-N\-G\-: \char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-B\-G@{E\-C\-\_\-\-D\-B\-G}}
+\index{E\-C\-\_\-\-D\-B\-G@{E\-C\-\_\-\-D\-B\-G}!globals.h@{globals.\-h}}
+\subsubsection[{E\-C\-\_\-\-D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-D\-E\-B\-U\-G \char`\"{}Ether\-C\-A\-T D\-E\-B\-U\-G\-: \char`\"{} fmt, \#\#args)}\label{globals_8h_af1b60b9f7b88d42c2563c45dbd4ca478}
+
+
+Convenience macro for printing Ether\-C\-A\-T debug messages to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T D\-E\-B\-U\-G\-: \char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file globals.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\index{globals.\-h@{globals.\-h}!ec\-\_\-slave\-\_\-t@{ec\-\_\-slave\-\_\-t}}
+\index{ec\-\_\-slave\-\_\-t@{ec\-\_\-slave\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-slave} {\bf ec\-\_\-slave\-\_\-t}}\label{globals_8h_a8d9ffff7dbe1babaa4786a63f2860d57}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-slave}{p.}{structec__slave}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 313 of file globals.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{globals.\-h@{globals.\-h}!ec\-\_\-slave\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-state\-\_\-t}}
+\index{ec\-\_\-slave\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-state\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-state\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-slave\-\_\-state\-\_\-t}}\label{globals_8h_a0e9c38c7520909d649fac451046dcde0}
+
+
+State of an Ether\-C\-A\-T slave. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N\label{globals_8h_a0e9c38c7520909d649fac451046dcde0ae9edba07c48fe21c2e3ee549f98a0f59}
+}]unknown state \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-I\-T\label{globals_8h_a0e9c38c7520909d649fac451046dcde0af8bd16b734a32ab829a51f81620edfff}
+}]I\-N\-I\-T state (no mailbox communication, no I\-O) \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-R\-E\-O\-P\label{globals_8h_a0e9c38c7520909d649fac451046dcde0a1db532f4df475e41ee0613551f7bdc0c}
+}]P\-R\-E\-O\-P state (mailbox communication, no I\-O) \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-O\-O\-T\label{globals_8h_a0e9c38c7520909d649fac451046dcde0a071e3e465f3a44800dbca990ce475513}
+}]Bootstrap state (mailbox communication, firmware update) \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-A\-F\-E\-O\-P\label{globals_8h_a0e9c38c7520909d649fac451046dcde0a42a5127410509dad07baf40ba938ecf4}
+}]S\-A\-F\-E\-O\-P (mailbox communication and input update) \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-P\label{globals_8h_a0e9c38c7520909d649fac451046dcde0a321dab0f12d522422d158b8cf64351f8}
+}]O\-P (mailbox communication and input/output update) \index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R}}\item[{\em 
+E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-A\-C\-K\-\_\-\-E\-R\-R\label{globals_8h_a0e9c38c7520909d649fac451046dcde0afa4a479453f36ac36204ece05aeacd82}
+}]Acknowledge/\-Error bit (no actual state) \end{description}
+\end{Desc}
+
+
+
+Definition at line 127 of file globals.\-h.
+
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7}
+
+
+Supported mailbox protocols. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-A\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7af55a73bce8de5380f696812292a1ff1b}
+}]A\-D\-S over Ether\-C\-A\-T. \index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-E\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7a75ced95568023bf9ad616c8d2b4f3ae2}
+}]Ethernet over Ether\-C\-A\-T. \index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-C\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7a228d7270dad743f55f7d42719e406076}
+}]C\-A\-Nopen over Ether\-C\-A\-T. \index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-F\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7a02785e699946f757c7846b87a9703d4b}
+}]File-\/\-Access over Ether\-C\-A\-T. \index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-S\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7ab5ebd52d91b7f482bde14f6dcac7c7c4}
+}]Servo-\/\-Profile over Ether\-C\-A\-T. \index{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E@{E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E}}\item[{\em 
+E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-V\-O\-E\label{globals_8h_adf764cbdea00d65edcd07bb9953ad2b7aa29a7302a657cfa9b046d7f1dd7ceb95}
+}]Vendor specific. \end{description}
+\end{Desc}
+
+
+
+Definition at line 146 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t@{ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t}}
+\index{ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t@{ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t}}\label{globals_8h_a5cbf78c1663f1a9ba4d69b816bcd00f7}
+
+
+Ether\-C\-A\-T slave distributed clocks range. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-D\-C\-\_\-32@{E\-C\-\_\-\-D\-C\-\_\-32}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-C\-\_\-32@{E\-C\-\_\-\-D\-C\-\_\-32}}\item[{\em 
+E\-C\-\_\-\-D\-C\-\_\-32\label{globals_8h_a5cbf78c1663f1a9ba4d69b816bcd00f7a25afc86435cb41db03f0a6e95e7b986e}
+}]32 bit. \end{description}
+\end{Desc}
+
+
+
+Definition at line 175 of file globals.\-h.
+
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{globals_8h_a99fb83031ce9923c84392b4e92f956b5}
+
+
+Access states for S\-D\-O entries. 
+
+The access rights are managed per A\-L state. \begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-P\-R\-E\-O\-P\label{globals_8h_a99fb83031ce9923c84392b4e92f956b5a39b7036e6f688e92bfe62c3301312936}
+}]Access rights in P\-R\-E\-O\-P. \index{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-S\-A\-F\-E\-O\-P\label{globals_8h_a99fb83031ce9923c84392b4e92f956b5ad448daffa47d8f17532746cf993924ce}
+}]Access rights in S\-A\-F\-E\-O\-P. \index{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P}}\item[{\em 
+E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-O\-P\label{globals_8h_a99fb83031ce9923c84392b4e92f956b5ab035d5252d6daaa9bc55538c1a9eaecb}
+}]Access rights in O\-P. \index{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T@{E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T}}\item[{\em 
+E\-C\-\_\-\-S\-D\-O\-\_\-\-E\-N\-T\-R\-Y\-\_\-\-A\-C\-C\-E\-S\-S\-\_\-\-C\-O\-U\-N\-T\label{globals_8h_a99fb83031ce9923c84392b4e92f956b5a6cef0b079c10f308702a85dfe6a9c466}
+}]Number of states. \end{description}
+\end{Desc}
+
+
+
+Definition at line 192 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-device\-\_\-index\-\_\-t@{ec\-\_\-device\-\_\-index\-\_\-t}}
+\index{ec\-\_\-device\-\_\-index\-\_\-t@{ec\-\_\-device\-\_\-index\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-device\-\_\-index\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-device\-\_\-index\-\_\-t}}\label{globals_8h_ad1a2101422888687598d7e1a630c6343}
+
+
+Master devices. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N@{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N@{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N}}\item[{\em 
+E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-I\-N\label{globals_8h_ad1a2101422888687598d7e1a630c6343a6cc7c24499003f339df547ab73605f13}
+}]Main device. \index{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P@{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P@{E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P}}\item[{\em 
+E\-C\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-B\-A\-C\-K\-U\-P\label{globals_8h_ad1a2101422888687598d7e1a630c6343ab269739586dbb817c1e0ff42e74c5111}
+}]Backup device. \end{description}
+\end{Desc}
+
+
+
+Definition at line 201 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t@{ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t}}
+\index{ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t@{ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t}}\label{globals_8h_af8e216ffa0b8f5e3ee20edd4c17d6174}
+
+
+Generic request state. 
+
+\begin{DoxyAttention}{Attention}
+If ever changing this, please be sure to adjust the {\itshape state\-\_\-table} in \doxyref{master/sdo\-\_\-request.\-c}{p.}{sdo__request_8c}. 
+\end{DoxyAttention}
+
+
+Definition at line 290 of file globals.\-h.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-origin\-\_\-t@{ec\-\_\-origin\-\_\-t}}
+\index{ec\-\_\-origin\-\_\-t@{ec\-\_\-origin\-\_\-t}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-origin\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-origin\-\_\-t}}\label{globals_8h_ab62b6e667f97a3b63d18f8077487d249}
+
+
+Origin type. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L@{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L@{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L}}\item[{\em 
+E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\label{globals_8h_ab62b6e667f97a3b63d18f8077487d249ab9bbe16f248855308e1ac168fd00a4a4}
+}]Internal. \index{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}!globals.\-h@{globals.\-h}}\index{globals.\-h@{globals.\-h}!E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}}\item[{\em 
+E\-C\-\_\-\-O\-R\-I\-G\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L\label{globals_8h_ab62b6e667f97a3b63d18f8077487d249a9f7450cec35e7aba63f3de7520f41c4a}
+}]External. \end{description}
+\end{Desc}
+
+
+
+Definition at line 306 of file globals.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{globals.\-h@{globals.\-h}!ec\-\_\-print\-\_\-data@{ec\-\_\-print\-\_\-data}}
+\index{ec\-\_\-print\-\_\-data@{ec\-\_\-print\-\_\-data}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-print\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-print\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{globals_8h_af9b1cee5f8eb11448141bd02d52f44ac}
+
+
+Outputs frame contents for debugging purposes. 
+
+If the data block is larger than 256 bytes, only the first 128 and the last 128 bytes will be shown 
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to data \\
+\hline
+{\em size} & number of bytes to output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 341 of file module.\-c.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-state\-\_\-string@{ec\-\_\-state\-\_\-string}}
+\index{ec\-\_\-state\-\_\-string@{ec\-\_\-state\-\_\-string}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-state\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-state\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{states, }
+\item[{char $\ast$}]{buffer, }
+\item[{uint8\-\_\-t}]{multi}
+\end{DoxyParamCaption}
+)}\label{globals_8h_a5492e579e30e1bb9351cd601a89e238b}
+
+
+Prints slave states in clear text. 
+
+\begin{DoxyReturn}{Returns}
+Size of the created string. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em states} & slave states \\
+\hline
+{\em buffer} & target buffer (min. E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E bytes) \\
+\hline
+{\em multi} & Show multi-\/state mask. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file module.\-c.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-mac\-\_\-print@{ec\-\_\-mac\-\_\-print}}
+\index{ec\-\_\-mac\-\_\-print@{ec\-\_\-mac\-\_\-print}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-mac\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t ec\-\_\-mac\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac, }
+\item[{char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}\label{globals_8h_a494695f2cebf0403348cb6281e0af0c9}
+
+
+Print a M\-A\-C address to a buffer. 
+
+The buffer size must be at least E\-C\-\_\-\-M\-A\-X\-\_\-\-M\-A\-C\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E.
+
+\begin{DoxyReturn}{Returns}
+number of bytes written. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & M\-A\-C address \\
+\hline
+{\em buffer} & Target buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 242 of file module.\-c.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-mac\-\_\-is\-\_\-zero@{ec\-\_\-mac\-\_\-is\-\_\-zero}}
+\index{ec\-\_\-mac\-\_\-is\-\_\-zero@{ec\-\_\-mac\-\_\-is\-\_\-zero}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-mac\-\_\-is\-\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-mac\-\_\-is\-\_\-zero (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac}
+\end{DoxyParamCaption}
+)}\label{globals_8h_a41d094eb49bc156c06af74b02eb8708d}
+\begin{DoxyReturn}{Returns}
+true, if the M\-A\-C address is all-\/zero. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & M\-A\-C address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file module.\-c.
+
+\index{globals.\-h@{globals.\-h}!ecrt\-\_\-request\-\_\-master\-\_\-err@{ecrt\-\_\-request\-\_\-master\-\_\-err}}
+\index{ecrt\-\_\-request\-\_\-master\-\_\-err@{ecrt\-\_\-request\-\_\-master\-\_\-err}!globals.h@{globals.\-h}}
+\subsubsection[{ecrt\-\_\-request\-\_\-master\-\_\-err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ ecrt\-\_\-request\-\_\-master\-\_\-err (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{master\-\_\-index}
+\end{DoxyParamCaption}
+)}\label{globals_8h_aba359debd8aebe89887ab68f1c831ab5}
+
+
+Request a master. 
+
+Same as \doxyref{ecrt\-\_\-request\-\_\-master()}{p.}{group__ApplicationInterface_gafb85534b6fcba3fa1fab6c81173b2ed1}, but with E\-R\-R\-\_\-\-P\-T\-R() return value.
+
+\begin{DoxyReturn}{Returns}
+Requested master. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master\-\_\-index} & Master index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 530 of file module.\-c.
+
+
+
+\subsection{Variable Documentation}
+\index{globals.\-h@{globals.\-h}!ec\-\_\-master\-\_\-version\-\_\-str@{ec\-\_\-master\-\_\-version\-\_\-str}}
+\index{ec\-\_\-master\-\_\-version\-\_\-str@{ec\-\_\-master\-\_\-version\-\_\-str}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-version\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-master\-\_\-version\-\_\-str}\label{globals_8h_ab5580493c8bf2eaa43174a4fe78abc72}
+
+
+Version string. 
+
+
+
+Definition at line 71 of file module.\-c.
+
+\index{globals.\-h@{globals.\-h}!ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table@{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}}
+\index{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table@{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}!globals.h@{globals.\-h}}
+\subsubsection[{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table[$\,$]}\label{globals_8h_a3a9e581016f6c49ce672ccd2784c0b50}
+
+
+Global request state type translation table. 
+
+Translates an internal request state to an external one. 
+
+Definition at line 651 of file module.\-c.
+

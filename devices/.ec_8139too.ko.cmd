@@ -1,0 +1,1 @@
+cmd_/home/sybot/devel/etherlabmaster/devices/ec_8139too.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-4-common/scripts/module-common.lds --build-id  -o /home/sybot/devel/etherlabmaster/devices/ec_8139too.ko /home/sybot/devel/etherlabmaster/devices/ec_8139too.o /home/sybot/devel/etherlabmaster/devices/ec_8139too.mod.o

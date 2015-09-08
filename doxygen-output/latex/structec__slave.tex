@@ -1,0 +1,468 @@
+\section{ec\-\_\-slave Struct Reference}
+\label{structec__slave}\index{ec\-\_\-slave@{ec\-\_\-slave}}
+
+
+Ether\-C\-A\-T slave.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf master}
+\begin{DoxyCompactList}\small\item\em Master owning the slave. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-index\-\_\-t} {\bf device\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Index of device the slave responds on. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf ring\-\_\-position}
+\begin{DoxyCompactList}\small\item\em Ring position. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf station\-\_\-address}
+\begin{DoxyCompactList}\small\item\em Configured station address. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf effective\-\_\-alias}
+\begin{DoxyCompactList}\small\item\em Effective alias address. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-port\-\_\-t} {\bf ports} [{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-P\-O\-R\-T\-S}]
+\begin{DoxyCompactList}\small\item\em Ports. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf config}
+\begin{DoxyCompactList}\small\item\em Current configuration. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-state\-\_\-t} {\bf requested\-\_\-state}
+\begin{DoxyCompactList}\small\item\em Requested application state. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-state\-\_\-t} {\bf current\-\_\-state}
+\begin{DoxyCompactList}\small\item\em Current application state. \end{DoxyCompactList}\item 
+unsigned int {\bf error\-\_\-flag}
+\begin{DoxyCompactList}\small\item\em Stop processing after an error. \end{DoxyCompactList}\item 
+unsigned int {\bf force\-\_\-config}
+\begin{DoxyCompactList}\small\item\em Force (re-\/)configuration. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf configured\-\_\-rx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Configured receive mailbox offset. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf configured\-\_\-rx\-\_\-mailbox\-\_\-size}\label{structec__slave_a0310afbbf38da2a92cdbe3911a46535c}
+
+\begin{DoxyCompactList}\small\item\em Configured receive mailbox size. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf configured\-\_\-tx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Configured send mailbox offset. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf configured\-\_\-tx\-\_\-mailbox\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Configured send mailbox size. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Slave type. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-revision}
+\begin{DoxyCompactList}\small\item\em Revision. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf base\-\_\-build}
+\begin{DoxyCompactList}\small\item\em Build number. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-fmmu\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of supported F\-M\-M\-Us. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-sync\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of supported sync managers. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-fmmu\-\_\-bit\-\_\-operation}
+\begin{DoxyCompactList}\small\item\em F\-M\-M\-U bit operation is supported. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf base\-\_\-dc\-\_\-supported}
+\begin{DoxyCompactList}\small\item\em Distributed clocks are supported. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t} {\bf base\-\_\-dc\-\_\-range}
+\begin{DoxyCompactList}\small\item\em D\-C range. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf has\-\_\-dc\-\_\-system\-\_\-time}
+\begin{DoxyCompactList}\small\item\em The slave supports the D\-C system time register. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf transmission\-\_\-delay}
+\begin{DoxyCompactList}\small\item\em D\-C system time transmission delay (offset from reference clock). \end{DoxyCompactList}\item 
+uint16\-\_\-t $\ast$ {\bf sii\-\_\-words}
+\begin{DoxyCompactList}\small\item\em Complete S\-I\-I image. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf sii\-\_\-nwords}
+\begin{DoxyCompactList}\small\item\em Size of the S\-I\-I contents in words. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sii\-\_\-t} {\bf sii}
+\begin{DoxyCompactList}\small\item\em Extracted S\-I\-I data. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sdo\-\_\-dictionary}\label{structec__slave_a2754265971634ba5f97ce28fc1029d58}
+
+\begin{DoxyCompactList}\small\item\em S\-D\-O dictionary list. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf sdo\-\_\-dictionary\-\_\-fetched}
+\begin{DoxyCompactList}\small\item\em Dictionary has been fetched. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-preop}
+\begin{DoxyCompactList}\small\item\em Time, the slave went to P\-R\-E\-O\-P. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sdo\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em S\-D\-O access requests. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf reg\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em Register access requests. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf foe\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em Fo\-E write requests. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf soe\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em So\-E write requests. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} {\bf fsm}
+\begin{DoxyCompactList}\small\item\em Slave state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave. 
+
+Definition at line 176 of file slave.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-slave@{ec\-\_\-slave}!master@{master}}
+\index{master@{master}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{master}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ ec\-\_\-slave\-::master}\label{structec__slave_ae3ca485627d212610814bf4e0130eddd}
+
+
+Master owning the slave. 
+
+
+
+Definition at line 178 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!device\-\_\-index@{device\-\_\-index}}
+\index{device\-\_\-index@{device\-\_\-index}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{device\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-device\-\_\-index\-\_\-t} ec\-\_\-slave\-::device\-\_\-index}\label{structec__slave_adc17b41384e235c98b39f4ac49319d68}
+
+
+Index of device the slave responds on. 
+
+
+
+Definition at line 179 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!ring\-\_\-position@{ring\-\_\-position}}
+\index{ring\-\_\-position@{ring\-\_\-position}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{ring\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::ring\-\_\-position}\label{structec__slave_a337a538c53fb9ac8bcfb951fd445e0a1}
+
+
+Ring position. 
+
+
+
+Definition at line 183 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!station\-\_\-address@{station\-\_\-address}}
+\index{station\-\_\-address@{station\-\_\-address}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{station\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::station\-\_\-address}\label{structec__slave_ae4c26b32979bcb21cf391ca3b170d701}
+
+
+Configured station address. 
+
+
+
+Definition at line 184 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!effective\-\_\-alias@{effective\-\_\-alias}}
+\index{effective\-\_\-alias@{effective\-\_\-alias}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{effective\-\_\-alias}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::effective\-\_\-alias}\label{structec__slave_a954d95e8464b5dcb7084463d00760291}
+
+
+Effective alias address. 
+
+
+
+Definition at line 185 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!ports@{ports}}
+\index{ports@{ports}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{ports}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-port\-\_\-t} ec\-\_\-slave\-::ports[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-P\-O\-R\-T\-S}]}\label{structec__slave_a0dc49f089a749f49fcce90007063ed85}
+
+
+Ports. 
+
+
+
+Definition at line 187 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!config@{config}}
+\index{config@{config}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-slave\-::config}\label{structec__slave_a35616766fc7afbd4fc0b8a5d5a652bf7}
+
+
+Current configuration. 
+
+
+
+Definition at line 190 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!requested\-\_\-state@{requested\-\_\-state}}
+\index{requested\-\_\-state@{requested\-\_\-state}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{requested\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-state\-\_\-t} ec\-\_\-slave\-::requested\-\_\-state}\label{structec__slave_af81c1abd2ac2b8a5a5bfbbfe7d79ce70}
+
+
+Requested application state. 
+
+
+
+Definition at line 191 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!current\-\_\-state@{current\-\_\-state}}
+\index{current\-\_\-state@{current\-\_\-state}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{current\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-state\-\_\-t} ec\-\_\-slave\-::current\-\_\-state}\label{structec__slave_a6214f41ec1dce05b67b298b89a49e1f8}
+
+
+Current application state. 
+
+
+
+Definition at line 192 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!error\-\_\-flag@{error\-\_\-flag}}
+\index{error\-\_\-flag@{error\-\_\-flag}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{error\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-::error\-\_\-flag}\label{structec__slave_aef33c89d3974546f5aed153b379d0d24}
+
+
+Stop processing after an error. 
+
+
+
+Definition at line 193 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!force\-\_\-config@{force\-\_\-config}}
+\index{force\-\_\-config@{force\-\_\-config}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{force\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-::force\-\_\-config}\label{structec__slave_a0baba2f1593708191871119e3570655f}
+
+
+Force (re-\/)configuration. 
+
+
+
+Definition at line 194 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!configured\-\_\-rx\-\_\-mailbox\-\_\-offset@{configured\-\_\-rx\-\_\-mailbox\-\_\-offset}}
+\index{configured\-\_\-rx\-\_\-mailbox\-\_\-offset@{configured\-\_\-rx\-\_\-mailbox\-\_\-offset}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{configured\-\_\-rx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::configured\-\_\-rx\-\_\-mailbox\-\_\-offset}\label{structec__slave_a885011c3377eacc3513c7806db9ea4d4}
+
+
+Configured receive mailbox offset. 
+
+
+
+Definition at line 195 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!configured\-\_\-tx\-\_\-mailbox\-\_\-offset@{configured\-\_\-tx\-\_\-mailbox\-\_\-offset}}
+\index{configured\-\_\-tx\-\_\-mailbox\-\_\-offset@{configured\-\_\-tx\-\_\-mailbox\-\_\-offset}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{configured\-\_\-tx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::configured\-\_\-tx\-\_\-mailbox\-\_\-offset}\label{structec__slave_a365e2116bd54803112c56cb3a98970cb}
+
+
+Configured send mailbox offset. 
+
+
+
+Definition at line 199 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!configured\-\_\-tx\-\_\-mailbox\-\_\-size@{configured\-\_\-tx\-\_\-mailbox\-\_\-size}}
+\index{configured\-\_\-tx\-\_\-mailbox\-\_\-size@{configured\-\_\-tx\-\_\-mailbox\-\_\-size}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{configured\-\_\-tx\-\_\-mailbox\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::configured\-\_\-tx\-\_\-mailbox\-\_\-size}\label{structec__slave_a79ecaa06844f2b8bf2d1b4d9bfae9207}
+
+
+Configured send mailbox size. 
+
+
+
+Definition at line 201 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-type@{base\-\_\-type}}
+\index{base\-\_\-type@{base\-\_\-type}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-type}\label{structec__slave_a942db00c8dc12ba78cd124b353945301}
+
+
+Slave type. 
+
+
+
+Definition at line 204 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-revision@{base\-\_\-revision}}
+\index{base\-\_\-revision@{base\-\_\-revision}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-revision}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-revision}\label{structec__slave_a5346100cbd1fa0187ae3074d4a75d3cc}
+
+
+Revision. 
+
+
+
+Definition at line 205 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-build@{base\-\_\-build}}
+\index{base\-\_\-build@{base\-\_\-build}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-build}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-::base\-\_\-build}\label{structec__slave_afd680b0cb700169c2a97aa38c0fd0552}
+
+
+Build number. 
+
+
+
+Definition at line 206 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-fmmu\-\_\-count@{base\-\_\-fmmu\-\_\-count}}
+\index{base\-\_\-fmmu\-\_\-count@{base\-\_\-fmmu\-\_\-count}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-fmmu\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-fmmu\-\_\-count}\label{structec__slave_a45adb760f44d08fcab9c81d6022e0bad}
+
+
+Number of supported F\-M\-M\-Us. 
+
+
+
+Definition at line 207 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-sync\-\_\-count@{base\-\_\-sync\-\_\-count}}
+\index{base\-\_\-sync\-\_\-count@{base\-\_\-sync\-\_\-count}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-sync\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-sync\-\_\-count}\label{structec__slave_aa4d67d55717398c4f25d379ede390d5d}
+
+
+Number of supported sync managers. 
+
+
+
+Definition at line 208 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-fmmu\-\_\-bit\-\_\-operation@{base\-\_\-fmmu\-\_\-bit\-\_\-operation}}
+\index{base\-\_\-fmmu\-\_\-bit\-\_\-operation@{base\-\_\-fmmu\-\_\-bit\-\_\-operation}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-fmmu\-\_\-bit\-\_\-operation}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-fmmu\-\_\-bit\-\_\-operation}\label{structec__slave_a39d39fe2e87602de4629cfbdb0106929}
+
+
+F\-M\-M\-U bit operation is supported. 
+
+
+
+Definition at line 209 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-dc\-\_\-supported@{base\-\_\-dc\-\_\-supported}}
+\index{base\-\_\-dc\-\_\-supported@{base\-\_\-dc\-\_\-supported}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-dc\-\_\-supported}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::base\-\_\-dc\-\_\-supported}\label{structec__slave_a2b02f5e40a79f9b6213dde898a10b873}
+
+
+Distributed clocks are supported. 
+
+
+
+Definition at line 210 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!base\-\_\-dc\-\_\-range@{base\-\_\-dc\-\_\-range}}
+\index{base\-\_\-dc\-\_\-range@{base\-\_\-dc\-\_\-range}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{base\-\_\-dc\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-dc\-\_\-range\-\_\-t} ec\-\_\-slave\-::base\-\_\-dc\-\_\-range}\label{structec__slave_a8bc5c82a2467c31b4c427fe4c56cb544}
+
+
+D\-C range. 
+
+
+
+Definition at line 211 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!has\-\_\-dc\-\_\-system\-\_\-time@{has\-\_\-dc\-\_\-system\-\_\-time}}
+\index{has\-\_\-dc\-\_\-system\-\_\-time@{has\-\_\-dc\-\_\-system\-\_\-time}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{has\-\_\-dc\-\_\-system\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::has\-\_\-dc\-\_\-system\-\_\-time}\label{structec__slave_a65fba9aad1f196c6c43ba7dceecc15dd}
+
+
+The slave supports the D\-C system time register. 
+
+Otherwise it can only be used for delay measurement. 
+
+Definition at line 212 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!transmission\-\_\-delay@{transmission\-\_\-delay}}
+\index{transmission\-\_\-delay@{transmission\-\_\-delay}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{transmission\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-::transmission\-\_\-delay}\label{structec__slave_a0e5d719413436f927eba7320ee565125}
+
+
+D\-C system time transmission delay (offset from reference clock). 
+
+
+
+Definition at line 215 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!sii\-\_\-words@{sii\-\_\-words}}
+\index{sii\-\_\-words@{sii\-\_\-words}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{sii\-\_\-words}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t$\ast$ ec\-\_\-slave\-::sii\-\_\-words}\label{structec__slave_a3886920f38a9b5a97c1d50f3c08e989a}
+
+
+Complete S\-I\-I image. 
+
+
+
+Definition at line 219 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!sii\-\_\-nwords@{sii\-\_\-nwords}}
+\index{sii\-\_\-nwords@{sii\-\_\-nwords}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{sii\-\_\-nwords}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-slave\-::sii\-\_\-nwords}\label{structec__slave_a9b6ee3261f586d6c30647b1494da0f57}
+
+
+Size of the S\-I\-I contents in words. 
+
+
+
+Definition at line 220 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!sii@{sii}}
+\index{sii@{sii}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{sii}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sii\-\_\-t} ec\-\_\-slave\-::sii}\label{structec__slave_a081433f5a30f9352fbc4363093ae1e16}
+
+
+Extracted S\-I\-I data. 
+
+
+
+Definition at line 223 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!sdo\-\_\-dictionary\-\_\-fetched@{sdo\-\_\-dictionary\-\_\-fetched}}
+\index{sdo\-\_\-dictionary\-\_\-fetched@{sdo\-\_\-dictionary\-\_\-fetched}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{sdo\-\_\-dictionary\-\_\-fetched}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-::sdo\-\_\-dictionary\-\_\-fetched}\label{structec__slave_a94732ef500405ce3afa15f6aeef4918d}
+
+
+Dictionary has been fetched. 
+
+
+
+Definition at line 226 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!jiffies\-\_\-preop@{jiffies\-\_\-preop}}
+\index{jiffies\-\_\-preop@{jiffies\-\_\-preop}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{jiffies\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-slave\-::jiffies\-\_\-preop}\label{structec__slave_af177795f6287be576f617772d18e3dee}
+
+
+Time, the slave went to P\-R\-E\-O\-P. 
+
+
+
+Definition at line 227 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!sdo\-\_\-requests@{sdo\-\_\-requests}}
+\index{sdo\-\_\-requests@{sdo\-\_\-requests}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{sdo\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-::sdo\-\_\-requests}\label{structec__slave_a6cbec4e34923f5b25fecdbd166a8328a}
+
+
+S\-D\-O access requests. 
+
+
+
+Definition at line 229 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!reg\-\_\-requests@{reg\-\_\-requests}}
+\index{reg\-\_\-requests@{reg\-\_\-requests}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{reg\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-::reg\-\_\-requests}\label{structec__slave_a614562e4df0afc3707515ae9f1df0ffc}
+
+
+Register access requests. 
+
+
+
+Definition at line 230 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!foe\-\_\-requests@{foe\-\_\-requests}}
+\index{foe\-\_\-requests@{foe\-\_\-requests}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{foe\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-::foe\-\_\-requests}\label{structec__slave_a374ce6a1879d81ca54496be994b9e46e}
+
+
+Fo\-E write requests. 
+
+
+
+Definition at line 231 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!soe\-\_\-requests@{soe\-\_\-requests}}
+\index{soe\-\_\-requests@{soe\-\_\-requests}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{soe\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-::soe\-\_\-requests}\label{structec__slave_a85daad41c4862aa0de137a3c927abac8}
+
+
+So\-E write requests. 
+
+
+
+Definition at line 232 of file slave.\-h.
+
+\index{ec\-\_\-slave@{ec\-\_\-slave}!fsm@{fsm}}
+\index{fsm@{fsm}!ec_slave@{ec\-\_\-slave}}
+\subsubsection[{fsm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} ec\-\_\-slave\-::fsm}\label{structec__slave_aecb677b730d579c8eeeaa83a432a74a8}
+
+
+Slave state machine. 
+
+
+
+Definition at line 234 of file slave.\-h.
+

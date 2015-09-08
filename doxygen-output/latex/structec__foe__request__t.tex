@@ -1,0 +1,189 @@
+\section{ec\-\_\-foe\-\_\-request\-\_\-t Struct Reference}
+\label{structec__foe__request__t}\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+
+
+Fo\-E request.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf buffer}
+\begin{DoxyCompactList}\small\item\em Pointer to Fo\-E data. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf buffer\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of Fo\-E data memory. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of Fo\-E data. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf issue\-\_\-timeout}
+\begin{DoxyCompactList}\small\item\em Maximum time in ms, the processing of the request may take. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf response\-\_\-timeout}
+\begin{DoxyCompactList}\small\item\em Maximum time in ms, the transfer is retried, if the slave does not respond. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Direction. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} {\bf state}
+\begin{DoxyCompactList}\small\item\em Fo\-E request state. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the request was issued. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-sent}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the upload/download request was sent. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf file\-\_\-name}
+\begin{DoxyCompactList}\small\item\em Pointer to the filename. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf result}
+\begin{DoxyCompactList}\small\item\em Fo\-E request abort code. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf error\-\_\-code}
+\begin{DoxyCompactList}\small\item\em Error code from an Fo\-E Error Request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fo\-E request. 
+
+Definition at line 50 of file foe\-\_\-request.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!list@{list}}
+\index{list@{list}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-foe\-\_\-request\-\_\-t\-::list}\label{structec__foe__request__t_a3934835725b006bc6268d2553234901a}
+
+
+List item. 
+
+
+
+Definition at line 51 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!buffer@{buffer}}
+\index{buffer@{buffer}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-foe\-\_\-request\-\_\-t\-::buffer}\label{structec__foe__request__t_a9f6af09dc6347bb9139f488c7ca48427}
+
+
+Pointer to Fo\-E data. 
+
+
+
+Definition at line 52 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!buffer\-\_\-size@{buffer\-\_\-size}}
+\index{buffer\-\_\-size@{buffer\-\_\-size}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{buffer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::buffer\-\_\-size}\label{structec__foe__request__t_a5cf1b56bd0f3406f9cf36650fc5ac7aa}
+
+
+Size of Fo\-E data memory. 
+
+
+
+Definition at line 53 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::data\-\_\-size}\label{structec__foe__request__t_aa7b6efa4a99fe568f8f53ae0b2ebc2e4}
+
+
+Size of Fo\-E data. 
+
+
+
+Definition at line 54 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!issue\-\_\-timeout@{issue\-\_\-timeout}}
+\index{issue\-\_\-timeout@{issue\-\_\-timeout}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{issue\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::issue\-\_\-timeout}\label{structec__foe__request__t_a313c264273fbc3dc6b7aa4a177dd1505}
+
+
+Maximum time in ms, the processing of the request may take. 
+
+
+
+Definition at line 56 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!response\-\_\-timeout@{response\-\_\-timeout}}
+\index{response\-\_\-timeout@{response\-\_\-timeout}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{response\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::response\-\_\-timeout}\label{structec__foe__request__t_a347a7ba58a6616319766bc65e2957ef9}
+
+
+Maximum time in ms, the transfer is retried, if the slave does not respond. 
+
+
+
+Definition at line 58 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!dir@{dir}}
+\index{dir@{dir}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-foe\-\_\-request\-\_\-t\-::dir}\label{structec__foe__request__t_a28940cc34e5ddb8a960cc459040bbcc9}
+
+
+Direction. 
+
+E\-C\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T means downloading to the slave, E\-C\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T means uploading from the slave. 
+
+Definition at line 60 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!state@{state}}
+\index{state@{state}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-foe\-\_\-request\-\_\-t\-::state}\label{structec__foe__request__t_afd59d6b4eb03fe6f05a20179cef9ac5e}
+
+
+Fo\-E request state. 
+
+
+
+Definition at line 63 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-foe\-\_\-request\-\_\-t\-::jiffies\-\_\-start}\label{structec__foe__request__t_a3fef682f7dcd197e1fa74cf90a2e8963}
+
+
+Jiffies, when the request was issued. 
+
+
+
+Definition at line 64 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!jiffies\-\_\-sent@{jiffies\-\_\-sent}}
+\index{jiffies\-\_\-sent@{jiffies\-\_\-sent}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{jiffies\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-foe\-\_\-request\-\_\-t\-::jiffies\-\_\-sent}\label{structec__foe__request__t_ac0d7533c6fc99ddf0a4584837a2829d3}
+
+
+Jiffies, when the upload/download request was sent. 
+
+
+
+Definition at line 65 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!file\-\_\-name@{file\-\_\-name}}
+\index{file\-\_\-name@{file\-\_\-name}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{file\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-foe\-\_\-request\-\_\-t\-::file\-\_\-name}\label{structec__foe__request__t_a9ff443ccddd8bd0492f364abb7fd4a32}
+
+
+Pointer to the filename. 
+
+
+
+Definition at line 67 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!result@{result}}
+\index{result@{result}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::result}\label{structec__foe__request__t_a3755f2ecc7d79a09afc8d567b11b7aef}
+
+
+Fo\-E request abort code. 
+
+Zero on success. 
+
+Definition at line 68 of file foe\-\_\-request.\-h.
+
+\index{ec\-\_\-foe\-\_\-request\-\_\-t@{ec\-\_\-foe\-\_\-request\-\_\-t}!error\-\_\-code@{error\-\_\-code}}
+\index{error\-\_\-code@{error\-\_\-code}!ec_foe_request_t@{ec\-\_\-foe\-\_\-request\-\_\-t}}
+\subsubsection[{error\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-foe\-\_\-request\-\_\-t\-::error\-\_\-code}\label{structec__foe__request__t_a61bb591aa99ad14d759e67c687b11d5d}
+
+
+Error code from an Fo\-E Error Request. 
+
+
+
+Definition at line 69 of file foe\-\_\-request.\-h.
+

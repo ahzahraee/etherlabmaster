@@ -1,0 +1,204 @@
+\section{cdev.\-c File Reference}
+\label{cdev_8c}\index{cdev.\-c@{cdev.\-c}}
+
+
+Ether\-C\-A\-T master character device.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-cdev\-\_\-priv\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Private data structure for file handles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\-E\-B\-U\-G}~0\label{cdev_8c_ad72dbcf6d0153db1b8d8a58001feed83}
+
+\begin{DoxyCompactList}\small\item\em Set to 1 to enable device operations debugging. \end{DoxyCompactList}\item 
+\#define {\bf P\-A\-G\-E\-\_\-\-F\-A\-U\-L\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N}~K\-E\-R\-N\-E\-L\-\_\-\-V\-E\-R\-S\-I\-O\-N(2, 6, 23)\label{cdev_8c_a10f95a3683dceea630bcdd04e89e484f}
+
+\begin{DoxyCompactList}\small\item\em This is the kernel version from which the .fault member of the vm\-\_\-operations\-\_\-struct is usable. \end{DoxyCompactList}\item 
+\#define {\bf V\-M\-\_\-\-D\-O\-N\-T\-D\-U\-M\-P}~V\-M\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D\label{cdev_8c_a17f0ec31019517ccc93149007ee45d9d}
+
+\begin{DoxyCompactList}\small\item\em V\-M\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D disappeared in 3.\-7. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf eccdev\-\_\-open} (struct inode $\ast$inode, struct file $\ast$filp)\label{cdev_8c_ac12a62dff23c807f50608bb1c3b99a69}
+
+\begin{DoxyCompactList}\small\item\em Called when the cdev is opened. \end{DoxyCompactList}\item 
+static int {\bf eccdev\-\_\-release} (struct inode $\ast$inode, struct file $\ast$filp)\label{cdev_8c_a0676fd59dff0432b9f378923d290129e}
+
+\begin{DoxyCompactList}\small\item\em Called when the cdev is closed. \end{DoxyCompactList}\item 
+static long {\bf eccdev\-\_\-ioctl} (struct file $\ast$filp, unsigned int cmd, unsigned long arg)\label{cdev_8c_abbf50f74e0ed9ba2d8db5b1f9184a49b}
+
+\begin{DoxyCompactList}\small\item\em Called when an ioctl() command is issued. \end{DoxyCompactList}\item 
+static int {\bf eccdev\-\_\-mmap} (struct file $\ast$filp, struct vm\-\_\-area\-\_\-struct $\ast$vma)
+\begin{DoxyCompactList}\small\item\em Memory-\/map callback for the Ether\-C\-A\-T character device. \end{DoxyCompactList}\item 
+static int {\bf eccdev\-\_\-vma\-\_\-fault} (struct vm\-\_\-area\-\_\-struct $\ast$vma,struct vm\-\_\-fault $\ast$vmf)
+\begin{DoxyCompactList}\small\item\em Page fault callback for a virtual memory area. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-cdev\-\_\-init} ({\bf ec\-\_\-cdev\-\_\-t} $\ast$cdev, {\bf ec\-\_\-master\-\_\-t} $\ast$master, dev\-\_\-t dev\-\_\-num)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-cdev\-\_\-clear} ({\bf ec\-\_\-cdev\-\_\-t} $\ast$cdev)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static struct file\-\_\-operations {\bf eccdev\-\_\-fops}
+\begin{DoxyCompactList}\small\item\em File operation callbacks for the Ether\-C\-A\-T character device. \end{DoxyCompactList}\item 
+struct vm\-\_\-operations\-\_\-struct {\bf eccdev\-\_\-vm\-\_\-ops}
+\begin{DoxyCompactList}\small\item\em Callbacks for a virtual memory area retrieved with ecdevc\-\_\-mmap(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master character device. 
+
+Definition in file {\bf cdev.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{cdev.\-c@{cdev.\-c}!eccdev\-\_\-mmap@{eccdev\-\_\-mmap}}
+\index{eccdev\-\_\-mmap@{eccdev\-\_\-mmap}!cdev.c@{cdev.\-c}}
+\subsubsection[{eccdev\-\_\-mmap}]{\setlength{\rightskip}{0pt plus 5cm}int eccdev\-\_\-mmap (
+\begin{DoxyParamCaption}
+\item[{struct file $\ast$}]{filp, }
+\item[{struct vm\-\_\-area\-\_\-struct $\ast$}]{vma}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{cdev_8c_a10a15bca817cd8044e0dd41af640b38e}
+
+
+Memory-\/map callback for the Ether\-C\-A\-T character device. 
+
+The actual mapping will be done in the eccdev\-\_\-vma\-\_\-nopage() callback of the virtual memory area.
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file cdev.\-c.
+
+\index{cdev.\-c@{cdev.\-c}!eccdev\-\_\-vma\-\_\-fault@{eccdev\-\_\-vma\-\_\-fault}}
+\index{eccdev\-\_\-vma\-\_\-fault@{eccdev\-\_\-vma\-\_\-fault}!cdev.c@{cdev.\-c}}
+\subsubsection[{eccdev\-\_\-vma\-\_\-fault}]{\setlength{\rightskip}{0pt plus 5cm}static int eccdev\-\_\-vma\-\_\-fault (
+\begin{DoxyParamCaption}
+\item[{struct vm\-\_\-area\-\_\-struct $\ast$}]{vma, }
+\item[{struct vm\-\_\-fault $\ast$}]{vmf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{cdev_8c_a6a40664cf84d1e54ae2892e18010ec14}
+
+
+Page fault callback for a virtual memory area. 
+
+Called at the first access on a virtual-\/memory area retrieved with ecdev\-\_\-mmap().
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em vma} & Virtual memory area. \\
+\hline
+{\em vmf} & Fault data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file cdev.\-c.
+
+\index{cdev.\-c@{cdev.\-c}!ec\-\_\-cdev\-\_\-init@{ec\-\_\-cdev\-\_\-init}}
+\index{ec\-\_\-cdev\-\_\-init@{ec\-\_\-cdev\-\_\-init}!cdev.c@{cdev.\-c}}
+\subsubsection[{ec\-\_\-cdev\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-cdev\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-cdev\-\_\-t} $\ast$}]{cdev, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{dev\-\_\-t}]{dev\-\_\-num}
+\end{DoxyParamCaption}
+)}\label{cdev_8c_a39eba670d1b58944bce6a8b3102db06c}
+
+
+Constructor. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em cdev} & Ether\-C\-A\-T master character device. \\
+\hline
+{\em master} & Parent master. \\
+\hline
+{\em dev\-\_\-num} & Device number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file cdev.\-c.
+
+\index{cdev.\-c@{cdev.\-c}!ec\-\_\-cdev\-\_\-clear@{ec\-\_\-cdev\-\_\-clear}}
+\index{ec\-\_\-cdev\-\_\-clear@{ec\-\_\-cdev\-\_\-clear}!cdev.c@{cdev.\-c}}
+\subsubsection[{ec\-\_\-cdev\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-cdev\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-cdev\-\_\-t} $\ast$}]{cdev}
+\end{DoxyParamCaption}
+)}\label{cdev_8c_a99583eb6867ecf756ff6f91f386408cd}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cdev} & Ether\-C\-A\-T X\-M\-L device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file cdev.\-c.
+
+
+
+\subsection{Variable Documentation}
+\index{cdev.\-c@{cdev.\-c}!eccdev\-\_\-fops@{eccdev\-\_\-fops}}
+\index{eccdev\-\_\-fops@{eccdev\-\_\-fops}!cdev.c@{cdev.\-c}}
+\subsubsection[{eccdev\-\_\-fops}]{\setlength{\rightskip}{0pt plus 5cm}struct file\-\_\-operations eccdev\-\_\-fops\hspace{0.3cm}{\ttfamily [static]}}\label{cdev_8c_afa770d8ee52fb7d01115e006879238bd}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+    .owner          = THIS\_MODULE,
+    .open           = eccdev_open,
+    .release        = eccdev_release,
+    .unlocked\_ioctl = eccdev_ioctl,
+    .mmap           = eccdev_mmap
+\}
+\end{DoxyCode}
+
+
+File operation callbacks for the Ether\-C\-A\-T character device. 
+
+
+
+Definition at line 75 of file cdev.\-c.
+
+\index{cdev.\-c@{cdev.\-c}!eccdev\-\_\-vm\-\_\-ops@{eccdev\-\_\-vm\-\_\-ops}}
+\index{eccdev\-\_\-vm\-\_\-ops@{eccdev\-\_\-vm\-\_\-ops}!cdev.c@{cdev.\-c}}
+\subsubsection[{eccdev\-\_\-vm\-\_\-ops}]{\setlength{\rightskip}{0pt plus 5cm}struct vm\-\_\-operations\-\_\-struct eccdev\-\_\-vm\-\_\-ops}\label{cdev_8c_ac0b3a174ec0e5531598931789b842ca0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+
+    .fault = eccdev_vma_fault
+
+
+
+\}
+\end{DoxyCode}
+
+
+Callbacks for a virtual memory area retrieved with ecdevc\-\_\-mmap(). 
+
+
+
+Definition at line 85 of file cdev.\-c.
+

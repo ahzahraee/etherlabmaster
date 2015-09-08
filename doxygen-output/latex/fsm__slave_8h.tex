@@ -1,0 +1,105 @@
+\section{fsm\-\_\-slave.\-h File Reference}
+\label{fsm__slave_8h}\index{fsm\-\_\-slave.\-h@{fsm\-\_\-slave.\-h}}
+
+
+Ether\-C\-A\-T slave request state machine.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-slave}
+\begin{DoxyCompactList}\small\item\em Finite state machine of an Ether\-C\-A\-T slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-slave} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{fsm__slave_8h_ad36992febd2772a454ea6a96daf78505}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$)\label{fsm__slave_8h_a469872e3dda4fb39ac959d5ad621de95}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-set\-\_\-ready} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$)\label{fsm__slave_8h_a2b667be77f5ef3d4d9ae60523589a13e}
+
+\begin{DoxyCompactList}\small\item\em Sets the current state of the state machine to R\-E\-A\-D\-Y. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns, if the F\-S\-M is currently not busy and ready to execute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave request state machine. 
+
+Definition in file {\bf fsm\-\_\-slave.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-slave.\-h@{fsm\-\_\-slave.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-t}!fsm_slave.h@{fsm\-\_\-slave.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-slave} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-t}}\label{fsm__slave_8h_a6d226b26b2608f564263a2bd346c05ac}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-slave}{p.}{structec__fsm__slave} 
+\end{DoxySeeAlso}
+
+
+Definition at line 50 of file fsm\-\_\-slave.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-slave.\-h@{fsm\-\_\-slave.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-exec}!fsm_slave.h@{fsm\-\_\-slave.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__slave_8h_ae12b13ec5c06619f6c6cca08b631930c}
+
+
+Executes the current state of the state machine. 
+
+\begin{DoxyReturn}{Returns}
+1 if {\itshape datagram} was used, else 0. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Slave state machine. \\
+\hline
+{\em datagram} & New datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file fsm\-\_\-slave.\-c.
+
+\index{fsm\-\_\-slave.\-h@{fsm\-\_\-slave.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready@{ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready@{ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready}!fsm_slave.h@{fsm\-\_\-slave.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave_8h_ae4ccb250140a4547412ddcd7b9aba22c}
+
+
+Returns, if the F\-S\-M is currently not busy and ready to execute. 
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if ready. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Slave state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file fsm\-\_\-slave.\-c.
+

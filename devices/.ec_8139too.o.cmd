@@ -1,0 +1,1 @@
+cmd_/home/sybot/devel/etherlabmaster/devices/ec_8139too.o := ld -m elf_i386   -r -o /home/sybot/devel/etherlabmaster/devices/ec_8139too.o /home/sybot/devel/etherlabmaster/devices/8139too-3.2-ethercat.o 

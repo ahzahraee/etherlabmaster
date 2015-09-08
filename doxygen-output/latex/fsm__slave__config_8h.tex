@@ -1,0 +1,100 @@
+\section{fsm\-\_\-slave\-\_\-config.\-h File Reference}
+\label{fsm__slave__config_8h}\index{fsm\-\_\-slave\-\_\-config.\-h@{fsm\-\_\-slave\-\_\-config.\-h}}
+
+
+Ether\-C\-A\-T slave configuration state machine.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config}
+\begin{DoxyCompactList}\small\item\em Finite state machine to configure an Ether\-C\-A\-T slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$)\label{fsm__slave__config_8h_a3cf535ef054ccf014948d693179bd9e3}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$)\label{fsm__slave__config_8h_aa5f111e82c517aba5f4d05193299dd56}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{fsm__slave__config_8h_a33e8b316f85096b24e24cd6d3d4d4182}
+
+\begin{DoxyCompactList}\small\item\em Start slave configuration state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave configuration state machine. 
+
+Definition in file {\bf fsm\-\_\-slave\-\_\-config.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-slave\-\_\-config.\-h@{fsm\-\_\-slave\-\_\-config.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}!fsm_slave_config.h@{fsm\-\_\-slave\-\_\-config.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}}\label{fsm__slave__config_8h_a31e1e414b22a05b9dd1302d6ed036c0b}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-slave\-\_\-config}{p.}{structec__fsm__slave__config} 
+\end{DoxySeeAlso}
+
+
+Definition at line 50 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-slave\-\_\-config.\-h@{fsm\-\_\-slave\-\_\-config.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}!fsm_slave_config.h@{fsm\-\_\-slave\-\_\-config.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8h_ae044ed2bcf430f33553d73dda1c6361b}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle.
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-h@{fsm\-\_\-slave\-\_\-config.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}!fsm_slave_config.h@{fsm\-\_\-slave\-\_\-config.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8h_ae91cb2bb7fccbbc5dd9ca7101a97b493}
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file fsm\-\_\-slave\-\_\-config.\-c.
+

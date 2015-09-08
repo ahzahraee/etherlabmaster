@@ -1,0 +1,204 @@
+\section{ec\-\_\-domain Struct Reference}
+\label{structec__domain}\index{ec\-\_\-domain@{ec\-\_\-domain}}
+
+
+Ether\-C\-A\-T domain.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf master}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T master owning the domain. \end{DoxyCompactList}\item 
+unsigned int {\bf index}
+\begin{DoxyCompactList}\small\item\em Index (just a number). \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf fmmu\-\_\-configs}
+\begin{DoxyCompactList}\small\item\em F\-M\-M\-U configurations contained. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of the process data. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf data}
+\begin{DoxyCompactList}\small\item\em Memory for the process data. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-origin\-\_\-t} {\bf data\-\_\-origin}
+\begin{DoxyCompactList}\small\item\em Origin of the {\itshape data} memory. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf logical\-\_\-base\-\_\-address}
+\begin{DoxyCompactList}\small\item\em Logical offset address of the process data. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf datagram\-\_\-pairs}
+\begin{DoxyCompactList}\small\item\em Datagrams pairs (main/backup) for process data exchange. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf working\-\_\-counter} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em Last working counter values. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf expected\-\_\-working\-\_\-counter}
+\begin{DoxyCompactList}\small\item\em Expected working counter. \end{DoxyCompactList}\item 
+unsigned int {\bf working\-\_\-counter\-\_\-changes}
+\begin{DoxyCompactList}\small\item\em Working counter changes since last notification. \end{DoxyCompactList}\item 
+unsigned int {\bf redundancy\-\_\-active}
+\begin{DoxyCompactList}\small\item\em Non-\/zero, if redundancy is in use. \end{DoxyCompactList}\item 
+unsigned long {\bf notify\-\_\-jiffies}
+\begin{DoxyCompactList}\small\item\em Time of last notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T domain. 
+
+Handles the process data and the therefore needed datagrams of a certain group of slaves. 
+
+Definition at line 54 of file domain.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-domain@{ec\-\_\-domain}!list@{list}}
+\index{list@{list}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-domain\-::list}\label{structec__domain_a2d15a4d54c3c1893bd3902d43380d474}
+
+
+List item. 
+
+
+
+Definition at line 56 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!master@{master}}
+\index{master@{master}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{master}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ ec\-\_\-domain\-::master}\label{structec__domain_a58e4f4b7d54f30e58c7187268c1525c1}
+
+
+Ether\-C\-A\-T master owning the domain. 
+
+
+
+Definition at line 57 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!index@{index}}
+\index{index@{index}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-domain\-::index}\label{structec__domain_ac341000021b5790693cc74f7687fb956}
+
+
+Index (just a number). 
+
+
+
+Definition at line 58 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!fmmu\-\_\-configs@{fmmu\-\_\-configs}}
+\index{fmmu\-\_\-configs@{fmmu\-\_\-configs}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{fmmu\-\_\-configs}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-domain\-::fmmu\-\_\-configs}\label{structec__domain_af7578fbb9d9c493a4c086b5c9cc3796b}
+
+
+F\-M\-M\-U configurations contained. 
+
+
+
+Definition at line 60 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-domain\-::data\-\_\-size}\label{structec__domain_a7c2dfe55da8c96a17ace9de29e8cbb95}
+
+
+Size of the process data. 
+
+
+
+Definition at line 61 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!data@{data}}
+\index{data@{data}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-domain\-::data}\label{structec__domain_ab6ced9980be9d70c0c610cf00e44793d}
+
+
+Memory for the process data. 
+
+
+
+Definition at line 62 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!data\-\_\-origin@{data\-\_\-origin}}
+\index{data\-\_\-origin@{data\-\_\-origin}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{data\-\_\-origin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-origin\-\_\-t} ec\-\_\-domain\-::data\-\_\-origin}\label{structec__domain_a2ff57b73bc954e0ce90f1cee5d0a2721}
+
+
+Origin of the {\itshape data} memory. 
+
+
+
+Definition at line 63 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!logical\-\_\-base\-\_\-address@{logical\-\_\-base\-\_\-address}}
+\index{logical\-\_\-base\-\_\-address@{logical\-\_\-base\-\_\-address}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{logical\-\_\-base\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-domain\-::logical\-\_\-base\-\_\-address}\label{structec__domain_a5efe0cdd408c44ad61c52952f28f14de}
+
+
+Logical offset address of the process data. 
+
+
+
+Definition at line 64 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!datagram\-\_\-pairs@{datagram\-\_\-pairs}}
+\index{datagram\-\_\-pairs@{datagram\-\_\-pairs}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{datagram\-\_\-pairs}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-domain\-::datagram\-\_\-pairs}\label{structec__domain_a9935943271eabfa9d5c68b5c19fe3bee}
+
+
+Datagrams pairs (main/backup) for process data exchange. 
+
+
+
+Definition at line 66 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!working\-\_\-counter@{working\-\_\-counter}}
+\index{working\-\_\-counter@{working\-\_\-counter}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{working\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-domain\-::working\-\_\-counter[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__domain_a6f18a1d8c6b2a83acf3e5932a5f3048f}
+
+
+Last working counter values. 
+
+
+
+Definition at line 68 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!expected\-\_\-working\-\_\-counter@{expected\-\_\-working\-\_\-counter}}
+\index{expected\-\_\-working\-\_\-counter@{expected\-\_\-working\-\_\-counter}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{expected\-\_\-working\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-domain\-::expected\-\_\-working\-\_\-counter}\label{structec__domain_af978a94741ca2483ce0460e34c77271d}
+
+
+Expected working counter. 
+
+
+
+Definition at line 70 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!working\-\_\-counter\-\_\-changes@{working\-\_\-counter\-\_\-changes}}
+\index{working\-\_\-counter\-\_\-changes@{working\-\_\-counter\-\_\-changes}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{working\-\_\-counter\-\_\-changes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-domain\-::working\-\_\-counter\-\_\-changes}\label{structec__domain_abe70425a9c3e701f4b561d0baac2e29c}
+
+
+Working counter changes since last notification. 
+
+
+
+Definition at line 71 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!redundancy\-\_\-active@{redundancy\-\_\-active}}
+\index{redundancy\-\_\-active@{redundancy\-\_\-active}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{redundancy\-\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-domain\-::redundancy\-\_\-active}\label{structec__domain_aeb8f64931c44dc2c89521b94f54879d6}
+
+
+Non-\/zero, if redundancy is in use. 
+
+
+
+Definition at line 73 of file domain.\-h.
+
+\index{ec\-\_\-domain@{ec\-\_\-domain}!notify\-\_\-jiffies@{notify\-\_\-jiffies}}
+\index{notify\-\_\-jiffies@{notify\-\_\-jiffies}!ec_domain@{ec\-\_\-domain}}
+\subsubsection[{notify\-\_\-jiffies}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-domain\-::notify\-\_\-jiffies}\label{structec__domain_a5d14409ef398792e134f5b4f170a9f5c}
+
+
+Time of last notification. 
+
+
+
+Definition at line 74 of file domain.\-h.
+

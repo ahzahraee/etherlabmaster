@@ -1,0 +1,4 @@
+kernel//home/sybot/devel/etherlabmaster/examples/mini/ec_mini.ko
+kernel//home/sybot/devel/etherlabmaster/master/ec_master.ko
+kernel//home/sybot/devel/etherlabmaster/devices/ec_generic.ko
+kernel//home/sybot/devel/etherlabmaster/devices/ec_8139too.ko

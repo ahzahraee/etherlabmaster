@@ -1,0 +1,35 @@
+\section{ectty.\-h File Reference}
+\label{ectty_8h}\index{ectty.\-h@{ectty.\-h}}
+
+
+Ether\-C\-A\-T virtual T\-T\-Y interface.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-tty\-\_\-operations\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Operations on the virtual T\-T\-Y interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct ec\-\_\-tty {\bf ec\-\_\-tty\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-tty\-\_\-t} $\ast$ {\bf ectty\-\_\-create} (const {\bf ec\-\_\-tty\-\_\-operations\-\_\-t} $\ast$ops, void $\ast$cb\-\_\-data)
+\begin{DoxyCompactList}\small\item\em Create a virtual T\-T\-Y interface. \end{DoxyCompactList}\item 
+void {\bf ectty\-\_\-free} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty)
+\begin{DoxyCompactList}\small\item\em Releases a virtual T\-T\-Y interface. \end{DoxyCompactList}\item 
+unsigned int {\bf ectty\-\_\-tx\-\_\-data} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty, uint8\-\_\-t $\ast$buffer, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Reads data to send from the T\-T\-Y interface. \end{DoxyCompactList}\item 
+void {\bf ectty\-\_\-rx\-\_\-data} ({\bf ec\-\_\-tty\-\_\-t} $\ast$tty, const uint8\-\_\-t $\ast$buffer, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Pushes received data to the T\-T\-Y interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T virtual T\-T\-Y interface. 
+
+Definition in file {\bf ectty.\-h}.
+

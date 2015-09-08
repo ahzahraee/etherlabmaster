@@ -1,0 +1,215 @@
+\section{ec\-\_\-sdo\-\_\-request Struct Reference}
+\label{structec__sdo__request}\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}}
+
+
+C\-A\-Nopen S\-D\-O request.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf index}
+\begin{DoxyCompactList}\small\item\em S\-D\-O index. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf subindex}
+\begin{DoxyCompactList}\small\item\em S\-D\-O subindex. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf data}
+\begin{DoxyCompactList}\small\item\em Pointer to S\-D\-O data. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf mem\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of S\-D\-O data memory. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of S\-D\-O data. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf complete\-\_\-access}
+\begin{DoxyCompactList}\small\item\em S\-D\-O shall be transferred completely. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf issue\-\_\-timeout}
+\begin{DoxyCompactList}\small\item\em Maximum time in ms, the processing of the request may take. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf response\-\_\-timeout}
+\begin{DoxyCompactList}\small\item\em Maximum time in ms, the transfer is retried, if the slave does not respond. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Direction. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} {\bf state}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request state. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the request was issued. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-sent}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the upload/download request was sent. \end{DoxyCompactList}\item 
+int {\bf errno}
+\begin{DoxyCompactList}\small\item\em Error number. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf abort\-\_\-code}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request abort code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\-A\-Nopen S\-D\-O request. 
+
+Definition at line 48 of file sdo\-\_\-request.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!list@{list}}
+\index{list@{list}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-sdo\-\_\-request\-::list}\label{structec__sdo__request_a80c68878d98d613513a0b985be43198e}
+
+
+List item. 
+
+
+
+Definition at line 49 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!index@{index}}
+\index{index@{index}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sdo\-\_\-request\-::index}\label{structec__sdo__request_ad8ef54b4c7495a17c81eabff59e079fd}
+
+
+S\-D\-O index. 
+
+
+
+Definition at line 50 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!subindex@{subindex}}
+\index{subindex@{subindex}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{subindex}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-sdo\-\_\-request\-::subindex}\label{structec__sdo__request_af3b7a335ce659260bed0d04f90ba9e4a}
+
+
+S\-D\-O subindex. 
+
+
+
+Definition at line 51 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!data@{data}}
+\index{data@{data}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-sdo\-\_\-request\-::data}\label{structec__sdo__request_aa1f9c68c95c5fde23ed0807abf884b08}
+
+
+Pointer to S\-D\-O data. 
+
+
+
+Definition at line 52 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!mem\-\_\-size@{mem\-\_\-size}}
+\index{mem\-\_\-size@{mem\-\_\-size}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-sdo\-\_\-request\-::mem\-\_\-size}\label{structec__sdo__request_a6275d28bba5bc2a428915b717fe425e5}
+
+
+Size of S\-D\-O data memory. 
+
+
+
+Definition at line 53 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-sdo\-\_\-request\-::data\-\_\-size}\label{structec__sdo__request_a9a094314f738ed0fdf4b46f4bd37dfe9}
+
+
+Size of S\-D\-O data. 
+
+
+
+Definition at line 54 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!complete\-\_\-access@{complete\-\_\-access}}
+\index{complete\-\_\-access@{complete\-\_\-access}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{complete\-\_\-access}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-sdo\-\_\-request\-::complete\-\_\-access}\label{structec__sdo__request_a98a6142382d920ac06195dd6b6de2990}
+
+
+S\-D\-O shall be transferred completely. 
+
+
+
+Definition at line 55 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!issue\-\_\-timeout@{issue\-\_\-timeout}}
+\index{issue\-\_\-timeout@{issue\-\_\-timeout}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{issue\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sdo\-\_\-request\-::issue\-\_\-timeout}\label{structec__sdo__request_a042249b5e1776a0c0b6fc3003ef939a2}
+
+
+Maximum time in ms, the processing of the request may take. 
+
+
+
+Definition at line 56 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!response\-\_\-timeout@{response\-\_\-timeout}}
+\index{response\-\_\-timeout@{response\-\_\-timeout}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{response\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sdo\-\_\-request\-::response\-\_\-timeout}\label{structec__sdo__request_a0282ca505cf8acbbe9ecbbd1999967a9}
+
+
+Maximum time in ms, the transfer is retried, if the slave does not respond. 
+
+
+
+Definition at line 58 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!dir@{dir}}
+\index{dir@{dir}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-sdo\-\_\-request\-::dir}\label{structec__sdo__request_aaccb8ada520d7948b4f61653df6e871f}
+
+
+Direction. 
+
+E\-C\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T means downloading to the slave, E\-C\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T means uploading from the slave. 
+
+Definition at line 60 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!state@{state}}
+\index{state@{state}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-sdo\-\_\-request\-::state}\label{structec__sdo__request_a0c50e10b80720d00f11863e76ecc1755}
+
+
+S\-D\-O request state. 
+
+
+
+Definition at line 63 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-sdo\-\_\-request\-::jiffies\-\_\-start}\label{structec__sdo__request_aa5be223c362a630833451bd57471a05f}
+
+
+Jiffies, when the request was issued. 
+
+
+
+Definition at line 64 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!jiffies\-\_\-sent@{jiffies\-\_\-sent}}
+\index{jiffies\-\_\-sent@{jiffies\-\_\-sent}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{jiffies\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-sdo\-\_\-request\-::jiffies\-\_\-sent}\label{structec__sdo__request_ad5d35e78085bce7e20a02753024e5822}
+
+
+Jiffies, when the upload/download request was sent. 
+
+
+
+Definition at line 65 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!errno@{errno}}
+\index{errno@{errno}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{errno}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sdo\-\_\-request\-::errno}\label{structec__sdo__request_a1119ddcb79a3deed62e3890481109030}
+
+
+Error number. 
+
+
+
+Definition at line 67 of file sdo\-\_\-request.\-h.
+
+\index{ec\-\_\-sdo\-\_\-request@{ec\-\_\-sdo\-\_\-request}!abort\-\_\-code@{abort\-\_\-code}}
+\index{abort\-\_\-code@{abort\-\_\-code}!ec_sdo_request@{ec\-\_\-sdo\-\_\-request}}
+\subsubsection[{abort\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sdo\-\_\-request\-::abort\-\_\-code}\label{structec__sdo__request_aaa992ddb3f070824088161dffb347b3e}
+
+
+S\-D\-O request abort code. 
+
+Zero on success. 
+
+Definition at line 68 of file sdo\-\_\-request.\-h.
+

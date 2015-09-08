@@ -1,0 +1,66 @@
+\section{ec\-\_\-pdo\-\_\-info\-\_\-t Struct Reference}
+\label{structec__pdo__info__t}\index{ec\-\_\-pdo\-\_\-info\-\_\-t@{ec\-\_\-pdo\-\_\-info\-\_\-t}}
+
+
+P\-D\-O configuration information.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t {\bf index}
+\begin{DoxyCompactList}\small\item\em P\-D\-O index. \end{DoxyCompactList}\item 
+unsigned int {\bf n\-\_\-entries}
+\begin{DoxyCompactList}\small\item\em Number of P\-D\-O entries in {\itshape entries} to map. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-entry\-\_\-info\-\_\-t} $\ast$ {\bf entries}
+\begin{DoxyCompactList}\small\item\em Array of P\-D\-O entries to map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-D\-O configuration information. 
+
+This is the data type of the {\itshape pdos} field in \doxyref{ec\-\_\-sync\-\_\-info\-\_\-t}{p.}{structec__sync__info__t}.
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-pdos()}{p.}{group__ApplicationInterface_ga7bc2683699a5c0c551f0cfdc90c1a559}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 458 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-pdo\-\_\-info\-\_\-t@{ec\-\_\-pdo\-\_\-info\-\_\-t}!index@{index}}
+\index{index@{index}!ec_pdo_info_t@{ec\-\_\-pdo\-\_\-info\-\_\-t}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-pdo\-\_\-info\-\_\-t\-::index}\label{structec__pdo__info__t_a90f9554694041aefded6f069e0b003d3}
+
+
+P\-D\-O index. 
+
+
+
+Definition at line 459 of file ecrt.\-h.
+
+\index{ec\-\_\-pdo\-\_\-info\-\_\-t@{ec\-\_\-pdo\-\_\-info\-\_\-t}!n\-\_\-entries@{n\-\_\-entries}}
+\index{n\-\_\-entries@{n\-\_\-entries}!ec_pdo_info_t@{ec\-\_\-pdo\-\_\-info\-\_\-t}}
+\subsubsection[{n\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-pdo\-\_\-info\-\_\-t\-::n\-\_\-entries}\label{structec__pdo__info__t_a64eb03ac59c0d0cb771b6c32bf52de74}
+
+
+Number of P\-D\-O entries in {\itshape entries} to map. 
+
+Zero means, that the default mapping shall be used (this can only be done if the slave is present at bus configuration time). 
+
+Definition at line 460 of file ecrt.\-h.
+
+\index{ec\-\_\-pdo\-\_\-info\-\_\-t@{ec\-\_\-pdo\-\_\-info\-\_\-t}!entries@{entries}}
+\index{entries@{entries}!ec_pdo_info_t@{ec\-\_\-pdo\-\_\-info\-\_\-t}}
+\subsubsection[{entries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-entry\-\_\-info\-\_\-t}$\ast$ ec\-\_\-pdo\-\_\-info\-\_\-t\-::entries}\label{structec__pdo__info__t_a625680a1ef38138a5d0298c70ba6f4b1}
+
+
+Array of P\-D\-O entries to map. 
+
+Can either be {\itshape N\-U\-L\-L}, or must contain at least {\itshape n\-\_\-entries} values. 
+
+Definition at line 464 of file ecrt.\-h.
+

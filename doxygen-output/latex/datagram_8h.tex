@@ -1,0 +1,824 @@
+\section{datagram.\-h File Reference}
+\label{datagram_8h}\index{datagram.\-h@{datagram.\-h}}
+
+
+Ether\-C\-A\-T datagram structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-datagram\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T datagram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-datagram\-\_\-type\-\_\-t} \{ \\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E} =  0x00, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D} =  0x01, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R} =  0x02, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W} =  0x03, 
+\\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D} =  0x04, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R} =  0x05, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W} =  0x06, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D} =  0x07, 
+\\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R} =  0x08, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W} =  0x09, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D} =  0x0\-A, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R} =  0x0\-B, 
+\\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W} =  0x0\-C, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W} =  0x0\-D, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W} =  0x0\-E
+ \}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T datagram type. \end{DoxyCompactList}\item 
+enum {\bf ec\-\_\-datagram\-\_\-state\-\_\-t} \{ \\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T}, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D}, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T}, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}, 
+\\*
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T}, 
+{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R}
+ \}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T datagram state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-datagram\-\_\-init} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{datagram_8h_a8c149b9109b8710239b65c14bcf87cfd}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-clear} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{datagram_8h_abb57d145234f12a354a0286dab86f106}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-unqueue} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{datagram_8h_a43d78d0e9873569e4b5c840fafdadba5}
+
+\begin{DoxyCompactList}\small\item\em Unqueue datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-prealloc} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Allocates internal payload memory. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-zero} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{datagram_8h_ae3a997439eaf8c94e0272e309f06da94}
+
+\begin{DoxyCompactList}\small\item\em Fills the datagram payload memory with zeros. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-aprd} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T A\-P\-R\-D datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-apwr} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T A\-P\-W\-R datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-aprw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T A\-P\-R\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-armw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T A\-R\-M\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-fprd} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T F\-P\-R\-D datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-fpwr} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T F\-P\-W\-R datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-fprw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T F\-P\-R\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-frmw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T F\-R\-M\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-brd} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T B\-R\-D datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-bwr} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T B\-W\-R datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-brw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint16\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T B\-R\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lrd} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-R\-D datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lwr} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-W\-R datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lrw} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-R\-W datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lrd\-\_\-ext} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t, uint8\-\_\-t $\ast$)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-R\-D datagram with external memory. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lwr\-\_\-ext} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t, uint8\-\_\-t $\ast$)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-W\-R datagram with external memory. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-datagram\-\_\-lrw\-\_\-ext} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint32\-\_\-t, size\-\_\-t, uint8\-\_\-t $\ast$)
+\begin{DoxyCompactList}\small\item\em Initializes an Ether\-C\-A\-T L\-R\-W datagram with external memory. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-print\-\_\-state} (const {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Prints the state of a datagram. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error} (const {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Evaluates the working counter of a single-\/cast datagram. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-output\-\_\-stats} ({\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{datagram_8h_a8802eeb907490d0f927538d95aaf805e}
+
+\begin{DoxyCompactList}\small\item\em Outputs datagram statistics at most every second. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf ec\-\_\-datagram\-\_\-type\-\_\-string} (const {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns a string describing the datagram type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T datagram structure. 
+
+Definition in file {\bf datagram.\-h}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-type\-\_\-t@{ec\-\_\-datagram\-\_\-type\-\_\-t}}
+\index{ec\-\_\-datagram\-\_\-type\-\_\-t@{ec\-\_\-datagram\-\_\-type\-\_\-t}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-type\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-datagram\-\_\-type\-\_\-t}}\label{datagram_8h_a03209bc3f89797943506f8f7c160b015}
+
+
+Ether\-C\-A\-T datagram type. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-O\-N\-E\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a455bd48cbb495dc8b0c34ab831a7fb3d}
+}]Dummy. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-D\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a4f04360dcb5d54e7fa9cc9d29b0201d4}
+}]Auto Increment Physical Read. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-W\-R\label{datagram_8h_a03209bc3f89797943506f8f7c160b015adde6a3abb46fc29cf612209f80961ffa}
+}]Auto Increment Physical Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-P\-R\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a1c72f47920669e05abafa39e4135aea4}
+}]Auto Increment Physical Read\-Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-D\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a37da79feb57a32a0d5d009e43e36fc3b}
+}]Configured Address Physical Read. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-W\-R\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a0c3a2341969ba72970430b534ffa7e92}
+}]Configured Address Physical Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-P\-R\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a94bb7b04cafdb9a9b16708830df12420}
+}]Configured Address Physical Read\-Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-D\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a74127113716bd45eaf6009ecdcb74dfc}
+}]Broadcast Read. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-W\-R\label{datagram_8h_a03209bc3f89797943506f8f7c160b015abe060a204f51ab1ce7d2ff4b8fc4dda0}
+}]Broadcast Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-B\-R\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a7e441843805140c02dec287ec8ba0481}
+}]Broadcast Read\-Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-D\label{datagram_8h_a03209bc3f89797943506f8f7c160b015ae39583a474563f9420fee3bdcac8f738}
+}]Logical Read. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-W\-R\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a8821b71eda807ab031ecf7e3030ebe1f}
+}]Logical Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-L\-R\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a7b305ba36800dd3e5c61203cdd6a5093}
+}]Logical Read\-Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-A\-R\-M\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a3480b2f60d4ee7fafd94582afd4a82b1}
+}]Auto Increment Physical Read Multiple Write. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-F\-R\-M\-W\label{datagram_8h_a03209bc3f89797943506f8f7c160b015a924ce1c906dcb8263c6ed75e37bc35db}
+}]Configured Address Physical Read Multiple Write. \end{description}
+\end{Desc}
+
+
+
+Definition at line 50 of file datagram.\-h.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-state\-\_\-t@{ec\-\_\-datagram\-\_\-state\-\_\-t}}
+\index{ec\-\_\-datagram\-\_\-state\-\_\-t@{ec\-\_\-datagram\-\_\-state\-\_\-t}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-state\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-datagram\-\_\-state\-\_\-t}}\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720}
+
+
+Ether\-C\-A\-T datagram state. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-I\-N\-I\-T\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720a5ccc352710bfd57969fdba9a13f91f71}
+}]Initial state of a new datagram. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-Q\-U\-E\-U\-E\-D\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720acb7d25358159e7c95e334a74b97d661c}
+}]Queued for sending. \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-S\-E\-N\-T\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720abe88d98e46c97099702211a92e1d8c9d}
+}]Sent (still in the queue). \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720a95630d1e98f6217bf0392b4295c5bc6a}
+}]Received (dequeued). \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-T\-I\-M\-E\-D\-\_\-\-O\-U\-T\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720a9f9009188c7cee7d421908a8924ba5e8}
+}]Timed out (dequeued). \index{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R}!datagram.\-h@{datagram.\-h}}\index{datagram.\-h@{datagram.\-h}!E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R@{E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-E\-R\-R\-O\-R\label{datagram_8h_ac9882419ec1404dcca75761c4d1ce720af9a4a9cb27dca2c36d87f734fa36debf}
+}]Error while sending/receiving (dequeued). \end{description}
+\end{Desc}
+
+
+
+Definition at line 74 of file datagram.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-prealloc@{ec\-\_\-datagram\-\_\-prealloc}}
+\index{ec\-\_\-datagram\-\_\-prealloc@{ec\-\_\-datagram\-\_\-prealloc}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-prealloc}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-prealloc (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a92a101b920c6e3cedd187a74d148c65c}
+
+
+Allocates internal payload memory. 
+
+If the allocated memory is already larger than requested, nothing ist done.
+
+\begin{DoxyAttention}{Attention}
+If external payload memory has been provided, no range checking is done!
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+0 in case of success, otherwise {\itshape -\/\-E\-N\-O\-M\-E\-M}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em size} & New payload size in bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-aprd@{ec\-\_\-datagram\-\_\-aprd}}
+\index{ec\-\_\-datagram\-\_\-aprd@{ec\-\_\-datagram\-\_\-aprd}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-aprd}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-aprd (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{ring\-\_\-position, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a28104e7c3691ae038472f292d77f0e1c}
+
+
+Initializes an Ether\-C\-A\-T A\-P\-R\-D datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em ring\-\_\-position} & Auto-\/increment address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-apwr@{ec\-\_\-datagram\-\_\-apwr}}
+\index{ec\-\_\-datagram\-\_\-apwr@{ec\-\_\-datagram\-\_\-apwr}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-apwr}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-apwr (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{ring\-\_\-position, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_ab1f9df4ca5a9b197bbebab97c3b1b014}
+
+
+Initializes an Ether\-C\-A\-T A\-P\-W\-R datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em ring\-\_\-position} & Auto-\/increment address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-aprw@{ec\-\_\-datagram\-\_\-aprw}}
+\index{ec\-\_\-datagram\-\_\-aprw@{ec\-\_\-datagram\-\_\-aprw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-aprw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-aprw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{ring\-\_\-position, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a09196132a8e2ba4455e29034c7c1c021}
+
+
+Initializes an Ether\-C\-A\-T A\-P\-R\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em ring\-\_\-position} & Auto-\/increment address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-armw@{ec\-\_\-datagram\-\_\-armw}}
+\index{ec\-\_\-datagram\-\_\-armw@{ec\-\_\-datagram\-\_\-armw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-armw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-armw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{ring\-\_\-position, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a9189502fd72cb516ed7e34b717919d11}
+
+
+Initializes an Ether\-C\-A\-T A\-R\-M\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em ring\-\_\-position} & Auto-\/increment address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-fprd@{ec\-\_\-datagram\-\_\-fprd}}
+\index{ec\-\_\-datagram\-\_\-fprd@{ec\-\_\-datagram\-\_\-fprd}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-fprd}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-fprd (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{configured\-\_\-address, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a0756df47b9ae51ded9a1ca2acc116c93}
+
+
+Initializes an Ether\-C\-A\-T F\-P\-R\-D datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em configured\-\_\-address} & Configured station address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 273 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-fpwr@{ec\-\_\-datagram\-\_\-fpwr}}
+\index{ec\-\_\-datagram\-\_\-fpwr@{ec\-\_\-datagram\-\_\-fpwr}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-fpwr}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-fpwr (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{configured\-\_\-address, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a874f9f8511a2a5bb94eea8a168031acd}
+
+
+Initializes an Ether\-C\-A\-T F\-P\-W\-R datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em configured\-\_\-address} & Configured station address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 298 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-fprw@{ec\-\_\-datagram\-\_\-fprw}}
+\index{ec\-\_\-datagram\-\_\-fprw@{ec\-\_\-datagram\-\_\-fprw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-fprw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-fprw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{configured\-\_\-address, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a06df15b353aba6fdfe1122e7c95eb19c}
+
+
+Initializes an Ether\-C\-A\-T F\-P\-R\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em configured\-\_\-address} & Configured station address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-frmw@{ec\-\_\-datagram\-\_\-frmw}}
+\index{ec\-\_\-datagram\-\_\-frmw@{ec\-\_\-datagram\-\_\-frmw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-frmw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-frmw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{configured\-\_\-address, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a2e41788150abc1067d4e4d5db66c2541}
+
+
+Initializes an Ether\-C\-A\-T F\-R\-M\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em configured\-\_\-address} & Configured station address. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 348 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-brd@{ec\-\_\-datagram\-\_\-brd}}
+\index{ec\-\_\-datagram\-\_\-brd@{ec\-\_\-datagram\-\_\-brd}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-brd}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-brd (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_aaf49430ca2c7ac387a389e66172a4228}
+
+
+Initializes an Ether\-C\-A\-T B\-R\-D datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-bwr@{ec\-\_\-datagram\-\_\-bwr}}
+\index{ec\-\_\-datagram\-\_\-bwr@{ec\-\_\-datagram\-\_\-bwr}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-bwr}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-bwr (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a0cf08cec8bb44d9f74fd92ded2a217bf}
+
+
+Initializes an Ether\-C\-A\-T B\-W\-R datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 393 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-brw@{ec\-\_\-datagram\-\_\-brw}}
+\index{ec\-\_\-datagram\-\_\-brw@{ec\-\_\-datagram\-\_\-brw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-brw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-brw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint16\-\_\-t}]{mem\-\_\-address, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a9f81033d766e9c6e748485defc83a3e9}
+
+
+Initializes an Ether\-C\-A\-T B\-R\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em mem\-\_\-address} & Physical memory address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 413 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lrd@{ec\-\_\-datagram\-\_\-lrd}}
+\index{ec\-\_\-datagram\-\_\-lrd@{ec\-\_\-datagram\-\_\-lrd}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lrd}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lrd (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_aabc448d4b7b6ec688240c20bbf81db08}
+
+
+Initializes an Ether\-C\-A\-T L\-R\-D datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 433 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lwr@{ec\-\_\-datagram\-\_\-lwr}}
+\index{ec\-\_\-datagram\-\_\-lwr@{ec\-\_\-datagram\-\_\-lwr}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lwr}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lwr (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_ae86a6739ed9060237d935adb4240e1a7}
+
+
+Initializes an Ether\-C\-A\-T L\-W\-R datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 452 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lrw@{ec\-\_\-datagram\-\_\-lrw}}
+\index{ec\-\_\-datagram\-\_\-lrw@{ec\-\_\-datagram\-\_\-lrw}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lrw}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lrw (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_aecf0cddb70deea7a91ff65037faa8f29}
+
+
+Initializes an Ether\-C\-A\-T L\-R\-W datagram. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 471 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lrd\-\_\-ext@{ec\-\_\-datagram\-\_\-lrd\-\_\-ext}}
+\index{ec\-\_\-datagram\-\_\-lrd\-\_\-ext@{ec\-\_\-datagram\-\_\-lrd\-\_\-ext}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lrd\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lrd\-\_\-ext (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{uint8\-\_\-t $\ast$}]{external\-\_\-memory}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a9c8a833002784ce7c8855b11afd5bd87}
+
+
+Initializes an Ether\-C\-A\-T L\-R\-D datagram with external memory. 
+
+\begin{DoxyAttention}{Attention}
+It is assumed, that the external memory is at least {\itshape data\-\_\-size} bytes large.
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+{\em external\-\_\-memory} & Pointer to the memory to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 493 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lwr\-\_\-ext@{ec\-\_\-datagram\-\_\-lwr\-\_\-ext}}
+\index{ec\-\_\-datagram\-\_\-lwr\-\_\-ext@{ec\-\_\-datagram\-\_\-lwr\-\_\-ext}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lwr\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lwr\-\_\-ext (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{uint8\-\_\-t $\ast$}]{external\-\_\-memory}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a40de84b0b6fa9336d4713a06da68dfdc}
+
+
+Initializes an Ether\-C\-A\-T L\-W\-R datagram with external memory. 
+
+\begin{DoxyAttention}{Attention}
+It is assumed, that the external memory is at least {\itshape data\-\_\-size} bytes large.
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+{\em external\-\_\-memory} & Pointer to the memory to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 518 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-lrw\-\_\-ext@{ec\-\_\-datagram\-\_\-lrw\-\_\-ext}}
+\index{ec\-\_\-datagram\-\_\-lrw\-\_\-ext@{ec\-\_\-datagram\-\_\-lrw\-\_\-ext}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-lrw\-\_\-ext}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-lrw\-\_\-ext (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{uint8\-\_\-t $\ast$}]{external\-\_\-memory}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_aec1a712ab2eb262b2100180787b30648}
+
+
+Initializes an Ether\-C\-A\-T L\-R\-W datagram with external memory. 
+
+\begin{DoxyAttention}{Attention}
+It is assumed, that the external memory is at least {\itshape data\-\_\-size} bytes large.
+\end{DoxyAttention}
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+{\em offset} & Logical address. \\
+\hline
+{\em data\-\_\-size} & Number of bytes to read/write. \\
+\hline
+{\em external\-\_\-memory} & Pointer to the memory to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 543 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-print\-\_\-state@{ec\-\_\-datagram\-\_\-print\-\_\-state}}
+\index{ec\-\_\-datagram\-\_\-print\-\_\-state@{ec\-\_\-datagram\-\_\-print\-\_\-state}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-print\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-datagram\-\_\-print\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_ace816d0d8117ee2d89185bcae16d45e4}
+
+
+Prints the state of a datagram. 
+
+Outputs a text message. 
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 565 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error@{ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error}}
+\index{ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error@{ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-datagram\-\_\-print\-\_\-wc\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a447b859841b687ecbe7bbf5ee896bc11}
+
+
+Evaluates the working counter of a single-\/cast datagram. 
+
+Outputs an error message. 
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 602 of file datagram.\-c.
+
+\index{datagram.\-h@{datagram.\-h}!ec\-\_\-datagram\-\_\-type\-\_\-string@{ec\-\_\-datagram\-\_\-type\-\_\-string}}
+\index{ec\-\_\-datagram\-\_\-type\-\_\-string@{ec\-\_\-datagram\-\_\-type\-\_\-string}!datagram.h@{datagram.\-h}}
+\subsubsection[{ec\-\_\-datagram\-\_\-type\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ec\-\_\-datagram\-\_\-type\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{datagram_8h_a9534d758b8408b2c7d5b64dcfbc0cd10}
+
+
+Returns a string describing the datagram type. 
+
+\begin{DoxyReturn}{Returns}
+Pointer on a static memory containing the requested string. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Ether\-C\-A\-T datagram. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 642 of file datagram.\-c.
+

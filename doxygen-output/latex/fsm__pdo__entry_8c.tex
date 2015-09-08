@@ -1,0 +1,529 @@
+\section{fsm\-\_\-pdo\-\_\-entry.\-c File Reference}
+\label{fsm__pdo__entry_8c}\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+
+
+Ether\-C\-A\-T P\-D\-O mapping state machine.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Request reading the number of mapped P\-D\-O entries. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Read number of mapped P\-D\-O entries. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Read P\-D\-O entry information. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Read next P\-D\-O entry. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Start P\-D\-O mapping. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Set the number of mapped entries to zero. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Add a P\-D\-O entry. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Set the number of entries. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Starts to add a P\-D\-O entry. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm, {\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$fsm\-\_\-coe)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Print the current and desired P\-D\-O mapping. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em Start reading a P\-D\-O's entries. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$cur\-\_\-pdo)
+\begin{DoxyCompactList}\small\item\em Start P\-D\-O mapping state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Get running state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Executes the current state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Get execution result. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$ {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$fsm, const struct list\-\_\-head $\ast$list)
+\begin{DoxyCompactList}\small\item\em Process next P\-D\-O entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T P\-D\-O mapping state machine. 
+
+Definition in file {\bf fsm\-\_\-pdo\-\_\-entry.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_ac31c11899f9066209f70bf27ed1b0bb9}
+
+
+Request reading the number of mapped P\-D\-O entries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_aa31a24df33757399697413a2dd74a808}
+
+
+Read number of mapped P\-D\-O entries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-state\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_ae8596aa4b2590a8d19f3a55ae5d3591a}
+
+
+Read P\-D\-O entry information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-read\-\_\-action\-\_\-next (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a1add7e2cd581a3b4d98f90ecde0c7c4f}
+
+
+Read next P\-D\-O entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 249 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_aedc9f0c8c2ccdbe0333f20e61611f5b7}
+
+
+Start P\-D\-O mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 340 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-zero\-\_\-entry\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_ac7477d437fa8e737fd4f7e83640f42fa}
+
+
+Set the number of mapped entries to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 384 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-map\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a772b7a317f3b6bc5a5a58f389199f1d5}
+
+
+Add a P\-D\-O entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 448 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-state\-\_\-set\-\_\-entry\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a004b31bdc50fceb7aca4623deda961bd}
+
+
+Set the number of entries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 495 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-action\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a0b5747d64dddcd228d08f914122acbd4}
+
+
+Starts to add a P\-D\-O entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 419 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a05f1d42cad7d219b55562e7fa8d186bc}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 534 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-state\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a8514327da605e17d7f1b8f4672cfb228}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 523 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$}]{fsm\-\_\-coe}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a133b853be4523479faa849c220581400}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em fsm\-\_\-coe} & Co\-E state machine to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a825211609f332cdf5edeef3b472292d6}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_ab33c67d8293c206239b5a3bb6fbbdd43}
+
+
+Print the current and desired P\-D\-O mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a45b02eb267b7a6ca3307cd23f673c945}
+
+
+Start reading a P\-D\-O's entries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em slave} & Slave to configure. \\
+\hline
+{\em pdo} & P\-D\-O to read entries for. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{cur\-\_\-pdo}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a74763c3c16724f3cb5822c62460b2014}
+
+
+Start P\-D\-O mapping state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em slave} & Slave to configure. \\
+\hline
+{\em pdo} & P\-D\-O with the desired entries. \\
+\hline
+{\em cur\-\_\-pdo} & Current P\-D\-O mapping. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-running (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_adbddb0a19f193283eddfc69f8027fa2e}
+
+
+Get running state. 
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a3ff64581aa828daf9ba6baccf577e808}
+
+
+Executes the current state. 
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a9cf110dbdb0ddf854410f572b5a310e3}
+
+
+Get execution result. 
+
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-c@{fsm\-\_\-pdo\-\_\-entry.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry}!fsm_pdo_entry.c@{fsm\-\_\-pdo\-\_\-entry.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-conf\-\_\-next\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{const struct list\-\_\-head $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8c_a090a6a1025e45847bcfd1f7f885e0c1e}
+
+
+Process next P\-D\-O entry. 
+
+\begin{DoxyReturn}{Returns}
+Next P\-D\-O entry, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em list} & current entry list item \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 369 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+

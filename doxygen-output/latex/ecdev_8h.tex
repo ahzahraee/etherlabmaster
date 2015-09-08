@@ -1,0 +1,52 @@
+\section{ecdev.\-h File Reference}
+\label{ecdev_8h}\index{ecdev.\-h@{ecdev.\-h}}
+
+
+Ether\-C\-A\-T interface for Ether\-C\-A\-T device drivers.  
+
+
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-device} {\bf ec\-\_\-device\-\_\-t}
+\item 
+typedef void($\ast$ {\bf ec\-\_\-pollfunc\-\_\-t} )(struct net\-\_\-device $\ast$)\label{ecdev_8h_a093deaf1a8dd3a84d4e2a560e7d07649}
+
+\begin{DoxyCompactList}\small\item\em Device poll function type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-device\-\_\-t} $\ast$ {\bf ecdev\-\_\-offer} (struct net\-\_\-device $\ast$net\-\_\-dev, {\bf ec\-\_\-pollfunc\-\_\-t} poll, struct module $\ast$module)
+\begin{DoxyCompactList}\small\item\em Offers an Ether\-C\-A\-T device to a certain master. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-withdraw} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Withdraws an Ether\-C\-A\-T device from the master. \end{DoxyCompactList}\item 
+int {\bf ecdev\-\_\-open} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Opens the network device and makes the master enter I\-D\-L\-E phase. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-close} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Makes the master leave I\-D\-L\-E phase and closes the network device. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-receive} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, const void $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Accepts a received frame. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-set\-\_\-link} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, uint8\-\_\-t state)
+\begin{DoxyCompactList}\small\item\em Sets a new link state. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf ecdev\-\_\-get\-\_\-link} (const {\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Reads the link state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T interface for Ether\-C\-A\-T device drivers. 
+
+Definition in file {\bf ecdev.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{ecdev.\-h@{ecdev.\-h}!ec\-\_\-device\-\_\-t@{ec\-\_\-device\-\_\-t}}
+\index{ec\-\_\-device\-\_\-t@{ec\-\_\-device\-\_\-t}!ecdev.h@{ecdev.\-h}}
+\subsubsection[{ec\-\_\-device\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-device} {\bf ec\-\_\-device\-\_\-t}}\label{ecdev_8h_ac0895793ea540357d225d4b8be71f2e4}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-device}{p.}{structec__device} 
+\end{DoxySeeAlso}
+
+
+Definition at line 53 of file ecdev.\-h.
+

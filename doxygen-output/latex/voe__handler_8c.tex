@@ -1,0 +1,167 @@
+\section{voe\-\_\-handler.\-c File Reference}
+\label{voe__handler_8c}\index{voe\-\_\-handler.\-c@{voe\-\_\-handler.\-c}}
+
+
+Vendor specific over Ether\-C\-A\-T protocol handler functions.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-O\-E}~0x0f\label{voe__handler_8c_a8ec96afd19421aaaf473543f6603bc09}
+
+\begin{DoxyCompactList}\small\item\em Vo\-E mailbox type. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-V\-O\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}~6\label{voe__handler_8c_a8f58e3b11fea87f8fc8503a571d77228}
+
+\begin{DoxyCompactList}\small\item\em Vo\-E header size. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-V\-O\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}~500\label{voe__handler_8c_a490aa0619114e852dc92e954c12d8ebf}
+
+\begin{DoxyCompactList}\small\item\em Vo\-E response timeout in [ms]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-write\-\_\-start} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a654a0fe3a3271278e71977c8900d0abe}
+
+\begin{DoxyCompactList}\small\item\em Start writing Vo\-E data. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-write\-\_\-response} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_aea222d10074f966ce59e320b112a8e3b}
+
+\begin{DoxyCompactList}\small\item\em Wait for the mailbox response. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-start} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a7ccd97e7eec931b2786f85eb8cd768c9}
+
+\begin{DoxyCompactList}\small\item\em Start reading Vo\-E data. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-check} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a0a823c493b4b556cbf34cdf4881e0c02}
+
+\begin{DoxyCompactList}\small\item\em Check for new data in the mailbox. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-response} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a02e821274f1254316f4f9bd9250353bb}
+
+\begin{DoxyCompactList}\small\item\em Read the pending mailbox data. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-start} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a5935291f786fefb13cc3af4a95b70f59}
+
+\begin{DoxyCompactList}\small\item\em Start reading Vo\-E data without sending a sync message before. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Read the pending mailbox data without sending a sync message before. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-end} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a2fa83fd99610e6095841b063f59a987f}
+
+\begin{DoxyCompactList}\small\item\em Successful termination state function. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-error} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)\label{voe__handler_8c_a47e00873115c360caea558f435527ece}
+
+\begin{DoxyCompactList}\small\item\em Failure termination state function. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-voe\-\_\-handler\-\_\-init} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe, {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Vo\-E handler constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-clear} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Vo\-E handler destructor. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size} (const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Get usable memory size. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-send\-\_\-header} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe, uint32\-\_\-t vendor\-\_\-id, uint16\-\_\-t vendor\-\_\-type)
+\begin{DoxyCompactList}\small\item\em Sets the Vo\-E header for future send operations. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-received\-\_\-header} (const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe, uint32\-\_\-t $\ast$vendor\-\_\-id, uint16\-\_\-t $\ast$vendor\-\_\-type)
+\begin{DoxyCompactList}\small\item\em Reads the header data of a received Vo\-E message. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-data} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Access to the Vo\-E handler's data. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-data\-\_\-size} (const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Returns the current data size. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-read} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Start a Vo\-E read operation. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-read\-\_\-nosync} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Start a Vo\-E read operation without querying the sync manager status. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-write} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Start a Vo\-E write operation. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-request\-\_\-state\-\_\-t} {\bf ecrt\-\_\-voe\-\_\-handler\-\_\-execute} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$voe)
+\begin{DoxyCompactList}\small\item\em Execute the handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Vendor specific over Ether\-C\-A\-T protocol handler functions. 
+
+Definition in file {\bf voe\-\_\-handler.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{voe\-\_\-handler.\-c@{voe\-\_\-handler.\-c}!ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response@{ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response@{ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response}!voe_handler.c@{voe\-\_\-handler.\-c}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-voe\-\_\-handler\-\_\-state\-\_\-read\-\_\-nosync\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8c_a2605f7a74b7a09b7c16a24777181aeb4}
+
+
+Read the pending mailbox data without sending a sync message before. 
+
+This might lead to an empty reponse from the client. 
+
+Definition at line 462 of file voe\-\_\-handler.\-c.
+
+\index{voe\-\_\-handler.\-c@{voe\-\_\-handler.\-c}!ec\-\_\-voe\-\_\-handler\-\_\-init@{ec\-\_\-voe\-\_\-handler\-\_\-init}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-init@{ec\-\_\-voe\-\_\-handler\-\_\-init}!voe_handler.c@{voe\-\_\-handler.\-c}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-voe\-\_\-handler\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe, }
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8c_ac4f3ad1fe200fa0a1ea9c77d9a400f4d}
+
+
+Vo\-E handler constructor. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em voe} & Vo\-E handler. \\
+\hline
+{\em sc} & Parent slave configuration. \\
+\hline
+{\em size} & Size of memory to reserve. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file voe\-\_\-handler.\-c.
+
+\index{voe\-\_\-handler.\-c@{voe\-\_\-handler.\-c}!ec\-\_\-voe\-\_\-handler\-\_\-clear@{ec\-\_\-voe\-\_\-handler\-\_\-clear}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-clear@{ec\-\_\-voe\-\_\-handler\-\_\-clear}!voe_handler.c@{voe\-\_\-handler.\-c}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-voe\-\_\-handler\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8c_a5177aa3c9bf760a01f2fa069536a1499}
+
+
+Vo\-E handler destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voe} & Vo\-E handler. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file voe\-\_\-handler.\-c.
+
+\index{voe\-\_\-handler.\-c@{voe\-\_\-handler.\-c}!ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size@{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size@{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}!voe_handler.c@{voe\-\_\-handler.\-c}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8c_ac8a107ca2649552e8601f563046573f4}
+
+
+Get usable memory size. 
+
+\begin{DoxyReturn}{Returns}
+Memory size. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em voe} & Vo\-E handler. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file voe\-\_\-handler.\-c.
+

@@ -1,0 +1,749 @@
+\section{fsm\-\_\-pdo.\-c File Reference}
+\label{fsm__pdo_8c}\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}}
+
+
+Ether\-C\-A\-T P\-D\-O configuration state machine.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Start reading P\-D\-O assignment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Count assigned P\-D\-Os. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Fetch P\-D\-O information. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Fetch P\-D\-O information. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Read P\-D\-O assignment of next sync manager. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Read next P\-D\-O. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Start P\-D\-O configuration. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Execute the P\-D\-O entry state machine to read the current P\-D\-O's mapping. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Let the P\-D\-O entry state machine configure the current P\-D\-O's mapping. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Set the number of assigned P\-D\-Os to zero. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Add a P\-D\-O to the sync managers P\-D\-O assignment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Set the number of assigned P\-D\-Os. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Get the next sync manager for a pdo configuration. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Check if the mapping has to be read, otherwise start to configure it. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Check if the mapping has to be re-\/configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Check mapping of next P\-D\-O, otherwise configure assignment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Check if the P\-D\-O assignment of the current S\-M has to be re-\/configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Assign a P\-D\-O. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm, {\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$fsm\-\_\-coe)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-print} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Print the current and desired P\-D\-O assignment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Start reading the P\-D\-O configuration. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Start writing the P\-D\-O configuration. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-running} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Get running state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Get execution result. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm, const struct list\-\_\-head $\ast$list)
+\begin{DoxyCompactList}\small\item\em Assign next P\-D\-O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T P\-D\-O configuration state machine. 
+
+Definition in file {\bf fsm\-\_\-pdo.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a1fb68d6829408d6f0c130971d47483ad}
+
+
+Start reading P\-D\-O assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a008a0fc8245a39b004a2b573cc183453}
+
+
+Count assigned P\-D\-Os. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 243 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ac113995f1d52f19f0d078a5839548db4}
+
+
+Fetch P\-D\-O information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 307 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-state\-\_\-pdo\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_acb5a00e6607e892ce83be950967d3a38}
+
+
+Fetch P\-D\-O information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 356 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ad5c3b1da9e85be1cdb97f8a7a0ebf4f3}
+
+
+Read P\-D\-O assignment of next sync manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-read\-\_\-action\-\_\-next\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a1306071376268e8cfbd6607a21b7af15}
+
+
+Read next P\-D\-O. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ab41a01ba2a73ab679b47b086f1a2e248}
+
+
+Start P\-D\-O configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 383 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-read\-\_\-mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a67c68c79c09a039e105a48408f24a8f4}
+
+
+Execute the P\-D\-O entry state machine to read the current P\-D\-O's mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 502 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a8e8ffcdf018f56e6b8c4895dbbc0f4f4}
+
+
+Let the P\-D\-O entry state machine configure the current P\-D\-O's mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 561 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-zero\-\_\-pdo\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a29178e7eeb4adf15c0426dfdbe2a2f5a}
+
+
+Set the number of assigned P\-D\-Os to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 648 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-assign\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ae17575d5de393f4402ad01b781e38d70}
+
+
+Add a P\-D\-O to the sync managers P\-D\-O assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 710 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-state\-\_\-set\-\_\-pdo\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a9bcc1d1e30fe74bb00b2d084d9f7deb4}
+
+
+Set the number of assigned P\-D\-Os. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 755 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a2b2fd4e412ea3baa3430f3defa37f7e5}
+
+
+Get the next sync manager for a pdo configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 418 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-pdo\-\_\-mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_adfef0e1909dd223aada742d64266fa46}
+
+
+Check if the mapping has to be read, otherwise start to configure it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 467 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ac73f34054b9f261936748bc54dab74da}
+
+
+Check if the mapping has to be re-\/configured. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Display mapping differences. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 526 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo\-\_\-mapping (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a7fb24909aeb8c0f01d56892bc08c3dcd}
+
+
+Check mapping of next P\-D\-O, otherwise configure assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 582 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-check\-\_\-assignment (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_aa2dbc580fd54b6b7f962d03b6e8563de}
+
+
+Check if the P\-D\-O assignment of the current S\-M has to be re-\/configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 601 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-assign\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a0209ea43ffcb88d8c243daa24939adc9}
+
+
+Assign a P\-D\-O. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 687 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a0e26358944af40d9730f4f70019977b2}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 799 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-state\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_acb727135ff5eb5f52be87ab3656f90bd}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 788 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-init@{ec\-\_\-fsm\-\_\-pdo\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-init@{ec\-\_\-fsm\-\_\-pdo\-\_\-init}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$}]{fsm\-\_\-coe}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ac0785235fca5314b2d528ff3cb38ffc3}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+{\em fsm\-\_\-coe} & Co\-E state machine to use \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-clear@{ec\-\_\-fsm\-\_\-pdo\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-clear@{ec\-\_\-fsm\-\_\-pdo\-\_\-clear}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a2a834bb1087c6c89bcebeabd961677a3}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-print@{ec\-\_\-fsm\-\_\-pdo\-\_\-print}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-print@{ec\-\_\-fsm\-\_\-pdo\-\_\-print}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ab82b16e9e90a718617989b1046a825da}
+
+
+Print the current and desired P\-D\-O assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-reading (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a38161765844e834ee5c0ed6aeca8321f}
+
+
+Start reading the P\-D\-O configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+{\em slave} & slave to configure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration@{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration@{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-pdo\-\_\-start\-\_\-configuration (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a45673c0ffcb4f251696b30fc86288253}
+
+
+Start writing the P\-D\-O configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+{\em slave} & slave to configure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-running@{ec\-\_\-fsm\-\_\-pdo\-\_\-running}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-running@{ec\-\_\-fsm\-\_\-pdo\-\_\-running}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-running (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a88ff25e3668c0fa820a93d2e607e0a33}
+
+
+Get running state. 
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-exec}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_ad90d47e84f43b419017a9db1fc75c4cf}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle.
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-success}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_adeb03e520938d50c3adb3b15b8a7801c}
+
+
+Get execution result. 
+
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file fsm\-\_\-pdo.\-c.
+
+\index{fsm\-\_\-pdo.\-c@{fsm\-\_\-pdo.\-c}!ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo}!fsm_pdo.c@{fsm\-\_\-pdo.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-conf\-\_\-action\-\_\-next\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm, }
+\item[{const struct list\-\_\-head $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo_8c_a70621bc4964ac8f972294656425216e7}
+
+
+Assign next P\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+Next P\-D\-O, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O configuration state machine. \\
+\hline
+{\em list} & current P\-D\-O list item \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 403 of file fsm\-\_\-pdo.\-c.
+

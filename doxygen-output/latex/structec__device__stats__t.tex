@@ -1,0 +1,185 @@
+\section{ec\-\_\-device\-\_\-stats\-\_\-t Struct Reference}
+\label{structec__device__stats__t}\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+
+
+Device statistics.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+u64 {\bf tx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames sent. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-tx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames sent of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf rx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames received. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-rx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames received of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf tx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes sent. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-tx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes sent of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf rx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes received. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-rx\-\_\-bytes}\label{structec__device__stats__t_af577e001b9fa7ca11696eb99e4dc1c94}
+
+\begin{DoxyCompactList}\small\item\em Number of bytes received of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-loss}
+\begin{DoxyCompactList}\small\item\em Tx/\-Rx difference of last statistics cycle. \end{DoxyCompactList}\item 
+s32 {\bf tx\-\_\-frame\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]\label{structec__device__stats__t_ae7ca9495a2d4254d7cb87655a1e5ea64}
+
+\begin{DoxyCompactList}\small\item\em Transmit rates in frames/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf rx\-\_\-frame\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]\label{structec__device__stats__t_a71c364775c6e39faf856d6569f4ac384}
+
+\begin{DoxyCompactList}\small\item\em Receive rates in frames/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf tx\-\_\-byte\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em Transmit rates in byte/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf rx\-\_\-byte\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em Receive rates in byte/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf loss\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em Frame loss rates for different statistics cycle periods. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies}
+\begin{DoxyCompactList}\small\item\em Jiffies of last statistic cycle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Device statistics. 
+
+Definition at line 155 of file master.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!tx\-\_\-count@{tx\-\_\-count}}
+\index{tx\-\_\-count@{tx\-\_\-count}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{tx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::tx\-\_\-count}\label{structec__device__stats__t_a712dc5c0b9652b59fe8dfda4cd5cb0fe}
+
+
+Number of frames sent. 
+
+
+
+Definition at line 156 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!last\-\_\-tx\-\_\-count@{last\-\_\-tx\-\_\-count}}
+\index{last\-\_\-tx\-\_\-count@{last\-\_\-tx\-\_\-count}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{last\-\_\-tx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::last\-\_\-tx\-\_\-count}\label{structec__device__stats__t_ab7ad452fd25c6e0470249165d8b5757f}
+
+
+Number of frames sent of last statistics cycle. 
+
+
+
+Definition at line 157 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!rx\-\_\-count@{rx\-\_\-count}}
+\index{rx\-\_\-count@{rx\-\_\-count}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{rx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::rx\-\_\-count}\label{structec__device__stats__t_aca29f0a6107eab8e7438ea53078183af}
+
+
+Number of frames received. 
+
+
+
+Definition at line 158 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!last\-\_\-rx\-\_\-count@{last\-\_\-rx\-\_\-count}}
+\index{last\-\_\-rx\-\_\-count@{last\-\_\-rx\-\_\-count}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{last\-\_\-rx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::last\-\_\-rx\-\_\-count}\label{structec__device__stats__t_af7e4fc7bfa8d67523c5e4f49b3953280}
+
+
+Number of frames received of last statistics cycle. 
+
+
+
+Definition at line 159 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!tx\-\_\-bytes@{tx\-\_\-bytes}}
+\index{tx\-\_\-bytes@{tx\-\_\-bytes}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{tx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::tx\-\_\-bytes}\label{structec__device__stats__t_ac4bcb52ad4f765671ffe124f4019b370}
+
+
+Number of bytes sent. 
+
+
+
+Definition at line 161 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!last\-\_\-tx\-\_\-bytes@{last\-\_\-tx\-\_\-bytes}}
+\index{last\-\_\-tx\-\_\-bytes@{last\-\_\-tx\-\_\-bytes}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{last\-\_\-tx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::last\-\_\-tx\-\_\-bytes}\label{structec__device__stats__t_ab4d135010f4b8200a252f02429bd4160}
+
+
+Number of bytes sent of last statistics cycle. 
+
+
+
+Definition at line 162 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!rx\-\_\-bytes@{rx\-\_\-bytes}}
+\index{rx\-\_\-bytes@{rx\-\_\-bytes}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{rx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::rx\-\_\-bytes}\label{structec__device__stats__t_a7aa4d7f1b8804dfd50d0b6caef15de9f}
+
+
+Number of bytes received. 
+
+
+
+Definition at line 163 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!last\-\_\-loss@{last\-\_\-loss}}
+\index{last\-\_\-loss@{last\-\_\-loss}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{last\-\_\-loss}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-\_\-stats\-\_\-t\-::last\-\_\-loss}\label{structec__device__stats__t_a9cb31cea1af324f2a46ece82690027c7}
+
+
+Tx/\-Rx difference of last statistics cycle. 
+
+
+
+Definition at line 166 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!tx\-\_\-byte\-\_\-rates@{tx\-\_\-byte\-\_\-rates}}
+\index{tx\-\_\-byte\-\_\-rates@{tx\-\_\-byte\-\_\-rates}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{tx\-\_\-byte\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}s32 ec\-\_\-device\-\_\-stats\-\_\-t\-::tx\-\_\-byte\-\_\-rates[{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__device__stats__t_ac12aa6100b6c79d8c25f38d6c163bd3e}
+
+
+Transmit rates in byte/s for different statistics cycle periods. 
+
+
+
+Definition at line 173 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!rx\-\_\-byte\-\_\-rates@{rx\-\_\-byte\-\_\-rates}}
+\index{rx\-\_\-byte\-\_\-rates@{rx\-\_\-byte\-\_\-rates}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{rx\-\_\-byte\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}s32 ec\-\_\-device\-\_\-stats\-\_\-t\-::rx\-\_\-byte\-\_\-rates[{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__device__stats__t_a2f9e55c67c34fec5e5d67230598b80d1}
+
+
+Receive rates in byte/s for different statistics cycle periods. 
+
+
+
+Definition at line 175 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!loss\-\_\-rates@{loss\-\_\-rates}}
+\index{loss\-\_\-rates@{loss\-\_\-rates}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{loss\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}s32 ec\-\_\-device\-\_\-stats\-\_\-t\-::loss\-\_\-rates[{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__device__stats__t_a3dfa4926b342dd6567647b5a368f224a}
+
+
+Frame loss rates for different statistics cycle periods. 
+
+
+
+Definition at line 177 of file master.\-h.
+
+\index{ec\-\_\-device\-\_\-stats\-\_\-t@{ec\-\_\-device\-\_\-stats\-\_\-t}!jiffies@{jiffies}}
+\index{jiffies@{jiffies}!ec_device_stats_t@{ec\-\_\-device\-\_\-stats\-\_\-t}}
+\subsubsection[{jiffies}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-device\-\_\-stats\-\_\-t\-::jiffies}\label{structec__device__stats__t_afd23f1645bfbf7a505dc4e8b5ac5eca0}
+
+
+Jiffies of last statistic cycle. 
+
+
+
+Definition at line 179 of file master.\-h.
+

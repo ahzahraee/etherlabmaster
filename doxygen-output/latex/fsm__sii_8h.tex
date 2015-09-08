@@ -1,0 +1,136 @@
+\section{fsm\-\_\-sii.\-h File Reference}
+\label{fsm__sii_8h}\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}}
+
+
+Ether\-C\-A\-T slave information interface F\-S\-M structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-sii}
+\begin{DoxyCompactList}\small\item\em Slave information interface F\-S\-M. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-sii} {\bf ec\-\_\-fsm\-\_\-sii\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t} \{ {\bf E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}, 
+{\bf E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em S\-I\-I access addressing mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{fsm__sii_8h_aaabcdf786b590efeab32a3d22e0128fd}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$)\label{fsm__sii_8h_a8caf4d1dad1846b4f2604c646cf5e5f8}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-read} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t, {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t})\label{fsm__sii_8h_a38e7b8c01e605fff2c33fac389d91600}
+
+\begin{DoxyCompactList}\small\item\em Initializes the S\-I\-I read state machine. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-write} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t, const uint16\-\_\-t $\ast$, {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t})\label{fsm__sii_8h_a07f4477300db5c173a24df91f6f22073}
+
+\begin{DoxyCompactList}\small\item\em Initializes the S\-I\-I write state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-sii\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the S\-I\-I state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-sii\-\_\-success} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns, if the master startup state machine terminated with success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave information interface F\-S\-M structure. 
+
+Definition in file {\bf fsm\-\_\-sii.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!ec\-\_\-fsm\-\_\-sii\-\_\-t@{ec\-\_\-fsm\-\_\-sii\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-t@{ec\-\_\-fsm\-\_\-sii\-\_\-t}!fsm_sii.h@{fsm\-\_\-sii.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-sii} {\bf ec\-\_\-fsm\-\_\-sii\-\_\-t}}\label{fsm__sii_8h_a6b596f5c1a4212b443a4429b2baed8f2}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-sii}{p.}{structec__fsm__sii} 
+\end{DoxySeeAlso}
+
+
+Definition at line 55 of file fsm\-\_\-sii.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t@{ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t@{ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}!fsm_sii.h@{fsm\-\_\-sii.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}}\label{fsm__sii_8h_ab31614ec8c650bb9ad5c8370f43113b9}
+
+
+S\-I\-I access addressing mode. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}!fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}}\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}}\item[{\em 
+E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-I\-N\-C\-R\-E\-M\-E\-N\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S\label{fsm__sii_8h_ab31614ec8c650bb9ad5c8370f43113b9ae9d46f26f8811736432dc46c5cb5ccbf}
+}]Use auto-\/increment addressing. \index{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S}!fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}}\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S@{E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S}}\item[{\em 
+E\-C\-\_\-\-F\-S\-M\-\_\-\-S\-I\-I\-\_\-\-U\-S\-E\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-E\-D\-\_\-\-A\-D\-D\-R\-E\-S\-S\label{fsm__sii_8h_ab31614ec8c650bb9ad5c8370f43113b9a37be562464a8536ed644aaf88fdd6705}
+}]Use configured addresses. \end{description}
+\end{Desc}
+
+
+
+Definition at line 48 of file fsm\-\_\-sii.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!ec\-\_\-fsm\-\_\-sii\-\_\-exec@{ec\-\_\-fsm\-\_\-sii\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-exec@{ec\-\_\-fsm\-\_\-sii\-\_\-exec}!fsm_sii.h@{fsm\-\_\-sii.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-sii\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8h_a7a55a4196ef667eb7320c07c1e290330}
+
+
+Executes the S\-I\-I state machine. 
+
+\begin{DoxyReturn}{Returns}
+false, if the state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-h@{fsm\-\_\-sii.\-h}!ec\-\_\-fsm\-\_\-sii\-\_\-success@{ec\-\_\-fsm\-\_\-sii\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-success@{ec\-\_\-fsm\-\_\-sii\-\_\-success}!fsm_sii.h@{fsm\-\_\-sii.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-sii\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8h_a3227702bf3cc7a1a6b7ce235b2fb8bbf}
+
+
+Returns, if the master startup state machine terminated with success. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file fsm\-\_\-sii.\-c.
+

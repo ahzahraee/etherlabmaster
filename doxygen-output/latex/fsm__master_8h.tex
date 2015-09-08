@@ -1,0 +1,102 @@
+\section{fsm\-\_\-master.\-h File Reference}
+\label{fsm__master_8h}\index{fsm\-\_\-master.\-h@{fsm\-\_\-master.\-h}}
+
+
+Ether\-C\-A\-T master state machine.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-sii\-\_\-write\-\_\-request\-\_\-t}
+\begin{DoxyCompactList}\small\item\em S\-I\-I write request. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-fsm\-\_\-master}
+\begin{DoxyCompactList}\small\item\em Finite state machine of an Ether\-C\-A\-T master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-master} {\bf ec\-\_\-fsm\-\_\-master\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$, {\bf ec\-\_\-master\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{fsm__master_8h_ac522240017742f5ce6f6e6099a4d55c6}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$)\label{fsm__master_8h_aab6e3a8172db55802b1ebb309a308574}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-reset} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$)\label{fsm__master_8h_a8a4cf483cc0f32ade4601009604a70ce}
+
+\begin{DoxyCompactList}\small\item\em Reset state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-idle} (const {\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master state machine. 
+
+Definition in file {\bf fsm\-\_\-master.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-master.\-h@{fsm\-\_\-master.\-h}!ec\-\_\-fsm\-\_\-master\-\_\-t@{ec\-\_\-fsm\-\_\-master\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-t@{ec\-\_\-fsm\-\_\-master\-\_\-t}!fsm_master.h@{fsm\-\_\-master.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-master} {\bf ec\-\_\-fsm\-\_\-master\-\_\-t}}\label{fsm__master_8h_a0d05c703de0dd2047ef9ae60d6822cdc}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-master}{p.}{structec__fsm__master} 
+\end{DoxySeeAlso}
+
+
+Definition at line 64 of file fsm\-\_\-master.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-master.\-h@{fsm\-\_\-master.\-h}!ec\-\_\-fsm\-\_\-master\-\_\-exec@{ec\-\_\-fsm\-\_\-master\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-exec@{ec\-\_\-fsm\-\_\-master\-\_\-exec}!fsm_master.h@{fsm\-\_\-master.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8h_aef7063fd815224264557e936f96d8844}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle.
+
+\begin{DoxyReturn}{Returns}
+true, if the state machine was executed 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-h@{fsm\-\_\-master.\-h}!ec\-\_\-fsm\-\_\-master\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-idle}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-idle}!fsm_master.h@{fsm\-\_\-master.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-idle (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8h_af02432232f46f496f90d376082717440}
+\begin{DoxyReturn}{Returns}
+true, if the state machine is in an idle phase 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file fsm\-\_\-master.\-c.
+

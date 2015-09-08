@@ -1,0 +1,136 @@
+\section{sdo.\-c File Reference}
+\label{sdo_8c}\index{sdo.\-c@{sdo.\-c}}
+
+
+C\-A\-Nopen S\-D\-O functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-sdo\-\_\-init} ({\bf ec\-\_\-sdo\-\_\-t} $\ast$sdo, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, uint16\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-sdo\-\_\-clear} ({\bf ec\-\_\-sdo\-\_\-t} $\ast$sdo)
+\begin{DoxyCompactList}\small\item\em S\-D\-O destructor. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-entry\-\_\-t} $\ast$ {\bf ec\-\_\-sdo\-\_\-get\-\_\-entry} ({\bf ec\-\_\-sdo\-\_\-t} $\ast$sdo, uint8\-\_\-t subindex)
+\begin{DoxyCompactList}\small\item\em Get an S\-D\-O entry from an S\-D\-O via its subindex. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-sdo\-\_\-entry\-\_\-t} $\ast$ {\bf ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const} (const {\bf ec\-\_\-sdo\-\_\-t} $\ast$sdo, uint8\-\_\-t subindex)
+\begin{DoxyCompactList}\small\item\em Get an S\-D\-O entry from an S\-D\-O via its subindex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\-A\-Nopen S\-D\-O functions. 
+
+Definition in file {\bf sdo.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{sdo.\-c@{sdo.\-c}!ec\-\_\-sdo\-\_\-init@{ec\-\_\-sdo\-\_\-init}}
+\index{ec\-\_\-sdo\-\_\-init@{ec\-\_\-sdo\-\_\-init}!sdo.c@{sdo.\-c}}
+\subsubsection[{ec\-\_\-sdo\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sdo\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-t} $\ast$}]{sdo, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}\label{sdo_8c_a15cf95f0a90b02eea2cb78638fca60ef}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sdo} & S\-D\-O. \\
+\hline
+{\em slave} & Parent slave. \\
+\hline
+{\em index} & S\-D\-O index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file sdo.\-c.
+
+\index{sdo.\-c@{sdo.\-c}!ec\-\_\-sdo\-\_\-clear@{ec\-\_\-sdo\-\_\-clear}}
+\index{ec\-\_\-sdo\-\_\-clear@{ec\-\_\-sdo\-\_\-clear}!sdo.c@{sdo.\-c}}
+\subsubsection[{ec\-\_\-sdo\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sdo\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-t} $\ast$}]{sdo}
+\end{DoxyParamCaption}
+)}\label{sdo_8c_aca357ab1de36e046e6255172760de6cb}
+
+
+S\-D\-O destructor. 
+
+Clears and frees an S\-D\-O object. 
+\begin{DoxyParams}{Parameters}
+{\em sdo} & S\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file sdo.\-c.
+
+\index{sdo.\-c@{sdo.\-c}!ec\-\_\-sdo\-\_\-get\-\_\-entry@{ec\-\_\-sdo\-\_\-get\-\_\-entry}}
+\index{ec\-\_\-sdo\-\_\-get\-\_\-entry@{ec\-\_\-sdo\-\_\-get\-\_\-entry}!sdo.c@{sdo.\-c}}
+\subsubsection[{ec\-\_\-sdo\-\_\-get\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-sdo\-\_\-get\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sdo\-\_\-t} $\ast$}]{sdo, }
+\item[{uint8\-\_\-t}]{subindex}
+\end{DoxyParamCaption}
+)}\label{sdo_8c_af352865e2d5558a9df73336a386e6936}
+
+
+Get an S\-D\-O entry from an S\-D\-O via its subindex. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em $>$0} & Pointer to the requested S\-D\-O entry. \\
+\hline
+{\em N\-U\-L\-L} & S\-D\-O entry not found. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em sdo} & S\-D\-O. \\
+\hline
+{\em subindex} & Entry subindex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 91 of file sdo.\-c.
+
+\index{sdo.\-c@{sdo.\-c}!ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const@{ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const}}
+\index{ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const@{ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const}!sdo.c@{sdo.\-c}}
+\subsubsection[{ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-sdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-sdo\-\_\-get\-\_\-entry\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-sdo\-\_\-t} $\ast$}]{sdo, }
+\item[{uint8\-\_\-t}]{subindex}
+\end{DoxyParamCaption}
+)}\label{sdo_8c_a00027bedf282c987d166215fed28de72}
+
+
+Get an S\-D\-O entry from an S\-D\-O via its subindex. 
+
+const version.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em $>$0} & Pointer to the requested S\-D\-O entry. \\
+\hline
+{\em N\-U\-L\-L} & S\-D\-O entry not found. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em sdo} & S\-D\-O. \\
+\hline
+{\em subindex} & Entry subindex. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file sdo.\-c.
+

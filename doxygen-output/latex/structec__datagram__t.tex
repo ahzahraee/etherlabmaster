@@ -1,0 +1,241 @@
+\section{ec\-\_\-datagram\-\_\-t Struct Reference}
+\label{structec__datagram__t}\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}}
+
+
+Ether\-C\-A\-T datagram.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf queue}
+\begin{DoxyCompactList}\small\item\em Master datagram queue item. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sent}
+\begin{DoxyCompactList}\small\item\em Master list item for sent datagrams. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-index\-\_\-t} {\bf device\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Device via which the datagram shall be / was sent. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-type\-\_\-t} {\bf type}
+\begin{DoxyCompactList}\small\item\em Datagram type (A\-P\-R\-D, B\-W\-R, etc.). \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf address} [{\bf E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}]
+\begin{DoxyCompactList}\small\item\em Recipient address. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf data}
+\begin{DoxyCompactList}\small\item\em Datagram payload. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-origin\-\_\-t} {\bf data\-\_\-origin}
+\begin{DoxyCompactList}\small\item\em Origin of the {\itshape data} memory. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf mem\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Datagram {\itshape data} memory size. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of the data in {\itshape data}. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf index}
+\begin{DoxyCompactList}\small\item\em Index (set by master). \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf working\-\_\-counter}
+\begin{DoxyCompactList}\small\item\em Working counter. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-state\-\_\-t} {\bf state}
+\begin{DoxyCompactList}\small\item\em State. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-sent}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the datagram was sent. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-received}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the datagram was received. \end{DoxyCompactList}\item 
+unsigned int {\bf skip\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of requeues when not yet received. \end{DoxyCompactList}\item 
+unsigned long {\bf stats\-\_\-output\-\_\-jiffies}
+\begin{DoxyCompactList}\small\item\em Last statistics output. \end{DoxyCompactList}\item 
+char {\bf name} [{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]
+\begin{DoxyCompactList}\small\item\em Description of the datagram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T datagram. 
+
+Definition at line 87 of file datagram.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!queue@{queue}}
+\index{queue@{queue}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{queue}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-datagram\-\_\-t\-::queue}\label{structec__datagram__t_a6e6acbb9301ecc6f382740eae531f00a}
+
+
+Master datagram queue item. 
+
+
+
+Definition at line 88 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!sent@{sent}}
+\index{sent@{sent}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{sent}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-datagram\-\_\-t\-::sent}\label{structec__datagram__t_aa1ff1596b3e36d19123be609dbf3de46}
+
+
+Master list item for sent datagrams. 
+
+
+
+Definition at line 89 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!device\-\_\-index@{device\-\_\-index}}
+\index{device\-\_\-index@{device\-\_\-index}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{device\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-device\-\_\-index\-\_\-t} ec\-\_\-datagram\-\_\-t\-::device\-\_\-index}\label{structec__datagram__t_a9804c4ebdbd3e7ff5b55bfe3aa33bbef}
+
+
+Device via which the datagram shall be / was sent. 
+
+
+
+Definition at line 90 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!type@{type}}
+\index{type@{type}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-type\-\_\-t} ec\-\_\-datagram\-\_\-t\-::type}\label{structec__datagram__t_a5c19753e2f2a239f3496cde3f9c1ee53}
+
+
+Datagram type (A\-P\-R\-D, B\-W\-R, etc.). 
+
+
+
+Definition at line 92 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!address@{address}}
+\index{address@{address}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{address}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-datagram\-\_\-t\-::address[{\bf E\-C\-\_\-\-A\-D\-D\-R\-\_\-\-L\-E\-N}]}\label{structec__datagram__t_acbe5cfc2b01e0ec6cb720b3dc99c4027}
+
+
+Recipient address. 
+
+
+
+Definition at line 93 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!data@{data}}
+\index{data@{data}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-datagram\-\_\-t\-::data}\label{structec__datagram__t_ae7471d08444f2bc780532e9268859296}
+
+
+Datagram payload. 
+
+
+
+Definition at line 94 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!data\-\_\-origin@{data\-\_\-origin}}
+\index{data\-\_\-origin@{data\-\_\-origin}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{data\-\_\-origin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-origin\-\_\-t} ec\-\_\-datagram\-\_\-t\-::data\-\_\-origin}\label{structec__datagram__t_ae8d52c6dc3ef92d165d9d14cd9c3d593}
+
+
+Origin of the {\itshape data} memory. 
+
+
+
+Definition at line 95 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!mem\-\_\-size@{mem\-\_\-size}}
+\index{mem\-\_\-size@{mem\-\_\-size}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-datagram\-\_\-t\-::mem\-\_\-size}\label{structec__datagram__t_a038f0d3706ceb82a71a87644bb5cb987}
+
+
+Datagram {\itshape data} memory size. 
+
+
+
+Definition at line 96 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-datagram\-\_\-t\-::data\-\_\-size}\label{structec__datagram__t_a2bdc1dfd68576466bfe3d276b9322959}
+
+
+Size of the data in {\itshape data}. 
+
+
+
+Definition at line 97 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!index@{index}}
+\index{index@{index}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-datagram\-\_\-t\-::index}\label{structec__datagram__t_a76cb4206efa88c4084db0b99c802d5b9}
+
+
+Index (set by master). 
+
+
+
+Definition at line 98 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!working\-\_\-counter@{working\-\_\-counter}}
+\index{working\-\_\-counter@{working\-\_\-counter}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{working\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-datagram\-\_\-t\-::working\-\_\-counter}\label{structec__datagram__t_a1eeebb1d33d0dbf47498dd78a966977d}
+
+
+Working counter. 
+
+
+
+Definition at line 99 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!state@{state}}
+\index{state@{state}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-state\-\_\-t} ec\-\_\-datagram\-\_\-t\-::state}\label{structec__datagram__t_a90d55e568be4b8464e9725c105d6c4b0}
+
+
+State. 
+
+
+
+Definition at line 100 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!jiffies\-\_\-sent@{jiffies\-\_\-sent}}
+\index{jiffies\-\_\-sent@{jiffies\-\_\-sent}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{jiffies\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-datagram\-\_\-t\-::jiffies\-\_\-sent}\label{structec__datagram__t_a640ba704d00d50c33e930b6c641b55d7}
+
+
+Jiffies, when the datagram was sent. 
+
+
+
+Definition at line 104 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!jiffies\-\_\-received@{jiffies\-\_\-received}}
+\index{jiffies\-\_\-received@{jiffies\-\_\-received}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{jiffies\-\_\-received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-datagram\-\_\-t\-::jiffies\-\_\-received}\label{structec__datagram__t_a3a643445750ee67fa83d182eb720380e}
+
+
+Jiffies, when the datagram was received. 
+
+
+
+Definition at line 108 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!skip\-\_\-count@{skip\-\_\-count}}
+\index{skip\-\_\-count@{skip\-\_\-count}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{skip\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-datagram\-\_\-t\-::skip\-\_\-count}\label{structec__datagram__t_af7007d254b40111c064caaac6f9c4f81}
+
+
+Number of requeues when not yet received. 
+
+
+
+Definition at line 110 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!stats\-\_\-output\-\_\-jiffies@{stats\-\_\-output\-\_\-jiffies}}
+\index{stats\-\_\-output\-\_\-jiffies@{stats\-\_\-output\-\_\-jiffies}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{stats\-\_\-output\-\_\-jiffies}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-datagram\-\_\-t\-::stats\-\_\-output\-\_\-jiffies}\label{structec__datagram__t_a9a6c9216d340b19a47e802ce89fbb269}
+
+
+Last statistics output. 
+
+
+
+Definition at line 111 of file datagram.\-h.
+
+\index{ec\-\_\-datagram\-\_\-t@{ec\-\_\-datagram\-\_\-t}!name@{name}}
+\index{name@{name}!ec_datagram_t@{ec\-\_\-datagram\-\_\-t}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char ec\-\_\-datagram\-\_\-t\-::name[{\bf E\-C\-\_\-\-D\-A\-T\-A\-G\-R\-A\-M\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]}\label{structec__datagram__t_af2690854e7fb1c410aa37a1ed225836d}
+
+
+Description of the datagram. 
+
+
+
+Definition at line 112 of file datagram.\-h.
+

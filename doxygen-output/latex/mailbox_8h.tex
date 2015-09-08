@@ -1,0 +1,177 @@
+\section{mailbox.\-h File Reference}
+\label{mailbox_8h}\index{mailbox.\-h@{mailbox.\-h}}
+
+
+Mailbox functionality.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-Z\-E}~6\label{mailbox_8h_a189582ffd5ea94b41b00482c04968291}
+
+\begin{DoxyCompactList}\small\item\em Size of the mailbox header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t $\ast$ {\bf ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint8\-\_\-t, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Prepares a mailbox-\/send datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Prepares a datagram for checking the mailbox state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-mbox\-\_\-check} (const {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Processes a mailbox state checking datagram. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Prepares a datagram to fetch mailbox data. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf ec\-\_\-slave\-\_\-mbox\-\_\-fetch} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, const {\bf ec\-\_\-datagram\-\_\-t} $\ast$, uint8\-\_\-t $\ast$, size\-\_\-t $\ast$)
+\begin{DoxyCompactList}\small\item\em Processes received mailbox data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mailbox functionality. 
+
+Definition in file {\bf mailbox.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{mailbox.\-h@{mailbox.\-h}!ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send}}
+\index{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send}!mailbox.h@{mailbox.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint8\-\_\-t}]{type, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{mailbox_8h_ab3a5be80064e09c9e7194d155c62cae8}
+
+
+Prepares a mailbox-\/send datagram. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to mailbox datagram data, or E\-R\-R\-\_\-\-P\-T\-R() code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & slave \\
+\hline
+{\em datagram} & datagram \\
+\hline
+{\em type} & mailbox protocol \\
+\hline
+{\em size} & size of the data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file mailbox.\-c.
+
+\index{mailbox.\-h@{mailbox.\-h}!ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check}}
+\index{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check}!mailbox.h@{mailbox.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{mailbox_8h_a9c9f8f70db11c581795e7520c10bb623}
+
+
+Prepares a datagram for checking the mailbox state. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Determine sync manager used for receive mailbox \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & slave \\
+\hline
+{\em datagram} & datagram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file mailbox.\-c.
+
+\index{mailbox.\-h@{mailbox.\-h}!ec\-\_\-slave\-\_\-mbox\-\_\-check@{ec\-\_\-slave\-\_\-mbox\-\_\-check}}
+\index{ec\-\_\-slave\-\_\-mbox\-\_\-check@{ec\-\_\-slave\-\_\-mbox\-\_\-check}!mailbox.h@{mailbox.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-mbox\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-mbox\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{mailbox_8h_a4d932f3a3716b07460950cf795e89891}
+
+
+Processes a mailbox state checking datagram. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & datagram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file mailbox.\-c.
+
+\index{mailbox.\-h@{mailbox.\-h}!ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch}}
+\index{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch@{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch}!mailbox.h@{mailbox.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-mbox\-\_\-prepare\-\_\-fetch (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{mailbox_8h_a6c8ab58f4b9c8d78153e5d0403bae40b}
+
+
+Prepares a datagram to fetch mailbox data. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & slave \\
+\hline
+{\em datagram} & datagram \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file mailbox.\-c.
+
+\index{mailbox.\-h@{mailbox.\-h}!ec\-\_\-slave\-\_\-mbox\-\_\-fetch@{ec\-\_\-slave\-\_\-mbox\-\_\-fetch}}
+\index{ec\-\_\-slave\-\_\-mbox\-\_\-fetch@{ec\-\_\-slave\-\_\-mbox\-\_\-fetch}!mailbox.h@{mailbox.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-mbox\-\_\-fetch}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-slave\-\_\-mbox\-\_\-fetch (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const {\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{uint8\-\_\-t $\ast$}]{type, }
+\item[{size\-\_\-t $\ast$}]{size}
+\end{DoxyParamCaption}
+)}\label{mailbox_8h_a9845c6e71e538cdaf2af6000b16f60c9}
+
+
+Processes received mailbox data. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the received data, or E\-R\-R\-\_\-\-P\-T\-R() code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & slave \\
+\hline
+{\em datagram} & datagram \\
+\hline
+{\em type} & expected mailbox protocol \\
+\hline
+{\em size} & size of the received data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file mailbox.\-c.
+

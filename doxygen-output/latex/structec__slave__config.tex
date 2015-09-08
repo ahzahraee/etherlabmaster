@@ -1,0 +1,280 @@
+\section{ec\-\_\-slave\-\_\-config Struct Reference}
+\label{structec__slave__config}\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}}
+
+
+Ether\-C\-A\-T slave configuration.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf master}
+\begin{DoxyCompactList}\small\item\em Master owning the slave configuration. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf alias}
+\begin{DoxyCompactList}\small\item\em Slave alias. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf position}
+\begin{DoxyCompactList}\small\item\em Index after alias. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf vendor\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Slave vendor I\-D. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf product\-\_\-code}
+\begin{DoxyCompactList}\small\item\em Slave product code. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf watchdog\-\_\-divider}
+\begin{DoxyCompactList}\small\item\em Watchdog divider as a number of 40ns intervals (see spec. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf watchdog\-\_\-intervals}
+\begin{DoxyCompactList}\small\item\em Process data watchdog intervals (see spec. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}
+\begin{DoxyCompactList}\small\item\em Slave pointer. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sync\-\_\-config\-\_\-t} {\bf sync\-\_\-configs} [{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-M\-A\-N\-A\-G\-E\-R\-S}]
+\begin{DoxyCompactList}\small\item\em Sync manager configurations. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} {\bf fmmu\-\_\-configs} [{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}]
+\begin{DoxyCompactList}\small\item\em F\-M\-M\-U configurations. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf used\-\_\-fmmus}
+\begin{DoxyCompactList}\small\item\em Number of F\-M\-M\-Us used. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf dc\-\_\-assign\-\_\-activate}
+\begin{DoxyCompactList}\small\item\em Vendor-\/specific Assign\-Activate word. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sync\-\_\-signal\-\_\-t} {\bf dc\-\_\-sync} [{\bf E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em D\-C sync signals. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sdo\-\_\-configs}
+\begin{DoxyCompactList}\small\item\em List of S\-D\-O configurations. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sdo\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em List of S\-D\-O requests. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf voe\-\_\-handlers}
+\begin{DoxyCompactList}\small\item\em List of Vo\-E handlers. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf reg\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em List of register requests. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf soe\-\_\-configs}
+\begin{DoxyCompactList}\small\item\em List of So\-E configurations. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} {\bf emerg\-\_\-ring}
+\begin{DoxyCompactList}\small\item\em Co\-E emergency ring buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave configuration. 
+
+Definition at line 118 of file slave\-\_\-config.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!list@{list}}
+\index{list@{list}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::list}\label{structec__slave__config_a52b1f382ad8f4272ece7870347dc9118}
+
+
+List item. 
+
+
+
+Definition at line 119 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!master@{master}}
+\index{master@{master}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{master}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-::master}\label{structec__slave__config_ac5bef8d37047b658df7b56f7ebdbfecb}
+
+
+Master owning the slave configuration. 
+
+
+
+Definition at line 120 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!alias@{alias}}
+\index{alias@{alias}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{alias}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-config\-::alias}\label{structec__slave__config_a62dbce2ad4cf9367261c293534d0730c}
+
+
+Slave alias. 
+
+
+
+Definition at line 122 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!position@{position}}
+\index{position@{position}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-config\-::position}\label{structec__slave__config_adf5176b65d59852f91125066b6bf3f07}
+
+
+Index after alias. 
+
+If alias is zero, this is the ring position. 
+
+Definition at line 123 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!vendor\-\_\-id@{vendor\-\_\-id}}
+\index{vendor\-\_\-id@{vendor\-\_\-id}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{vendor\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-config\-::vendor\-\_\-id}\label{structec__slave__config_ad561239255f4392e34fb12e0327063e0}
+
+
+Slave vendor I\-D. 
+
+
+
+Definition at line 125 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!product\-\_\-code@{product\-\_\-code}}
+\index{product\-\_\-code@{product\-\_\-code}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{product\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-slave\-\_\-config\-::product\-\_\-code}\label{structec__slave__config_a11dfa0af49e66d7b44f2b78d122e1040}
+
+
+Slave product code. 
+
+
+
+Definition at line 126 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!watchdog\-\_\-divider@{watchdog\-\_\-divider}}
+\index{watchdog\-\_\-divider@{watchdog\-\_\-divider}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{watchdog\-\_\-divider}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-config\-::watchdog\-\_\-divider}\label{structec__slave__config_aaa1db6b3136fa60412cbf8d1302c48e9}
+
+
+Watchdog divider as a number of 40ns intervals (see spec. 
+
+reg. 0x0400). 
+
+Definition at line 128 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!watchdog\-\_\-intervals@{watchdog\-\_\-intervals}}
+\index{watchdog\-\_\-intervals@{watchdog\-\_\-intervals}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{watchdog\-\_\-intervals}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-config\-::watchdog\-\_\-intervals}\label{structec__slave__config_a51e0bd197191abd7a46fd3206575eccb}
+
+
+Process data watchdog intervals (see spec. 
+
+reg. 0x0420). 
+
+Definition at line 130 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!slave@{slave}}
+\index{slave@{slave}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-::slave}\label{structec__slave__config_ad1c2b1916ca2208c52cf0acbf6f1a8c7}
+
+
+Slave pointer. 
+
+This is {\itshape N\-U\-L\-L}, if the slave is offline. 
+
+Definition at line 133 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!sync\-\_\-configs@{sync\-\_\-configs}}
+\index{sync\-\_\-configs@{sync\-\_\-configs}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{sync\-\_\-configs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sync\-\_\-config\-\_\-t} ec\-\_\-slave\-\_\-config\-::sync\-\_\-configs[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-M\-A\-N\-A\-G\-E\-R\-S}]}\label{structec__slave__config_a28bf292a581f2af8696f41fa333ba0f3}
+
+
+Sync manager configurations. 
+
+
+
+Definition at line 136 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!fmmu\-\_\-configs@{fmmu\-\_\-configs}}
+\index{fmmu\-\_\-configs@{fmmu\-\_\-configs}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{fmmu\-\_\-configs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} ec\-\_\-slave\-\_\-config\-::fmmu\-\_\-configs[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-F\-M\-M\-U\-S}]}\label{structec__slave__config_a87548f86b5a467a0d2da312571bac4c0}
+
+
+F\-M\-M\-U configurations. 
+
+
+
+Definition at line 138 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!used\-\_\-fmmus@{used\-\_\-fmmus}}
+\index{used\-\_\-fmmus@{used\-\_\-fmmus}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{used\-\_\-fmmus}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-slave\-\_\-config\-::used\-\_\-fmmus}\label{structec__slave__config_ab34b5531b56f3bb35ea0647f3aa8345a}
+
+
+Number of F\-M\-M\-Us used. 
+
+
+
+Definition at line 139 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!dc\-\_\-assign\-\_\-activate@{dc\-\_\-assign\-\_\-activate}}
+\index{dc\-\_\-assign\-\_\-activate@{dc\-\_\-assign\-\_\-activate}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{dc\-\_\-assign\-\_\-activate}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-config\-::dc\-\_\-assign\-\_\-activate}\label{structec__slave__config_a444000aa859f4830053b65518fc65233}
+
+
+Vendor-\/specific Assign\-Activate word. 
+
+
+
+Definition at line 140 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!dc\-\_\-sync@{dc\-\_\-sync}}
+\index{dc\-\_\-sync@{dc\-\_\-sync}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{dc\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sync\-\_\-signal\-\_\-t} ec\-\_\-slave\-\_\-config\-::dc\-\_\-sync[{\bf E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__slave__config_a947ad2e8f2573df6655965524575c5b8}
+
+
+D\-C sync signals. 
+
+
+
+Definition at line 141 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!sdo\-\_\-configs@{sdo\-\_\-configs}}
+\index{sdo\-\_\-configs@{sdo\-\_\-configs}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{sdo\-\_\-configs}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::sdo\-\_\-configs}\label{structec__slave__config_aa980b60539d3818999fe9ba116851e1c}
+
+
+List of S\-D\-O configurations. 
+
+
+
+Definition at line 143 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!sdo\-\_\-requests@{sdo\-\_\-requests}}
+\index{sdo\-\_\-requests@{sdo\-\_\-requests}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{sdo\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::sdo\-\_\-requests}\label{structec__slave__config_a51461cce3b38ac55be3e046c5e93a932}
+
+
+List of S\-D\-O requests. 
+
+
+
+Definition at line 144 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!voe\-\_\-handlers@{voe\-\_\-handlers}}
+\index{voe\-\_\-handlers@{voe\-\_\-handlers}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{voe\-\_\-handlers}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::voe\-\_\-handlers}\label{structec__slave__config_afab81a75365c94fde03e15446fe7cc9e}
+
+
+List of Vo\-E handlers. 
+
+
+
+Definition at line 145 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!reg\-\_\-requests@{reg\-\_\-requests}}
+\index{reg\-\_\-requests@{reg\-\_\-requests}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{reg\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::reg\-\_\-requests}\label{structec__slave__config_a391b64268ec07ce78e7aa50c9641e436}
+
+
+List of register requests. 
+
+
+
+Definition at line 146 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!soe\-\_\-configs@{soe\-\_\-configs}}
+\index{soe\-\_\-configs@{soe\-\_\-configs}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{soe\-\_\-configs}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-slave\-\_\-config\-::soe\-\_\-configs}\label{structec__slave__config_a9bfab1eba98284fcaa21079ea1700188}
+
+
+List of So\-E configurations. 
+
+
+
+Definition at line 147 of file slave\-\_\-config.\-h.
+
+\index{ec\-\_\-slave\-\_\-config@{ec\-\_\-slave\-\_\-config}!emerg\-\_\-ring@{emerg\-\_\-ring}}
+\index{emerg\-\_\-ring@{emerg\-\_\-ring}!ec_slave_config@{ec\-\_\-slave\-\_\-config}}
+\subsubsection[{emerg\-\_\-ring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} ec\-\_\-slave\-\_\-config\-::emerg\-\_\-ring}\label{structec__slave__config_a8a43523dca6d68508d858813f3d497a9}
+
+
+Co\-E emergency ring buffer. 
+
+
+
+Definition at line 149 of file slave\-\_\-config.\-h.
+

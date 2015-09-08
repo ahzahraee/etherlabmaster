@@ -1,0 +1,385 @@
+\section{fsm\-\_\-sii.\-c File Reference}
+\label{fsm__sii_8c}\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}}
+
+
+Ether\-C\-A\-T slave information interface F\-S\-M.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T}~20
+\begin{DoxyCompactList}\small\item\em Read/write timeout [ms]. \end{DoxyCompactList}\item 
+\#define {\bf S\-I\-I\-\_\-\-I\-N\-H\-I\-B\-I\-T}~5\label{fsm__sii_8c_aaf562911fbe9d8d473390f97c2a185e1}
+
+\begin{DoxyCompactList}\small\item\em Time before evaluating answer at writing [ms]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: S\-T\-A\-R\-T R\-E\-A\-D\-I\-N\-G. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: R\-E\-A\-D C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: R\-E\-A\-D F\-E\-T\-C\-H. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: S\-T\-A\-R\-T W\-R\-I\-T\-I\-N\-G. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em S\-I\-I state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K 2. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-read} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, uint16\-\_\-t word\-\_\-offset, {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t} mode)
+\begin{DoxyCompactList}\small\item\em Initializes the S\-I\-I read state machine. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-sii\-\_\-write} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, uint16\-\_\-t word\-\_\-offset, const uint16\-\_\-t $\ast$value, {\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t} mode)
+\begin{DoxyCompactList}\small\item\em Initializes the S\-I\-I write state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-sii\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Executes the S\-I\-I state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-sii\-\_\-success} ({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Returns, if the master startup state machine terminated with success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave information interface F\-S\-M. 
+
+Definition in file {\bf fsm\-\_\-sii.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-I\-I\-\_\-\-T\-I\-M\-E\-O\-U\-T~20}\label{fsm__sii_8c_a19313c5c625a9bd6a3181bc7ab427ab8}
+
+
+Read/write timeout [ms]. 
+
+Used to calculate timeouts bsed on the jiffies counter.
+
+\begin{DoxyAttention}{Attention}
+Must be more than 10 to avoid problems on kernels that run with a timer interupt frequency of 100 Hz. 
+\end{DoxyAttention}
+
+
+Definition at line 49 of file fsm\-\_\-sii.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-reading (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_aa962238df8a96fb72fb83c321d91411d}
+
+
+S\-I\-I state\-: S\-T\-A\-R\-T R\-E\-A\-D\-I\-N\-G. 
+
+Starts reading the slave information interface. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a720750644f92278027d4ae02925b277b}
+
+
+S\-I\-I state\-: R\-E\-A\-D C\-H\-E\-C\-K. 
+
+Checks, if the S\-I\-I-\/read-\/datagram has been sent and issues a fetch datagram. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-read\-\_\-fetch (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_ac4212d034457619e005ac2d3752634a0}
+
+
+S\-I\-I state\-: R\-E\-A\-D F\-E\-T\-C\-H. 
+
+Fetches the result of an S\-I\-I-\/read datagram. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-start\-\_\-writing (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_ace13a2908e3966675307ff47e9c77c99}
+
+
+S\-I\-I state\-: S\-T\-A\-R\-T W\-R\-I\-T\-I\-N\-G. 
+
+Starts writing a word through the slave information interface. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 320 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_aaee69e244c350ef77c397fda8e9bf3f8}
+
+
+S\-I\-I state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-write\-\_\-check2 (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a3898542c0741239514008916c797e53e}
+
+
+S\-I\-I state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 389 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a688ff966f39ddf066c3552fb8d3e16c8}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 484 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-state\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_af706e0c6d40417a78534ba79c25707b2}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 472 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-init@{ec\-\_\-fsm\-\_\-sii\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-init@{ec\-\_\-fsm\-\_\-sii\-\_\-init}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_add8c9461798f2a96a05ae57c93885890}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & datagram structure to use \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-clear@{ec\-\_\-fsm\-\_\-sii\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-clear@{ec\-\_\-fsm\-\_\-sii\-\_\-clear}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a6dbd5f2a2815c2b0852cd5272279f8c6}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-read@{ec\-\_\-fsm\-\_\-sii\-\_\-read}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-read@{ec\-\_\-fsm\-\_\-sii\-\_\-read}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{word\-\_\-offset, }
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_aa20332ff7b8eb1f4510ebb9bfdbdef81}
+
+
+Initializes the S\-I\-I read state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em slave} & slave to read from \\
+\hline
+{\em word\-\_\-offset} & offset to read from \\
+\hline
+{\em mode} & addressing scheme \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-write@{ec\-\_\-fsm\-\_\-sii\-\_\-write}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-write@{ec\-\_\-fsm\-\_\-sii\-\_\-write}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-sii\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{word\-\_\-offset, }
+\item[{const uint16\-\_\-t $\ast$}]{value, }
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_adb460a43b75a53c0d26b9058d685fee3}
+
+
+Initializes the S\-I\-I write state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em slave} & slave to read from \\
+\hline
+{\em word\-\_\-offset} & offset to read from \\
+\hline
+{\em value} & pointer to 2 bytes of data \\
+\hline
+{\em mode} & addressing scheme \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-exec@{ec\-\_\-fsm\-\_\-sii\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-exec@{ec\-\_\-fsm\-\_\-sii\-\_\-exec}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-sii\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a83b1d58217c9c46ee1202b6bee1cabab}
+
+
+Executes the S\-I\-I state machine. 
+
+\begin{DoxyReturn}{Returns}
+false, if the state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file fsm\-\_\-sii.\-c.
+
+\index{fsm\-\_\-sii.\-c@{fsm\-\_\-sii.\-c}!ec\-\_\-fsm\-\_\-sii\-\_\-success@{ec\-\_\-fsm\-\_\-sii\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-sii\-\_\-success@{ec\-\_\-fsm\-\_\-sii\-\_\-success}!fsm_sii.c@{fsm\-\_\-sii.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-sii\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-sii\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__sii_8c_a2408e4df539edddead44761dbe32ef45}
+
+
+Returns, if the master startup state machine terminated with success. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file fsm\-\_\-sii.\-c.
+

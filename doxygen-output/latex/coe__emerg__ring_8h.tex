@@ -1,0 +1,142 @@
+\section{coe\-\_\-emerg\-\_\-ring.\-h File Reference}
+\label{coe__emerg__ring_8h}\index{coe\-\_\-emerg\-\_\-ring.\-h@{coe\-\_\-emerg\-\_\-ring.\-h}}
+
+
+Ether\-C\-A\-T Co\-E emergency ring buffer structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-coe\-\_\-emerg\-\_\-msg\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T Co\-E emergency message record. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T Co\-E emergency ring buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-init} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$)\label{coe__emerg__ring_8h_a29d0aa3bea8dc5911ec6e90e43220fcf}
+
+\begin{DoxyCompactList}\small\item\em Emergency ring buffer constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$)\label{coe__emerg__ring_8h_aa2cc2988730a5be5b4501447bee6ccac}
+
+\begin{DoxyCompactList}\small\item\em Emergency ring buffer destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Set the ring size. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-push} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$, const u8 $\ast$)\label{coe__emerg__ring_8h_a7dc4cc68ee9867298393aef837b95dce}
+
+\begin{DoxyCompactList}\small\item\em Add a new emergency message. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$, u8 $\ast$)
+\begin{DoxyCompactList}\small\item\em Remove an emergency message from the ring. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Clear the ring. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns} ({\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Read the number of overruns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T Co\-E emergency ring buffer structure. 
+
+Definition in file {\bf coe\-\_\-emerg\-\_\-ring.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{coe\-\_\-emerg\-\_\-ring.\-h@{coe\-\_\-emerg\-\_\-ring.\-h}!ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size}}
+\index{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size}!coe_emerg_ring.h@{coe\-\_\-emerg\-\_\-ring.\-h}}
+\subsubsection[{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$}]{ring, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{coe__emerg__ring_8h_acb06d77fa2cfacd990ce1be541d01911}
+
+
+Set the ring size. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & Emergency ring. \\
+\hline
+{\em size} & Maximum number of messages in the ring. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file coe\-\_\-emerg\-\_\-ring.\-c.
+
+\index{coe\-\_\-emerg\-\_\-ring.\-h@{coe\-\_\-emerg\-\_\-ring.\-h}!ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop}}
+\index{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop}!coe_emerg_ring.h@{coe\-\_\-emerg\-\_\-ring.\-h}}
+\subsubsection[{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-pop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$}]{ring, }
+\item[{u8 $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}\label{coe__emerg__ring_8h_ad4fb61580d89c5ba36a7506bbe184351}
+
+
+Remove an emergency message from the ring. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & Emergency ring. \\
+\hline
+{\em msg} & Memory to store the emergency message. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file coe\-\_\-emerg\-\_\-ring.\-c.
+
+\index{coe\-\_\-emerg\-\_\-ring.\-h@{coe\-\_\-emerg\-\_\-ring.\-h}!ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring}}
+\index{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring}!coe_emerg_ring.h@{coe\-\_\-emerg\-\_\-ring.\-h}}
+\subsubsection[{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-clear\-\_\-ring (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$}]{ring}
+\end{DoxyParamCaption}
+)}\label{coe__emerg__ring_8h_a99adb5039654b9cd9e2d5a934b8a74fe}
+
+
+Clear the ring. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & Emergency ring. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file coe\-\_\-emerg\-\_\-ring.\-c.
+
+\index{coe\-\_\-emerg\-\_\-ring.\-h@{coe\-\_\-emerg\-\_\-ring.\-h}!ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns}}
+\index{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns@{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns}!coe_emerg_ring.h@{coe\-\_\-emerg\-\_\-ring.\-h}}
+\subsubsection[{ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-overruns (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-coe\-\_\-emerg\-\_\-ring\-\_\-t} $\ast$}]{ring}
+\end{DoxyParamCaption}
+)}\label{coe__emerg__ring_8h_a75b251ca1fd01e052960e5a0dfd903f6}
+
+
+Read the number of overruns. 
+
+\begin{DoxyReturn}{Returns}
+Number of overruns. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ring} & Emergency ring. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file coe\-\_\-emerg\-\_\-ring.\-c.
+

@@ -1,0 +1,60 @@
+\section{ec\-\_\-fsm\-\_\-change Struct Reference}
+\label{structec__fsm__change}\index{ec\-\_\-fsm\-\_\-change@{ec\-\_\-fsm\-\_\-change}}
+
+
+Ether\-C\-A\-T state change F\-S\-M.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__fsm__change_ae3843c25b9fd49665931655cafc21b3d}
+
+\begin{DoxyCompactList}\small\item\em slave the F\-S\-M runs on \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}\label{structec__fsm__change_ab273d6047105421f11b993301269dea3}
+
+\begin{DoxyCompactList}\small\item\em datagram used in the state machine \end{DoxyCompactList}\item 
+unsigned int {\bf retries}\label{structec__fsm__change_a00a1bc8fab1ccbed6b723bebb19ae34b}
+
+\begin{DoxyCompactList}\small\item\em retries upon datagram timeout \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$)\label{structec__fsm__change_a3026434d1cab8f98a4ca535ae6a54382}
+
+\begin{DoxyCompactList}\small\item\em slave state change state function \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t} {\bf mode}
+\begin{DoxyCompactList}\small\item\em full state change, or ack only. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-state\-\_\-t} {\bf requested\-\_\-state}\label{structec__fsm__change_a64a969bd6bad475ff30870eed7f79266}
+
+\begin{DoxyCompactList}\small\item\em input\-: state \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-state\-\_\-t} {\bf old\-\_\-state}\label{structec__fsm__change_a1327ecfcea3bdd858423750cf22783e6}
+
+\begin{DoxyCompactList}\small\item\em prior slave state \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}\label{structec__fsm__change_aa357cf0cae0e5b306b6f555d48dc47ba}
+
+\begin{DoxyCompactList}\small\item\em change timer \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf take\-\_\-time}\label{structec__fsm__change_a86dd65308e2a0e1c89a96f35d2b5672f}
+
+\begin{DoxyCompactList}\small\item\em take sending timestamp \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf spontaneous\-\_\-change}\label{structec__fsm__change_a67f934c317235fc5ea71ee128f6a979b}
+
+\begin{DoxyCompactList}\small\item\em spontaneous state change detected \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T state change F\-S\-M. 
+
+Definition at line 64 of file fsm\-\_\-change.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-change@{ec\-\_\-fsm\-\_\-change}!mode@{mode}}
+\index{mode@{mode}!ec_fsm_change@{ec\-\_\-fsm\-\_\-change}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t} ec\-\_\-fsm\-\_\-change\-::mode}\label{structec__fsm__change_a3565fb9fec03a24d1d3a66cce7e9fce3}
+
+
+full state change, or ack only. 
+
+
+
+Definition at line 71 of file fsm\-\_\-change.\-h.
+

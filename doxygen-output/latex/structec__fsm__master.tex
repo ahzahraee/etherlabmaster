@@ -1,0 +1,156 @@
+\section{ec\-\_\-fsm\-\_\-master Struct Reference}
+\label{structec__fsm__master}\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}}
+
+
+Finite state machine of an Ether\-C\-A\-T master.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf master}\label{structec__fsm__master_af5597239477f215c744aad387d7baa6b}
+
+\begin{DoxyCompactList}\small\item\em master the F\-S\-M runs on \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}\label{structec__fsm__master_a518334a40bb6eeea55081a997bbaebc2}
+
+\begin{DoxyCompactList}\small\item\em datagram used in the state machine \end{DoxyCompactList}\item 
+unsigned int {\bf retries}
+\begin{DoxyCompactList}\small\item\em retries on datagram timeout. \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$)\label{structec__fsm__master_a604e1597e8447699b14b5fa8298980a6}
+
+\begin{DoxyCompactList}\small\item\em master state function \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-index\-\_\-t} {\bf dev\-\_\-idx}\label{structec__fsm__master_ab57f14b0c615bae6428ff89ef2cb7ef0}
+
+\begin{DoxyCompactList}\small\item\em Current device index (for scanning etc.). \end{DoxyCompactList}\item 
+int {\bf idle}\label{structec__fsm__master_aa06626b21389030366d7aed5f525c6c0}
+
+\begin{DoxyCompactList}\small\item\em state machine is in idle phase \end{DoxyCompactList}\item 
+unsigned long {\bf scan\-\_\-jiffies}\label{structec__fsm__master_acf6f1bd6e82f2947e181ed23f9d5f6f9}
+
+\begin{DoxyCompactList}\small\item\em beginning of slave scanning \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf link\-\_\-state} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em Last link state for every device. \end{DoxyCompactList}\item 
+unsigned int {\bf slaves\-\_\-responding} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em Number of responding slaves for every device. \end{DoxyCompactList}\item 
+unsigned int {\bf rescan\-\_\-required}
+\begin{DoxyCompactList}\small\item\em A bus rescan is required. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-state\-\_\-t} {\bf slave\-\_\-states} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em A\-L states of responding slaves for every device. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__fsm__master_aaa3d10bbf5af6278cec37fcd7b771372}
+
+\begin{DoxyCompactList}\small\item\em current slave \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sii\-\_\-write\-\_\-request\-\_\-t} $\ast$ {\bf sii\-\_\-request}\label{structec__fsm__master_a0e8413b9433f4223911da952e2e26a7a}
+
+\begin{DoxyCompactList}\small\item\em S\-I\-I write request. \end{DoxyCompactList}\item 
+off\-\_\-t {\bf sii\-\_\-index}\label{structec__fsm__master_ad9050cec0823e4e0f4ac34effddd8d21}
+
+\begin{DoxyCompactList}\small\item\em index to S\-I\-I write request data \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf sdo\-\_\-request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request to process. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} {\bf fsm\-\_\-coe}\label{structec__fsm__master_a2bc8d2dd67be1dbddac6c20190e3632c}
+
+\begin{DoxyCompactList}\small\item\em Co\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} {\bf fsm\-\_\-soe}\label{structec__fsm__master_acab91592f35788b01419702634765b86}
+
+\begin{DoxyCompactList}\small\item\em So\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} {\bf fsm\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O configuration state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-change\-\_\-t} {\bf fsm\-\_\-change}\label{structec__fsm__master_a64f30f383522a78b12151f803f39c552}
+
+\begin{DoxyCompactList}\small\item\em State change state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} {\bf fsm\-\_\-slave\-\_\-config}\label{structec__fsm__master_acd8d73f9c016a18c19eb120f8d691c62}
+
+\begin{DoxyCompactList}\small\item\em slave state machine \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} {\bf fsm\-\_\-slave\-\_\-scan}\label{structec__fsm__master_aeac9947df44bf439f0e1f2b1c1b7b33f}
+
+\begin{DoxyCompactList}\small\item\em slave state machine \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} {\bf fsm\-\_\-sii}\label{structec__fsm__master_aeac629d016ca18930554d88646b1516f}
+
+\begin{DoxyCompactList}\small\item\em S\-I\-I state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Finite state machine of an Ether\-C\-A\-T master. 
+
+Definition at line 68 of file fsm\-\_\-master.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!retries@{retries}}
+\index{retries@{retries}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{retries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-master\-::retries}\label{structec__fsm__master_a6dea4cfd065a817b358441748378bd14}
+
+
+retries on datagram timeout. 
+
+
+
+Definition at line 71 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!link\-\_\-state@{link\-\_\-state}}
+\index{link\-\_\-state@{link\-\_\-state}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{link\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-fsm\-\_\-master\-::link\-\_\-state[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__fsm__master_a6b0de3d8e619c6937679b6e746dd3c1f}
+
+
+Last link state for every device. 
+
+
+
+Definition at line 78 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!slaves\-\_\-responding@{slaves\-\_\-responding}}
+\index{slaves\-\_\-responding@{slaves\-\_\-responding}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{slaves\-\_\-responding}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-master\-::slaves\-\_\-responding[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__fsm__master_a0e6fafb6571a8c72ef75d37b335f168c}
+
+
+Number of responding slaves for every device. 
+
+
+
+Definition at line 80 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!rescan\-\_\-required@{rescan\-\_\-required}}
+\index{rescan\-\_\-required@{rescan\-\_\-required}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{rescan\-\_\-required}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-master\-::rescan\-\_\-required}\label{structec__fsm__master_a173d3201cbfb35d29ff02788d7396839}
+
+
+A bus rescan is required. 
+
+
+
+Definition at line 83 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!slave\-\_\-states@{slave\-\_\-states}}
+\index{slave\-\_\-states@{slave\-\_\-states}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{slave\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-state\-\_\-t} ec\-\_\-fsm\-\_\-master\-::slave\-\_\-states[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__fsm__master_a76906b5cbaec1d07e5881738a6ce008e}
+
+
+A\-L states of responding slaves for every device. 
+
+
+
+Definition at line 84 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!sdo\-\_\-request@{sdo\-\_\-request}}
+\index{sdo\-\_\-request@{sdo\-\_\-request}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{sdo\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-master\-::sdo\-\_\-request}\label{structec__fsm__master_a4d4e15f7b94cd12a63a7450db070840b}
+
+
+S\-D\-O request to process. 
+
+
+
+Definition at line 90 of file fsm\-\_\-master.\-h.
+
+\index{ec\-\_\-fsm\-\_\-master@{ec\-\_\-fsm\-\_\-master}!fsm\-\_\-pdo@{fsm\-\_\-pdo}}
+\index{fsm\-\_\-pdo@{fsm\-\_\-pdo}!ec_fsm_master@{ec\-\_\-fsm\-\_\-master}}
+\subsubsection[{fsm\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} ec\-\_\-fsm\-\_\-master\-::fsm\-\_\-pdo}\label{structec__fsm__master_a93359faa0215a9448d5663a09f319372}
+
+
+P\-D\-O configuration state machine. 
+
+
+
+Definition at line 94 of file fsm\-\_\-master.\-h.
+

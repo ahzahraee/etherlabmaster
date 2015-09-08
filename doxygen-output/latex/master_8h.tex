@@ -1,0 +1,764 @@
+\section{master.\-h File Reference}
+\label{master_8h}\index{master.\-h@{master.\-h}}
+
+
+Ether\-C\-A\-T master structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-stats\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Cyclic statistics. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-device\-\_\-stats\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Device statistics. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-master}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T master. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O}(master, fmt, args...)~printk(K\-E\-R\-N\-\_\-\-I\-N\-F\-O \char`\"{}Ether\-C\-A\-T \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing master-\/specific information to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R}(master, fmt, args...)~printk(K\-E\-R\-N\-\_\-\-E\-R\-R \char`\"{}Ether\-C\-A\-T E\-R\-R\-O\-R \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing master-\/specific errors to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N}(master, fmt, args...)~printk(K\-E\-R\-N\-\_\-\-W\-A\-R\-N\-I\-N\-G \char`\"{}Ether\-C\-A\-T W\-A\-R\-N\-I\-N\-G \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing master-\/specific warnings to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G}(master, level, fmt, args...)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing master-\/specific debug messages to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}~32
+\begin{DoxyCompactList}\small\item\em Size of the external datagram ring. \end{DoxyCompactList}\item 
+\#define {\bf ec\-\_\-master\-\_\-num\-\_\-devices}(M\-A\-S\-T\-E\-R)~1\label{master_8h_a27e6deff35543c304e8a191c64f35cf3}
+
+\begin{DoxyCompactList}\small\item\em Number of Ethernet devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-master\-\_\-phase\-\_\-t} \{ {\bf E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D}, 
+{\bf E\-C\-\_\-\-I\-D\-L\-E}, 
+{\bf E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N}
+ \}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T master phase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-master\-\_\-init\-\_\-static} (void)\label{master_8h_a1042d68ede5c0f866dc185b89167b31f}
+
+\begin{DoxyCompactList}\small\item\em Static variables initializer. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-master\-\_\-init} ({\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int, const uint8\-\_\-t $\ast$, const uint8\-\_\-t $\ast$, dev\-\_\-t, struct {\bf class} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Master constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-clear} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_a5ea8e56915a4c0507a1bf69ed7ecee13}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase} ({\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Transition function from O\-R\-P\-H\-A\-N\-E\-D to I\-D\-L\-E phase. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-leave\-\_\-idle\-\_\-phase} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_a172a333dbe2567d1a3adeb69f1fd672a}
+
+\begin{DoxyCompactList}\small\item\em Transition function from I\-D\-L\-E to O\-R\-P\-H\-A\-N\-E\-D phase. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase} ({\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Transition function from I\-D\-L\-E to O\-P\-E\-R\-A\-T\-I\-O\-N phase. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-leave\-\_\-operation\-\_\-phase} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_a0a85447c25b0d0629447d224aa7ed08d}
+
+\begin{DoxyCompactList}\small\item\em Transition function from O\-P\-E\-R\-A\-T\-I\-O\-N to I\-D\-L\-E phase. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-eoe\-\_\-start} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_aeb3fd5f8f48d5b0688bf5374d1db8a2a}
+
+\begin{DoxyCompactList}\small\item\em Starts Ethernet over Ether\-C\-A\-T processing on demand. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-eoe\-\_\-stop} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_ae91a3cc9f33b29f2e0f479f602e979b7}
+
+\begin{DoxyCompactList}\small\item\em Stops the Ethernet over Ether\-C\-A\-T processing. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-receive\-\_\-datagrams} ({\bf ec\-\_\-master\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Processes a received frame. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-queue\-\_\-datagram} ({\bf ec\-\_\-master\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{master_8h_a6d0214fc51a4b399f22b6317f2c239dd}
+
+\begin{DoxyCompactList}\small\item\em Places a datagram in the datagram queue. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-queue\-\_\-datagram\-\_\-ext} ({\bf ec\-\_\-master\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{master_8h_aca56ba0e591545222908f5c2b148fd5f}
+
+\begin{DoxyCompactList}\small\item\em Places a datagram in the non-\/application datagram queue. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-set\-\_\-send\-\_\-interval} ({\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)\label{master_8h_a005dd21f87606cec96e3803c2848d6e1}
+
+\begin{DoxyCompactList}\small\item\em Sets the expected interval between calls to ecrt\-\_\-master\-\_\-send and calculates the maximum amount of data to queue. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-attach\-\_\-slave\-\_\-configs} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_ad6aca8fc11ed9b16a69449c47d432dba}
+
+\begin{DoxyCompactList}\small\item\em Attaches the slave configurations to the slaves. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-find\-\_\-slave} ({\bf ec\-\_\-master\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Finds a slave in the bus, given the alias and position. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const} (const {\bf ec\-\_\-master\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Finds a slave in the bus, given the alias and position. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-output\-\_\-stats} ({\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Output master statistics. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-clear\-\_\-eoe\-\_\-handlers} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_a35f916015e57779aa89b73928568ec7c}
+
+\begin{DoxyCompactList}\small\item\em Clear and free all Eo\-E handlers. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-clear\-\_\-slaves} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_a96163ebaa24e3ef19e4879656eac0c6f}
+
+\begin{DoxyCompactList}\small\item\em Clear all slaves. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-master\-\_\-config\-\_\-count} (const {\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get the number of slave configurations provided by the application. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-get\-\_\-config} (const {\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Get a slave configuration via its position in the list. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const} (const {\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Get a slave configuration via its position in the list. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-master\-\_\-domain\-\_\-count} (const {\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get the number of domains. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-domain\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-find\-\_\-domain} ({\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Get a domain via its position in the list. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-domain\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const} (const {\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Get a domain via its position in the list. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count} (const {\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get the number of Eo\-E handlers. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-eoe\-\_\-t} $\ast$ {\bf ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const} (const {\bf ec\-\_\-master\-\_\-t} $\ast$, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Get an Eo\-E handler via its position in the list. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-master\-\_\-debug\-\_\-level} ({\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Set the debug level. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-domain\-\_\-t} $\ast$ {\bf ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err} ({\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{ecrt\-\_\-master\-\_\-create\-\_\-domain()}{p.}{group__ApplicationInterface_gae4ede07f05b211667078ab2b2396da6e}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf ecrt\-\_\-master\-\_\-slave\-\_\-config\-\_\-err} ({\bf ec\-\_\-master\-\_\-t} $\ast$, uint16\-\_\-t, uint16\-\_\-t, uint32\-\_\-t, uint32\-\_\-t)\label{master_8h_a7c0b63cd61c5a8189f4fbf1469a42fc5}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{ecrt\-\_\-master\-\_\-slave\-\_\-config()}{p.}{group__ApplicationInterface_gaa190a5d3aa2a72b8950ef93aa7baab0b}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-calc\-\_\-dc} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_ae45d9efc15219b27e5559e541bf0e3a3}
+
+\begin{DoxyCompactList}\small\item\em Distributed-\/clocks calculations. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-request\-\_\-op} ({\bf ec\-\_\-master\-\_\-t} $\ast$)\label{master_8h_ac51be86291ae6211a441dbcdce28a308}
+
+\begin{DoxyCompactList}\small\item\em Request O\-P state for configured slaves. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-internal\-\_\-send\-\_\-cb} (void $\ast$)\label{master_8h_aea63a38b5a1b38f44f82c8548b1eb317}
+
+\begin{DoxyCompactList}\small\item\em Internal sending callback. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-master\-\_\-internal\-\_\-receive\-\_\-cb} (void $\ast$)\label{master_8h_ae9fd1de8d2addfe0a8ee3e42b3c33c13}
+
+\begin{DoxyCompactList}\small\item\em Internal receiving callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int {\bf rate\-\_\-intervals} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]\label{master_8h_a7f01585ce8b405b3956eb89564968b3d}
+
+\begin{DoxyCompactList}\small\item\em List of intervals for statistics [s]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master structure. 
+
+Definition in file {\bf master.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{master.\-h@{master.\-h}!E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O}}
+\index{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O}!master.h@{master.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O(
+\begin{DoxyParamCaption}
+\item[{}]{master, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-I\-N\-F\-O \char`\"{}Ether\-C\-A\-T \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)}\label{master_8h_a306a2bcfad973302ae507c9c6978b816}
+
+
+Convenience macro for printing master-\/specific information to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file master.\-h.
+
+\index{master.\-h@{master.\-h}!E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R}}
+\index{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R}!master.h@{master.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{master, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-E\-R\-R \char`\"{}Ether\-C\-A\-T E\-R\-R\-O\-R \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)}\label{master_8h_aece1fb7ea6af168ba7513c9d7b0a523a}
+
+
+Convenience macro for printing master-\/specific errors to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file master.\-h.
+
+\index{master.\-h@{master.\-h}!E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N}}
+\index{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N}!master.h@{master.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N(
+\begin{DoxyParamCaption}
+\item[{}]{master, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)~printk(K\-E\-R\-N\-\_\-\-W\-A\-R\-N\-I\-N\-G \char`\"{}Ether\-C\-A\-T W\-A\-R\-N\-I\-N\-G \%u\-: \char`\"{} fmt, master-\/$>$index, \#\#args)}\label{master_8h_af75617c47fe87f4f60e8593d7e79dbc0}
+
+
+Convenience macro for printing master-\/specific warnings to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file master.\-h.
+
+\index{master.\-h@{master.\-h}!E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G}}
+\index{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G@{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G}!master.h@{master.\-h}}
+\subsubsection[{E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{master, }
+\item[{}]{level, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}\label{master_8h_a6cc0dea5aa374291f2379e844de741d0}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+        if (master->debug\_level >= level) \{ \(\backslash\)
+            printk(KERN\_DEBUG \textcolor{stringliteral}{"EtherCAT DEBUG %u: "} fmt, \(\backslash\)
+                    master->index, ##args); \(\backslash\)
+        \} \(\backslash\)
+    \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Convenience macro for printing master-\/specific debug messages to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em level} & Debug level. Master's debug level must be $>$= {\itshape level} for output. \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file master.\-h.
+
+\index{master.\-h@{master.\-h}!E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}}
+\index{E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E@{E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}!master.h@{master.\-h}}
+\subsubsection[{E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E~32}\label{master_8h_a82682f338d4c64728c4bc14543eb6b9e}
+
+
+Size of the external datagram ring. 
+
+The external datagram ring is used for slave F\-S\-Ms. 
+
+Definition at line 124 of file master.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-phase\-\_\-t@{ec\-\_\-master\-\_\-phase\-\_\-t}}
+\index{ec\-\_\-master\-\_\-phase\-\_\-t@{ec\-\_\-master\-\_\-phase\-\_\-t}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-phase\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-master\-\_\-phase\-\_\-t}}\label{master_8h_aebcf0998049ecde580a47832fb3b36f0}
+
+
+Ether\-C\-A\-T master phase. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D@{E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D}!master.\-h@{master.\-h}}\index{master.\-h@{master.\-h}!E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D@{E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D}}\item[{\em 
+E\-C\-\_\-\-O\-R\-P\-H\-A\-N\-E\-D\label{master_8h_aebcf0998049ecde580a47832fb3b36f0aa9cb1938a13b1bfc35b02646310efe8f}
+}]Orphaned phase. The master has no Ethernet device attached. \index{E\-C\-\_\-\-I\-D\-L\-E@{E\-C\-\_\-\-I\-D\-L\-E}!master.\-h@{master.\-h}}\index{master.\-h@{master.\-h}!E\-C\-\_\-\-I\-D\-L\-E@{E\-C\-\_\-\-I\-D\-L\-E}}\item[{\em 
+E\-C\-\_\-\-I\-D\-L\-E\label{master_8h_aebcf0998049ecde580a47832fb3b36f0a243c4f44013cdfedb1105cb13e6b1191}
+}]Idle phase. An Ethernet device is attached, but the master is not in use, yet. \index{E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N@{E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N}!master.\-h@{master.\-h}}\index{master.\-h@{master.\-h}!E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N@{E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N}}\item[{\em 
+E\-C\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\label{master_8h_aebcf0998049ecde580a47832fb3b36f0aadf62d83c5d61ea4fda76f5676aeb0c4}
+}]Operation phase. The master was requested by a realtime application. \end{description}
+\end{Desc}
+
+
+
+Definition at line 130 of file master.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-init@{ec\-\_\-master\-\_\-init}}
+\index{ec\-\_\-master\-\_\-init@{ec\-\_\-master\-\_\-init}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-master\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{index, }
+\item[{const uint8\-\_\-t $\ast$}]{main\-\_\-mac, }
+\item[{const uint8\-\_\-t $\ast$}]{backup\-\_\-mac, }
+\item[{dev\-\_\-t}]{device\-\_\-number, }
+\item[{struct {\bf class} $\ast$}]{class, }
+\item[{unsigned int}]{debug\-\_\-level}
+\end{DoxyParamCaption}
+)}\label{master_8h_a7ac0da6ba7a9d07560cf444aa3591b9a}
+
+
+Master constructor. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em index} & master index \\
+\hline
+{\em main\-\_\-mac} & M\-A\-C address of main device \\
+\hline
+{\em backup\-\_\-mac} & M\-A\-C address of backup device \\
+\hline
+{\em device\-\_\-number} & Character device number. \\
+\hline
+{\em class} & Device class. \\
+\hline
+{\em debug\-\_\-level} & Debug level (module parameter). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase@{ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase}}
+\index{ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase@{ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-master\-\_\-enter\-\_\-idle\-\_\-phase (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_a510fd2e57ffec9153acd1fa5e07429d9}
+
+
+Transition function from O\-R\-P\-H\-A\-N\-E\-D to I\-D\-L\-E phase. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 620 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase@{ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase}}
+\index{ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase@{ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-master\-\_\-enter\-\_\-operation\-\_\-phase (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_a0265b8dfaa214b79b789eaf2808b836e}
+
+
+Transition function from I\-D\-L\-E to O\-P\-E\-R\-A\-T\-I\-O\-N phase. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 677 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-receive\-\_\-datagrams@{ec\-\_\-master\-\_\-receive\-\_\-datagrams}}
+\index{ec\-\_\-master\-\_\-receive\-\_\-datagrams@{ec\-\_\-master\-\_\-receive\-\_\-datagrams}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-receive\-\_\-datagrams}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-master\-\_\-receive\-\_\-datagrams (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{const uint8\-\_\-t $\ast$}]{frame\-\_\-data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{master_8h_a0f9f566f43be617c60cc7be343582402}
+
+
+Processes a received frame. 
+
+This function is called by the network driver for every received frame.
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em frame\-\_\-data} & frame data \\
+\hline
+{\em size} & size of the received data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1109 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-find\-\_\-slave@{ec\-\_\-master\-\_\-find\-\_\-slave}}
+\index{ec\-\_\-master\-\_\-find\-\_\-slave@{ec\-\_\-master\-\_\-find\-\_\-slave}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-find\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-master\-\_\-find\-\_\-slave (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{position}
+\end{DoxyParamCaption}
+)}\label{master_8h_aa2ad73c977ff2605e060085649d97d1a}
+
+
+Finds a slave in the bus, given the alias and position. 
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em alias} & Slave alias. \\
+\hline
+{\em position} & Slave position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1791 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const@{ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const}}
+\index{ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const@{ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-master\-\_\-find\-\_\-slave\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{position}
+\end{DoxyParamCaption}
+)}\label{master_8h_a7fd24724221dacd3f2a9059b8992cb0b}
+
+
+Finds a slave in the bus, given the alias and position. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em alias} & Slave alias. \\
+\hline
+{\em position} & Slave position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1807 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-output\-\_\-stats@{ec\-\_\-master\-\_\-output\-\_\-stats}}
+\index{ec\-\_\-master\-\_\-output\-\_\-stats@{ec\-\_\-master\-\_\-output\-\_\-stats}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-output\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-master\-\_\-output\-\_\-stats (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_ab19fbec7369ba9928d822a025b1b62ef}
+
+
+Output master statistics. 
+
+This function outputs statistical data on demand, but not more often than necessary. The output happens at most once a second. 
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1235 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-config\-\_\-count@{ec\-\_\-master\-\_\-config\-\_\-count}}
+\index{ec\-\_\-master\-\_\-config\-\_\-count@{ec\-\_\-master\-\_\-config\-\_\-count}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-config\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-config\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_a2471b97da009904ca66188f0360d17e3}
+
+
+Get the number of slave configurations provided by the application. 
+
+\begin{DoxyReturn}{Returns}
+Number of configurations. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1823 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-get\-\_\-config@{ec\-\_\-master\-\_\-get\-\_\-config}}
+\index{ec\-\_\-master\-\_\-get\-\_\-config@{ec\-\_\-master\-\_\-get\-\_\-config}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-get\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-master\-\_\-get\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{master_8h_a7f71af78e1b705fb6fadf9c5f1d574fb}
+
+
+Get a slave configuration via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+Slave configuration or {\itshape N\-U\-L\-L}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em pos} & List position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1856 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const@{ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const}}
+\index{ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const@{ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-master\-\_\-get\-\_\-config\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{master_8h_a260fc8f122ebaf627fd575e668efdfe5}
+
+
+Get a slave configuration via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Slave configuration or {\itshape N\-U\-L\-L}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em pos} & List position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1871 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-domain\-\_\-count@{ec\-\_\-master\-\_\-domain\-\_\-count}}
+\index{ec\-\_\-master\-\_\-domain\-\_\-count@{ec\-\_\-master\-\_\-domain\-\_\-count}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-domain\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-domain\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_a0ece9b88cc82a2b94ee1160561b0d6cf}
+
+
+Get the number of domains. 
+
+\begin{DoxyReturn}{Returns}
+Number of domains. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1886 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-find\-\_\-domain@{ec\-\_\-master\-\_\-find\-\_\-domain}}
+\index{ec\-\_\-master\-\_\-find\-\_\-domain@{ec\-\_\-master\-\_\-find\-\_\-domain}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-find\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-domain\-\_\-t}$\ast$ ec\-\_\-master\-\_\-find\-\_\-domain (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}\label{master_8h_a8c5d1278cdd711758cc70d006d4f6796}
+
+
+Get a domain via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+Domain pointer, or {\itshape N\-U\-L\-L} if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em index} & Domain index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1920 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const@{ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const}}
+\index{ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const@{ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-domain\-\_\-t}$\ast$ ec\-\_\-master\-\_\-find\-\_\-domain\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}\label{master_8h_af3cf92c146791d65e9f50bab3fd52df9}
+
+
+Get a domain via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Domain pointer, or {\itshape N\-U\-L\-L} if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em index} & Domain index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1935 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count@{ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count}}
+\index{ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count@{ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-master\-\_\-eoe\-\_\-handler\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_a46e4e479e848ee7d2b241b6bf59e53f7}
+
+
+Get the number of Eo\-E handlers. 
+
+\begin{DoxyReturn}{Returns}
+Number of Eo\-E handlers. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1952 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const@{ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const}}
+\index{ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const@{ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-eoe\-\_\-t}$\ast$ ec\-\_\-master\-\_\-get\-\_\-eoe\-\_\-handler\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{uint16\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}\label{master_8h_ae20b715da9a11ca5743fd794a9cb1714}
+
+
+Get an Eo\-E handler via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Eo\-E handler pointer, or {\itshape N\-U\-L\-L} if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em index} & Eo\-E handler index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1974 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ec\-\_\-master\-\_\-debug\-\_\-level@{ec\-\_\-master\-\_\-debug\-\_\-level}}
+\index{ec\-\_\-master\-\_\-debug\-\_\-level@{ec\-\_\-master\-\_\-debug\-\_\-level}!master.h@{master.\-h}}
+\subsubsection[{ec\-\_\-master\-\_\-debug\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-master\-\_\-debug\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{level}
+\end{DoxyParamCaption}
+)}\label{master_8h_a329e1df698c675e5764eb52321cfb337}
+
+
+Set the debug level. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em -\/\-E\-I\-N\-V\-A\-L} & Invalid debug level. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em level} & Debug level. May be 0, 1 or 2. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1999 of file master.\-c.
+
+\index{master.\-h@{master.\-h}!ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err@{ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err}}
+\index{ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err@{ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err}!master.h@{master.\-h}}
+\subsubsection[{ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-domain\-\_\-t}$\ast$ ecrt\-\_\-master\-\_\-create\-\_\-domain\-\_\-err (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{master_8h_af5944c23eda9f9fb63e3eb9772e6e1ba}
+
+
+Same as \doxyref{ecrt\-\_\-master\-\_\-create\-\_\-domain()}{p.}{group__ApplicationInterface_gae4ede07f05b211667078ab2b2396da6e}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. 
+
+\begin{DoxyReturn}{Returns}
+New domain, or E\-R\-R\-\_\-\-P\-T\-R() return value. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & master \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2217 of file master.\-c.
+

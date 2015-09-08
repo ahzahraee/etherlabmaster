@@ -1,0 +1,108 @@
+\section{fsm\-\_\-pdo\-\_\-entry.\-h File Reference}
+\label{fsm__pdo__entry_8h}\index{fsm\-\_\-pdo\-\_\-entry.\-h@{fsm\-\_\-pdo\-\_\-entry.\-h}}
+
+
+Ether\-C\-A\-T P\-D\-O entry configuration state machine structures.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry}
+\begin{DoxyCompactList}\small\item\em P\-D\-O configuration state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry} {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$)\label{fsm__pdo__entry_8h_ab3a4a60f1346a0bc52de9a2c83b15f2a}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$)\label{fsm__pdo__entry_8h_a2b3b45d223f6f799a15d061bdaf85280}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-reading} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-pdo\-\_\-t} $\ast$)\label{fsm__pdo__entry_8h_a8c9968d21fff2b461715c5b2599cbce5}
+
+\begin{DoxyCompactList}\small\item\em Start reading a P\-D\-O's entries. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-start\-\_\-configuration} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$)\label{fsm__pdo__entry_8h_abf74384e8963df57c2e9825b38662e22}
+
+\begin{DoxyCompactList}\small\item\em Start P\-D\-O mapping state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get execution result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T P\-D\-O entry configuration state machine structures. 
+
+Definition in file {\bf fsm\-\_\-pdo\-\_\-entry.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-pdo\-\_\-entry.\-h@{fsm\-\_\-pdo\-\_\-entry.\-h}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t}!fsm_pdo_entry.h@{fsm\-\_\-pdo\-\_\-entry.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry} {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t}}\label{fsm__pdo__entry_8h_a5ab659022f19ca69c7d54a78135890f7}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}{p.}{structec__fsm__pdo__entry} 
+\end{DoxySeeAlso}
+
+
+Definition at line 48 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-pdo\-\_\-entry.\-h@{fsm\-\_\-pdo\-\_\-entry.\-h}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}!fsm_pdo_entry.h@{fsm\-\_\-pdo\-\_\-entry.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8h_aebc3d530d3c18b07f28ac22c143b205a}
+
+
+Executes the current state. 
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+
+\index{fsm\-\_\-pdo\-\_\-entry.\-h@{fsm\-\_\-pdo\-\_\-entry.\-h}!ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}!fsm_pdo_entry.h@{fsm\-\_\-pdo\-\_\-entry.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__pdo__entry_8h_a67fc421f4712cd8eb86d40c73ffdd9c9}
+
+
+Get execution result. 
+
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & P\-D\-O mapping state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 181 of file fsm\-\_\-pdo\-\_\-entry.\-c.
+

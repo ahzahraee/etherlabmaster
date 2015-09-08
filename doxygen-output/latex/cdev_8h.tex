@@ -1,0 +1,59 @@
+\section{cdev.\-h File Reference}
+\label{cdev_8h}\index{cdev.\-h@{cdev.\-h}}
+
+
+Ether\-C\-A\-T master character device.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-cdev\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T master character device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-cdev\-\_\-init} ({\bf ec\-\_\-cdev\-\_\-t} $\ast$, {\bf ec\-\_\-master\-\_\-t} $\ast$, dev\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-cdev\-\_\-clear} ({\bf ec\-\_\-cdev\-\_\-t} $\ast$)\label{cdev_8h_a2f7ae759bd3e5d289477cc5d3f0194ff}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master character device. 
+
+Definition in file {\bf cdev.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{cdev.\-h@{cdev.\-h}!ec\-\_\-cdev\-\_\-init@{ec\-\_\-cdev\-\_\-init}}
+\index{ec\-\_\-cdev\-\_\-init@{ec\-\_\-cdev\-\_\-init}!cdev.h@{cdev.\-h}}
+\subsubsection[{ec\-\_\-cdev\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-cdev\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-cdev\-\_\-t} $\ast$}]{cdev, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{dev\-\_\-t}]{dev\-\_\-num}
+\end{DoxyParamCaption}
+)}\label{cdev_8h_a6c719d1b6848d5ce60411e19d51c22dc}
+
+
+Constructor. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em cdev} & Ether\-C\-A\-T master character device. \\
+\hline
+{\em master} & Parent master. \\
+\hline
+{\em dev\-\_\-num} & Device number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file cdev.\-c.
+

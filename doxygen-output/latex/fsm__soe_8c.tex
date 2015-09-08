@@ -1,0 +1,528 @@
+\section{fsm\-\_\-soe.\-c File Reference}
+\label{fsm__soe_8c}\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}}
+
+
+Ether\-C\-A\-T So\-E state machines.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-M\-B\-O\-X\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-O\-E}~0x05\label{fsm__soe_8c_ab02cafd2881eb57c288e078ea57736d5}
+
+\begin{DoxyCompactList}\small\item\em Mailbox type for So\-E. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-O\-E\-\_\-\-S\-I\-Z\-E}~0x04\label{fsm__soe_8c_add5bad0251925ce1779bc0d3e186f547}
+
+\begin{DoxyCompactList}\small\item\em Size of all So\-E headers. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-O\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}~1000\label{fsm__soe_8c_a2e9892fef5e41058583eafca62b7708b}
+
+\begin{DoxyCompactList}\small\item\em So\-E response timeout [ms]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-soe\-\_\-opcodes} \{ {\bf O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T} =  0x01, 
+{\bf O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E} =  0x02, 
+{\bf O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T} =  0x03, 
+{\bf O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E} =  0x04
+ \}
+\begin{DoxyCompactList}\small\item\em So\-E operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: R\-E\-A\-D S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: R\-E\-A\-D R\-E\-Q\-U\-E\-S\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Co\-E state\-: R\-E\-A\-D C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: R\-E\-A\-D R\-E\-S\-P\-O\-N\-S\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: W\-R\-I\-T\-E S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: W\-R\-I\-T\-E R\-E\-Q\-U\-E\-S\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Co\-E state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em So\-E state\-: W\-R\-I\-T\-E R\-E\-S\-P\-O\-N\-S\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm,{\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-print\-\_\-soe\-\_\-error} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, uint16\-\_\-t error\-\_\-code)\label{fsm__soe_8c_aac6e087c335a755f1ce0ada566734be4}
+
+\begin{DoxyCompactList}\small\item\em Outputs an So\-E error code. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-transfer} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave, {\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$request)
+\begin{DoxyCompactList}\small\item\em Starts to transfer an I\-D\-N to/from a slave. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-soe\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-soe\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Returns, if the state machine terminated with success. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Output information about a failed So\-E transfer. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Prepare a read operation. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Write next fragment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf ec\-\_\-code\-\_\-msg\-\_\-t} {\bf soe\-\_\-error\-\_\-codes} [$\,$]\label{fsm__soe_8c_a4013ee44d8165e19ed7abec334d499e4}
+
+\begin{DoxyCompactList}\small\item\em So\-E error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T So\-E state machines. 
+
+Definition in file {\bf fsm\-\_\-soe.\-c}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-soe\-\_\-opcodes@{ec\-\_\-soe\-\_\-opcodes}}
+\index{ec\-\_\-soe\-\_\-opcodes@{ec\-\_\-soe\-\_\-opcodes}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-soe\-\_\-opcodes}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-soe\-\_\-opcodes}}\label{fsm__soe_8c_a9c7163e5550adaf891eb9afff86b72cd}
+
+
+So\-E operations. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T@{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T}!fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}}\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T@{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T}}\item[{\em 
+O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-Q\-U\-E\-S\-T\label{fsm__soe_8c_a9c7163e5550adaf891eb9afff86b72cda914c75cac48096f5ee9befec8bcf4160}
+}]Read request. \index{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}}\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+O\-P\-C\-O\-D\-E\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\label{fsm__soe_8c_a9c7163e5550adaf891eb9afff86b72cda7b5653448be7413e965de6318740afdc}
+}]Read response. \index{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T@{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T}!fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}}\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T@{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T}}\item[{\em 
+O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\label{fsm__soe_8c_a9c7163e5550adaf891eb9afff86b72cda1b5afa15a9b8a6f640ea4307ab399901}
+}]Write request. \index{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}}\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}\item[{\em 
+O\-P\-C\-O\-D\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E\label{fsm__soe_8c_a9c7163e5550adaf891eb9afff86b72cdacc60027a463033de1a3f6a2ac52a4f0f}
+}]Write response. \end{description}
+\end{Desc}
+
+
+
+Definition at line 50 of file fsm\-\_\-soe.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a03159120b45002e08e303f19a5604a25}
+
+
+So\-E state\-: R\-E\-A\-D S\-T\-A\-R\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 254 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a34f2e9ebff8b8af42b8c578c2c59bce8}
+
+
+So\-E state\-: R\-E\-A\-D R\-E\-Q\-U\-E\-S\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a101d0e3e05fc9030859df1ab3d6c2278}
+
+
+Co\-E state\-: R\-E\-A\-D C\-H\-E\-C\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 340 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response@{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-read\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a95cba30098d7db1fdc0929f3187741a7}
+
+
+So\-E state\-: R\-E\-A\-D R\-E\-S\-P\-O\-N\-S\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 396 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a0fe8a1dc3a8834e400c8f7dd8799c389}
+
+
+So\-E state\-: W\-R\-I\-T\-E S\-T\-A\-R\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 579 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a7f71c3ccb21d80ca348f864a13577436}
+
+
+So\-E state\-: W\-R\-I\-T\-E R\-E\-Q\-U\-E\-S\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 606 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_aa0f32be6b2b63b64d1b197adeaad6e70}
+
+
+Co\-E state\-: W\-R\-I\-T\-E C\-H\-E\-C\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 656 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_afc44a667ebfef0cd90f8be31bc5f677e}
+
+
+So\-E state\-: W\-R\-I\-T\-E R\-E\-S\-P\-O\-N\-S\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 710 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-end@{ec\-\_\-fsm\-\_\-soe\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-end@{ec\-\_\-fsm\-\_\-soe\-\_\-end}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_aedb2ac49852e4af2959772c60a94cefe}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 837 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-error@{ec\-\_\-fsm\-\_\-soe\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-error@{ec\-\_\-fsm\-\_\-soe\-\_\-error}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a6a47d0afa50cd7d83a5ee526323994f4}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 826 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-init@{ec\-\_\-fsm\-\_\-soe\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-init@{ec\-\_\-fsm\-\_\-soe\-\_\-init}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a22bcbd5d8832e375e3cb5ce0b960da5d}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-clear@{ec\-\_\-fsm\-\_\-soe\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-clear@{ec\-\_\-fsm\-\_\-soe\-\_\-clear}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a422dd4f9c47393097303ca25a7d17dbf}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-transfer@{ec\-\_\-fsm\-\_\-soe\-\_\-transfer}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-transfer@{ec\-\_\-fsm\-\_\-soe\-\_\-transfer}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-transfer}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-transfer (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$}]{request}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a34c4cc4d7d8988a5786599d07d52aebd}
+
+
+Starts to transfer an I\-D\-N to/from a slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & State machine. \\
+\hline
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+{\em request} & So\-E request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-exec@{ec\-\_\-fsm\-\_\-soe\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-exec@{ec\-\_\-fsm\-\_\-soe\-\_\-exec}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-soe\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a2572aecb3869697ac939f78e22c3cd4e}
+
+
+Executes the current state of the state machine. 
+
+\begin{DoxyReturn}{Returns}
+1 if the datagram was used, else 0. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-success@{ec\-\_\-fsm\-\_\-soe\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-success@{ec\-\_\-fsm\-\_\-soe\-\_\-success}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-soe\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_abe5fc037034ee0591047a678d3d52e36}
+
+
+Returns, if the state machine terminated with success. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error@{ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error@{ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-print\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a5cdb42cd4bfb8be6cb51e950c3a1e730}
+
+
+Output information about a failed So\-E transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read@{ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read@{ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-soe\-\_\-prepare\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_a6cebae49a5e2fddc1d4eacd82a2f04df}
+
+
+Prepare a read operation. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 219 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-c@{fsm\-\_\-soe.\-c}!ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment@{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment}!fsm_soe.c@{fsm\-\_\-soe.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-soe\-\_\-write\-\_\-next\-\_\-fragment (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8c_aac4bf11d75a4045679fcc2bc4cd2b9f3}
+
+
+Write next fragment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 522 of file fsm\-\_\-soe.\-c.
+

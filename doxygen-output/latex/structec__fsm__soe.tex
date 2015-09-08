@@ -1,0 +1,84 @@
+\section{ec\-\_\-fsm\-\_\-soe Struct Reference}
+\label{structec__fsm__soe}\index{ec\-\_\-fsm\-\_\-soe@{ec\-\_\-fsm\-\_\-soe}}
+
+
+Finite state machines for the Sercos over Ether\-C\-A\-T protocol.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__fsm__soe_ac70c33e8ea8a98b79d84c3ace3416180}
+
+\begin{DoxyCompactList}\small\item\em slave the F\-S\-M runs on \end{DoxyCompactList}\item 
+unsigned int {\bf retries}\label{structec__fsm__soe_a717e23d822ee8bca76b9b477ff078bb7}
+
+\begin{DoxyCompactList}\small\item\em retries upon datagram timeout \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{structec__fsm__soe_a07bba81cf72365b14c57924a6c7b5e63}
+
+\begin{DoxyCompactList}\small\item\em Co\-E state function. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used in the previous step. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Timestamp. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$ {\bf request}\label{structec__fsm__soe_add6279a51617da94d91420bb05e57a7c}
+
+\begin{DoxyCompactList}\small\item\em So\-E request. \end{DoxyCompactList}\item 
+off\-\_\-t {\bf offset}
+\begin{DoxyCompactList}\small\item\em I\-D\-N data offset during fragmented write. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf fragment\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of the current fragment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Finite state machines for the Sercos over Ether\-C\-A\-T protocol. 
+
+Definition at line 51 of file fsm\-\_\-soe.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-soe@{ec\-\_\-fsm\-\_\-soe}!datagram@{datagram}}
+\index{datagram@{datagram}!ec_fsm_soe@{ec\-\_\-fsm\-\_\-soe}}
+\subsubsection[{datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-soe\-::datagram}\label{structec__fsm__soe_ad94b8e0cd3aeb06cc554b1405bf02436}
+
+
+Datagram used in the previous step. 
+
+
+
+Definition at line 56 of file fsm\-\_\-soe.\-h.
+
+\index{ec\-\_\-fsm\-\_\-soe@{ec\-\_\-fsm\-\_\-soe}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_fsm_soe@{ec\-\_\-fsm\-\_\-soe}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-fsm\-\_\-soe\-::jiffies\-\_\-start}\label{structec__fsm__soe_ad9dc7d3d67af743a7181a878f23faa84}
+
+
+Timestamp. 
+
+
+
+Definition at line 57 of file fsm\-\_\-soe.\-h.
+
+\index{ec\-\_\-fsm\-\_\-soe@{ec\-\_\-fsm\-\_\-soe}!offset@{offset}}
+\index{offset@{offset}!ec_fsm_soe@{ec\-\_\-fsm\-\_\-soe}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t ec\-\_\-fsm\-\_\-soe\-::offset}\label{structec__fsm__soe_a2e2bdcd1fdb5d507480e0c29a97ce7d0}
+
+
+I\-D\-N data offset during fragmented write. 
+
+
+
+Definition at line 59 of file fsm\-\_\-soe.\-h.
+
+\index{ec\-\_\-fsm\-\_\-soe@{ec\-\_\-fsm\-\_\-soe}!fragment\-\_\-size@{fragment\-\_\-size}}
+\index{fragment\-\_\-size@{fragment\-\_\-size}!ec_fsm_soe@{ec\-\_\-fsm\-\_\-soe}}
+\subsubsection[{fragment\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-fsm\-\_\-soe\-::fragment\-\_\-size}\label{structec__fsm__soe_ae3f6c643ecacae3364064dc9f466c95a}
+
+
+Size of the current fragment. 
+
+
+
+Definition at line 60 of file fsm\-\_\-soe.\-h.
+

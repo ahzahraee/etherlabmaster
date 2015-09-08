@@ -1,0 +1,56 @@
+\section{reg\-\_\-request.\-h File Reference}
+\label{reg__request_8h}\index{reg\-\_\-request.\-h@{reg\-\_\-request.\-h}}
+
+
+Ether\-C\-A\-T register request structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-reg\-\_\-request}
+\begin{DoxyCompactList}\small\item\em Register request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-reg\-\_\-request\-\_\-init} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Register request constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-reg\-\_\-request\-\_\-clear} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$)\label{reg__request_8h_a5614fa1fafcc1fc19898a881e364738c}
+
+\begin{DoxyCompactList}\small\item\em Register request destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T register request structure. 
+
+Definition in file {\bf reg\-\_\-request.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{reg\-\_\-request.\-h@{reg\-\_\-request.\-h}!ec\-\_\-reg\-\_\-request\-\_\-init@{ec\-\_\-reg\-\_\-request\-\_\-init}}
+\index{ec\-\_\-reg\-\_\-request\-\_\-init@{ec\-\_\-reg\-\_\-request\-\_\-init}!reg_request.h@{reg\-\_\-request.\-h}}
+\subsubsection[{ec\-\_\-reg\-\_\-request\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-reg\-\_\-request\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$}]{reg, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{reg__request_8h_a13ac6213c3190143288559beacc0da0d}
+
+
+Register request constructor. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register request. \\
+\hline
+{\em size} & Memory size. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file reg\-\_\-request.\-c.
+

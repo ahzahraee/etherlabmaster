@@ -1,0 +1,62 @@
+\section{rtdm.\-h File Reference}
+\label{rtdm_8h}\index{rtdm.\-h@{rtdm.\-h}}
+
+
+R\-T\-D\-M interface.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-rtdm\-\_\-dev}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T R\-T\-D\-M device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-rtdm\-\_\-dev} {\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t}\label{rtdm_8h_a251d14e127f7590bdf0a6a59acf07777}
+
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T R\-T\-D\-M device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-rtdm\-\_\-dev\-\_\-init} ({\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$, {\bf ec\-\_\-master\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Initialize an R\-T\-D\-M device. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-rtdm\-\_\-dev\-\_\-clear} ({\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$)\label{rtdm_8h_a597c8141cb50546873826975c1bc64d5}
+
+\begin{DoxyCompactList}\small\item\em Clear an R\-T\-D\-M device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-T\-D\-M interface. 
+
+Definition in file {\bf rtdm.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{rtdm.\-h@{rtdm.\-h}!ec\-\_\-rtdm\-\_\-dev\-\_\-init@{ec\-\_\-rtdm\-\_\-dev\-\_\-init}}
+\index{ec\-\_\-rtdm\-\_\-dev\-\_\-init@{ec\-\_\-rtdm\-\_\-dev\-\_\-init}!rtdm.h@{rtdm.\-h}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-dev\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-dev\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$}]{rtdm\-\_\-dev, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{rtdm_8h_aac0c8c41af4536a9954b0958af35726f}
+
+
+Initialize an R\-T\-D\-M device. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em rtdm\-\_\-dev} & Ether\-C\-A\-T R\-T\-D\-M device. \\
+\hline
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file rtdm.\-c.
+

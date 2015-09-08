@@ -1,0 +1,143 @@
+\section{ec\-\_\-voe\-\_\-handler Struct Reference}
+\label{structec__voe__handler}\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}}
+
+
+Vendor specific over Ether\-C\-A\-T handler.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf config}
+\begin{DoxyCompactList}\small\item\em Parent slave configuration. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf datagram}
+\begin{DoxyCompactList}\small\item\em State machine datagram. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf vendor\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Vendor I\-D for the header. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf vendor\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Vendor type for the header. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of Vo\-E data. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Direction. \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$)\label{structec__voe__handler_a7d14024529e871ce3ed2bf901afc79ed}
+
+\begin{DoxyCompactList}\small\item\em State function. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} {\bf request\-\_\-state}
+\begin{DoxyCompactList}\small\item\em Handler state. \end{DoxyCompactList}\item 
+unsigned int {\bf retries}\label{structec__voe__handler_a94b591afc9239d7da95ce47108211048}
+
+\begin{DoxyCompactList}\small\item\em retries upon datagram timeout \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Timestamp for timeout calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Vendor specific over Ether\-C\-A\-T handler. 
+
+Definition at line 49 of file voe\-\_\-handler.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!list@{list}}
+\index{list@{list}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-voe\-\_\-handler\-::list}\label{structec__voe__handler_ab078e6fbc73c7bb4f7cb465b6c4abfa3}
+
+
+List item. 
+
+
+
+Definition at line 50 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!config@{config}}
+\index{config@{config}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-voe\-\_\-handler\-::config}\label{structec__voe__handler_a0d54cd53df6b6aa0d3f5d0bdd4d61686}
+
+
+Parent slave configuration. 
+
+
+
+Definition at line 51 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!datagram@{datagram}}
+\index{datagram@{datagram}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-voe\-\_\-handler\-::datagram}\label{structec__voe__handler_a22dc8e8a089f2a9df8336828d4ddcbe6}
+
+
+State machine datagram. 
+
+
+
+Definition at line 52 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!vendor\-\_\-id@{vendor\-\_\-id}}
+\index{vendor\-\_\-id@{vendor\-\_\-id}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{vendor\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-voe\-\_\-handler\-::vendor\-\_\-id}\label{structec__voe__handler_a2c8f52c786041ad0600c3d3b84db48e7}
+
+
+Vendor I\-D for the header. 
+
+
+
+Definition at line 53 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!vendor\-\_\-type@{vendor\-\_\-type}}
+\index{vendor\-\_\-type@{vendor\-\_\-type}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{vendor\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-voe\-\_\-handler\-::vendor\-\_\-type}\label{structec__voe__handler_aa0f8674c035659f9f2850045ed641139}
+
+
+Vendor type for the header. 
+
+
+
+Definition at line 54 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-voe\-\_\-handler\-::data\-\_\-size}\label{structec__voe__handler_a8f7609a3c03d2eab155ea2d24c4353e2}
+
+
+Size of Vo\-E data. 
+
+
+
+Definition at line 55 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!dir@{dir}}
+\index{dir@{dir}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-voe\-\_\-handler\-::dir}\label{structec__voe__handler_a4930b843f8706117298fd50362514117}
+
+
+Direction. 
+
+E\-C\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T means writing to the slave, E\-C\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T means reading from the slave. 
+
+Definition at line 56 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!request\-\_\-state@{request\-\_\-state}}
+\index{request\-\_\-state@{request\-\_\-state}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{request\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-voe\-\_\-handler\-::request\-\_\-state}\label{structec__voe__handler_a08b2653c2e110c29f17b28dce2094c69}
+
+
+Handler state. 
+
+
+
+Definition at line 60 of file voe\-\_\-handler.\-h.
+
+\index{ec\-\_\-voe\-\_\-handler@{ec\-\_\-voe\-\_\-handler}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_voe_handler@{ec\-\_\-voe\-\_\-handler}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-voe\-\_\-handler\-::jiffies\-\_\-start}\label{structec__voe__handler_a394c2e7f86802ae0c78a1d7f5a762cc5}
+
+
+Timestamp for timeout calculation. 
+
+
+
+Definition at line 62 of file voe\-\_\-handler.\-h.
+

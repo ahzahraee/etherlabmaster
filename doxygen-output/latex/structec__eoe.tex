@@ -1,0 +1,159 @@
+\section{ec\-\_\-eoe Struct Reference}
+\label{structec__eoe}\index{ec\-\_\-eoe@{ec\-\_\-eoe}}
+
+
+Ethernet over Ether\-C\-A\-T (Eo\-E) handler.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}\label{structec__eoe_af41c63118154c1645769f19658256df0}
+
+\begin{DoxyCompactList}\small\item\em list item \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__eoe_a4a07acce0d52dfec65250bb9e8152976}
+
+\begin{DoxyCompactList}\small\item\em pointer to the corresponding slave \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf datagram}\label{structec__eoe_a58a38a4520677a172eb12ed44d230502}
+
+\begin{DoxyCompactList}\small\item\em datagram \end{DoxyCompactList}\item 
+unsigned int {\bf queue\-\_\-datagram}\label{structec__eoe_a3a3a486cb3359c0d528e4e4e37a6953d}
+
+\begin{DoxyCompactList}\small\item\em the datagram is ready for queuing \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-eoe\-\_\-t} $\ast$)\label{structec__eoe_a13b721b4041a46522ddce127720095d1}
+
+\begin{DoxyCompactList}\small\item\em state function for the state machine \end{DoxyCompactList}\item 
+struct net\-\_\-device $\ast$ {\bf dev}\label{structec__eoe_aa11f7b383aa09219aca3cfeffcdb55df}
+
+\begin{DoxyCompactList}\small\item\em net\-\_\-device for virtual ethernet device \end{DoxyCompactList}\item 
+struct net\-\_\-device\-\_\-stats {\bf stats}\label{structec__eoe_a859cf84e58d4407062e2d96c5b44a480}
+
+\begin{DoxyCompactList}\small\item\em device statistics \end{DoxyCompactList}\item 
+unsigned int {\bf opened}\label{structec__eoe_a174f57afa262c3a4b21b1e86268442f0}
+
+\begin{DoxyCompactList}\small\item\em net\-\_\-device is opened \end{DoxyCompactList}\item 
+unsigned long {\bf rate\-\_\-jiffies}\label{structec__eoe_aaf40c510901fb2cb0765518c2c8ed229}
+
+\begin{DoxyCompactList}\small\item\em time of last rate output \end{DoxyCompactList}\item 
+struct sk\-\_\-buff $\ast$ {\bf rx\-\_\-skb}\label{structec__eoe_aaed9dafdc5f3ae99a04e3941408e9e00}
+
+\begin{DoxyCompactList}\small\item\em current rx socket buffer \end{DoxyCompactList}\item 
+off\-\_\-t {\bf rx\-\_\-skb\-\_\-offset}\label{structec__eoe_a7647dd32da557fbba05bd0dd1153d2a9}
+
+\begin{DoxyCompactList}\small\item\em current write pointer in the socket buffer \end{DoxyCompactList}\item 
+size\-\_\-t {\bf rx\-\_\-skb\-\_\-size}\label{structec__eoe_a4ad33f25a05ae6b8664306c8bb12d30d}
+
+\begin{DoxyCompactList}\small\item\em size of the allocated socket buffer memory \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf rx\-\_\-expected\-\_\-fragment}\label{structec__eoe_a88d376026ca84277ec5fa85c31ab1c17}
+
+\begin{DoxyCompactList}\small\item\em next expected fragment number \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf rx\-\_\-counter}\label{structec__eoe_a94ade8d6e6250de7d04b86160b83c22c}
+
+\begin{DoxyCompactList}\small\item\em octets received during last second \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf rx\-\_\-rate}\label{structec__eoe_a1062493d151d4b2ad4e0392673ad1507}
+
+\begin{DoxyCompactList}\small\item\em receive rate (bps) \end{DoxyCompactList}\item 
+unsigned int {\bf rx\-\_\-idle}
+\begin{DoxyCompactList}\small\item\em Idle flag. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf tx\-\_\-queue}\label{structec__eoe_afd6bcfa6f1ad2bfb371439776b2ca8a9}
+
+\begin{DoxyCompactList}\small\item\em queue for frames to send \end{DoxyCompactList}\item 
+unsigned int {\bf tx\-\_\-queue\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Transmit queue size. \end{DoxyCompactList}\item 
+unsigned int {\bf tx\-\_\-queue\-\_\-active}\label{structec__eoe_a167ab3458420a60abec520dd0c73e5d5}
+
+\begin{DoxyCompactList}\small\item\em kernel netif queue started \end{DoxyCompactList}\item 
+unsigned int {\bf tx\-\_\-queued\-\_\-frames}\label{structec__eoe_a3ec0e5dc97f984769403f00230e53f03}
+
+\begin{DoxyCompactList}\small\item\em number of frames in the queue \end{DoxyCompactList}\item 
+struct semaphore {\bf tx\-\_\-queue\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Semaphore for the send queue. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-eoe\-\_\-frame\-\_\-t} $\ast$ {\bf tx\-\_\-frame}\label{structec__eoe_a5f814555b215fa648246d3e4b8952db4}
+
+\begin{DoxyCompactList}\small\item\em current T\-X frame \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf tx\-\_\-frame\-\_\-number}\label{structec__eoe_aa662995414d6117c623a67d7d3807bfc}
+
+\begin{DoxyCompactList}\small\item\em number of the transmitted frame \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf tx\-\_\-fragment\-\_\-number}\label{structec__eoe_a3ee417a7b394d57b0ba1e7513e24f8b6}
+
+\begin{DoxyCompactList}\small\item\em number of the fragment \end{DoxyCompactList}\item 
+size\-\_\-t {\bf tx\-\_\-offset}\label{structec__eoe_a77e698a64338945f1c57b75771881255}
+
+\begin{DoxyCompactList}\small\item\em number of octets sent \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf tx\-\_\-counter}\label{structec__eoe_aacdbf76b955e5aeb7f1d627a2ca93af5}
+
+\begin{DoxyCompactList}\small\item\em octets transmitted during last second \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf tx\-\_\-rate}\label{structec__eoe_abfaa2eb7e9ff799e9872a49819177448}
+
+\begin{DoxyCompactList}\small\item\em transmit rate (bps) \end{DoxyCompactList}\item 
+unsigned int {\bf tx\-\_\-idle}
+\begin{DoxyCompactList}\small\item\em Idle flag. \end{DoxyCompactList}\item 
+unsigned int {\bf tries}
+\begin{DoxyCompactList}\small\item\em Tries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ethernet over Ether\-C\-A\-T (Eo\-E) handler. 
+
+The master creates one of these objects for each slave that supports the Eo\-E protocol. 
+
+Definition at line 76 of file ethernet.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-eoe@{ec\-\_\-eoe}!rx\-\_\-idle@{rx\-\_\-idle}}
+\index{rx\-\_\-idle@{rx\-\_\-idle}!ec_eoe@{ec\-\_\-eoe}}
+\subsubsection[{rx\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-eoe\-::rx\-\_\-idle}\label{structec__eoe_ad0775c67897e6c38beb0b656e8732d05}
+
+
+Idle flag. 
+
+
+
+Definition at line 94 of file ethernet.\-h.
+
+\index{ec\-\_\-eoe@{ec\-\_\-eoe}!tx\-\_\-queue\-\_\-size@{tx\-\_\-queue\-\_\-size}}
+\index{tx\-\_\-queue\-\_\-size@{tx\-\_\-queue\-\_\-size}!ec_eoe@{ec\-\_\-eoe}}
+\subsubsection[{tx\-\_\-queue\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-eoe\-::tx\-\_\-queue\-\_\-size}\label{structec__eoe_acaccde2a704283ace65f59aa1611e7cc}
+
+
+Transmit queue size. 
+
+
+
+Definition at line 97 of file ethernet.\-h.
+
+\index{ec\-\_\-eoe@{ec\-\_\-eoe}!tx\-\_\-queue\-\_\-sem@{tx\-\_\-queue\-\_\-sem}}
+\index{tx\-\_\-queue\-\_\-sem@{tx\-\_\-queue\-\_\-sem}!ec_eoe@{ec\-\_\-eoe}}
+\subsubsection[{tx\-\_\-queue\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-eoe\-::tx\-\_\-queue\-\_\-sem}\label{structec__eoe_a53d2194eaa281eeaf4d101443b4117a6}
+
+
+Semaphore for the send queue. 
+
+
+
+Definition at line 100 of file ethernet.\-h.
+
+\index{ec\-\_\-eoe@{ec\-\_\-eoe}!tx\-\_\-idle@{tx\-\_\-idle}}
+\index{tx\-\_\-idle@{tx\-\_\-idle}!ec_eoe@{ec\-\_\-eoe}}
+\subsubsection[{tx\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-eoe\-::tx\-\_\-idle}\label{structec__eoe_a4f62dfcc5d7d43780af3e2520e66ab74}
+
+
+Idle flag. 
+
+
+
+Definition at line 107 of file ethernet.\-h.
+
+\index{ec\-\_\-eoe@{ec\-\_\-eoe}!tries@{tries}}
+\index{tries@{tries}!ec_eoe@{ec\-\_\-eoe}}
+\subsubsection[{tries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-eoe\-::tries}\label{structec__eoe_a94fc1a4085026439575dee3432a8613d}
+
+
+Tries. 
+
+
+
+Definition at line 109 of file ethernet.\-h.
+

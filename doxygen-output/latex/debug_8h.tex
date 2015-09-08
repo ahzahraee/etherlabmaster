@@ -1,0 +1,93 @@
+\section{debug.\-h File Reference}
+\label{debug_8h}\index{debug.\-h@{debug.\-h}}
+
+
+Network interface for debugging purposes.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-debug\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Debugging network interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-debug\-\_\-init} ({\bf ec\-\_\-debug\-\_\-t} $\ast$, {\bf ec\-\_\-device\-\_\-t} $\ast$, const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Debug interface constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-clear} ({\bf ec\-\_\-debug\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Debug interface destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-register} ({\bf ec\-\_\-debug\-\_\-t} $\ast$, const struct net\-\_\-device $\ast$)\label{debug_8h_a1d9b504f3765f22ec81c6e332f542add}
+
+\begin{DoxyCompactList}\small\item\em Register debug interface. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-unregister} ({\bf ec\-\_\-debug\-\_\-t} $\ast$)\label{debug_8h_aed729c6112e274fb57539f57f0101c59}
+
+\begin{DoxyCompactList}\small\item\em Unregister debug interface. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-send} ({\bf ec\-\_\-debug\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)\label{debug_8h_a69e2cddd7db5ff1ac8b3e1896e7cc862}
+
+\begin{DoxyCompactList}\small\item\em Sends frame data to the interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Network interface for debugging purposes. 
+
+Definition in file {\bf debug.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{debug.\-h@{debug.\-h}!ec\-\_\-debug\-\_\-init@{ec\-\_\-debug\-\_\-init}}
+\index{ec\-\_\-debug\-\_\-init@{ec\-\_\-debug\-\_\-init}!debug.h@{debug.\-h}}
+\subsubsection[{ec\-\_\-debug\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-debug\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg, }
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{debug_8h_aa8debb37c58f6813ddefa8233095f496}
+
+
+Debug interface constructor. 
+
+Initializes the debug object, creates a net\-\_\-device and registeres it.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em dbg} & Debug object. \\
+\hline
+{\em device} & Ether\-C\-A\-T device. \\
+\hline
+{\em name} & Interface name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file debug.\-c.
+
+\index{debug.\-h@{debug.\-h}!ec\-\_\-debug\-\_\-clear@{ec\-\_\-debug\-\_\-clear}}
+\index{ec\-\_\-debug\-\_\-clear@{ec\-\_\-debug\-\_\-clear}!debug.h@{debug.\-h}}
+\subsubsection[{ec\-\_\-debug\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-debug\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg}
+\end{DoxyParamCaption}
+)}\label{debug_8h_aaf7590df1f37cbc094a03b6dd339a007}
+
+
+Debug interface destructor. 
+
+Unregisters the net\-\_\-device and frees allocated memory. 
+\begin{DoxyParams}{Parameters}
+{\em dbg} & debug object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file debug.\-c.
+

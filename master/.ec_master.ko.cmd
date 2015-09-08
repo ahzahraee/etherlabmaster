@@ -1,0 +1,1 @@
+cmd_/home/sybot/devel/etherlabmaster/master/ec_master.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-4-common/scripts/module-common.lds --build-id  -o /home/sybot/devel/etherlabmaster/master/ec_master.ko /home/sybot/devel/etherlabmaster/master/ec_master.o /home/sybot/devel/etherlabmaster/master/ec_master.mod.o

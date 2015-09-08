@@ -1,0 +1,89 @@
+\section{fmmu\-\_\-config.\-h File Reference}
+\label{fmmu__config_8h}\index{fmmu\-\_\-config.\-h@{fmmu\-\_\-config.\-h}}
+
+
+Ether\-C\-A\-T F\-M\-M\-U configuration structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t}
+\begin{DoxyCompactList}\small\item\em F\-M\-M\-U configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fmmu\-\_\-config\-\_\-init} ({\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$, {\bf ec\-\_\-domain\-\_\-t} $\ast$, uint8\-\_\-t, {\bf ec\-\_\-direction\-\_\-t})
+\begin{DoxyCompactList}\small\item\em F\-M\-M\-U configuration constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fmmu\-\_\-config\-\_\-page} (const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$, const {\bf ec\-\_\-sync\-\_\-t} $\ast$, uint8\-\_\-t $\ast$)
+\begin{DoxyCompactList}\small\item\em Initializes an F\-M\-M\-U configuration page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T F\-M\-M\-U configuration structure. 
+
+Definition in file {\bf fmmu\-\_\-config.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{fmmu\-\_\-config.\-h@{fmmu\-\_\-config.\-h}!ec\-\_\-fmmu\-\_\-config\-\_\-init@{ec\-\_\-fmmu\-\_\-config\-\_\-init}}
+\index{ec\-\_\-fmmu\-\_\-config\-\_\-init@{ec\-\_\-fmmu\-\_\-config\-\_\-init}!fmmu_config.h@{fmmu\-\_\-config.\-h}}
+\subsubsection[{ec\-\_\-fmmu\-\_\-config\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fmmu\-\_\-config\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$}]{fmmu, }
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint8\-\_\-t}]{sync\-\_\-index, }
+\item[{{\bf ec\-\_\-direction\-\_\-t}}]{dir}
+\end{DoxyParamCaption}
+)}\label{fmmu__config_8h_aa4405e7d2d30fe4747b6936970ab30b1}
+
+
+F\-M\-M\-U configuration constructor. 
+
+Inits an F\-M\-M\-U configuration, sets the logical start address and adds the process data size for the mapped P\-D\-Os of the given direction to the domain data size. 
+\begin{DoxyParams}{Parameters}
+{\em fmmu} & Ether\-C\-A\-T F\-M\-M\-U configuration. \\
+\hline
+{\em sc} & Ether\-C\-A\-T slave configuration. \\
+\hline
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em sync\-\_\-index} & Sync manager index to use. \\
+\hline
+{\em dir} & P\-D\-O direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file fmmu\-\_\-config.\-c.
+
+\index{fmmu\-\_\-config.\-h@{fmmu\-\_\-config.\-h}!ec\-\_\-fmmu\-\_\-config\-\_\-page@{ec\-\_\-fmmu\-\_\-config\-\_\-page}}
+\index{ec\-\_\-fmmu\-\_\-config\-\_\-page@{ec\-\_\-fmmu\-\_\-config\-\_\-page}!fmmu_config.h@{fmmu\-\_\-config.\-h}}
+\subsubsection[{ec\-\_\-fmmu\-\_\-config\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fmmu\-\_\-config\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$}]{fmmu, }
+\item[{const {\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync, }
+\item[{uint8\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{fmmu__config_8h_aa3eb12c353a0e1db05f0543a1c96612d}
+
+
+Initializes an F\-M\-M\-U configuration page. 
+
+The referenced memory ({\itshape data}) must be at least E\-C\-\_\-\-F\-M\-M\-U\-\_\-\-P\-A\-G\-E\-\_\-\-S\-I\-Z\-E bytes. 
+\begin{DoxyParams}{Parameters}
+{\em fmmu} & Ether\-C\-A\-T F\-M\-M\-U configuration. \\
+\hline
+{\em sync} & Sync manager. \\
+\hline
+{\em data} & \begin{quotation}
+Configuration page memory. \end{quotation}
+\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file fmmu\-\_\-config.\-c.
+

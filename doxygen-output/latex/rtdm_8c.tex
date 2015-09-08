@@ -1,0 +1,202 @@
+\section{rtdm.\-c File Reference}
+\label{rtdm_8c}\index{rtdm.\-c@{rtdm.\-c}}
+
+
+R\-T\-D\-M interface.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-rtdm\-\_\-context\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Context structure for an open R\-T\-D\-M file handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\-E\-B\-U\-G}~0\label{rtdm_8c_ad72dbcf6d0153db1b8d8a58001feed83}
+
+\begin{DoxyCompactList}\small\item\em Set to 1 to enable device operations debugging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-rtdm\-\_\-open} (struct rtdm\-\_\-dev\-\_\-context $\ast$context,rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$user\-\_\-info,int oflags)
+\begin{DoxyCompactList}\small\item\em Driver open. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-rtdm\-\_\-close} (struct rtdm\-\_\-dev\-\_\-context $\ast$context,rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$user\-\_\-info)
+\begin{DoxyCompactList}\small\item\em Driver close. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-rtdm\-\_\-ioctl} (struct rtdm\-\_\-dev\-\_\-context $\ast$context,rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$user\-\_\-info,unsigned int request,void \-\_\-\-\_\-user $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Driver ioctl. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-rtdm\-\_\-dev\-\_\-init} ({\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$rtdm\-\_\-dev, {\bf ec\-\_\-master\-\_\-t} $\ast$master)
+\begin{DoxyCompactList}\small\item\em Initialize an R\-T\-D\-M device. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-rtdm\-\_\-dev\-\_\-clear} ({\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$rtdm\-\_\-dev)
+\begin{DoxyCompactList}\small\item\em Clear an R\-T\-D\-M device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-rtdm\-\_\-mmap} (ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ioctl\-\_\-ctx, void $\ast$$\ast$user\-\_\-address)
+\begin{DoxyCompactList}\small\item\em Memory-\/map process data to user space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-T\-D\-M interface. 
+
+Definition in file {\bf rtdm.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-open@{ec\-\_\-rtdm\-\_\-open}}
+\index{ec\-\_\-rtdm\-\_\-open@{ec\-\_\-rtdm\-\_\-open}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{struct rtdm\-\_\-dev\-\_\-context $\ast$}]{context, }
+\item[{rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$}]{user\-\_\-info, }
+\item[{int}]{oflags}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a3fd2f4e950d8b2c88022c413010cea06}
+
+
+Driver open. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context. \\
+\hline
+{\em user\-\_\-info} & User data. \\
+\hline
+{\em oflags} & Open flags. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file rtdm.\-c.
+
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-close@{ec\-\_\-rtdm\-\_\-close}}
+\index{ec\-\_\-rtdm\-\_\-close@{ec\-\_\-rtdm\-\_\-close}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{struct rtdm\-\_\-dev\-\_\-context $\ast$}]{context, }
+\item[{rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$}]{user\-\_\-info}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a91b71caf95808988d420728ec92cf7f4}
+
+
+Driver close. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context. \\
+\hline
+{\em user\-\_\-info} & User data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 171 of file rtdm.\-c.
+
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-ioctl@{ec\-\_\-rtdm\-\_\-ioctl}}
+\index{ec\-\_\-rtdm\-\_\-ioctl@{ec\-\_\-rtdm\-\_\-ioctl}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-ioctl}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-ioctl (
+\begin{DoxyParamCaption}
+\item[{struct rtdm\-\_\-dev\-\_\-context $\ast$}]{context, }
+\item[{rtdm\-\_\-user\-\_\-info\-\_\-t $\ast$}]{user\-\_\-info, }
+\item[{unsigned int}]{request, }
+\item[{void \-\_\-\-\_\-user $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a41a16f6eff6a450d832b551b6f8964d6}
+
+
+Driver ioctl. 
+
+\begin{DoxyReturn}{Returns}
+ioctl() return code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Context. \\
+\hline
+{\em user\-\_\-info} & User data. \\
+\hline
+{\em request} & Request. \\
+\hline
+{\em arg} & Argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file rtdm.\-c.
+
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-dev\-\_\-init@{ec\-\_\-rtdm\-\_\-dev\-\_\-init}}
+\index{ec\-\_\-rtdm\-\_\-dev\-\_\-init@{ec\-\_\-rtdm\-\_\-dev\-\_\-init}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-dev\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-dev\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$}]{rtdm\-\_\-dev, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a4df98f505b4a74bb76aeb2df2bfe1fda}
+
+
+Initialize an R\-T\-D\-M device. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em rtdm\-\_\-dev} & Ether\-C\-A\-T R\-T\-D\-M device. \\
+\hline
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file rtdm.\-c.
+
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-dev\-\_\-clear@{ec\-\_\-rtdm\-\_\-dev\-\_\-clear}}
+\index{ec\-\_\-rtdm\-\_\-dev\-\_\-clear@{ec\-\_\-rtdm\-\_\-dev\-\_\-clear}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-dev\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-rtdm\-\_\-dev\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-rtdm\-\_\-dev\-\_\-t} $\ast$}]{rtdm\-\_\-dev}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a4d1eee172b955c21345fae5a0aaf0d21}
+
+
+Clear an R\-T\-D\-M device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtdm\-\_\-dev} & Ether\-C\-A\-T R\-T\-D\-M device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 118 of file rtdm.\-c.
+
+\index{rtdm.\-c@{rtdm.\-c}!ec\-\_\-rtdm\-\_\-mmap@{ec\-\_\-rtdm\-\_\-mmap}}
+\index{ec\-\_\-rtdm\-\_\-mmap@{ec\-\_\-rtdm\-\_\-mmap}!rtdm.c@{rtdm.\-c}}
+\subsubsection[{ec\-\_\-rtdm\-\_\-mmap}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-rtdm\-\_\-mmap (
+\begin{DoxyParamCaption}
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ioctl\-\_\-ctx, }
+\item[{void $\ast$$\ast$}]{user\-\_\-address}
+\end{DoxyParamCaption}
+)}\label{rtdm_8c_a1aec20337852eaf46576f8f3025202d1}
+
+
+Memory-\/map process data to user space. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em ioctl\-\_\-ctx} & Context. \\
+\hline
+{\em user\-\_\-address} & Userspace address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file rtdm.\-c.
+

@@ -1,0 +1,327 @@
+\section{pdo.\-c File Reference}
+\label{pdo_8c}\index{pdo.\-c@{pdo.\-c}}
+
+
+Ether\-C\-A\-T process data object methods.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-pdo\-\_\-init} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em P\-D\-O constructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-pdo\-\_\-init\-\_\-copy} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$other\-\_\-pdo)
+\begin{DoxyCompactList}\small\item\em P\-D\-O copy constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-pdo\-\_\-clear} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em P\-D\-O destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-pdo\-\_\-clear\-\_\-entries} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em Clear P\-D\-O entry list. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-pdo\-\_\-set\-\_\-name} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Set P\-D\-O name. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$ {\bf ec\-\_\-pdo\-\_\-add\-\_\-entry} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, uint16\-\_\-t index, uint8\-\_\-t subindex, uint8\-\_\-t bit\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Add a new P\-D\-O entry to the configuration. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-pdo\-\_\-copy\-\_\-entries} ({\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$other)
+\begin{DoxyCompactList}\small\item\em Copy P\-D\-O entries from another P\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-pdo\-\_\-equal\-\_\-entries} (const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo1, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo2)
+\begin{DoxyCompactList}\small\item\em Compares the entries of two P\-D\-Os. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-pdo\-\_\-entry\-\_\-count} (const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em Get the number of P\-D\-O entries. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$ {\bf ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const} (const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds a P\-D\-O entry via its position in the list. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-pdo\-\_\-print\-\_\-entries} (const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em Outputs the P\-D\-Os in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T process data object methods. 
+
+Definition in file {\bf pdo.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-init@{ec\-\_\-pdo\-\_\-init}}
+\index{ec\-\_\-pdo\-\_\-init@{ec\-\_\-pdo\-\_\-init}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-pdo\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a0766e8e7b4f607aa3b8ce3320198c23b}
+
+
+P\-D\-O constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & Ether\-C\-A\-T P\-D\-O \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-init\-\_\-copy@{ec\-\_\-pdo\-\_\-init\-\_\-copy}}
+\index{ec\-\_\-pdo\-\_\-init\-\_\-copy@{ec\-\_\-pdo\-\_\-init\-\_\-copy}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-init\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-pdo\-\_\-init\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{other\-\_\-pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_aa3110f0f43df1aa859a25a7a53be431c}
+
+
+P\-D\-O copy constructor. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O to create. \\
+\hline
+{\em other\-\_\-pdo} & P\-D\-O to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-clear@{ec\-\_\-pdo\-\_\-clear}}
+\index{ec\-\_\-pdo\-\_\-clear@{ec\-\_\-pdo\-\_\-clear}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-pdo\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a2fdbc33334b65a05865e9df69df1737c}
+
+
+P\-D\-O destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & Ether\-C\-A\-T P\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-clear\-\_\-entries@{ec\-\_\-pdo\-\_\-clear\-\_\-entries}}
+\index{ec\-\_\-pdo\-\_\-clear\-\_\-entries@{ec\-\_\-pdo\-\_\-clear\-\_\-entries}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-clear\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-pdo\-\_\-clear\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a399136c28e710fa96af02e46c0351dbb}
+
+
+Clear P\-D\-O entry list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & Ether\-C\-A\-T P\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-set\-\_\-name@{ec\-\_\-pdo\-\_\-set\-\_\-name}}
+\index{ec\-\_\-pdo\-\_\-set\-\_\-name@{ec\-\_\-pdo\-\_\-set\-\_\-name}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-set\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-pdo\-\_\-set\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a8bd12e530ccbb342e5e4434d3464777a}
+
+
+Set P\-D\-O name. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O. \\
+\hline
+{\em name} & New name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-add\-\_\-entry@{ec\-\_\-pdo\-\_\-add\-\_\-entry}}
+\index{ec\-\_\-pdo\-\_\-add\-\_\-entry@{ec\-\_\-pdo\-\_\-add\-\_\-entry}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-add\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-pdo\-\_\-add\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{uint16\-\_\-t}]{index, }
+\item[{uint8\-\_\-t}]{subindex, }
+\item[{uint8\-\_\-t}]{bit\-\_\-length}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a2df3cd7ded1048aa232f2f5c19a07229}
+
+
+Add a new P\-D\-O entry to the configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Pointer} & to the added entry, otherwise a E\-R\-R\-\_\-\-P\-T\-R() code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O. \\
+\hline
+{\em index} & New entry's index. \\
+\hline
+{\em subindex} & New entry's subindex. \\
+\hline
+{\em bit\-\_\-length} & New entry's bit length. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-copy\-\_\-entries@{ec\-\_\-pdo\-\_\-copy\-\_\-entries}}
+\index{ec\-\_\-pdo\-\_\-copy\-\_\-entries@{ec\-\_\-pdo\-\_\-copy\-\_\-entries}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-copy\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-pdo\-\_\-copy\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a31ae386c7c51b495354db61f08e019a3}
+
+
+Copy P\-D\-O entries from another P\-D\-O. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O whos entries shall be replaced. \\
+\hline
+{\em other} & Pdo with entries to copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 186 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-equal\-\_\-entries@{ec\-\_\-pdo\-\_\-equal\-\_\-entries}}
+\index{ec\-\_\-pdo\-\_\-equal\-\_\-entries@{ec\-\_\-pdo\-\_\-equal\-\_\-entries}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-equal\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-pdo\-\_\-equal\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo1, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo2}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a17ae4ccdd1aa4cfb9748b89ee9cbbfd0}
+
+
+Compares the entries of two P\-D\-Os. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & The entries of the given P\-D\-Os are equal. \\
+\hline
+{\em 0} & The entries of the given P\-D\-Os differ. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo1} & First P\-D\-O. \\
+\hline
+{\em pdo2} & Second P\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-entry\-\_\-count@{ec\-\_\-pdo\-\_\-entry\-\_\-count}}
+\index{ec\-\_\-pdo\-\_\-entry\-\_\-count@{ec\-\_\-pdo\-\_\-entry\-\_\-count}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-entry\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-pdo\-\_\-entry\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_afff7e1d1a20a2845d14c05f697fda33e}
+
+
+Get the number of P\-D\-O entries. 
+
+\begin{DoxyReturn}{Returns}
+Number of P\-D\-O entries. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 257 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const}}
+\index{ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-pdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-pdo\-\_\-find\-\_\-entry\-\_\-by\-\_\-pos\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a9fa0c22e26d024fa3e5e4ccd77d3efe5}
+
+
+Finds a P\-D\-O entry via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file pdo.\-c.
+
+\index{pdo.\-c@{pdo.\-c}!ec\-\_\-pdo\-\_\-print\-\_\-entries@{ec\-\_\-pdo\-\_\-print\-\_\-entries}}
+\index{ec\-\_\-pdo\-\_\-print\-\_\-entries@{ec\-\_\-pdo\-\_\-print\-\_\-entries}!pdo.c@{pdo.\-c}}
+\subsubsection[{ec\-\_\-pdo\-\_\-print\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-pdo\-\_\-print\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{pdo_8c_a4009041a62d3844c85987c25ecaaf78f}
+
+
+Outputs the P\-D\-Os in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdo} & P\-D\-O. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 299 of file pdo.\-c.
+

@@ -1,0 +1,163 @@
+\section{ec\-\_\-soe\-\_\-request\-\_\-t Struct Reference}
+\label{structec__soe__request__t}\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+
+
+Sercos-\/over-\/\-Ether\-C\-A\-T request.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf drive\-\_\-no}
+\begin{DoxyCompactList}\small\item\em Drive number. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf idn}
+\begin{DoxyCompactList}\small\item\em Sercos I\-D-\/\-Number. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-al\-\_\-state\-\_\-t} {\bf al\-\_\-state}
+\begin{DoxyCompactList}\small\item\em A\-L state (only valid for I\-D\-N config). \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf data}
+\begin{DoxyCompactList}\small\item\em Pointer to S\-D\-O data. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf mem\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of S\-D\-O data memory. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf data\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of S\-D\-O data. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Direction. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} {\bf state}
+\begin{DoxyCompactList}\small\item\em Request state. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-sent}
+\begin{DoxyCompactList}\small\item\em Jiffies, when the upload/download request was sent. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf error\-\_\-code}
+\begin{DoxyCompactList}\small\item\em So\-E error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sercos-\/over-\/\-Ether\-C\-A\-T request. 
+
+Definition at line 48 of file soe\-\_\-request.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!list@{list}}
+\index{list@{list}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-soe\-\_\-request\-\_\-t\-::list}\label{structec__soe__request__t_a07cafa8f400f95ced4f6037629c979f6}
+
+
+List item. 
+
+
+
+Definition at line 49 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!drive\-\_\-no@{drive\-\_\-no}}
+\index{drive\-\_\-no@{drive\-\_\-no}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{drive\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-soe\-\_\-request\-\_\-t\-::drive\-\_\-no}\label{structec__soe__request__t_a041ffd0bc617403520b352bcb347a6b5}
+
+
+Drive number. 
+
+
+
+Definition at line 50 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!idn@{idn}}
+\index{idn@{idn}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{idn}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-soe\-\_\-request\-\_\-t\-::idn}\label{structec__soe__request__t_a04792e875a94787c20bb370e65b584b7}
+
+
+Sercos I\-D-\/\-Number. 
+
+
+
+Definition at line 51 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!al\-\_\-state@{al\-\_\-state}}
+\index{al\-\_\-state@{al\-\_\-state}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{al\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-al\-\_\-state\-\_\-t} ec\-\_\-soe\-\_\-request\-\_\-t\-::al\-\_\-state}\label{structec__soe__request__t_aa421217a4fc552dc2411b07010a4520a}
+
+
+A\-L state (only valid for I\-D\-N config). 
+
+
+
+Definition at line 52 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!data@{data}}
+\index{data@{data}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-soe\-\_\-request\-\_\-t\-::data}\label{structec__soe__request__t_a50146c3d308515d01b221f17b528f2f7}
+
+
+Pointer to S\-D\-O data. 
+
+
+
+Definition at line 53 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!mem\-\_\-size@{mem\-\_\-size}}
+\index{mem\-\_\-size@{mem\-\_\-size}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-soe\-\_\-request\-\_\-t\-::mem\-\_\-size}\label{structec__soe__request__t_af259cf93b71c67824d7ca728b27a5776}
+
+
+Size of S\-D\-O data memory. 
+
+
+
+Definition at line 54 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!data\-\_\-size@{data\-\_\-size}}
+\index{data\-\_\-size@{data\-\_\-size}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{data\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-soe\-\_\-request\-\_\-t\-::data\-\_\-size}\label{structec__soe__request__t_afb47843a1a15d493b35615bc5a65ca18}
+
+
+Size of S\-D\-O data. 
+
+
+
+Definition at line 55 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!dir@{dir}}
+\index{dir@{dir}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-soe\-\_\-request\-\_\-t\-::dir}\label{structec__soe__request__t_ad9788973a47b9b82bac17e527eb6d7a6}
+
+
+Direction. 
+
+E\-C\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T means writing to the slave, E\-C\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T means reading from the slave. 
+
+Definition at line 56 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!state@{state}}
+\index{state@{state}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-soe\-\_\-request\-\_\-t\-::state}\label{structec__soe__request__t_ad019a8fb7fd83ffc0744713d0247b217}
+
+
+Request state. 
+
+
+
+Definition at line 58 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!jiffies\-\_\-sent@{jiffies\-\_\-sent}}
+\index{jiffies\-\_\-sent@{jiffies\-\_\-sent}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{jiffies\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-soe\-\_\-request\-\_\-t\-::jiffies\-\_\-sent}\label{structec__soe__request__t_acb9e954735012f3e149bdd207afbc3a7}
+
+
+Jiffies, when the upload/download request was sent. 
+
+
+
+Definition at line 59 of file soe\-\_\-request.\-h.
+
+\index{ec\-\_\-soe\-\_\-request\-\_\-t@{ec\-\_\-soe\-\_\-request\-\_\-t}!error\-\_\-code@{error\-\_\-code}}
+\index{error\-\_\-code@{error\-\_\-code}!ec_soe_request_t@{ec\-\_\-soe\-\_\-request\-\_\-t}}
+\subsubsection[{error\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-soe\-\_\-request\-\_\-t\-::error\-\_\-code}\label{structec__soe__request__t_a9fe2cb324e505e6e0123e310dcbc4dcc}
+
+
+So\-E error code. 
+
+
+
+Definition at line 61 of file soe\-\_\-request.\-h.
+

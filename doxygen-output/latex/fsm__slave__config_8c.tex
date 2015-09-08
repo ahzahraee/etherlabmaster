@@ -1,0 +1,1080 @@
+\section{fsm\-\_\-slave\-\_\-config.\-c File Reference}
+\label{fsm__slave__config_8c}\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}}
+
+
+Ether\-C\-A\-T slave configuration state machine.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S}~10000
+\begin{DoxyCompactList}\small\item\em Maximum clock difference (in ns) before going to S\-A\-F\-E\-O\-P. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-W\-A\-I\-T\-\_\-\-M\-S}~5000\label{fsm__slave__config_8c_aa507b566eace93ee237a040d67a90430}
+
+\begin{DoxyCompactList}\small\item\em Maximum time (in ms) to wait for clock discipline. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-D\-C\-\_\-\-S\-T\-A\-R\-T\-\_\-\-O\-F\-F\-S\-E\-T}~100000000\-U\-L\-L\label{fsm__slave__config_8c_ae3ebe26a0aba621a2fa21a8c216ef4bb}
+
+\begin{DoxyCompactList}\small\item\em Time offset (in ns), that is added to cyclic start time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: I\-N\-I\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: C\-L\-E\-A\-R F\-M\-M\-U. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: C\-L\-E\-A\-R S\-Y\-N\-C. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: C\-L\-E\-A\-R D\-C A\-S\-S\-I\-G\-N. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-Y\-N\-C. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: B\-O\-O\-T/\-P\-R\-E\-O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-D\-O\-\_\-\-C\-O\-N\-F. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-O\-E\-\_\-\-C\-O\-N\-F. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-D\-I\-V\-I\-D\-E\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: W\-A\-T\-C\-H\-D\-O\-G. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Configure P\-D\-O sync managers. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: P\-D\-O\-\_\-\-C\-O\-N\-F. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: F\-M\-M\-U. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: D\-C C\-Y\-C\-L\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: D\-C S\-Y\-N\-C C\-H\-E\-C\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: D\-C S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: D\-C A\-S\-S\-I\-G\-N. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-A\-F\-E\-O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: S\-O\-E\-\_\-\-C\-O\-N\-F. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave configuration state\-: O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Start state change to I\-N\-I\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Clear the sync manager configurations. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Clear the D\-C assignment. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for mailbox sync managers to be configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Request P\-R\-E\-O\-P state. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for S\-D\-O configurations to be applied. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for So\-E configurations to be applied. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em P\-D\-O\-\_\-\-C\-O\-N\-F entry function. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-D\-I\-V\-I\-D\-E\-R entry function. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em W\-A\-T\-C\-H\-D\-O\-G entry function. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for P\-D\-O sync managers to be configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for F\-M\-M\-Us to be configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for D\-C to be configured. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Request S\-A\-F\-E\-O\-P state. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for So\-E configurations to be applied in S\-A\-F\-E\-O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Bring slave to O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Reconfigure the slave starting at I\-N\-I\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram, {\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$fsm\-\_\-change, {\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$fsm\-\_\-coe, {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$fsm\-\_\-soe, {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm\-\_\-pdo)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Start slave configuration state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave configuration state machine. 
+
+Definition in file {\bf fsm\-\_\-slave\-\_\-config.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S@{E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S}}
+\index{E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S@{E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-D\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-D\-I\-F\-F\-\_\-\-N\-S~10000}\label{fsm__slave__config_8c_aef4451a8493a8ee8d4178870fba218fd}
+
+
+Maximum clock difference (in ns) before going to S\-A\-F\-E\-O\-P. 
+
+Wait for D\-C time difference to drop under this absolute value before requesting S\-A\-F\-E\-O\-P. 
+
+Definition at line 52 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a1fa4b37f0223f56e502f069897e9b319}
+
+
+Slave configuration state\-: S\-T\-A\-R\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 219 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a26ea56ff1e196cb0e02fa94e3aaaca39}
+
+
+Slave configuration state\-: I\-N\-I\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 244 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-fmmus (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a29ccfdca2018704cce354e27d2ca264e}
+
+
+Slave configuration state\-: C\-L\-E\-A\-R F\-M\-M\-U. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 281 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-clear\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ad2372ca4d8aebe4b1df13d6e090a56b8}
+
+
+Slave configuration state\-: C\-L\-E\-A\-R S\-Y\-N\-C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 340 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-clear\-\_\-assign (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ac31c959dd3168644026c64fc841fe795}
+
+
+Slave configuration state\-: C\-L\-E\-A\-R D\-C A\-S\-S\-I\-G\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 396 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-mbox\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a9dec0908b83d7209da989b2c6e8debf2}
+
+
+Slave configuration state\-: S\-Y\-N\-C. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Timeout for response. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 557 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-boot\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_af700291b7a95c29d9485d78a53ca4456}
+
+
+Slave configuration state\-: B\-O\-O\-T/\-P\-R\-E\-O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 701 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-sdo\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a8c9aa96eb69c86706cdfeeaa4b4b17dd}
+
+
+Slave configuration state\-: S\-D\-O\-\_\-\-C\-O\-N\-F. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 817 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_aa115b184092cf474070e8810cd35379b}
+
+
+Slave configuration state\-: S\-O\-E\-\_\-\-C\-O\-N\-F. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 890 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog\-\_\-divider (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a62bf6e44b03ddefd7c14106fb5400dd8}
+
+
+Slave configuration state\-: W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-D\-I\-V\-I\-D\-E\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 999 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-watchdog (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a8ac8e5402dd89ef793a8ea5de59bb1b4}
+
+
+Slave configuration state\-: W\-A\-T\-C\-H\-D\-O\-G. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1058 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a23076a31e43499d1165ce23873a9bca6}
+
+
+Configure P\-D\-O sync managers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1157 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-pdo\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_aeee2e09af3d8a8d6ad35a9c89f869b74}
+
+
+Slave configuration state\-: P\-D\-O\-\_\-\-C\-O\-N\-F. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 948 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a879e6e3cf0da1700a80deea5f25f673f}
+
+
+Slave configuration state\-: F\-M\-M\-U. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1244 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-cycle (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_aa0e41535e16539525584f3e0073d5c3b}
+
+
+Slave configuration state\-: D\-C C\-Y\-C\-L\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1314 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-sync\-\_\-check (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ad5a3b1f715cac3cdb65d6e949a5d6080}
+
+
+Slave configuration state\-: D\-C S\-Y\-N\-C C\-H\-E\-C\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1357 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ad651366e02dfe226542b571eb5b459b5}
+
+
+Slave configuration state\-: D\-C S\-T\-A\-R\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1459 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-dc\-\_\-assign (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a4f251cd33ffedc3dd47b10c058dbcd4a}
+
+
+Slave configuration state\-: D\-C A\-S\-S\-I\-G\-N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1504 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-safeop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a53d7a3f43b0c377d53176178e9ad3f7d}
+
+
+Slave configuration state\-: S\-A\-F\-E\-O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1549 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-soe\-\_\-conf\-\_\-safeop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_afb5e783f09530f52f9ee6130f717bd69}
+
+
+Slave configuration state\-: S\-O\-E\-\_\-\-C\-O\-N\-F. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1615 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-op (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_afd878d760f1d15be33a19791d174a0c8}
+
+
+Slave configuration state\-: O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1673 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_af6d87c10639604b3e0ee4efc9ebeb94d}
+
+
+Start state change to I\-N\-I\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-clear\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_aee4686cc448d8e25b640e4a4506cc468}
+
+
+Clear the sync manager configurations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 311 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-clear\-\_\-assign (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a63931c31e95885b7843ee93281d5239e}
+
+
+Clear the D\-C assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 372 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-mbox\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ad6a6da651b80a6d73abc9711e0d57703}
+
+
+Check for mailbox sync managers to be configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 425 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-boot\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a621a88cd2b5ee279537452ebbe40a057}
+
+
+Request P\-R\-E\-O\-P state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 680 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-sdo\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a6b1533fd17415a5526ab95ab9f29023b}
+
+
+Check for S\-D\-O configurations to be applied. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 786 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ab86fec90d4f5a3bfd8452abe34eba544}
+
+
+Check for So\-E configurations to be applied. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 856 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-conf (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a48bda2af315f6b104013c8361ed34857}
+
+
+P\-D\-O\-\_\-\-C\-O\-N\-F entry function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 934 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog\-\_\-divider (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ada4717cc684d2830bd4f3ea1edea6610}
+
+
+W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-D\-I\-V\-I\-D\-E\-R entry function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 974 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-watchdog (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_af76083b207aff980b3dcc95799956765}
+
+
+W\-A\-T\-C\-H\-D\-O\-G entry function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1031 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-pdo\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a4b40cbd2649821755d2fec3669302a6d}
+
+
+Check for P\-D\-O sync managers to be configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1089 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a7114df3d23652e25cf456b9ba8485417}
+
+
+Check for F\-M\-M\-Us to be configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1190 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-dc\-\_\-cycle (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ab06cdcc4a2f26e5ed899fdbe8265b0ed}
+
+
+Check for D\-C to be configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1276 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-safeop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a53b9e5224c07c71ea0148e259bc15dc4}
+
+
+Request S\-A\-F\-E\-O\-P state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1536 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-soe\-\_\-conf\-\_\-safeop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_adf4f1684a79998d257bbb6b22a0ba626}
+
+
+Check for So\-E configurations to be applied in S\-A\-F\-E\-O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1581 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-enter\-\_\-op (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ab1b3b7d0ee7df28be7c7bfec05d613c8}
+
+
+Bring slave to O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1659 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ac49f7cba3423c2f0996fb9bd318bac0b}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1725 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-state\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a71e2a09cfd6eca4aede62732d2d0b7ab}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1715 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-reconfigure (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a60a3aefc3121fbcd3eed49c61c209ff9}
+
+
+Reconfigure the slave starting at I\-N\-I\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1699 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{{\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$}]{fsm\-\_\-change, }
+\item[{{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$}]{fsm\-\_\-coe, }
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm\-\_\-soe, }
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm\-\_\-pdo}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a093814930df5e3d3af495e85398aa872}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+{\em datagram} & datagram structure to use \\
+\hline
+{\em fsm\-\_\-change} & State change state machine to use. \\
+\hline
+{\em fsm\-\_\-coe} & Co\-E state machine to use. \\
+\hline
+{\em fsm\-\_\-soe} & So\-E state machine to use. \\
+\hline
+{\em fsm\-\_\-pdo} & P\-D\-O configuration state machine to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ac2b66c1eec055bdf97dfe28b1867829a}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 144 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a23969958ec22371a9b35cdb99e826885}
+
+
+Start slave configuration state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+{\em slave} & slave to configure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-running (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a5ebfe5792997b3d5f0a815e23e57a039}
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_ac57f8276c2094c03c4bff58efd775d37}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle.
+
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file fsm\-\_\-slave\-\_\-config.\-c.
+
+\index{fsm\-\_\-slave\-\_\-config.\-c@{fsm\-\_\-slave\-\_\-config.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}!fsm_slave_config.c@{fsm\-\_\-slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__config_8c_a1d6f6bb1032bf3687e6be6b71a66a008}
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file fsm\-\_\-slave\-\_\-config.\-c.
+

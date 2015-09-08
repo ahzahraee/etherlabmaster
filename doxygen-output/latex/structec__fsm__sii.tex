@@ -1,0 +1,57 @@
+\section{ec\-\_\-fsm\-\_\-sii Struct Reference}
+\label{structec__fsm__sii}\index{ec\-\_\-fsm\-\_\-sii@{ec\-\_\-fsm\-\_\-sii}}
+
+
+Slave information interface F\-S\-M.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__fsm__sii_a8900a8deb8f7f8fa21b678bb45c49bd6}
+
+\begin{DoxyCompactList}\small\item\em slave the F\-S\-M runs on \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}\label{structec__fsm__sii_a0b742789c074c3ebff83f0892571fd20}
+
+\begin{DoxyCompactList}\small\item\em datagram used in the state machine \end{DoxyCompactList}\item 
+unsigned int {\bf retries}\label{structec__fsm__sii_a1571b23ec01b79dc7287d327cc6a4812}
+
+\begin{DoxyCompactList}\small\item\em retries upon datagram timeout \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} $\ast$)\label{structec__fsm__sii_a38d4274ecd8a9e1cd3135184a48fb218}
+
+\begin{DoxyCompactList}\small\item\em S\-I\-I state function. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf word\-\_\-offset}\label{structec__fsm__sii_afecb19ccde2a49881d9430c65a854880}
+
+\begin{DoxyCompactList}\small\item\em input\-: word offset in S\-I\-I \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-sii\-\_\-addressing\-\_\-t} {\bf mode}\label{structec__fsm__sii_abe104575bf34cbfb34beee82562524a7}
+
+\begin{DoxyCompactList}\small\item\em reading via A\-P\-R\-D or N\-P\-R\-D \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf value} [4]\label{structec__fsm__sii_ac95eca9edba43bc2e9e6354a35f6cd77}
+
+\begin{DoxyCompactList}\small\item\em raw S\-I\-I value (32bit) \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em Start timestamp. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf check\-\_\-once\-\_\-more}\label{structec__fsm__sii_aa42a961a6e212bced0051dbf569b47c3}
+
+\begin{DoxyCompactList}\small\item\em one more try after timeout \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Slave information interface F\-S\-M. 
+
+Definition at line 61 of file fsm\-\_\-sii.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-sii@{ec\-\_\-fsm\-\_\-sii}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_fsm_sii@{ec\-\_\-fsm\-\_\-sii}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-fsm\-\_\-sii\-::jiffies\-\_\-start}\label{structec__fsm__sii_ab7f2a8187c72c4dcd08235b1533062b5}
+
+
+Start timestamp. 
+
+
+
+Definition at line 71 of file fsm\-\_\-sii.\-h.
+

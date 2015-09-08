@@ -1,0 +1,286 @@
+\section{debug.\-c File Reference}
+\label{debug_8c}\index{debug.\-c@{debug.\-c}}
+
+
+Ethernet interface for debugging purposes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-dbgdev\-\_\-open} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Opens the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-dbgdev\-\_\-stop} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Stops the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-dbgdev\-\_\-tx} (struct sk\-\_\-buff $\ast$skb,struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Transmits data via the virtual network device. \end{DoxyCompactList}\item 
+struct net\-\_\-device\-\_\-stats $\ast$ {\bf ec\-\_\-dbgdev\-\_\-stats} (struct net\-\_\-device $\ast$dev)
+\begin{DoxyCompactList}\small\item\em Gets statistics about the virtual network device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-debug\-\_\-init} ({\bf ec\-\_\-debug\-\_\-t} $\ast$dbg, {\bf ec\-\_\-device\-\_\-t} $\ast$device, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Debug interface constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-clear} ({\bf ec\-\_\-debug\-\_\-t} $\ast$dbg)
+\begin{DoxyCompactList}\small\item\em Debug interface destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-register} ({\bf ec\-\_\-debug\-\_\-t} $\ast$dbg, const struct net\-\_\-device $\ast$net\-\_\-dev)
+\begin{DoxyCompactList}\small\item\em Register debug interface. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-unregister} ({\bf ec\-\_\-debug\-\_\-t} $\ast$dbg)
+\begin{DoxyCompactList}\small\item\em Unregister debug interface. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-debug\-\_\-send} ({\bf ec\-\_\-debug\-\_\-t} $\ast$dbg, const uint8\-\_\-t $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Sends frame data to the interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static struct net\-\_\-device\-\_\-ops {\bf ec\-\_\-dbg\-\_\-netdev\-\_\-ops}
+\begin{DoxyCompactList}\small\item\em Device operations for debug interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ethernet interface for debugging purposes. 
+
+Definition in file {\bf debug.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{debug.\-c@{debug.\-c}!ec\-\_\-dbgdev\-\_\-open@{ec\-\_\-dbgdev\-\_\-open}}
+\index{ec\-\_\-dbgdev\-\_\-open@{ec\-\_\-dbgdev\-\_\-open}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-dbgdev\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-dbgdev\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a11a1c64e15248046846431990839c0f4}
+
+
+Opens the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & debug net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-dbgdev\-\_\-stop@{ec\-\_\-dbgdev\-\_\-stop}}
+\index{ec\-\_\-dbgdev\-\_\-stop@{ec\-\_\-dbgdev\-\_\-stop}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-dbgdev\-\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-dbgdev\-\_\-stop (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a59052897d8dbe64aba431cc31ba628a9}
+
+
+Stops the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & debug net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-dbgdev\-\_\-tx@{ec\-\_\-dbgdev\-\_\-tx}}
+\index{ec\-\_\-dbgdev\-\_\-tx@{ec\-\_\-dbgdev\-\_\-tx}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-dbgdev\-\_\-tx}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-dbgdev\-\_\-tx (
+\begin{DoxyParamCaption}
+\item[{struct sk\-\_\-buff $\ast$}]{skb, }
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a3930f635baeaee86e93bd625b3543f2e}
+
+
+Transmits data via the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em skb} & transmit socket buffer \\
+\hline
+{\em dev} & Eo\-E net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-dbgdev\-\_\-stats@{ec\-\_\-dbgdev\-\_\-stats}}
+\index{ec\-\_\-dbgdev\-\_\-stats@{ec\-\_\-dbgdev\-\_\-stats}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-dbgdev\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}struct net\-\_\-device\-\_\-stats $\ast$ ec\-\_\-dbgdev\-\_\-stats (
+\begin{DoxyParamCaption}
+\item[{struct net\-\_\-device $\ast$}]{dev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [read]}}\label{debug_8c_ab8061a6af8b6ec3067b2c171fbae47bf}
+
+
+Gets statistics about the virtual network device. 
+
+\begin{DoxyReturn}{Returns}
+Statistics. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & debug net\-\_\-device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 258 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-debug\-\_\-init@{ec\-\_\-debug\-\_\-init}}
+\index{ec\-\_\-debug\-\_\-init@{ec\-\_\-debug\-\_\-init}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-debug\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-debug\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg, }
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{debug_8c_ab4a40ce6bb6a66bd034790c3a7985c80}
+
+
+Debug interface constructor. 
+
+Initializes the debug object, creates a net\-\_\-device and registeres it.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em dbg} & Debug object. \\
+\hline
+{\em device} & Ether\-C\-A\-T device. \\
+\hline
+{\em name} & Interface name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-debug\-\_\-clear@{ec\-\_\-debug\-\_\-clear}}
+\index{ec\-\_\-debug\-\_\-clear@{ec\-\_\-debug\-\_\-clear}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-debug\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-debug\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a1711152b73dc97bc81a9e9aae4b8a263}
+
+
+Debug interface destructor. 
+
+Unregisters the net\-\_\-device and frees allocated memory. 
+\begin{DoxyParams}{Parameters}
+{\em dbg} & debug object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-debug\-\_\-register@{ec\-\_\-debug\-\_\-register}}
+\index{ec\-\_\-debug\-\_\-register@{ec\-\_\-debug\-\_\-register}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-debug\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-debug\-\_\-register (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg, }
+\item[{const struct net\-\_\-device $\ast$}]{net\-\_\-dev}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a683a1dd06041ed934990c736ab3267a9}
+
+
+Register debug interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbg} & debug object \\
+\hline
+{\em net\-\_\-dev} & 'Real' Ethernet device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-debug\-\_\-unregister@{ec\-\_\-debug\-\_\-unregister}}
+\index{ec\-\_\-debug\-\_\-unregister@{ec\-\_\-debug\-\_\-unregister}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-debug\-\_\-unregister}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-debug\-\_\-unregister (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg}
+\end{DoxyParamCaption}
+)}\label{debug_8c_a488b3c97e9786a33f2372180de561591}
+
+
+Unregister debug interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbg} & debug object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file debug.\-c.
+
+\index{debug.\-c@{debug.\-c}!ec\-\_\-debug\-\_\-send@{ec\-\_\-debug\-\_\-send}}
+\index{ec\-\_\-debug\-\_\-send@{ec\-\_\-debug\-\_\-send}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-debug\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-debug\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-debug\-\_\-t} $\ast$}]{dbg, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{debug_8c_af11807b9c95c1c4f05aa0cd5a672a560}
+
+
+Sends frame data to the interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbg} & debug object \\
+\hline
+{\em data} & frame data \\
+\hline
+{\em size} & size of the frame data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file debug.\-c.
+
+
+
+\subsection{Variable Documentation}
+\index{debug.\-c@{debug.\-c}!ec\-\_\-dbg\-\_\-netdev\-\_\-ops@{ec\-\_\-dbg\-\_\-netdev\-\_\-ops}}
+\index{ec\-\_\-dbg\-\_\-netdev\-\_\-ops@{ec\-\_\-dbg\-\_\-netdev\-\_\-ops}!debug.c@{debug.\-c}}
+\subsubsection[{ec\-\_\-dbg\-\_\-netdev\-\_\-ops}]{\setlength{\rightskip}{0pt plus 5cm}struct net\-\_\-device\-\_\-ops ec\-\_\-dbg\-\_\-netdev\-\_\-ops\hspace{0.3cm}{\ttfamily [static]}}\label{debug_8c_a07e229b09425cb2cdc9caa6dc769c79c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+
+\{
+    .ndo\_open = ec_dbgdev_open,
+    .ndo\_stop = ec_dbgdev_stop,
+    .ndo\_start\_xmit = ec_dbgdev_tx,
+    .ndo\_get\_stats = ec_dbgdev_stats,
+\}
+\end{DoxyCode}
+
+
+Device operations for debug interfaces. 
+
+
+
+Definition at line 56 of file debug.\-c.
+

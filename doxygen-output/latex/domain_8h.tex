@@ -1,0 +1,103 @@
+\section{domain.\-h File Reference}
+\label{domain_8h}\index{domain.\-h@{domain.\-h}}
+
+
+Ether\-C\-A\-T domain structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-domain}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-domain\-\_\-init} ({\bf ec\-\_\-domain\-\_\-t} $\ast$, {\bf ec\-\_\-master\-\_\-t} $\ast$, unsigned int)\label{domain_8h_a62277a562703ecfbf3aad9e3b0ad8c75}
+
+\begin{DoxyCompactList}\small\item\em Domain constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-domain\-\_\-clear} ({\bf ec\-\_\-domain\-\_\-t} $\ast$)\label{domain_8h_a0673cfe6b046dbc8160068ef776fd0b1}
+
+\begin{DoxyCompactList}\small\item\em Domain destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config} ({\bf ec\-\_\-domain\-\_\-t} $\ast$, {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$)\label{domain_8h_a145e578c728c987fb2764ea7c30439f1}
+
+\begin{DoxyCompactList}\small\item\em Adds an F\-M\-M\-U configuration to the domain. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-domain\-\_\-finish} ({\bf ec\-\_\-domain\-\_\-t} $\ast$, uint32\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Finishes a domain. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-domain\-\_\-fmmu\-\_\-count} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$)\label{domain_8h_ae3b2fb4aa807084750214357bdba897a}
+
+\begin{DoxyCompactList}\small\item\em Get the number of F\-M\-M\-U configurations of the domain. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$ {\bf ec\-\_\-domain\-\_\-find\-\_\-fmmu} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$, unsigned int)
+\begin{DoxyCompactList}\small\item\em Get a certain F\-M\-M\-U configuration via its position in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T domain structure. 
+
+Definition in file {\bf domain.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{domain.\-h@{domain.\-h}!ec\-\_\-domain\-\_\-finish@{ec\-\_\-domain\-\_\-finish}}
+\index{ec\-\_\-domain\-\_\-finish@{ec\-\_\-domain\-\_\-finish}!domain.h@{domain.\-h}}
+\subsubsection[{ec\-\_\-domain\-\_\-finish}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-domain\-\_\-finish (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint32\-\_\-t}]{base\-\_\-address}
+\end{DoxyParamCaption}
+)}\label{domain_8h_a0ca3858bbbb5f744d85d1c6d5aa247c3}
+
+
+Finishes a domain. 
+
+This allocates the necessary datagrams and writes the correct logical addresses to every configured F\-M\-M\-U.
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Check for F\-M\-M\-Us that do not fit into any datagram.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em base\-\_\-address} & Logical base address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file domain.\-c.
+
+\index{domain.\-h@{domain.\-h}!ec\-\_\-domain\-\_\-find\-\_\-fmmu@{ec\-\_\-domain\-\_\-find\-\_\-fmmu}}
+\index{ec\-\_\-domain\-\_\-find\-\_\-fmmu@{ec\-\_\-domain\-\_\-find\-\_\-fmmu}!domain.h@{domain.\-h}}
+\subsubsection[{ec\-\_\-domain\-\_\-find\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t}$\ast$ ec\-\_\-domain\-\_\-find\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{domain_8h_a1a0dbfb47f2634ffacfd0523bb706fde}
+
+
+Get a certain F\-M\-M\-U configuration via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+F\-M\-M\-U at position {\itshape pos}, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em pos} & List position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file domain.\-c.
+

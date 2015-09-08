@@ -1,0 +1,513 @@
+\section{module.\-c File Reference}
+\label{module_8c}\index{module.\-c@{module.\-c}}
+
+
+Ether\-C\-A\-T master driver module.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}~32
+\begin{DoxyCompactList}\small\item\em Maximum number of masters. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-M\-A\-C\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}~(3 $\ast$ E\-T\-H\-\_\-\-A\-L\-E\-N)\label{module_8c_a39e98526a4ed34d4b47146eebc08f341}
+
+\begin{DoxyCompactList}\small\item\em Maximum M\-A\-C string size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \-\_\-\-\_\-init {\bf ec\-\_\-init\-\_\-module} (void)
+\begin{DoxyCompactList}\small\item\em Module initialization. \end{DoxyCompactList}\item 
+void \-\_\-\-\_\-exit {\bf ec\-\_\-cleanup\-\_\-module} (void)
+\begin{DoxyCompactList}\small\item\em Module cleanup. \end{DoxyCompactList}\item 
+static int {\bf ec\-\_\-mac\-\_\-parse} (uint8\-\_\-t $\ast$mac, const char $\ast$src, int allow\-\_\-empty)
+\begin{DoxyCompactList}\small\item\em Parse a M\-A\-C address from a string. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-master\-\_\-count} (void)\label{module_8c_a4262f13e24a72428a0760f9e4e910597}
+
+\begin{DoxyCompactList}\small\item\em Get the number of masters. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-mac\-\_\-equal} (const uint8\-\_\-t $\ast$mac1, const uint8\-\_\-t $\ast$mac2)
+\item 
+ssize\-\_\-t {\bf ec\-\_\-mac\-\_\-print} (const uint8\-\_\-t $\ast$mac, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Print a M\-A\-C address to a buffer. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-mac\-\_\-is\-\_\-zero} (const uint8\-\_\-t $\ast$mac)
+\item 
+int {\bf ec\-\_\-mac\-\_\-is\-\_\-broadcast} (const uint8\-\_\-t $\ast$mac)
+\item 
+void {\bf ec\-\_\-print\-\_\-data} (const uint8\-\_\-t $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Outputs frame contents for debugging purposes. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-print\-\_\-data\-\_\-diff} (const uint8\-\_\-t $\ast$d1, const uint8\-\_\-t $\ast$d2, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Outputs frame contents and differences for debugging purposes. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ec\-\_\-state\-\_\-string} (uint8\-\_\-t states, char $\ast$buffer, uint8\-\_\-t multi)
+\begin{DoxyCompactList}\small\item\em Prints slave states in clear text. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-t} $\ast$ {\bf ecdev\-\_\-offer} (struct net\-\_\-device $\ast$net\-\_\-dev, {\bf ec\-\_\-pollfunc\-\_\-t} poll, struct module $\ast$module)
+\begin{DoxyCompactList}\small\item\em Offers an Ether\-C\-A\-T device to a certain master. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf ecrt\-\_\-request\-\_\-master\-\_\-err} (unsigned int master\-\_\-index)
+\begin{DoxyCompactList}\small\item\em Request a master. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf ecrt\-\_\-request\-\_\-master} (unsigned int master\-\_\-index)
+\begin{DoxyCompactList}\small\item\em Requests an Ether\-C\-A\-T master for realtime operation. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-release\-\_\-master} ({\bf ec\-\_\-master\-\_\-t} $\ast$master)
+\begin{DoxyCompactList}\small\item\em Releases a requested Ether\-C\-A\-T master. \end{DoxyCompactList}\item 
+unsigned int {\bf ecrt\-\_\-version\-\_\-magic} (void)
+\begin{DoxyCompactList}\small\item\em Returns the version magic of the realtime interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ {\bf main\-\_\-devices} [{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}]
+\begin{DoxyCompactList}\small\item\em Main devices parameter. \end{DoxyCompactList}\item 
+static unsigned int {\bf master\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of masters. \end{DoxyCompactList}\item 
+static char $\ast$ {\bf backup\-\_\-devices} [{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}]
+\begin{DoxyCompactList}\small\item\em Backup devices parameter. \end{DoxyCompactList}\item 
+static unsigned int {\bf backup\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of backup devices. \end{DoxyCompactList}\item 
+static unsigned int {\bf debug\-\_\-level}
+\begin{DoxyCompactList}\small\item\em Debug level parameter. \end{DoxyCompactList}\item 
+static {\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf masters}
+\begin{DoxyCompactList}\small\item\em Array of masters. \end{DoxyCompactList}\item 
+static struct semaphore {\bf master\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Master semaphore. \end{DoxyCompactList}\item 
+dev\-\_\-t {\bf device\-\_\-number}
+\begin{DoxyCompactList}\small\item\em Device number for master cdevs. \end{DoxyCompactList}\item 
+struct class $\ast$ {\bf class}
+\begin{DoxyCompactList}\small\item\em Device class. \end{DoxyCompactList}\item 
+static uint8\-\_\-t {\bf macs} [{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}][2][E\-T\-H\-\_\-\-A\-L\-E\-N]
+\begin{DoxyCompactList}\small\item\em M\-A\-C addresses. \end{DoxyCompactList}\item 
+char $\ast$ {\bf ec\-\_\-master\-\_\-version\-\_\-str} = E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N
+\begin{DoxyCompactList}\small\item\em Version string. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf ec\-\_\-device\-\_\-names} [2]
+\begin{DoxyCompactList}\small\item\em Device names. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-request\-\_\-state\-\_\-t} {\bf ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table} [$\,$]
+\begin{DoxyCompactList}\small\item\em Global request state type translation table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master driver module. 
+
+Definition in file {\bf module.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{module.\-c@{module.\-c}!M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S@{M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}}
+\index{M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S@{M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}!module.c@{module.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S~32}\label{module_8c_a7b5e78fbc39d2e9e0f09eeab29609f63}
+
+
+Maximum number of masters. 
+
+
+
+Definition at line 46 of file module.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{module.\-c@{module.\-c}!ec\-\_\-init\-\_\-module@{ec\-\_\-init\-\_\-module}}
+\index{ec\-\_\-init\-\_\-module@{ec\-\_\-init\-\_\-module}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-init\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}int \-\_\-\-\_\-init ec\-\_\-init\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{module_8c_ad77077729d1fe5cbbce29b60bd9833e6}
+
+
+Module initialization. 
+
+Initializes {\itshape master\-\_\-count} masters. \begin{DoxyReturn}{Returns}
+0 on success, else $<$ 0 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-cleanup\-\_\-module@{ec\-\_\-cleanup\-\_\-module}}
+\index{ec\-\_\-cleanup\-\_\-module@{ec\-\_\-cleanup\-\_\-module}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-cleanup\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}void \-\_\-\-\_\-exit ec\-\_\-cleanup\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{module_8c_ac716459f3654d685d044a08fcb1c5f0e}
+
+
+Module cleanup. 
+
+Clears all master instances. 
+
+Definition at line 181 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-mac\-\_\-parse@{ec\-\_\-mac\-\_\-parse}}
+\index{ec\-\_\-mac\-\_\-parse@{ec\-\_\-mac\-\_\-parse}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-mac\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}static int ec\-\_\-mac\-\_\-parse (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{mac, }
+\item[{const char $\ast$}]{src, }
+\item[{int}]{allow\-\_\-empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a17aa854d45f95d637b87d676e4e36e83}
+
+
+Parse a M\-A\-C address from a string. 
+
+The M\-A\-C address must match the regular expression \char`\"{}([0-\/9a-\/f\-A-\/\-F]\{2\}\-:)\{5\}[0-\/9a-\/f\-A-\/\-F]\{2\}\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+0 on success, else $<$ 0 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-mac\-\_\-equal@{ec\-\_\-mac\-\_\-equal}}
+\index{ec\-\_\-mac\-\_\-equal@{ec\-\_\-mac\-\_\-equal}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-mac\-\_\-equal}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-mac\-\_\-equal (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac1, }
+\item[{const uint8\-\_\-t $\ast$}]{mac2}
+\end{DoxyParamCaption}
+)}\label{module_8c_af6e318c0d5279ce5aad518f156962060}
+\begin{DoxyReturn}{Returns}
+true, if two M\-A\-C addresses are equal. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac1} & First M\-A\-C address. \\
+\hline
+{\em mac2} & Second M\-A\-C address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 216 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-mac\-\_\-print@{ec\-\_\-mac\-\_\-print}}
+\index{ec\-\_\-mac\-\_\-print@{ec\-\_\-mac\-\_\-print}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-mac\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}ssize\-\_\-t ec\-\_\-mac\-\_\-print (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac, }
+\item[{char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}\label{module_8c_a5e5f8f264803bdcf7d8df527e2149054}
+
+
+Print a M\-A\-C address to a buffer. 
+
+The buffer size must be at least E\-C\-\_\-\-M\-A\-X\-\_\-\-M\-A\-C\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E.
+
+\begin{DoxyReturn}{Returns}
+number of bytes written. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & M\-A\-C address \\
+\hline
+{\em buffer} & Target buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 242 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-mac\-\_\-is\-\_\-zero@{ec\-\_\-mac\-\_\-is\-\_\-zero}}
+\index{ec\-\_\-mac\-\_\-is\-\_\-zero@{ec\-\_\-mac\-\_\-is\-\_\-zero}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-mac\-\_\-is\-\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-mac\-\_\-is\-\_\-zero (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac}
+\end{DoxyParamCaption}
+)}\label{module_8c_a85fb1be9fffaec7aee741cc224a7b6b2}
+\begin{DoxyReturn}{Returns}
+true, if the M\-A\-C address is all-\/zero. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & M\-A\-C address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-mac\-\_\-is\-\_\-broadcast@{ec\-\_\-mac\-\_\-is\-\_\-broadcast}}
+\index{ec\-\_\-mac\-\_\-is\-\_\-broadcast@{ec\-\_\-mac\-\_\-is\-\_\-broadcast}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-mac\-\_\-is\-\_\-broadcast}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-mac\-\_\-is\-\_\-broadcast (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{mac}
+\end{DoxyParamCaption}
+)}\label{module_8c_a91a626e2e5f82abd07434ca87dd28ee5}
+\begin{DoxyReturn}{Returns}
+true, if the given M\-A\-C address is the broadcast address. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & M\-A\-C address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 281 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-print\-\_\-data@{ec\-\_\-print\-\_\-data}}
+\index{ec\-\_\-print\-\_\-data@{ec\-\_\-print\-\_\-data}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-print\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-print\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{module_8c_a32aac44a0499658de8c6bccd603ed434}
+
+
+Outputs frame contents for debugging purposes. 
+
+If the data block is larger than 256 bytes, only the first 128 and the last 128 bytes will be shown 
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to data \\
+\hline
+{\em size} & number of bytes to output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 341 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-print\-\_\-data\-\_\-diff@{ec\-\_\-print\-\_\-data\-\_\-diff}}
+\index{ec\-\_\-print\-\_\-data\-\_\-diff@{ec\-\_\-print\-\_\-data\-\_\-diff}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-print\-\_\-data\-\_\-diff}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-print\-\_\-data\-\_\-diff (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{d1, }
+\item[{const uint8\-\_\-t $\ast$}]{d2, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{module_8c_a7081243a7dd80399794dbcb64bb8dd4d}
+
+
+Outputs frame contents and differences for debugging purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d1} & first data \\
+\hline
+{\em d2} & second data \\
+\hline
+{\em size} & number of bytes to output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 369 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-state\-\_\-string@{ec\-\_\-state\-\_\-string}}
+\index{ec\-\_\-state\-\_\-string@{ec\-\_\-state\-\_\-string}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-state\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-state\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{states, }
+\item[{char $\ast$}]{buffer, }
+\item[{uint8\-\_\-t}]{multi}
+\end{DoxyParamCaption}
+)}\label{module_8c_a0b63e327288b0b8c0cbef1f62592f12f}
+
+
+Prints slave states in clear text. 
+
+\begin{DoxyReturn}{Returns}
+Size of the created string. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em states} & slave states \\
+\hline
+{\em buffer} & target buffer (min. E\-C\-\_\-\-S\-T\-A\-T\-E\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E bytes) \\
+\hline
+{\em multi} & Show multi-\/state mask. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ecrt\-\_\-request\-\_\-master\-\_\-err@{ecrt\-\_\-request\-\_\-master\-\_\-err}}
+\index{ecrt\-\_\-request\-\_\-master\-\_\-err@{ecrt\-\_\-request\-\_\-master\-\_\-err}!module.c@{module.\-c}}
+\subsubsection[{ecrt\-\_\-request\-\_\-master\-\_\-err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ ecrt\-\_\-request\-\_\-master\-\_\-err (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{master\-\_\-index}
+\end{DoxyParamCaption}
+)}\label{module_8c_a878af0eaf81e240f83cc09bc3128f583}
+
+
+Request a master. 
+
+Same as \doxyref{ecrt\-\_\-request\-\_\-master()}{p.}{group__ApplicationInterface_gafb85534b6fcba3fa1fab6c81173b2ed1}, but with E\-R\-R\-\_\-\-P\-T\-R() return value.
+
+\begin{DoxyReturn}{Returns}
+Requested master. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master\-\_\-index} & Master index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 530 of file module.\-c.
+
+
+
+\subsection{Variable Documentation}
+\index{module.\-c@{module.\-c}!main\-\_\-devices@{main\-\_\-devices}}
+\index{main\-\_\-devices@{main\-\_\-devices}!module.c@{module.\-c}}
+\subsubsection[{main\-\_\-devices}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ main\-\_\-devices[{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}]\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a592ab6f7fc76f88a67a72e6fcdb21595}
+
+
+Main devices parameter. 
+
+
+
+Definition at line 57 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!master\-\_\-count@{master\-\_\-count}}
+\index{master\-\_\-count@{master\-\_\-count}!module.c@{module.\-c}}
+\subsubsection[{master\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int master\-\_\-count\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a9d98a9a82dace460030b39bfa8241e4c}
+
+
+Number of masters. 
+
+
+
+Definition at line 58 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!backup\-\_\-devices@{backup\-\_\-devices}}
+\index{backup\-\_\-devices@{backup\-\_\-devices}!module.c@{module.\-c}}
+\subsubsection[{backup\-\_\-devices}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ backup\-\_\-devices[{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}]\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_ae6fdc69051135b58fda52334482310c3}
+
+
+Backup devices parameter. 
+
+
+
+Definition at line 59 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!backup\-\_\-count@{backup\-\_\-count}}
+\index{backup\-\_\-count@{backup\-\_\-count}!module.c@{module.\-c}}
+\subsubsection[{backup\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int backup\-\_\-count\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a91a9985578486eb68c5eceb8ad9f7e7f}
+
+
+Number of backup devices. 
+
+
+
+Definition at line 60 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!debug\-\_\-level@{debug\-\_\-level}}
+\index{debug\-\_\-level@{debug\-\_\-level}!module.c@{module.\-c}}
+\subsubsection[{debug\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int debug\-\_\-level\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_aaa02d25ef5eac3392189e2fae80a6fad}
+
+
+Debug level parameter. 
+
+
+
+Definition at line 61 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!masters@{masters}}
+\index{masters@{masters}!module.c@{module.\-c}}
+\subsubsection[{masters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-t}$\ast$ masters\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a9fbdc17f449c70c1665f21726c301dd7}
+
+
+Array of masters. 
+
+
+
+Definition at line 63 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!master\-\_\-sem@{master\-\_\-sem}}
+\index{master\-\_\-sem@{master\-\_\-sem}!module.c@{module.\-c}}
+\subsubsection[{master\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore master\-\_\-sem\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_adaf55d5f5a414db259c65bbad33c1d6a}
+
+
+Master semaphore. 
+
+
+
+Definition at line 64 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!device\-\_\-number@{device\-\_\-number}}
+\index{device\-\_\-number@{device\-\_\-number}!module.c@{module.\-c}}
+\subsubsection[{device\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}dev\-\_\-t device\-\_\-number}\label{module_8c_a0677101bf6615d80dd58c8a6fcff850d}
+
+
+Device number for master cdevs. 
+
+
+
+Definition at line 66 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!class@{class}}
+\index{class@{class}!module.c@{module.\-c}}
+\subsubsection[{class}]{\setlength{\rightskip}{0pt plus 5cm}struct class$\ast$ class}\label{module_8c_a9b6474dd18270738a5c4853fd93b5e70}
+
+
+Device class. 
+
+
+
+Definition at line 67 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!macs@{macs}}
+\index{macs@{macs}!module.c@{module.\-c}}
+\subsubsection[{macs}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t macs[{\bf M\-A\-X\-\_\-\-M\-A\-S\-T\-E\-R\-S}][2][E\-T\-H\-\_\-\-A\-L\-E\-N]\hspace{0.3cm}{\ttfamily [static]}}\label{module_8c_a93e568278eb7135eddee0827c5c7eb69}
+
+
+M\-A\-C addresses. 
+
+
+
+Definition at line 69 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-master\-\_\-version\-\_\-str@{ec\-\_\-master\-\_\-version\-\_\-str}}
+\index{ec\-\_\-master\-\_\-version\-\_\-str@{ec\-\_\-master\-\_\-version\-\_\-str}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-master\-\_\-version\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-master\-\_\-version\-\_\-str = E\-C\-\_\-\-M\-A\-S\-T\-E\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}\label{module_8c_ab5580493c8bf2eaa43174a4fe78abc72}
+
+
+Version string. 
+
+
+
+Definition at line 71 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-device\-\_\-names@{ec\-\_\-device\-\_\-names}}
+\index{ec\-\_\-device\-\_\-names@{ec\-\_\-device\-\_\-names}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ ec\-\_\-device\-\_\-names[2]}\label{module_8c_ab60dd3400b4ae7f326c3edb327505829}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+    \textcolor{stringliteral}{"main"},
+    \textcolor{stringliteral}{"backup"}
+\}
+\end{DoxyCode}
+
+
+Device names. 
+
+
+
+Definition at line 458 of file module.\-c.
+
+\index{module.\-c@{module.\-c}!ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table@{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}}
+\index{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table@{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}!module.c@{module.\-c}}
+\subsubsection[{ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-request\-\_\-state\-\_\-translation\-\_\-table[$\,$]}\label{module_8c_a3a9e581016f6c49ce672ccd2784c0b50}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+ \{
+    EC_REQUEST_UNUSED,  
+    EC_REQUEST_BUSY,    
+    EC_REQUEST_BUSY,    
+    EC_REQUEST_SUCCESS, 
+    EC_REQUEST_ERROR    
+\}
+\end{DoxyCode}
+
+
+Global request state type translation table. 
+
+Translates an internal request state to an external one. 
+
+Definition at line 651 of file module.\-c.
+

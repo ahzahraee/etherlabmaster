@@ -1,0 +1,124 @@
+\section{ec\-\_\-fsm\-\_\-slave\-\_\-scan Struct Reference}
+\label{structec__fsm__slave__scan}\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+
+
+Finite state machine for scanning an Ether\-C\-A\-T slave.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}
+\begin{DoxyCompactList}\small\item\em Slave the F\-S\-M runs on. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used in the state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf fsm\-\_\-slave\-\_\-config}
+\begin{DoxyCompactList}\small\item\em Slave configuration state machine to use. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$ {\bf fsm\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O configuration state machine to use. \end{DoxyCompactList}\item 
+unsigned int {\bf retries}
+\begin{DoxyCompactList}\small\item\em Retries on datagram timeout. \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em State function. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf sii\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em S\-I\-I offset in words. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} {\bf fsm\-\_\-sii}
+\begin{DoxyCompactList}\small\item\em S\-I\-I state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Finite state machine for scanning an Ether\-C\-A\-T slave. 
+
+Definition at line 55 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!slave@{slave}}
+\index{slave@{slave}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::slave}\label{structec__fsm__slave__scan_a54c987af1db08e3a333d98f76d71de15}
+
+
+Slave the F\-S\-M runs on. 
+
+
+
+Definition at line 57 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!datagram@{datagram}}
+\index{datagram@{datagram}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::datagram}\label{structec__fsm__slave__scan_a93ae94f618186affb1530667745ba774}
+
+
+Datagram used in the state machine. 
+
+
+
+Definition at line 58 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!fsm\-\_\-slave\-\_\-config@{fsm\-\_\-slave\-\_\-config}}
+\index{fsm\-\_\-slave\-\_\-config@{fsm\-\_\-slave\-\_\-config}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{fsm\-\_\-slave\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::fsm\-\_\-slave\-\_\-config}\label{structec__fsm__slave__scan_a39373f1c4e973c777cd3e27e040b8f66}
+
+
+Slave configuration state machine to use. 
+
+
+
+Definition at line 59 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!fsm\-\_\-pdo@{fsm\-\_\-pdo}}
+\index{fsm\-\_\-pdo@{fsm\-\_\-pdo}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{fsm\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::fsm\-\_\-pdo}\label{structec__fsm__slave__scan_adb7c9afd6972b238a744177aaa869dd7}
+
+
+P\-D\-O configuration state machine to use. 
+
+
+
+Definition at line 61 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!retries@{retries}}
+\index{retries@{retries}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{retries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::retries}\label{structec__fsm__slave__scan_a1abcaa2e075365336e45fa216c2a6ac5}
+
+
+Retries on datagram timeout. 
+
+
+
+Definition at line 62 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!state@{state}}
+\index{state@{state}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::state)({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$)}\label{structec__fsm__slave__scan_ab3ba7e958f1540f67f21367f96c68c47}
+
+
+State function. 
+
+
+
+Definition at line 64 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!sii\-\_\-offset@{sii\-\_\-offset}}
+\index{sii\-\_\-offset@{sii\-\_\-offset}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{sii\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::sii\-\_\-offset}\label{structec__fsm__slave__scan_a8cb75bc7d08ed43d9915f1d2a4411d5f}
+
+
+S\-I\-I offset in words. 
+
+
+
+Definition at line 65 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}!fsm\-\_\-sii@{fsm\-\_\-sii}}
+\index{fsm\-\_\-sii@{fsm\-\_\-sii}!ec_fsm_slave_scan@{ec\-\_\-fsm\-\_\-slave\-\_\-scan}}
+\subsubsection[{fsm\-\_\-sii}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-sii\-\_\-t} ec\-\_\-fsm\-\_\-slave\-\_\-scan\-::fsm\-\_\-sii}\label{structec__fsm__slave__scan_a711257451b14076272e1731592a42b61}
+
+
+S\-I\-I state machine. 
+
+
+
+Definition at line 67 of file fsm\-\_\-slave\-\_\-scan.\-h.
+

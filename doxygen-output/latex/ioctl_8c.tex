@@ -1,0 +1,2794 @@
+\section{ioctl.\-c File Reference}
+\label{ioctl_8c}\index{ioctl.\-c@{ioctl.\-c}}
+
+
+Ether\-C\-A\-T master character device.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y}~0
+\begin{DoxyCompactList}\small\item\em Set to 1 to enable ioctl() latency tracing. \end{DoxyCompactList}\item 
+\#define {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S}\label{ioctl_8c_ae456bc7dfd6c3d54bccef2e234ecae7a}
+
+\begin{DoxyCompactList}\small\item\em Optional compiler attributes fo ioctl() functions. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-I\-O\-C\-T\-L}~ec\-\_\-ioctl\label{ioctl_8c_a80a51dad3458ecb73d12369fa9b50a02}
+
+\begin{DoxyCompactList}\small\item\em ioctl() function to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf ec\-\_\-ioctl\-\_\-strcpy} (char $\ast$target, const char $\ast$source)
+\begin{DoxyCompactList}\small\item\em Copies a string to an ioctl structure. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-module} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get module information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-master} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get master information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sync} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave sync manager information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave sync manager P\-D\-O information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave sync manager P\-D\-O entry information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get domain information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get domain F\-M\-M\-U information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-data} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get domain data. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-master\-\_\-debug} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Set master debug level. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-master\-\_\-rescan} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Issue a bus scan. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Set slave state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave S\-D\-O information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave S\-D\-O entry information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Upload S\-D\-O. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Download S\-D\-O. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Read a slave's S\-I\-I. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Write a slave's S\-I\-I. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Read a slave's registers. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Write a slave's registers. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-config} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave configuration information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-config\-\_\-pdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave configuration P\-D\-O information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave configuration P\-D\-O entry information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-config\-\_\-sdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave configuration S\-D\-O information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-config\-\_\-idn} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get slave configuration I\-D\-N information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-eoe\-\_\-handler} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Get Eo\-E handler information. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-request} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Request the master from userspace. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-create\-\_\-domain} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Create a domain. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Create a slave configuration. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Select the D\-C reference clock. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-activate} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Activates the master. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-deactivate} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Deactivates the master. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Set max. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-send} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Send frames. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-receive} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Receive frames. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-master\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the master state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the link state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-app\-\_\-time} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Set the master D\-C application time. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sync\-\_\-ref} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sync the reference clock. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sync\-\_\-slaves} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sync the slave clocks. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the system time of the reference clock. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Queue the sync monitoring datagram. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Processes the sync monitoring datagram. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-reset} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Reset configuration. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-sync} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Configure a sync manager. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Configure a slave's watchdogs. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Add a P\-D\-O to the assignment. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clears the P\-D\-O assignment. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Add an entry to a P\-D\-O's mapping. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clears the mapping of a P\-D\-O. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Registers a P\-D\-O entry. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Registers a P\-D\-O entry by its position. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-dc} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sets the D\-C Assign\-Activate word and the sync signal times. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-sdo} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Configures an S\-D\-O. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Set the emergency ring buffer size. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get an emergency message from the ring. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Clear the emergency ring. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the number of emergency overruns. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Create an S\-D\-O request. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Create a register request. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Create a Vo\-E handler. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the slave configuration's state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sc\-\_\-idn} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Configures an I\-D\-N. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-size} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gets the domain's data size. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-offset} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gets the domain's offset in the total process data. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-process} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Process the domain. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-queue} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Queue the domain. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-domain\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Get the domain state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sets an S\-D\-O request's S\-D\-O index and subindex. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sets an S\-D\-O request's timeout. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gets an S\-D\-O request's state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts an S\-D\-O read operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts an S\-D\-O write operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Read S\-D\-O data. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Read register data. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gets an register request's state. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts an register write operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts an register read operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Sets the Vo\-E send header. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Gets the received Vo\-E header. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts a Vo\-E read operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts a Vo\-E read operation without sending a sync message first. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Starts a Vo\-E write operation. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-exec} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Executes the Vo\-E state machine. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-voe\-\_\-data} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Reads the received Vo\-E data. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Read a file from a slave via Fo\-E. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Write a file to a slave via Fo\-E. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Read an So\-E I\-D\-N. \end{DoxyCompactList}\item 
+static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int {\bf ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Write an I\-D\-N to a slave via So\-E. \end{DoxyCompactList}\item 
+long {\bf E\-C\-\_\-\-I\-O\-C\-T\-L} ({\bf ec\-\_\-master\-\_\-t} $\ast$master, ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$ctx, unsigned int cmd, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Called when an ioctl() command is issued. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master character device. 
+
+Definition in file {\bf ioctl.\-c}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{ioctl.\-c@{ioctl.\-c}!D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y@{D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y}}
+\index{D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y@{D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G\-\_\-\-L\-A\-T\-E\-N\-C\-Y~0}\label{ioctl_8c_aa33c965c87892b40c2bfdcbdc554c919}
+
+
+Set to 1 to enable ioctl() latency tracing. 
+
+Requires C\-P\-U timestamp counter! 
+
+Definition at line 50 of file ioctl.\-c.
+
+
+
+\subsection{Function Documentation}
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-strcpy@{ec\-\_\-ioctl\-\_\-strcpy}}
+\index{ec\-\_\-ioctl\-\_\-strcpy@{ec\-\_\-ioctl\-\_\-strcpy}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-strcpy}]{\setlength{\rightskip}{0pt plus 5cm}static void ec\-\_\-ioctl\-\_\-strcpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{target, }
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_acd138ad83a5a0b04e4a07c07c035d9ee}
+
+
+Copies a string to an ioctl structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Target. \\
+\hline
+{\em source} & Source. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-module@{ec\-\_\-ioctl\-\_\-module}}
+\index{ec\-\_\-ioctl\-\_\-module@{ec\-\_\-ioctl\-\_\-module}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ada73ba861c174f3e824cbe8519cd707b}
+
+
+Get module information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-master@{ec\-\_\-ioctl\-\_\-master}}
+\index{ec\-\_\-ioctl\-\_\-master@{ec\-\_\-ioctl\-\_\-master}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-master}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-master (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a942f48e33c4240985a3dfed151ddedd9}
+
+
+Get master information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave@{ec\-\_\-ioctl\-\_\-slave}}
+\index{ec\-\_\-ioctl\-\_\-slave@{ec\-\_\-ioctl\-\_\-slave}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a6a52ca648afc723008809730bb65e271}
+
+
+Get slave information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 199 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sync@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sync@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ae9eb01986ce029d43e9ba687c80dcb03}
+
+
+Get slave sync manager information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 286 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a92e979e00e5dd87a6f8ca11ad0de7e25}
+
+
+Get slave sync manager P\-D\-O information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 339 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sync\-\_\-pdo\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_af0488266107bb89aa140aa2999857a02}
+
+
+Get slave sync manager P\-D\-O entry information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain@{ec\-\_\-ioctl\-\_\-domain}}
+\index{ec\-\_\-ioctl\-\_\-domain@{ec\-\_\-ioctl\-\_\-domain}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a243a28bf53be27260b5c5d143d6b282d}
+
+
+Get domain information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 467 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu@{ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu@{ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a54ce5be9c8a9688255321d86cd459b89}
+
+
+Get domain F\-M\-M\-U information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 512 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-data@{ec\-\_\-ioctl\-\_\-domain\-\_\-data}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-data@{ec\-\_\-ioctl\-\_\-domain\-\_\-data}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a3194159274c643424e8a3d5d9163f25e}
+
+
+Get domain data. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & Userspace address to store the results. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 564 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-master\-\_\-debug@{ec\-\_\-ioctl\-\_\-master\-\_\-debug}}
+\index{ec\-\_\-ioctl\-\_\-master\-\_\-debug@{ec\-\_\-ioctl\-\_\-master\-\_\-debug}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-master\-\_\-debug}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-master\-\_\-debug (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a57444c126eeedeaeaf3b093a9fbbc3ad}
+
+
+Set master debug level. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 609 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-master\-\_\-rescan@{ec\-\_\-ioctl\-\_\-master\-\_\-rescan}}
+\index{ec\-\_\-ioctl\-\_\-master\-\_\-rescan@{ec\-\_\-ioctl\-\_\-master\-\_\-rescan}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-master\-\_\-rescan}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-master\-\_\-rescan (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ac31bef8ff8aa7767c418f3dfc4b6a925}
+
+
+Issue a bus scan. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 623 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-state@{ec\-\_\-ioctl\-\_\-slave\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-state@{ec\-\_\-ioctl\-\_\-slave\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ad4a6ca43584b9f02ec081b450010e9a6}
+
+
+Set slave state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 638 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sdo@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_af4d6febb5963f48d824d6d745a7fa276}
+
+
+Get slave S\-D\-O information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 673 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a3765b2ae70499fb1280a8c64fe625f34}
+
+
+Get slave S\-D\-O entry information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 722 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-upload (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a58b6b59e482f67391ac1b656a6011f61}
+
+
+Upload S\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 802 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download@{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sdo\-\_\-download (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ac04026c4a96a680bbc59fad0986b8523}
+
+
+Download S\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 848 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a033fb32a4704137456208258c2a0cf1a}
+
+
+Read a slave's S\-I\-I. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 896 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-sii\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ac3603b1007fcb890a3267df91bdfea74}
+
+
+Write a slave's S\-I\-I. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 944 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a9ee06f1c78fd750d76324c65ce99bc0e}
+
+
+Read a slave's registers. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1032 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-reg\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a25896dc7046edda19448c51fc43a257e}
+
+
+Write a slave's registers. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1111 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-config@{ec\-\_\-ioctl\-\_\-config}}
+\index{ec\-\_\-ioctl\-\_\-config@{ec\-\_\-ioctl\-\_\-config}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a0df9e7bdee5788abd1cba76367617610}
+
+
+Get slave configuration information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1189 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-config\-\_\-pdo@{ec\-\_\-ioctl\-\_\-config\-\_\-pdo}}
+\index{ec\-\_\-ioctl\-\_\-config\-\_\-pdo@{ec\-\_\-ioctl\-\_\-config\-\_\-pdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-config\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-config\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a75ca66980c8d3ad6a9d0163830d2b194}
+
+
+Get slave configuration P\-D\-O information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1247 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry}}
+\index{ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-config\-\_\-pdo\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aaae8d838482ee18a5ad151b5092fbd64}
+
+
+Get slave configuration P\-D\-O entry information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1303 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-config\-\_\-sdo@{ec\-\_\-ioctl\-\_\-config\-\_\-sdo}}
+\index{ec\-\_\-ioctl\-\_\-config\-\_\-sdo@{ec\-\_\-ioctl\-\_\-config\-\_\-sdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-config\-\_\-sdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-config\-\_\-sdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a5c22441bd854db23f598de4e7c5402be}
+
+
+Get slave configuration S\-D\-O information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1368 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-config\-\_\-idn@{ec\-\_\-ioctl\-\_\-config\-\_\-idn}}
+\index{ec\-\_\-ioctl\-\_\-config\-\_\-idn@{ec\-\_\-ioctl\-\_\-config\-\_\-idn}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-config\-\_\-idn}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-config\-\_\-idn (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ad5086c7e72fbd89b44ca710159c361f9}
+
+
+Get slave configuration I\-D\-N information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1432 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-eoe\-\_\-handler@{ec\-\_\-ioctl\-\_\-eoe\-\_\-handler}}
+\index{ec\-\_\-ioctl\-\_\-eoe\-\_\-handler@{ec\-\_\-ioctl\-\_\-eoe\-\_\-handler}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-eoe\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-eoe\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a13d8254794ace1ae6428cf86f5528cf3}
+
+
+Get Eo\-E handler information. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1498 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-request@{ec\-\_\-ioctl\-\_\-request}}
+\index{ec\-\_\-ioctl\-\_\-request@{ec\-\_\-ioctl\-\_\-request}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a35b886d5e781f68571ecabc9f0c9f524}
+
+
+Request the master from userspace. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1550 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-create\-\_\-domain@{ec\-\_\-ioctl\-\_\-create\-\_\-domain}}
+\index{ec\-\_\-ioctl\-\_\-create\-\_\-domain@{ec\-\_\-ioctl\-\_\-create\-\_\-domain}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-create\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-create\-\_\-domain (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a07b52171e30d879a94c8b386c1ed4517}
+
+
+Create a domain. 
+
+\begin{DoxyReturn}{Returns}
+Domain index on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1575 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config@{ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config}}
+\index{ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config@{ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-create\-\_\-slave\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a78db07ae2cccd2e3d2f598e17ee2206a}
+
+
+Create a slave configuration. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1599 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock@{ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock}}
+\index{ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock@{ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-select\-\_\-ref\-\_\-clock (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ae20755d3e68bc4dafdf011aa16ef467d}
+
+
+Select the D\-C reference clock. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1645 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-activate@{ec\-\_\-ioctl\-\_\-activate}}
+\index{ec\-\_\-ioctl\-\_\-activate@{ec\-\_\-ioctl\-\_\-activate}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-activate}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-activate (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_af2400c270d691b44ae895e458e269de1}
+
+
+Activates the master. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1686 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-deactivate@{ec\-\_\-ioctl\-\_\-deactivate}}
+\index{ec\-\_\-ioctl\-\_\-deactivate@{ec\-\_\-ioctl\-\_\-deactivate}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-deactivate}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-deactivate (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a31554dd6d485543f8510c099ac6d5656}
+
+
+Deactivates the master. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1769 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval@{ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval}}
+\index{ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval@{ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-set\-\_\-send\-\_\-interval (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a5184a2d161a424b07f9bbb71c0fd3fc7}
+
+
+Set max. 
+
+number of databytes in a cycle
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1788 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-send@{ec\-\_\-ioctl\-\_\-send}}
+\index{ec\-\_\-ioctl\-\_\-send@{ec\-\_\-ioctl\-\_\-send}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a53339ebb45952b1381334236d3a1d67e}
+
+
+Send frames. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1820 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-receive@{ec\-\_\-ioctl\-\_\-receive}}
+\index{ec\-\_\-ioctl\-\_\-receive@{ec\-\_\-ioctl\-\_\-receive}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-receive}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-receive (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a772c16b24029717715a52d4a4c2db735}
+
+
+Receive frames. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1840 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-master\-\_\-state@{ec\-\_\-ioctl\-\_\-master\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-master\-\_\-state@{ec\-\_\-ioctl\-\_\-master\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-master\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-master\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a52ff32e95fad7655e3ec6c87038c19b8}
+
+
+Get the master state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1860 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state@{ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state@{ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-master\-\_\-link\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_acfc77a7cc993345245fb762f4d42d666}
+
+
+Get the link state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1882 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-app\-\_\-time@{ec\-\_\-ioctl\-\_\-app\-\_\-time}}
+\index{ec\-\_\-ioctl\-\_\-app\-\_\-time@{ec\-\_\-ioctl\-\_\-app\-\_\-time}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-app\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-app\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_abd08a6dc1084758311324a41f70bec9c}
+
+
+Set the master D\-C application time. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1914 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sync\-\_\-ref@{ec\-\_\-ioctl\-\_\-sync\-\_\-ref}}
+\index{ec\-\_\-ioctl\-\_\-sync\-\_\-ref@{ec\-\_\-ioctl\-\_\-sync\-\_\-ref}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sync\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sync\-\_\-ref (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a78a6db9319d00f88bc0c53c357e21555}
+
+
+Sync the reference clock. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1939 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sync\-\_\-slaves@{ec\-\_\-ioctl\-\_\-sync\-\_\-slaves}}
+\index{ec\-\_\-ioctl\-\_\-sync\-\_\-slaves@{ec\-\_\-ioctl\-\_\-sync\-\_\-slaves}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sync\-\_\-slaves}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sync\-\_\-slaves (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a29cc791a19a4a4d8b87217c5f89032f9}
+
+
+Sync the slave clocks. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1959 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time@{ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time}}
+\index{ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time@{ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-ref\-\_\-clock\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ac5dcb42967b26a6bd13b82318398d68e}
+
+
+Get the system time of the reference clock. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1979 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue@{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue}}
+\index{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue@{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-queue (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ae47243a1ccdf552e3d5b21c9e3dbeab9}
+
+
+Queue the sync monitoring datagram. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2010 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process@{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process}}
+\index{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process@{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sync\-\_\-mon\-\_\-process (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aa67ce6dbb549e62d3d691703c1f43947}
+
+
+Processes the sync monitoring datagram. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2030 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-reset@{ec\-\_\-ioctl\-\_\-reset}}
+\index{ec\-\_\-ioctl\-\_\-reset@{ec\-\_\-ioctl\-\_\-reset}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a4e3da585706e6510a2100b2e926c9405}
+
+
+Reset configuration. 
+
+\begin{DoxyReturn}{Returns}
+Always zero (success). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2055 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-sync@{ec\-\_\-ioctl\-\_\-sc\-\_\-sync}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-sync@{ec\-\_\-ioctl\-\_\-sc\-\_\-sync}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a0dc04c6fcfea00daeeadff9cfa7b6d02}
+
+
+Configure a sync manager. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2073 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog@{ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog@{ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-watchdog (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a53abf2431d1485a290ac8e3a00c9a7f6}
+
+
+Configure a slave's watchdogs. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2126 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo@{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo@{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a99206a910b1f007bdd3a519028f2ea80}
+
+
+Add a P\-D\-O to the assignment. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2171 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos@{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos@{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-pdos (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a27e57c9c40a30401af4b5a5e71d39fbe}
+
+
+Clears the P\-D\-O assignment. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2205 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry@{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry@{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-add\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a87dfdcb663e20d4e059faf82d1982bcb}
+
+
+Add an entry to a P\-D\-O's mapping. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2240 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries@{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries@{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-clear\-\_\-entries (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a1c03ed57fb119cca3ad3ba673b58a1a0}
+
+
+Clears the mapping of a P\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2275 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry@{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-entry (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a1a043b2b5a43f64be550405ff07e90a0}
+
+
+Registers a P\-D\-O entry. 
+
+\begin{DoxyReturn}{Returns}
+Process data offset on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc or domain could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2310 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos@{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos@{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-reg\-\_\-pdo\-\_\-pos (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aef03b686bacda87d5618179d27e7d97f}
+
+
+Registers a P\-D\-O entry by its position. 
+
+\begin{DoxyReturn}{Returns}
+Process data offset on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc or domain could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2357 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-dc@{ec\-\_\-ioctl\-\_\-sc\-\_\-dc}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-dc@{ec\-\_\-ioctl\-\_\-sc\-\_\-dc}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-dc}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-dc (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aeb27ef22146dbe53354e368f3cba5df9}
+
+
+Sets the D\-C Assign\-Activate word and the sync signal times. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2407 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-sdo@{ec\-\_\-ioctl\-\_\-sc\-\_\-sdo}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-sdo@{ec\-\_\-ioctl\-\_\-sc\-\_\-sdo}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-sdo}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-sdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a69e32e215effa23dc3755b2315fbff4e}
+
+
+Configures an S\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2447 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ab04d5fc34acbd3daa896c943f9f9a1f6}
+
+
+Set the emergency ring buffer size. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2506 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-pop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a4cdaf5b41f957dfeb241e34b7a34b5ad}
+
+
+Get an emergency message from the ring. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2544 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ac8935491e253d3ee9efafb04a281963e}
+
+
+Clear the emergency ring. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2588 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns@{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-emerg\-\_\-overruns (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ae8fc9359ecff755a7b425bebfdbd5179}
+
+
+Get the number of emergency overruns. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2621 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-sdo\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ab1b3c000bc85fde89ba651183acab3ad}
+
+
+Create an S\-D\-O request. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2666 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-reg\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a5c85cb635383bc8a191012b134d4be78}
+
+
+Create a register request. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2717 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler@{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-create\-\_\-voe\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ad564c2bea05d6a8969cadfc35a0afa5f}
+
+
+Create a Vo\-E handler. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2771 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-state@{ec\-\_\-ioctl\-\_\-sc\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-state@{ec\-\_\-ioctl\-\_\-sc\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a10372b687290738df325e725a38a5e3e}
+
+
+Get the slave configuration's state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2821 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sc\-\_\-idn@{ec\-\_\-ioctl\-\_\-sc\-\_\-idn}}
+\index{ec\-\_\-ioctl\-\_\-sc\-\_\-idn@{ec\-\_\-ioctl\-\_\-sc\-\_\-idn}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sc\-\_\-idn}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sc\-\_\-idn (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a665fe3b51fc0de48b80b94a08d60a9ea}
+
+
+Configures an I\-D\-N. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]sc could be invalidated \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2859 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-size@{ec\-\_\-ioctl\-\_\-domain\-\_\-size}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-size@{ec\-\_\-ioctl\-\_\-domain\-\_\-size}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a6c00a451ac68ca2d2476407c9213a432}
+
+
+Gets the domain's data size. 
+
+\begin{DoxyReturn}{Returns}
+Domain size, or a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2913 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-offset@{ec\-\_\-ioctl\-\_\-domain\-\_\-offset}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-offset@{ec\-\_\-ioctl\-\_\-domain\-\_\-offset}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-offset (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_ae35b7d7bd07aa11cd4693ebd41cf85f9}
+
+
+Gets the domain's offset in the total process data. 
+
+\begin{DoxyReturn}{Returns}
+Domain offset, or a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2947 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-process@{ec\-\_\-ioctl\-\_\-domain\-\_\-process}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-process@{ec\-\_\-ioctl\-\_\-domain\-\_\-process}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-process (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a84be630007b8e33d158e3aa77a4c0947}
+
+
+Process the domain. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2981 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-queue@{ec\-\_\-ioctl\-\_\-domain\-\_\-queue}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-queue@{ec\-\_\-ioctl\-\_\-domain\-\_\-queue}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-queue (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a2065710d9f99d4133234eaeda14e0580}
+
+
+Queue the domain. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3009 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-domain\-\_\-state@{ec\-\_\-ioctl\-\_\-domain\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-domain\-\_\-state@{ec\-\_\-ioctl\-\_\-domain\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-domain\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-domain\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aac54c2a8ddaa954c219ec1aef6f0b92f}
+
+
+Get the domain state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3037 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-index (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a161d41f456793dd2717a3df9ae181d04}
+
+
+Sets an S\-D\-O request's S\-D\-O index and subindex. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3075 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-timeout (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_adee230c269c4a44a0843f1187986781f}
+
+
+Sets an S\-D\-O request's timeout. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3112 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a5fed9cf044e8d43c4743e6ee0c50d4a4}
+
+
+Gets an S\-D\-O request's state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3149 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a360b0bec95dc92279a677fb9fb1218a2}
+
+
+Starts an S\-D\-O read operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3194 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a91b490dd3442381bbff15c0309e4161c}
+
+
+Starts an S\-D\-O write operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3231 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data}}
+\index{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data@{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-sdo\-\_\-request\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aa79b6fd9f7e81f30b587ebb3bcc70c82}
+
+
+Read S\-D\-O data. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3282 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data}}
+\index{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_aed3bbdc5ba9b4869dbad5e93831aaf69}
+
+
+Read register data. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3322 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state}}
+\index{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_abffd25a47e56eb3b0cbdd0d2f4412e76}
+
+
+Gets an register request's state. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3369 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_abb1b5ca921f2702896d6c718bb8c9018}
+
+
+Starts an register write operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3414 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read@{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-reg\-\_\-request\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_af8dcbdaabd9338b9b281b65f1a58ee5d}
+
+
+Starts an register read operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3462 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header@{ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header@{ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-send\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a7169eec47b84a9292ec85d9f4da8a755}
+
+
+Sets the Vo\-E send header. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3505 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header@{ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header@{ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-rec\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_abba36d5915353726fb9419b1050c88a8}
+
+
+Gets the received Vo\-E header. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3550 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-read@{ec\-\_\-ioctl\-\_\-voe\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-read@{ec\-\_\-ioctl\-\_\-voe\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a74734c520ab97d46f0eb8ac266fc4a47}
+
+
+Starts a Vo\-E read operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3598 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync@{ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync@{ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-read\-\_\-nosync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_afbe5f63b27479db159ab2e02de40807e}
+
+
+Starts a Vo\-E read operation without sending a sync message first. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3635 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-write@{ec\-\_\-ioctl\-\_\-voe\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-write@{ec\-\_\-ioctl\-\_\-voe\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a8f715426e81e259bc71685cf94250d0d}
+
+
+Starts a Vo\-E write operation. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3672 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-exec@{ec\-\_\-ioctl\-\_\-voe\-\_\-exec}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-exec@{ec\-\_\-ioctl\-\_\-voe\-\_\-exec}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a49e529bb95e6cd2cdcd4bc7c2f3f6129}
+
+
+Executes the Vo\-E state machine. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3718 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-voe\-\_\-data@{ec\-\_\-ioctl\-\_\-voe\-\_\-data}}
+\index{ec\-\_\-ioctl\-\_\-voe\-\_\-data@{ec\-\_\-ioctl\-\_\-voe\-\_\-data}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-voe\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-voe\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a6ffb45eb28399b4330cb9efaace774fa}
+
+
+Reads the received Vo\-E data. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+{\em ctx} & Private data structure of file handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3763 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a2518a2b3264af0fbbb007ac07da00748}
+
+
+Read a file from a slave via Fo\-E. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3803 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-foe\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a18d53cf47aa3c37019abad476a8ed104}
+
+
+Write a file to a slave via Fo\-E. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3899 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read@{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a11936252bf7e93a7149933acf630288d}
+
+
+Read an So\-E I\-D\-N. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3987 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write}}
+\index{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write@{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\-T\-T\-R\-I\-B\-U\-T\-E\-S} int ec\-\_\-ioctl\-\_\-slave\-\_\-soe\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{ioctl_8c_a52bdb6f782205b184d6f5890587b735f}
+
+
+Write an I\-D\-N to a slave via So\-E. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4036 of file ioctl.\-c.
+
+\index{ioctl.\-c@{ioctl.\-c}!E\-C\-\_\-\-I\-O\-C\-T\-L@{E\-C\-\_\-\-I\-O\-C\-T\-L}}
+\index{E\-C\-\_\-\-I\-O\-C\-T\-L@{E\-C\-\_\-\-I\-O\-C\-T\-L}!ioctl.c@{ioctl.\-c}}
+\subsubsection[{E\-C\-\_\-\-I\-O\-C\-T\-L}]{\setlength{\rightskip}{0pt plus 5cm}long E\-C\-\_\-\-I\-O\-C\-T\-L (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{ec\-\_\-ioctl\-\_\-context\-\_\-t $\ast$}]{ctx, }
+\item[{unsigned int}]{cmd, }
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\label{ioctl_8c_ad2b4e3422cd9ad887c6618a333bb0205}
+
+
+Called when an ioctl() command is issued. 
+
+\begin{DoxyReturn}{Returns}
+ioctl() return code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em ctx} & Device context. \\
+\hline
+{\em cmd} & ioctl() command identifier. \\
+\hline
+{\em arg} & ioctl() argument. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4090 of file ioctl.\-c.
+

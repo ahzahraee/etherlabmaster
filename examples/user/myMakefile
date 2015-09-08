@@ -1,6 +1,39 @@
 CC=gcc
-CFLAGS=-m64 -I/opt/etherlab/include
+CFLAGS=-O0 -m64 -g -ggdb -I/opt/etherlab/include
 LFLAGS=-L/opt/etherlab/lib/x64  -lethercat -Wl,--rpath -Wl,/opt/etherlab/lib
 
-ek1818: main_ek1818.c
+ek1818: clean main_ek1818.c
 	$(CC) main_ek1818.c -o ek1818 $(CFLAGS) $(LFLAGS)
+	
+ek1818_module: clean main_ek1818_module.c Eth_Igh_Interface.c
+	$(CC) main_ek1818_module.c Eth_Igh_Interface.c -o ek1818 $(CFLAGS) $(LFLAGS)
+
+akd: clean main_akd.c Eth_Igh_Interface.c
+	$(CC) main_akd.c Eth_Igh_Interface.c -o akd $(CFLAGS) $(LFLAGS)
+
+akd_configtest: clean akd_free_pdo.c Eth_Igh_Interface.c
+	$(CC) akd_free_pdo.c Eth_Igh_Interface.c -o akd_sdo $(CFLAGS) $(LFLAGS)
+
+akd_torque: clean main_akd_torque.c Eth_Igh_Interface.c
+	$(CC) main_akd_torque.c Eth_Igh_Interface.c -o akd_torque $(CFLAGS) $(LFLAGS)
+
+akd_position: clean main_akd_position.c Eth_Igh_Interface.c
+	$(CC) main_akd_position.c Eth_Igh_Interface.c -o akd_position $(CFLAGS) $(LFLAGS)
+
+akd_velocity: clean main_akd_velocity.c Eth_Igh_Interface.c
+	$(CC) main_akd_velocity.c Eth_Igh_Interface.c -o akd_velocity $(CFLAGS) $(LFLAGS)
+			
+el6900: clean main_el6900.c Eth_Igh_Interface.c
+	$(CC) main_el6900.c Eth_Igh_Interface.c -o el6900 $(CFLAGS) $(LFLAGS)
+	
+#epos3: clean main_epos3.c Eth_Igh_Interface.c
+#	$(CC) main_epos3.c Eth_Igh_Interface.c -o epos3 $(CFLAGS) $(LFLAGS)
+
+epos3: clean main_epos3_ex2.c
+	$(CC) main_epos3_ex2.c -o epos3 $(CFLAGS) $(LFLAGS)
+			
+clean:
+	@if [ -e ek1818 ]; 	then	rm ek1818;	fi
+	@if [ -e epos3  ]; 	then	rm epos3;	fi
+	@if [ -e el6900 ]; 	then	rm el6900;	fi
+	@if [ -e akd	];	then	rm akd;		fi

@@ -1,0 +1,62 @@
+\section{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t Struct Reference}
+\label{structec__master__link__state__t}\index{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t}}
+
+
+Redundant link state.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf slaves\-\_\-responding}
+\begin{DoxyCompactList}\small\item\em Sum of responding slaves on the given link. \end{DoxyCompactList}\item 
+unsigned int {\bf al\-\_\-states}\-: 4
+\begin{DoxyCompactList}\small\item\em Application-\/layer states of the slaves on the given link. \end{DoxyCompactList}\item 
+unsigned int {\bf link\-\_\-up}\-: 1\label{structec__master__link__state__t_a6c076febd20049f7764d5a3bb8409797}
+
+\begin{DoxyCompactList}\small\item\em {\itshape true}, if the given Ethernet link is up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Redundant link state. 
+
+This is used for the output parameter of \doxyref{ecrt\-\_\-master\-\_\-link\-\_\-state()}{p.}{group__ApplicationInterface_ga90c4d1a88ecc1f3a49ba73dad4efdb14}.
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ecrt\-\_\-master\-\_\-link\-\_\-state()}{p.}{group__ApplicationInterface_ga90c4d1a88ecc1f3a49ba73dad4efdb14}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 282 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t}!slaves\-\_\-responding@{slaves\-\_\-responding}}
+\index{slaves\-\_\-responding@{slaves\-\_\-responding}!ec_master_link_state_t@{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t}}
+\subsubsection[{slaves\-\_\-responding}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t\-::slaves\-\_\-responding}\label{structec__master__link__state__t_af901790b400db653a2fd739275142a0e}
+
+
+Sum of responding slaves on the given link. 
+
+
+
+Definition at line 283 of file ecrt.\-h.
+
+\index{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t}!al\-\_\-states@{al\-\_\-states}}
+\index{al\-\_\-states@{al\-\_\-states}!ec_master_link_state_t@{ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t}}
+\subsubsection[{al\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-link\-\_\-state\-\_\-t\-::al\-\_\-states}\label{structec__master__link__state__t_a917ac210b8e3d193b845ce6f7fdc852a}
+
+
+Application-\/layer states of the slaves on the given link. 
+
+The states are coded in the lower 4 bits. If a bit is set, it means that at least one slave in the bus is in the corresponding state\-:
+\begin{DoxyItemize}
+\item Bit 0\-: {\itshape I\-N\-I\-T} 
+\item Bit 1\-: {\itshape P\-R\-E\-O\-P} 
+\item Bit 2\-: {\itshape S\-A\-F\-E\-O\-P} 
+\item Bit 3\-: {\itshape O\-P} 
+\end{DoxyItemize}
+
+Definition at line 285 of file ecrt.\-h.
+

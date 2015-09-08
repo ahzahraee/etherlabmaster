@@ -1,0 +1,561 @@
+\section{fsm\-\_\-slave\-\_\-scan.\-c File Reference}
+\label{fsm__slave__scan_8c}\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+
+
+Ether\-C\-A\-T slave state machines.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: A\-D\-D\-R\-E\-S\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: S\-T\-A\-T\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: B\-A\-S\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: D\-C C\-A\-P\-A\-B\-I\-L\-I\-T\-I\-E\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: D\-C T\-I\-M\-E\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: D\-A\-T\-A\-L\-I\-N\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: S\-I\-I S\-I\-Z\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: S\-I\-I D\-A\-T\-A. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: P\-R\-E\-O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: S\-Y\-N\-C. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan state\-: P\-D\-O\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-N\-D. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em State\-: E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Slave scan entry function\-: D\-A\-T\-A\-L\-I\-N\-K. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Enter slave scan state P\-R\-E\-O\-P. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Enter slave scan state P\-D\-O\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram, {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$fsm\-\_\-slave\-\_\-config, {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$fsm\-\_\-pdo)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Start slave scan state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Enter slave scan state S\-I\-I\-\_\-\-S\-I\-Z\-E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave state machines. 
+
+Definition in file {\bf fsm\-\_\-slave\-\_\-scan.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a01d55ef95cfd9a04abfd949790820743}
+
+
+Slave scan state\-: S\-T\-A\-R\-T. 
+
+First state of the slave state machine. Writes the station address to the slave, according to its ring position. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-address (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_abe0ecde5ce1983b239e2da3b481e8dce}
+
+
+Slave scan state\-: A\-D\-D\-R\-E\-S\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a7d291ff3d71a437adbe788f34a08ceb7}
+
+
+Slave scan state\-: S\-T\-A\-T\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-base (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a55dd4ea96a7cbf72cd23b0303f58ecb9}
+
+
+Slave scan state\-: B\-A\-S\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 271 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-cap (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ab9a1c7e217c1b92f7465067dde64aacb}
+
+
+Slave scan state\-: D\-C C\-A\-P\-A\-B\-I\-L\-I\-T\-I\-E\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 345 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-dc\-\_\-times (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a9c82c04700224f13a983264beab8d7f6}
+
+
+Slave scan state\-: D\-C T\-I\-M\-E\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 390 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-datalink (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a8bcfc5f5a8c67418625ea01664b85130}
+
+
+Slave scan state\-: D\-A\-T\-A\-L\-I\-N\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 490 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a539ce44be83455b1651c29da7357f483}
+
+
+Slave scan state\-: S\-I\-I S\-I\-Z\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 578 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sii\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ac1d34306750a2c345bb81b4d795427c0}
+
+
+Slave scan state\-: S\-I\-I D\-A\-T\-A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 650 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a45a7dff65d10e03da84754eb73be7d85}
+
+
+Slave scan state\-: P\-R\-E\-O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 907 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ab25422fd2748169ea2fc8827137d1cbf}
+
+
+Slave scan state\-: S\-Y\-N\-C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 926 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-pdos (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ab38334b5c2095e952b5e76906f70658a}
+
+
+Slave scan state\-: P\-D\-O\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 988 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-end (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a3baaae371ddb7a305d1d37b7b9175604}
+
+
+State\-: E\-N\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1021 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-state\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ae1fc71bdea10b2c4d4d1a24c67d14915}
+
+
+State\-: E\-R\-R\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1011 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-datalink (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a3357ab75dcccf4f03ce2621de48044d9}
+
+
+Slave scan entry function\-: D\-A\-T\-A\-L\-I\-N\-K. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 429 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-preop (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_aecfeac1eba1a56c496c9e41399695cfb}
+
+
+Enter slave scan state P\-R\-E\-O\-P. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 869 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-pdos (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a8175ccbe5743b4a7e3c3450122ecb70d}
+
+
+Enter slave scan state P\-D\-O\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 972 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram, }
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{fsm\-\_\-slave\-\_\-config, }
+\item[{{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$}]{fsm\-\_\-pdo}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a8cc2c3a15907436ab5261917eac11368}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Slave scanning state machine. \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+{\em fsm\-\_\-slave\-\_\-config} & Slave configuration state machine to use. \\
+\hline
+{\em fsm\-\_\-pdo} & P\-D\-O configuration machine to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 79 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_abe0acf4f2239f98a2c64140d8239dbfe}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a83f6387b6036e27b4ac97a992ec17367}
+
+
+Start slave scan state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+{\em slave} & slave to configure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-running (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ac672b3caec7befa075a341b2c2020cc3}
+\begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ac927c8c1c03764c0f9d86639968f3111}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle. \begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_ae24bf2f23955c4ab08862330f578c749}
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-c@{fsm\-\_\-slave\-\_\-scan.\-c}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size}!fsm_slave_scan.c@{fsm\-\_\-slave\-\_\-scan.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-enter\-\_\-sii\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8c_a92b43c9b40ef144ddd93bac1011fe6c2}
+
+
+Enter slave scan state S\-I\-I\-\_\-\-S\-I\-Z\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 447 of file fsm\-\_\-slave\-\_\-scan.\-c.
+

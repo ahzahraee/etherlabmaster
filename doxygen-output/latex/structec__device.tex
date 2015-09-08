@@ -1,0 +1,188 @@
+\section{ec\-\_\-device Struct Reference}
+\label{structec__device}\index{ec\-\_\-device@{ec\-\_\-device}}
+
+
+Ether\-C\-A\-T device.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-master\-\_\-t} $\ast$ {\bf master}\label{structec__device_a3678edcc317d6324936b02c4509de443}
+
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T master. \end{DoxyCompactList}\item 
+struct net\-\_\-device $\ast$ {\bf dev}\label{structec__device_a9503692598d3950969ca8b4daf5fd5ac}
+
+\begin{DoxyCompactList}\small\item\em pointer to the assigned net\-\_\-device \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pollfunc\-\_\-t} {\bf poll}\label{structec__device_aa51d769eb590a04e98f8544ea758322f}
+
+\begin{DoxyCompactList}\small\item\em pointer to the device's poll function \end{DoxyCompactList}\item 
+struct module $\ast$ {\bf module}\label{structec__device_a79af9075672aa2abf993a703b4d964ed}
+
+\begin{DoxyCompactList}\small\item\em pointer to the device's owning module \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf open}\label{structec__device_a0a3f5a12926e0d4ef17409d05b36d18a}
+
+\begin{DoxyCompactList}\small\item\em true, if the net\-\_\-device has been opened \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf link\-\_\-state}\label{structec__device_ab58236227ed28e568e0de571499d5e68}
+
+\begin{DoxyCompactList}\small\item\em device link state \end{DoxyCompactList}\item 
+struct sk\-\_\-buff $\ast$ {\bf tx\-\_\-skb} [{\bf E\-C\-\_\-\-T\-X\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}]\label{structec__device_a733aeb60035ac3696f05dc33adf49004}
+
+\begin{DoxyCompactList}\small\item\em transmit skb ring \end{DoxyCompactList}\item 
+unsigned int {\bf tx\-\_\-ring\-\_\-index}\label{structec__device_af9353b63b910b0b64d06837b3f7075b7}
+
+\begin{DoxyCompactList}\small\item\em last ring entry used to transmit \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-poll}\label{structec__device_af98c616a488455db59c5c4297206b8fb}
+
+\begin{DoxyCompactList}\small\item\em jiffies of last poll \end{DoxyCompactList}\item 
+u64 {\bf tx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames sent. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-tx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames sent of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf rx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames received. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-rx\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of frames received of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf tx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes sent. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-tx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes sent of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf rx\-\_\-bytes}
+\begin{DoxyCompactList}\small\item\em Number of bytes received. \end{DoxyCompactList}\item 
+u64 {\bf last\-\_\-rx\-\_\-bytes}\label{structec__device_a53f0337afe2d2bdb4b24e2ee4ccb8180}
+
+\begin{DoxyCompactList}\small\item\em Number of bytes received of last statistics cycle. \end{DoxyCompactList}\item 
+u64 {\bf tx\-\_\-errors}
+\begin{DoxyCompactList}\small\item\em Number of transmit errors. \end{DoxyCompactList}\item 
+s32 {\bf tx\-\_\-frame\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]\label{structec__device_a0de91079b171a6b07cb724a6362f340b}
+
+\begin{DoxyCompactList}\small\item\em Transmit rates in frames/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf rx\-\_\-frame\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]\label{structec__device_a8e78783b1d22fd12b5d2abe263184bb1}
+
+\begin{DoxyCompactList}\small\item\em Receive rates in frames/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf tx\-\_\-byte\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em Transmit rates in byte/s for different statistics cycle periods. \end{DoxyCompactList}\item 
+s32 {\bf rx\-\_\-byte\-\_\-rates} [{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]
+\begin{DoxyCompactList}\small\item\em Receive rates in byte/s for different statistics cycle periods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T device. 
+
+An Ether\-C\-A\-T device is a network interface card, that is owned by an Ether\-C\-A\-T master to send and receive Ether\-C\-A\-T frames with. 
+
+Definition at line 81 of file device.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-device@{ec\-\_\-device}!tx\-\_\-count@{tx\-\_\-count}}
+\index{tx\-\_\-count@{tx\-\_\-count}!ec_device@{ec\-\_\-device}}
+\subsubsection[{tx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::tx\-\_\-count}\label{structec__device_a0cdf625147761dedcd8aa0ee08434949}
+
+
+Number of frames sent. 
+
+
+
+Definition at line 100 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!last\-\_\-tx\-\_\-count@{last\-\_\-tx\-\_\-count}}
+\index{last\-\_\-tx\-\_\-count@{last\-\_\-tx\-\_\-count}!ec_device@{ec\-\_\-device}}
+\subsubsection[{last\-\_\-tx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::last\-\_\-tx\-\_\-count}\label{structec__device_afca221601cff7e6280283df48902a019}
+
+
+Number of frames sent of last statistics cycle. 
+
+
+
+Definition at line 101 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!rx\-\_\-count@{rx\-\_\-count}}
+\index{rx\-\_\-count@{rx\-\_\-count}!ec_device@{ec\-\_\-device}}
+\subsubsection[{rx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::rx\-\_\-count}\label{structec__device_ab53eaa1db2b7696c28f06146fd253786}
+
+
+Number of frames received. 
+
+
+
+Definition at line 102 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!last\-\_\-rx\-\_\-count@{last\-\_\-rx\-\_\-count}}
+\index{last\-\_\-rx\-\_\-count@{last\-\_\-rx\-\_\-count}!ec_device@{ec\-\_\-device}}
+\subsubsection[{last\-\_\-rx\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::last\-\_\-rx\-\_\-count}\label{structec__device_a5ad25fde7d43696988dcb602fa947a7b}
+
+
+Number of frames received of last statistics cycle. 
+
+
+
+Definition at line 103 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!tx\-\_\-bytes@{tx\-\_\-bytes}}
+\index{tx\-\_\-bytes@{tx\-\_\-bytes}!ec_device@{ec\-\_\-device}}
+\subsubsection[{tx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::tx\-\_\-bytes}\label{structec__device_a969a3e6f0057eeb8b1becc34d500e281}
+
+
+Number of bytes sent. 
+
+
+
+Definition at line 105 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!last\-\_\-tx\-\_\-bytes@{last\-\_\-tx\-\_\-bytes}}
+\index{last\-\_\-tx\-\_\-bytes@{last\-\_\-tx\-\_\-bytes}!ec_device@{ec\-\_\-device}}
+\subsubsection[{last\-\_\-tx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::last\-\_\-tx\-\_\-bytes}\label{structec__device_ac4a738c0943134edc5c68f2c85b9a089}
+
+
+Number of bytes sent of last statistics cycle. 
+
+
+
+Definition at line 106 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!rx\-\_\-bytes@{rx\-\_\-bytes}}
+\index{rx\-\_\-bytes@{rx\-\_\-bytes}!ec_device@{ec\-\_\-device}}
+\subsubsection[{rx\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::rx\-\_\-bytes}\label{structec__device_afea25f45c6911c97a08b8615154a2b91}
+
+
+Number of bytes received. 
+
+
+
+Definition at line 107 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!tx\-\_\-errors@{tx\-\_\-errors}}
+\index{tx\-\_\-errors@{tx\-\_\-errors}!ec_device@{ec\-\_\-device}}
+\subsubsection[{tx\-\_\-errors}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-device\-::tx\-\_\-errors}\label{structec__device_a076ce4fd0d53e53ba7236b12bf4ecf66}
+
+
+Number of transmit errors. 
+
+
+
+Definition at line 110 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!tx\-\_\-byte\-\_\-rates@{tx\-\_\-byte\-\_\-rates}}
+\index{tx\-\_\-byte\-\_\-rates@{tx\-\_\-byte\-\_\-rates}!ec_device@{ec\-\_\-device}}
+\subsubsection[{tx\-\_\-byte\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}s32 ec\-\_\-device\-::tx\-\_\-byte\-\_\-rates[{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__device_a5decb734bd07c7e1a1b66e08904f0bba}
+
+
+Transmit rates in byte/s for different statistics cycle periods. 
+
+
+
+Definition at line 117 of file device.\-h.
+
+\index{ec\-\_\-device@{ec\-\_\-device}!rx\-\_\-byte\-\_\-rates@{rx\-\_\-byte\-\_\-rates}}
+\index{rx\-\_\-byte\-\_\-rates@{rx\-\_\-byte\-\_\-rates}!ec_device@{ec\-\_\-device}}
+\subsubsection[{rx\-\_\-byte\-\_\-rates}]{\setlength{\rightskip}{0pt plus 5cm}s32 ec\-\_\-device\-::rx\-\_\-byte\-\_\-rates[{\bf E\-C\-\_\-\-R\-A\-T\-E\-\_\-\-C\-O\-U\-N\-T}]}\label{structec__device_a577e0651d974aa3db43fcb8fab639637}
+
+
+Receive rates in byte/s for different statistics cycle periods. 
+
+
+
+Definition at line 119 of file device.\-h.
+

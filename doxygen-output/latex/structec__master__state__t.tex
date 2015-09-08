@@ -1,0 +1,72 @@
+\section{ec\-\_\-master\-\_\-state\-\_\-t Struct Reference}
+\label{structec__master__state__t}\index{ec\-\_\-master\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-state\-\_\-t}}
+
+
+Master state.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf slaves\-\_\-responding}
+\begin{DoxyCompactList}\small\item\em Sum of responding slaves on all Ethernet devices. \end{DoxyCompactList}\item 
+unsigned int {\bf al\-\_\-states}\-: 4
+\begin{DoxyCompactList}\small\item\em Application-\/layer states of all slaves. \end{DoxyCompactList}\item 
+unsigned int {\bf link\-\_\-up}\-: 1
+\begin{DoxyCompactList}\small\item\em {\itshape true}, if at least one Ethernet link is up. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master state. 
+
+This is used for the output parameter of \doxyref{ecrt\-\_\-master\-\_\-state()}{p.}{group__ApplicationInterface_ga9f623ede71e87dd0e9d6ab87086f0d4f}.
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ecrt\-\_\-master\-\_\-state()}{p.}{group__ApplicationInterface_ga9f623ede71e87dd0e9d6ab87086f0d4f}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 258 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-master\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-state\-\_\-t}!slaves\-\_\-responding@{slaves\-\_\-responding}}
+\index{slaves\-\_\-responding@{slaves\-\_\-responding}!ec_master_state_t@{ec\-\_\-master\-\_\-state\-\_\-t}}
+\subsubsection[{slaves\-\_\-responding}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-state\-\_\-t\-::slaves\-\_\-responding}\label{structec__master__state__t_abd0384430bcfe9be73f7f0796210cbb1}
+
+
+Sum of responding slaves on all Ethernet devices. 
+
+
+
+Definition at line 259 of file ecrt.\-h.
+
+\index{ec\-\_\-master\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-state\-\_\-t}!al\-\_\-states@{al\-\_\-states}}
+\index{al\-\_\-states@{al\-\_\-states}!ec_master_state_t@{ec\-\_\-master\-\_\-state\-\_\-t}}
+\subsubsection[{al\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-state\-\_\-t\-::al\-\_\-states}\label{structec__master__state__t_a3f7cdc7119df341803926360e65e3405}
+
+
+Application-\/layer states of all slaves. 
+
+The states are coded in the lower 4 bits. If a bit is set, it means that at least one slave in the bus is in the corresponding state\-:
+\begin{DoxyItemize}
+\item Bit 0\-: {\itshape I\-N\-I\-T} 
+\item Bit 1\-: {\itshape P\-R\-E\-O\-P} 
+\item Bit 2\-: {\itshape S\-A\-F\-E\-O\-P} 
+\item Bit 3\-: {\itshape O\-P} 
+\end{DoxyItemize}
+
+Definition at line 261 of file ecrt.\-h.
+
+\index{ec\-\_\-master\-\_\-state\-\_\-t@{ec\-\_\-master\-\_\-state\-\_\-t}!link\-\_\-up@{link\-\_\-up}}
+\index{link\-\_\-up@{link\-\_\-up}!ec_master_state_t@{ec\-\_\-master\-\_\-state\-\_\-t}}
+\subsubsection[{link\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-\_\-state\-\_\-t\-::link\-\_\-up}\label{structec__master__state__t_abe6aef62585b16c0b08e2133d17c96d1}
+
+
+{\itshape true}, if at least one Ethernet link is up. 
+
+
+
+Definition at line 270 of file ecrt.\-h.
+

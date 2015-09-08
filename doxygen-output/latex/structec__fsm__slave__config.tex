@@ -1,0 +1,202 @@
+\section{ec\-\_\-fsm\-\_\-slave\-\_\-config Struct Reference}
+\label{structec__fsm__slave__config}\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+
+
+Finite state machine to configure an Ether\-C\-A\-T slave.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used in the state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$ {\bf fsm\-\_\-change}
+\begin{DoxyCompactList}\small\item\em State change state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$ {\bf fsm\-\_\-coe}
+\begin{DoxyCompactList}\small\item\em Co\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$ {\bf fsm\-\_\-soe}
+\begin{DoxyCompactList}\small\item\em So\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$ {\bf fsm\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O configuration state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}
+\begin{DoxyCompactList}\small\item\em Slave the F\-S\-M runs on. \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em State function. \end{DoxyCompactList}\item 
+unsigned int {\bf retries}
+\begin{DoxyCompactList}\small\item\em Retries on datagram timeout. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request for S\-D\-O configuration. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} {\bf request\-\_\-copy}
+\begin{DoxyCompactList}\small\item\em Copied S\-D\-O request. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$ {\bf soe\-\_\-request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request for S\-D\-O configuration. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-soe\-\_\-request\-\_\-t} {\bf soe\-\_\-request\-\_\-copy}
+\begin{DoxyCompactList}\small\item\em Copied S\-D\-O request. \end{DoxyCompactList}\item 
+unsigned long {\bf jiffies\-\_\-start}
+\begin{DoxyCompactList}\small\item\em For timeout calculations. \end{DoxyCompactList}\item 
+unsigned int {\bf take\-\_\-time}
+\begin{DoxyCompactList}\small\item\em Store jiffies after datagram reception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Finite state machine to configure an Ether\-C\-A\-T slave. 
+
+Definition at line 54 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!datagram@{datagram}}
+\index{datagram@{datagram}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::datagram}\label{structec__fsm__slave__config_a6b7e0ac3aa324aede3c39467672f7201}
+
+
+Datagram used in the state machine. 
+
+
+
+Definition at line 56 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!fsm\-\_\-change@{fsm\-\_\-change}}
+\index{fsm\-\_\-change@{fsm\-\_\-change}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{fsm\-\_\-change}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-change\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::fsm\-\_\-change}\label{structec__fsm__slave__config_a1e2372d1d2ca00c551f93a503d06586d}
+
+
+State change state machine. 
+
+
+
+Definition at line 57 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!fsm\-\_\-coe@{fsm\-\_\-coe}}
+\index{fsm\-\_\-coe@{fsm\-\_\-coe}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{fsm\-\_\-coe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::fsm\-\_\-coe}\label{structec__fsm__slave__config_a6c1f6900f5043f39d2d11250e5738dd0}
+
+
+Co\-E state machine. 
+
+
+
+Definition at line 58 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!fsm\-\_\-soe@{fsm\-\_\-soe}}
+\index{fsm\-\_\-soe@{fsm\-\_\-soe}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{fsm\-\_\-soe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::fsm\-\_\-soe}\label{structec__fsm__slave__config_a5760deffedeccf9457cd5bbf9c8b1706}
+
+
+So\-E state machine. 
+
+
+
+Definition at line 59 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!fsm\-\_\-pdo@{fsm\-\_\-pdo}}
+\index{fsm\-\_\-pdo@{fsm\-\_\-pdo}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{fsm\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::fsm\-\_\-pdo}\label{structec__fsm__slave__config_afad3c621c1ca68bcdb3b983cfa1101c0}
+
+
+P\-D\-O configuration state machine. 
+
+
+
+Definition at line 60 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!slave@{slave}}
+\index{slave@{slave}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::slave}\label{structec__fsm__slave__config_aa4f0d106474cbddf8159b09049d14398}
+
+
+Slave the F\-S\-M runs on. 
+
+
+
+Definition at line 62 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!state@{state}}
+\index{state@{state}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::state)({\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$)}\label{structec__fsm__slave__config_ab6a1ed826e5ca35eddf980244bd40db8}
+
+
+State function. 
+
+
+
+Definition at line 63 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!retries@{retries}}
+\index{retries@{retries}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{retries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-slave\-\_\-config\-::retries}\label{structec__fsm__slave__config_a706c10900a9822291dbd2a521889146b}
+
+
+Retries on datagram timeout. 
+
+
+
+Definition at line 64 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!request@{request}}
+\index{request@{request}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::request}\label{structec__fsm__slave__config_a1fbb50787df5cc82d434eff437d6e000}
+
+
+S\-D\-O request for S\-D\-O configuration. 
+
+
+
+Definition at line 65 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!request\-\_\-copy@{request\-\_\-copy}}
+\index{request\-\_\-copy@{request\-\_\-copy}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{request\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} ec\-\_\-fsm\-\_\-slave\-\_\-config\-::request\-\_\-copy}\label{structec__fsm__slave__config_a5ac2f5854919d07c2c70501307881582}
+
+
+Copied S\-D\-O request. 
+
+
+
+Definition at line 66 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!soe\-\_\-request@{soe\-\_\-request}}
+\index{soe\-\_\-request@{soe\-\_\-request}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{soe\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-soe\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-\_\-config\-::soe\-\_\-request}\label{structec__fsm__slave__config_a7cf04a851c168dd46cebe1d311414abf}
+
+
+S\-D\-O request for S\-D\-O configuration. 
+
+
+
+Definition at line 67 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!soe\-\_\-request\-\_\-copy@{soe\-\_\-request\-\_\-copy}}
+\index{soe\-\_\-request\-\_\-copy@{soe\-\_\-request\-\_\-copy}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{soe\-\_\-request\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-soe\-\_\-request\-\_\-t} ec\-\_\-fsm\-\_\-slave\-\_\-config\-::soe\-\_\-request\-\_\-copy}\label{structec__fsm__slave__config_ac1c8772376c738eb4b500b904bae8695}
+
+
+Copied S\-D\-O request. 
+
+
+
+Definition at line 68 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!jiffies\-\_\-start@{jiffies\-\_\-start}}
+\index{jiffies\-\_\-start@{jiffies\-\_\-start}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{jiffies\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long ec\-\_\-fsm\-\_\-slave\-\_\-config\-::jiffies\-\_\-start}\label{structec__fsm__slave__config_aaca0412b1e9430abb207655e6a42830a}
+
+
+For timeout calculations. 
+
+
+
+Definition at line 69 of file fsm\-\_\-slave\-\_\-config.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}!take\-\_\-time@{take\-\_\-time}}
+\index{take\-\_\-time@{take\-\_\-time}!ec_fsm_slave_config@{ec\-\_\-fsm\-\_\-slave\-\_\-config}}
+\subsubsection[{take\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-slave\-\_\-config\-::take\-\_\-time}\label{structec__fsm__slave__config_a884fcfd4e7f6e89d0d99dab720939c07}
+
+
+Store jiffies after datagram reception. 
+
+
+
+Definition at line 70 of file fsm\-\_\-slave\-\_\-config.\-h.
+

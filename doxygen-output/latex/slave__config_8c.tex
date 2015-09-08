@@ -1,0 +1,427 @@
+\section{slave\-\_\-config.\-c File Reference}
+\label{slave__config_8c}\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}}
+
+
+Ether\-C\-A\-T slave configuration methods.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-slave\-\_\-config\-\_\-init} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, {\bf ec\-\_\-master\-\_\-t} $\ast$master, uint16\-\_\-t alias, uint16\-\_\-t position, uint32\-\_\-t vendor\-\_\-id, uint32\-\_\-t product\-\_\-code)
+\begin{DoxyCompactList}\small\item\em Slave configuration constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-config\-\_\-clear} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Slave configuration destructor. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, uint8\-\_\-t sync\-\_\-index, {\bf ec\-\_\-direction\-\_\-t} dir)
+\begin{DoxyCompactList}\small\item\em Prepares an F\-M\-M\-U configuration. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-config\-\_\-attach} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Attaches the configuration to the addressed slave object. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-config\-\_\-detach} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Detaches the configuration from a slave object. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-config\-\_\-load\-\_\-default\-\_\-sync\-\_\-config} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)\label{slave__config_8c_a3e2c05644e14f2168967f8559ab3ee35}
+
+\begin{DoxyCompactList}\small\item\em Loads the default P\-D\-O assignment from the slave object. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-config\-\_\-load\-\_\-default\-\_\-mapping} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)\label{slave__config_8c_aa8e139fa8f726c589bccc8e5ee9447c2}
+
+\begin{DoxyCompactList}\small\item\em Loads the default mapping for a P\-D\-O from the slave object. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Get the number of S\-D\-O configurations. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds an S\-D\-O configuration via its position in the list. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Get the number of I\-D\-N configurations. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds an I\-D\-N configuration via its position in the list. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds a Co\-E handler via its position in the list. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds a register handler via its position in the list. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Finds a Vo\-E handler via its position in the list. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-sync\-\_\-manager} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t sync\-\_\-index, {\bf ec\-\_\-direction\-\_\-t} dir, {\bf ec\-\_\-watchdog\-\_\-mode\-\_\-t} watchdog\-\_\-mode)
+\begin{DoxyCompactList}\small\item\em Configure a sync manager. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-slave\-\_\-config\-\_\-watchdog} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t divider, uint16\-\_\-t intervals)
+\begin{DoxyCompactList}\small\item\em Configure a slave's watchdog times. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-pdo\-\_\-assign\-\_\-add} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t sync\-\_\-index, uint16\-\_\-t pdo\-\_\-index)
+\begin{DoxyCompactList}\small\item\em Add a P\-D\-O to a sync manager's P\-D\-O assignment. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-slave\-\_\-config\-\_\-pdo\-\_\-assign\-\_\-clear} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t sync\-\_\-index)
+\begin{DoxyCompactList}\small\item\em Clear a sync manager's P\-D\-O assignment. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-pdo\-\_\-mapping\-\_\-add} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t pdo\-\_\-index, uint16\-\_\-t entry\-\_\-index, uint8\-\_\-t entry\-\_\-subindex, uint8\-\_\-t entry\-\_\-bit\-\_\-length)
+\begin{DoxyCompactList}\small\item\em Add a P\-D\-O entry to the given P\-D\-O's mapping. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-slave\-\_\-config\-\_\-pdo\-\_\-mapping\-\_\-clear} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t pdo\-\_\-index)
+\begin{DoxyCompactList}\small\item\em Clear the mapping of a given P\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-pdos} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, unsigned int n\-\_\-syncs, const {\bf ec\-\_\-sync\-\_\-info\-\_\-t} syncs[$\,$])
+\begin{DoxyCompactList}\small\item\em Specify a complete P\-D\-O configuration. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-reg\-\_\-pdo\-\_\-entry} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, unsigned int $\ast$bit\-\_\-position)
+\begin{DoxyCompactList}\small\item\em Registers a P\-D\-O entry for process data exchange in a domain. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-reg\-\_\-pdo\-\_\-entry\-\_\-pos} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t sync\-\_\-index, unsigned int pdo\-\_\-pos, unsigned int entry\-\_\-pos, {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, unsigned int $\ast$bit\-\_\-position)
+\begin{DoxyCompactList}\small\item\em Registers a P\-D\-O entry using its position. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-slave\-\_\-config\-\_\-dc} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t assign\-\_\-activate, uint32\-\_\-t sync0\-\_\-cycle\-\_\-time, int32\-\_\-t sync0\-\_\-shift\-\_\-time, uint32\-\_\-t sync1\-\_\-cycle\-\_\-time, int32\-\_\-t sync1\-\_\-shift\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Configure distributed clocks. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-sdo} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, const uint8\-\_\-t $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Add an S\-D\-O configuration. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-sdo8} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, uint8\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em Add a configuration value for an 8-\/bit S\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-sdo16} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, uint16\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em Add a configuration value for a 16-\/bit S\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-sdo32} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, uint32\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em Add a configuration value for a 32-\/bit S\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-complete\-\_\-sdo} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, const uint8\-\_\-t $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Add configuration data for a complete S\-D\-O. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-emerg\-\_\-size} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t elements)
+\begin{DoxyCompactList}\small\item\em Set the size of the Co\-E emergency ring buffer. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-emerg\-\_\-pop} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t $\ast$target)
+\begin{DoxyCompactList}\small\item\em Read and remove one record from the Co\-E emergency ring buffer. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-emerg\-\_\-clear} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Clears Co\-E emergency ring buffer and the overrun counter. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-emerg\-\_\-overruns} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Read the number of Co\-E emergency overruns. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-sdo\-\_\-request\-\_\-err} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, size\-\_\-t size)\label{slave__config_8c_a3c3525153d28cd7beef58fe017fbebb1}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-sdo\-\_\-request()}{p.}{group__ApplicationInterface_ga14aa167c0d4afd84b0fbada417a204f1}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-sdo\-\_\-request} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint16\-\_\-t index, uint8\-\_\-t subindex, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Create an S\-D\-O request to exchange S\-D\-Os during realtime operation. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-reg\-\_\-request\-\_\-err} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t size)\label{slave__config_8c_a25c74750f388718c3e2a1caa374343d8}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-reg\-\_\-request()}{p.}{group__ApplicationInterface_ga1805e57c39e7bb12840c5e2589021dbe}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-reg\-\_\-request} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Create a register request to exchange Ether\-C\-A\-T register contents during realtime operation. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-voe\-\_\-handler\-\_\-err} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t size)\label{slave__config_8c_a842ef954d1e61932952886b2ea2a8deb}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-voe\-\_\-handler()}{p.}{group__ApplicationInterface_ga6341627f6bf764312dd6e8c3140e9be1}, but with E\-R\-R\-\_\-\-P\-T\-R() return value. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$ {\bf ecrt\-\_\-slave\-\_\-config\-\_\-create\-\_\-voe\-\_\-handler} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Create an Vo\-E handler to exchange vendor-\/specific data during realtime operation. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-slave\-\_\-config\-\_\-state} (const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, {\bf ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Outputs the state of the slave configuration. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-slave\-\_\-config\-\_\-idn} ({\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$sc, uint8\-\_\-t drive\-\_\-no, uint16\-\_\-t idn, {\bf ec\-\_\-al\-\_\-state\-\_\-t} state, const uint8\-\_\-t $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Add an So\-E I\-D\-N configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave configuration methods. 
+
+Definition in file {\bf slave\-\_\-config.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-init@{ec\-\_\-slave\-\_\-config\-\_\-init}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-init@{ec\-\_\-slave\-\_\-config\-\_\-init}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-slave\-\_\-config\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{position, }
+\item[{uint32\-\_\-t}]{vendor\-\_\-id, }
+\item[{uint32\-\_\-t}]{product\-\_\-code}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a89e3c5573a34a9e495cf6b467e223af4}
+
+
+Slave configuration constructor. 
+
+See \doxyref{ecrt\-\_\-master\-\_\-slave\-\_\-config()}{p.}{group__ApplicationInterface_gaa190a5d3aa2a72b8950ef93aa7baab0b} for the usage of the {\itshape alias} and {\itshape position} parameters. 
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em alias} & Slave alias. \\
+\hline
+{\em position} & Slave position. \\
+\hline
+{\em vendor\-\_\-id} & Expected vendor I\-D. \\
+\hline
+{\em product\-\_\-code} & Expected product code. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-clear@{ec\-\_\-slave\-\_\-config\-\_\-clear}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-clear@{ec\-\_\-slave\-\_\-config\-\_\-clear}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-slave\-\_\-config\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a76d9ec03885e1734c4ca7fd27490b193}
+
+
+Slave configuration destructor. 
+
+Clears and frees a slave configuration object. 
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu@{ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu@{ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-config\-\_\-prepare\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint8\-\_\-t}]{sync\-\_\-index, }
+\item[{{\bf ec\-\_\-direction\-\_\-t}}]{dir}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a6c908bc3c5044575e96e5dc1554c9bc1}
+
+
+Prepares an F\-M\-M\-U configuration. 
+
+Configuration data for the F\-M\-M\-U is saved in the slave config structure and is written to the slave during the configuration. The F\-M\-M\-U configuration is done in a way, that the complete data range of the corresponding sync manager is covered. Seperate F\-M\-M\-Us are configured for each domain. If the F\-M\-M\-U configuration is already prepared, the function does nothing and returns with success.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em $>$=0} & Success, logical offset byte address. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em domain} & Domain. \\
+\hline
+{\em sync\-\_\-index} & Sync manager index. \\
+\hline
+{\em dir} & P\-D\-O direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-attach@{ec\-\_\-slave\-\_\-config\-\_\-attach}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-attach@{ec\-\_\-slave\-\_\-config\-\_\-attach}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-attach}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-config\-\_\-attach (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_abb5cb481f42d644f581e52d5c876bfb9}
+
+
+Attaches the configuration to the addressed slave object. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-detach@{ec\-\_\-slave\-\_\-config\-\_\-detach}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-detach@{ec\-\_\-slave\-\_\-config\-\_\-detach}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-detach}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-slave\-\_\-config\-\_\-detach (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_af8f9c0e68dfe4781fa922ca9c4ec7e94}
+
+
+Detaches the configuration from a slave object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 266 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count@{ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count@{ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-\_\-config\-\_\-sdo\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_ae0ad39c4f100b0d18140b38db27fa52f}
+
+
+Get the number of S\-D\-O configurations. 
+
+\begin{DoxyReturn}{Returns}
+Number of S\-D\-O configurations. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 372 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-sdo\-\_\-request\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_ae6ccda0b55f86c5cd0e77ec5b51fac56}
+
+
+Finds an S\-D\-O configuration via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count@{ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count@{ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-\_\-config\-\_\-idn\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a833fa6107e6071bf7e37df298dcd41ac}
+
+
+Get the number of I\-D\-N configurations. 
+
+\begin{DoxyReturn}{Returns}
+Number of S\-D\-O configurations. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 416 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-soe\-\_\-request\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-\_\-get\-\_\-idn\-\_\-by\-\_\-pos\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a5767eb592be624ea3af8dfae05d7622d}
+
+
+Finds an I\-D\-N configuration via its position in the list. 
+
+Const version.
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 438 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-sdo\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a0e431ae80ee0465f6629ff33ef3e8290}
+
+
+Finds a Co\-E handler via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 460 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-reg\-\_\-request\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-reg\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_a23fe8c4e37cd9bea5cc346edfd890963}
+
+
+Finds a register handler via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 482 of file slave\-\_\-config.\-c.
+
+\index{slave\-\_\-config.\-c@{slave\-\_\-config.\-c}!ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler}}
+\index{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler@{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler}!slave_config.c@{slave\-\_\-config.\-c}}
+\subsubsection[{ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-voe\-\_\-handler\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-config\-\_\-find\-\_\-voe\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{slave__config_8c_ae096a128f1552f49f5f048a2a08a5beb}
+
+
+Finds a Vo\-E handler via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+Search result, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Slave configuration. \\
+\hline
+{\em pos} & Position in the list. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 504 of file slave\-\_\-config.\-c.
+

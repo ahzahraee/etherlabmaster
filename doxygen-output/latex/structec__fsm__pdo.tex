@@ -1,0 +1,176 @@
+\section{ec\-\_\-fsm\-\_\-pdo Struct Reference}
+\label{structec__fsm__pdo}\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}}
+
+
+P\-D\-O configuration state machine.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em State function. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$ {\bf fsm\-\_\-coe}
+\begin{DoxyCompactList}\small\item\em Co\-E state machine to use. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} {\bf fsm\-\_\-pdo\-\_\-entry}
+\begin{DoxyCompactList}\small\item\em P\-D\-O entry state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-list\-\_\-t} {\bf pdos}
+\begin{DoxyCompactList}\small\item\em P\-D\-O configuration. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} {\bf request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-t} {\bf slave\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O actually appearing in a slave. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}
+\begin{DoxyCompactList}\small\item\em Slave the F\-S\-M runs on. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf sync\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Current sync manager index. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sync\-\_\-t} $\ast$ {\bf sync}
+\begin{DoxyCompactList}\small\item\em Current sync manager. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf pdo}
+\begin{DoxyCompactList}\small\item\em Current P\-D\-O. \end{DoxyCompactList}\item 
+unsigned int {\bf pdo\-\_\-pos}
+\begin{DoxyCompactList}\small\item\em Assignment position of current P\-D\-Os. \end{DoxyCompactList}\item 
+unsigned int {\bf pdo\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of assigned P\-D\-Os. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-D\-O configuration state machine. 
+
+Definition at line 54 of file fsm\-\_\-pdo.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!state@{state}}
+\index{state@{state}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-fsm\-\_\-pdo\-::state)({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)}\label{structec__fsm__pdo_a0395eeb4608437fc422ddb7df18ddf95}
+
+
+State function. 
+
+
+
+Definition at line 56 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!fsm\-\_\-coe@{fsm\-\_\-coe}}
+\index{fsm\-\_\-coe@{fsm\-\_\-coe}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{fsm\-\_\-coe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-::fsm\-\_\-coe}\label{structec__fsm__pdo_af81a92fdb4a376a02c5f0a1cf60917b4}
+
+
+Co\-E state machine to use. 
+
+
+
+Definition at line 57 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!fsm\-\_\-pdo\-\_\-entry@{fsm\-\_\-pdo\-\_\-entry}}
+\index{fsm\-\_\-pdo\-\_\-entry@{fsm\-\_\-pdo\-\_\-entry}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{fsm\-\_\-pdo\-\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} ec\-\_\-fsm\-\_\-pdo\-::fsm\-\_\-pdo\-\_\-entry}\label{structec__fsm__pdo_aee68eda7245e56950c5409bf92c36c7d}
+
+
+P\-D\-O entry state machine. 
+
+
+
+Definition at line 58 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!pdos@{pdos}}
+\index{pdos@{pdos}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{pdos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-list\-\_\-t} ec\-\_\-fsm\-\_\-pdo\-::pdos}\label{structec__fsm__pdo_ac1519353602acca12353ea0719a6ba85}
+
+
+P\-D\-O configuration. 
+
+
+
+Definition at line 59 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!request@{request}}
+\index{request@{request}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} ec\-\_\-fsm\-\_\-pdo\-::request}\label{structec__fsm__pdo_a437105cab7019aad6aed6d5cf6326e4a}
+
+
+S\-D\-O request. 
+
+
+
+Definition at line 60 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!slave\-\_\-pdo@{slave\-\_\-pdo}}
+\index{slave\-\_\-pdo@{slave\-\_\-pdo}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{slave\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-t} ec\-\_\-fsm\-\_\-pdo\-::slave\-\_\-pdo}\label{structec__fsm__pdo_a83ce3aec31b10b4941c60088ac1c4a10}
+
+
+P\-D\-O actually appearing in a slave. 
+
+
+
+Definition at line 61 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!slave@{slave}}
+\index{slave@{slave}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-::slave}\label{structec__fsm__pdo_a659ca1e17ea96e9be327dd65eea054e4}
+
+
+Slave the F\-S\-M runs on. 
+
+
+
+Definition at line 63 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!sync\-\_\-index@{sync\-\_\-index}}
+\index{sync\-\_\-index@{sync\-\_\-index}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{sync\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-fsm\-\_\-pdo\-::sync\-\_\-index}\label{structec__fsm__pdo_a8b69e76c8f517ca1d7e8d782122ce7b8}
+
+
+Current sync manager index. 
+
+
+
+Definition at line 64 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!sync@{sync}}
+\index{sync@{sync}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sync\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-::sync}\label{structec__fsm__pdo_a38e76d6856ae5035b91bf5b0850218ad}
+
+
+Current sync manager. 
+
+
+
+Definition at line 65 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!pdo@{pdo}}
+\index{pdo@{pdo}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-::pdo}\label{structec__fsm__pdo_a437d446a8f8d784d8622ed302b3d51a1}
+
+
+Current P\-D\-O. 
+
+
+
+Definition at line 66 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!pdo\-\_\-pos@{pdo\-\_\-pos}}
+\index{pdo\-\_\-pos@{pdo\-\_\-pos}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{pdo\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-pdo\-::pdo\-\_\-pos}\label{structec__fsm__pdo_aec477e3e790d99da798a44e7523c0508}
+
+
+Assignment position of current P\-D\-Os. 
+
+
+
+Definition at line 67 of file fsm\-\_\-pdo.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo@{ec\-\_\-fsm\-\_\-pdo}!pdo\-\_\-count@{pdo\-\_\-count}}
+\index{pdo\-\_\-count@{pdo\-\_\-count}!ec_fsm_pdo@{ec\-\_\-fsm\-\_\-pdo}}
+\subsubsection[{pdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-pdo\-::pdo\-\_\-count}\label{structec__fsm__pdo_a60d790b9858292f2229115dabc994c08}
+
+
+Number of assigned P\-D\-Os. 
+
+
+
+Definition at line 68 of file fsm\-\_\-pdo.\-h.
+

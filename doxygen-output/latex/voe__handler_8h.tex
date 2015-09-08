@@ -1,0 +1,84 @@
+\section{voe\-\_\-handler.\-h File Reference}
+\label{voe__handler_8h}\index{voe\-\_\-handler.\-h@{voe\-\_\-handler.\-h}}
+
+
+Vendor specific over Ether\-C\-A\-T protocol handler.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-voe\-\_\-handler}
+\begin{DoxyCompactList}\small\item\em Vendor specific over Ether\-C\-A\-T handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-voe\-\_\-handler\-\_\-init} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Vo\-E handler constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-voe\-\_\-handler\-\_\-clear} ({\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$)\label{voe__handler_8h_a59baf69eb0203dbf1acf7f5e390e849a}
+
+\begin{DoxyCompactList}\small\item\em Vo\-E handler destructor. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size} (const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get usable memory size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Vendor specific over Ether\-C\-A\-T protocol handler. 
+
+Definition in file {\bf voe\-\_\-handler.\-h}.
+
+
+
+\subsection{Function Documentation}
+\index{voe\-\_\-handler.\-h@{voe\-\_\-handler.\-h}!ec\-\_\-voe\-\_\-handler\-\_\-init@{ec\-\_\-voe\-\_\-handler\-\_\-init}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-init@{ec\-\_\-voe\-\_\-handler\-\_\-init}!voe_handler.h@{voe\-\_\-handler.\-h}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-voe\-\_\-handler\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe, }
+\item[{{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$}]{sc, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8h_a721e07aa3628cde894d343f4bb9be382}
+
+
+Vo\-E handler constructor. 
+
+\begin{DoxyReturn}{Returns}
+Return value of \doxyref{ec\-\_\-datagram\-\_\-prealloc()}{p.}{datagram_8c_a407dc1f0c4247f84e4193b4368be8a8b}. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em voe} & Vo\-E handler. \\
+\hline
+{\em sc} & Parent slave configuration. \\
+\hline
+{\em size} & Size of memory to reserve. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file voe\-\_\-handler.\-c.
+
+\index{voe\-\_\-handler.\-h@{voe\-\_\-handler.\-h}!ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size@{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}}
+\index{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size@{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}!voe_handler.h@{voe\-\_\-handler.\-h}}
+\subsubsection[{ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-voe\-\_\-handler\-\_\-mem\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-voe\-\_\-handler\-\_\-t} $\ast$}]{voe}
+\end{DoxyParamCaption}
+)}\label{voe__handler_8h_a51ae52f9360172b1d8937ea62cf157aa}
+
+
+Get usable memory size. 
+
+\begin{DoxyReturn}{Returns}
+Memory size. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em voe} & Vo\-E handler. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 112 of file voe\-\_\-handler.\-c.
+

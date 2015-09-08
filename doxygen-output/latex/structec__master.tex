@@ -1,0 +1,805 @@
+\section{ec\-\_\-master Struct Reference}
+\label{structec__master}\index{ec\-\_\-master@{ec\-\_\-master}}
+
+
+Ether\-C\-A\-T master.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf index}
+\begin{DoxyCompactList}\small\item\em Index. \end{DoxyCompactList}\item 
+unsigned int {\bf reserved}
+\begin{DoxyCompactList}\small\item\em {\itshape True}, if the master is in use. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-cdev\-\_\-t} {\bf cdev}
+\begin{DoxyCompactList}\small\item\em Master character device. \end{DoxyCompactList}\item 
+struct device $\ast$ {\bf class\-\_\-device}
+\begin{DoxyCompactList}\small\item\em Master class device. \end{DoxyCompactList}\item 
+struct semaphore {\bf master\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Master semaphore. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-t} {\bf devices} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T devices. \end{DoxyCompactList}\item 
+const uint8\-\_\-t $\ast$ {\bf macs} [E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]
+\begin{DoxyCompactList}\small\item\em Device M\-A\-C addresses. \end{DoxyCompactList}\item 
+struct semaphore {\bf device\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Device semaphore. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-device\-\_\-stats\-\_\-t} {\bf device\-\_\-stats}
+\begin{DoxyCompactList}\small\item\em Device statistics. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} {\bf fsm}
+\begin{DoxyCompactList}\small\item\em Master state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf fsm\-\_\-datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used for state machines. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-master\-\_\-phase\-\_\-t} {\bf phase}
+\begin{DoxyCompactList}\small\item\em Master phase. \end{DoxyCompactList}\item 
+unsigned int {\bf active}
+\begin{DoxyCompactList}\small\item\em Master has been activated. \end{DoxyCompactList}\item 
+unsigned int {\bf config\-\_\-changed}
+\begin{DoxyCompactList}\small\item\em The configuration changed. \end{DoxyCompactList}\item 
+unsigned int {\bf injection\-\_\-seq\-\_\-fsm}
+\begin{DoxyCompactList}\small\item\em Datagram injection sequence number for the F\-S\-M side. \end{DoxyCompactList}\item 
+unsigned int {\bf injection\-\_\-seq\-\_\-rt}
+\begin{DoxyCompactList}\small\item\em Datagram injection sequence number for the realtime side. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slaves}
+\begin{DoxyCompactList}\small\item\em Array of slaves on the bus. \end{DoxyCompactList}\item 
+unsigned int {\bf slave\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of slaves on the bus. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf configs}
+\begin{DoxyCompactList}\small\item\em List of slave configurations. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf domains}
+\begin{DoxyCompactList}\small\item\em List of domains. \end{DoxyCompactList}\item 
+u64 {\bf app\-\_\-time}
+\begin{DoxyCompactList}\small\item\em Time of the last ecrt\-\_\-master\-\_\-sync() call. \end{DoxyCompactList}\item 
+u64 {\bf app\-\_\-start\-\_\-time}
+\begin{DoxyCompactList}\small\item\em Application start time. \end{DoxyCompactList}\item 
+u8 {\bf has\-\_\-app\-\_\-time}
+\begin{DoxyCompactList}\small\item\em Application time is valid. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf ref\-\_\-sync\-\_\-datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used for synchronizing the reference clock to the master clock. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf sync\-\_\-datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used for D\-C drift compensation. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf sync\-\_\-mon\-\_\-datagram}
+\begin{DoxyCompactList}\small\item\em Datagram used for D\-C synchronisation monitoring. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-config\-\_\-t} $\ast$ {\bf dc\-\_\-ref\-\_\-config}
+\begin{DoxyCompactList}\small\item\em Application-\/selected D\-C reference clock slave config. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf dc\-\_\-ref\-\_\-clock}
+\begin{DoxyCompactList}\small\item\em D\-C reference clock slave. \end{DoxyCompactList}\item 
+unsigned int {\bf scan\-\_\-busy}
+\begin{DoxyCompactList}\small\item\em Current scan state. \end{DoxyCompactList}\item 
+unsigned int {\bf allow\-\_\-scan}
+\begin{DoxyCompactList}\small\item\em {\itshape True}, if slave scanning is allowed. \end{DoxyCompactList}\item 
+struct semaphore {\bf scan\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Semaphore protecting the {\itshape scan\-\_\-busy} variable and the {\itshape allow\-\_\-scan} flag. \end{DoxyCompactList}\item 
+wait\-\_\-queue\-\_\-head\-\_\-t {\bf scan\-\_\-queue}
+\begin{DoxyCompactList}\small\item\em Queue for processes that wait for slave scanning. \end{DoxyCompactList}\item 
+unsigned int {\bf config\-\_\-busy}
+\begin{DoxyCompactList}\small\item\em State of slave configuration. \end{DoxyCompactList}\item 
+struct semaphore {\bf config\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Semaphore protecting the {\itshape config\-\_\-busy} variable and the allow\-\_\-config flag. \end{DoxyCompactList}\item 
+wait\-\_\-queue\-\_\-head\-\_\-t {\bf config\-\_\-queue}
+\begin{DoxyCompactList}\small\item\em Queue for processes that wait for slave configuration. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf datagram\-\_\-queue}
+\begin{DoxyCompactList}\small\item\em Datagram queue. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf datagram\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Current datagram index. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf ext\-\_\-datagram\-\_\-queue}
+\begin{DoxyCompactList}\small\item\em Queue for non-\/application datagrams. \end{DoxyCompactList}\item 
+struct semaphore {\bf ext\-\_\-queue\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Semaphore protecting the {\itshape ext\-\_\-datagram\-\_\-queue}. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} {\bf ext\-\_\-datagram\-\_\-ring} [{\bf E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}]
+\begin{DoxyCompactList}\small\item\em External datagram ring. \end{DoxyCompactList}\item 
+unsigned int {\bf ext\-\_\-ring\-\_\-idx\-\_\-rt}
+\begin{DoxyCompactList}\small\item\em Index in external datagram ring for R\-T side. \end{DoxyCompactList}\item 
+unsigned int {\bf ext\-\_\-ring\-\_\-idx\-\_\-fsm}
+\begin{DoxyCompactList}\small\item\em Index in external datagram ring for F\-S\-M side. \end{DoxyCompactList}\item 
+unsigned int {\bf send\-\_\-interval}
+\begin{DoxyCompactList}\small\item\em Interval between two calls to \doxyref{ecrt\-\_\-master\-\_\-send()}{p.}{group__ApplicationInterface_ga453f787866ee66afb98130cf4723762d}. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf max\-\_\-queue\-\_\-size}\label{structec__master_a39b81f27a225b9b10daf88b1746d0d6d}
+
+\begin{DoxyCompactList}\small\item\em Maximum size of datagram queue. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf fsm\-\_\-slave}
+\begin{DoxyCompactList}\small\item\em Slave that is queried next for F\-S\-M exec. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf fsm\-\_\-exec\-\_\-list}
+\begin{DoxyCompactList}\small\item\em Slave F\-S\-M execution list. \end{DoxyCompactList}\item 
+unsigned int {\bf fsm\-\_\-exec\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of entries in execution list. \end{DoxyCompactList}\item 
+unsigned int {\bf debug\-\_\-level}
+\begin{DoxyCompactList}\small\item\em Master debug level. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-stats\-\_\-t} {\bf stats}
+\begin{DoxyCompactList}\small\item\em Cyclic statistics. \end{DoxyCompactList}\item 
+struct task\-\_\-struct $\ast$ {\bf thread}
+\begin{DoxyCompactList}\small\item\em Master thread. \end{DoxyCompactList}\item 
+struct task\-\_\-struct $\ast$ {\bf eoe\-\_\-thread}
+\begin{DoxyCompactList}\small\item\em Eo\-E thread. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf eoe\-\_\-handlers}
+\begin{DoxyCompactList}\small\item\em Ethernet over Ether\-C\-A\-T handlers. \end{DoxyCompactList}\item 
+struct semaphore {\bf io\-\_\-sem}
+\begin{DoxyCompactList}\small\item\em Semaphore used in {\itshape I\-D\-L\-E} phase. \end{DoxyCompactList}\item 
+void($\ast$ {\bf send\-\_\-cb} )(void $\ast$)
+\begin{DoxyCompactList}\small\item\em Current send datagrams callback. \end{DoxyCompactList}\item 
+void($\ast$ {\bf receive\-\_\-cb} )(void $\ast$)
+\begin{DoxyCompactList}\small\item\em Current receive datagrams callback. \end{DoxyCompactList}\item 
+void $\ast$ {\bf cb\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Current callback data. \end{DoxyCompactList}\item 
+void($\ast$ {\bf app\-\_\-send\-\_\-cb} )(void $\ast$)
+\begin{DoxyCompactList}\small\item\em Application's send datagrams callback. \end{DoxyCompactList}\item 
+void($\ast$ {\bf app\-\_\-receive\-\_\-cb} )(void $\ast$)
+\begin{DoxyCompactList}\small\item\em Application's receive datagrams callback. \end{DoxyCompactList}\item 
+void $\ast$ {\bf app\-\_\-cb\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Application callback data. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf sii\-\_\-requests}
+\begin{DoxyCompactList}\small\item\em S\-I\-I write requests. \end{DoxyCompactList}\item 
+wait\-\_\-queue\-\_\-head\-\_\-t {\bf request\-\_\-queue}
+\begin{DoxyCompactList}\small\item\em Wait queue for external requests from user space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master. 
+
+Manages slaves, domains and I\-O. 
+
+Definition at line 194 of file master.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-master@{ec\-\_\-master}!index@{index}}
+\index{index@{index}!ec_master@{ec\-\_\-master}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::index}\label{structec__master_a78fe13519ced082c9a212711bec49ed3}
+
+
+Index. 
+
+
+
+Definition at line 195 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!reserved@{reserved}}
+\index{reserved@{reserved}!ec_master@{ec\-\_\-master}}
+\subsubsection[{reserved}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::reserved}\label{structec__master_ace80d85886a06d3608f853a7b37fb8c9}
+
+
+{\itshape True}, if the master is in use. 
+
+
+
+Definition at line 196 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!cdev@{cdev}}
+\index{cdev@{cdev}!ec_master@{ec\-\_\-master}}
+\subsubsection[{cdev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-cdev\-\_\-t} ec\-\_\-master\-::cdev}\label{structec__master_acbd6e49f052bce75f69d12ef93390e5b}
+
+
+Master character device. 
+
+
+
+Definition at line 198 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!class\-\_\-device@{class\-\_\-device}}
+\index{class\-\_\-device@{class\-\_\-device}!ec_master@{ec\-\_\-master}}
+\subsubsection[{class\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}struct device$\ast$ ec\-\_\-master\-::class\-\_\-device}\label{structec__master_ac5b8f1b9b9bc4beb08c6be854490841e}
+
+
+Master class device. 
+
+
+
+Definition at line 200 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!master\-\_\-sem@{master\-\_\-sem}}
+\index{master\-\_\-sem@{master\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{master\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::master\-\_\-sem}\label{structec__master_a322cd94f85808c07a046501df8308cc6}
+
+
+Master semaphore. 
+
+
+
+Definition at line 209 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!devices@{devices}}
+\index{devices@{devices}!ec_master@{ec\-\_\-master}}
+\subsubsection[{devices}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-device\-\_\-t} ec\-\_\-master\-::devices[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__master_af339cc3b68bceb8ce25b02f4d8b5891b}
+
+
+Ether\-C\-A\-T devices. 
+
+
+
+Definition at line 211 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!macs@{macs}}
+\index{macs@{macs}!ec_master@{ec\-\_\-master}}
+\subsubsection[{macs}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t$\ast$ ec\-\_\-master\-::macs[E\-C\-\_\-\-M\-A\-X\-\_\-\-N\-U\-M\-\_\-\-D\-E\-V\-I\-C\-E\-S]}\label{structec__master_ae06cfb9422989fbdcce9e17242aeeaa4}
+
+
+Device M\-A\-C addresses. 
+
+
+
+Definition at line 212 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!device\-\_\-sem@{device\-\_\-sem}}
+\index{device\-\_\-sem@{device\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{device\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::device\-\_\-sem}\label{structec__master_acbd28a1ea76d9b758e53a987b18a59c7}
+
+
+Device semaphore. 
+
+
+
+Definition at line 218 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!device\-\_\-stats@{device\-\_\-stats}}
+\index{device\-\_\-stats@{device\-\_\-stats}!ec_master@{ec\-\_\-master}}
+\subsubsection[{device\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-device\-\_\-stats\-\_\-t} ec\-\_\-master\-::device\-\_\-stats}\label{structec__master_a8109992ca98fdfc4d97610ec699fec31}
+
+
+Device statistics. 
+
+
+
+Definition at line 219 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!fsm@{fsm}}
+\index{fsm@{fsm}!ec_master@{ec\-\_\-master}}
+\subsubsection[{fsm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} ec\-\_\-master\-::fsm}\label{structec__master_a49062aab725bb4953a8fb6ad0fcabd85}
+
+
+Master state machine. 
+
+
+
+Definition at line 221 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!fsm\-\_\-datagram@{fsm\-\_\-datagram}}
+\index{fsm\-\_\-datagram@{fsm\-\_\-datagram}!ec_master@{ec\-\_\-master}}
+\subsubsection[{fsm\-\_\-datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-master\-::fsm\-\_\-datagram}\label{structec__master_a2f17ac41646829e59c60426847a14425}
+
+
+Datagram used for state machines. 
+
+
+
+Definition at line 222 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!phase@{phase}}
+\index{phase@{phase}!ec_master@{ec\-\_\-master}}
+\subsubsection[{phase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-master\-\_\-phase\-\_\-t} ec\-\_\-master\-::phase}\label{structec__master_aeeac95bdfc711903f48710b31e8b78a2}
+
+
+Master phase. 
+
+
+
+Definition at line 223 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!active@{active}}
+\index{active@{active}!ec_master@{ec\-\_\-master}}
+\subsubsection[{active}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::active}\label{structec__master_abca51c185472a028ee9a541f6c375d1b}
+
+
+Master has been activated. 
+
+
+
+Definition at line 224 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!config\-\_\-changed@{config\-\_\-changed}}
+\index{config\-\_\-changed@{config\-\_\-changed}!ec_master@{ec\-\_\-master}}
+\subsubsection[{config\-\_\-changed}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::config\-\_\-changed}\label{structec__master_ad505951b836d6c8a92549be0a8506aa0}
+
+
+The configuration changed. 
+
+
+
+Definition at line 225 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!injection\-\_\-seq\-\_\-fsm@{injection\-\_\-seq\-\_\-fsm}}
+\index{injection\-\_\-seq\-\_\-fsm@{injection\-\_\-seq\-\_\-fsm}!ec_master@{ec\-\_\-master}}
+\subsubsection[{injection\-\_\-seq\-\_\-fsm}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::injection\-\_\-seq\-\_\-fsm}\label{structec__master_a196088421f83927659e8c492f0432374}
+
+
+Datagram injection sequence number for the F\-S\-M side. 
+
+
+
+Definition at line 226 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!injection\-\_\-seq\-\_\-rt@{injection\-\_\-seq\-\_\-rt}}
+\index{injection\-\_\-seq\-\_\-rt@{injection\-\_\-seq\-\_\-rt}!ec_master@{ec\-\_\-master}}
+\subsubsection[{injection\-\_\-seq\-\_\-rt}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::injection\-\_\-seq\-\_\-rt}\label{structec__master_aa2badb7a9897d61488b4f08e58eb510c}
+
+
+Datagram injection sequence number for the realtime side. 
+
+
+
+Definition at line 228 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!slaves@{slaves}}
+\index{slaves@{slaves}!ec_master@{ec\-\_\-master}}
+\subsubsection[{slaves}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-master\-::slaves}\label{structec__master_abc8bc52f09996b03c605c0c1d2e6327a}
+
+
+Array of slaves on the bus. 
+
+
+
+Definition at line 231 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!slave\-\_\-count@{slave\-\_\-count}}
+\index{slave\-\_\-count@{slave\-\_\-count}!ec_master@{ec\-\_\-master}}
+\subsubsection[{slave\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::slave\-\_\-count}\label{structec__master_a664524e036971936aa812b73c51dc88d}
+
+
+Number of slaves on the bus. 
+
+
+
+Definition at line 232 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!configs@{configs}}
+\index{configs@{configs}!ec_master@{ec\-\_\-master}}
+\subsubsection[{configs}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::configs}\label{structec__master_ada6ef60acc0c19ab234472282fa3ef06}
+
+
+List of slave configurations. 
+
+
+
+Definition at line 235 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!domains@{domains}}
+\index{domains@{domains}!ec_master@{ec\-\_\-master}}
+\subsubsection[{domains}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::domains}\label{structec__master_a8d9bf2d9c43ac4724f13cb6a2fd34ab0}
+
+
+List of domains. 
+
+
+
+Definition at line 236 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!app\-\_\-time@{app\-\_\-time}}
+\index{app\-\_\-time@{app\-\_\-time}!ec_master@{ec\-\_\-master}}
+\subsubsection[{app\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-master\-::app\-\_\-time}\label{structec__master_a499bcb3d75277ce4415f6df3de21b7d0}
+
+
+Time of the last ecrt\-\_\-master\-\_\-sync() call. 
+
+
+
+Definition at line 238 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!app\-\_\-start\-\_\-time@{app\-\_\-start\-\_\-time}}
+\index{app\-\_\-start\-\_\-time@{app\-\_\-start\-\_\-time}!ec_master@{ec\-\_\-master}}
+\subsubsection[{app\-\_\-start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-master\-::app\-\_\-start\-\_\-time}\label{structec__master_a76d60bf657e362358ef24cb56e12771a}
+
+
+Application start time. 
+
+
+
+Definition at line 239 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!has\-\_\-app\-\_\-time@{has\-\_\-app\-\_\-time}}
+\index{has\-\_\-app\-\_\-time@{has\-\_\-app\-\_\-time}!ec_master@{ec\-\_\-master}}
+\subsubsection[{has\-\_\-app\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}u8 ec\-\_\-master\-::has\-\_\-app\-\_\-time}\label{structec__master_aafac97e86bc13e578d3ff0030c8ce7eb}
+
+
+Application time is valid. 
+
+
+
+Definition at line 240 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ref\-\_\-sync\-\_\-datagram@{ref\-\_\-sync\-\_\-datagram}}
+\index{ref\-\_\-sync\-\_\-datagram@{ref\-\_\-sync\-\_\-datagram}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ref\-\_\-sync\-\_\-datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-master\-::ref\-\_\-sync\-\_\-datagram}\label{structec__master_a8cb95984916798bb54e829452d069f50}
+
+
+Datagram used for synchronizing the reference clock to the master clock. 
+
+
+
+Definition at line 241 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!sync\-\_\-datagram@{sync\-\_\-datagram}}
+\index{sync\-\_\-datagram@{sync\-\_\-datagram}!ec_master@{ec\-\_\-master}}
+\subsubsection[{sync\-\_\-datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-master\-::sync\-\_\-datagram}\label{structec__master_a34e475677b9513fba43fb615e1928fdc}
+
+
+Datagram used for D\-C drift compensation. 
+
+
+
+Definition at line 243 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!sync\-\_\-mon\-\_\-datagram@{sync\-\_\-mon\-\_\-datagram}}
+\index{sync\-\_\-mon\-\_\-datagram@{sync\-\_\-mon\-\_\-datagram}!ec_master@{ec\-\_\-master}}
+\subsubsection[{sync\-\_\-mon\-\_\-datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-master\-::sync\-\_\-mon\-\_\-datagram}\label{structec__master_ab80e6b1c25a8818e7959aedcbe99e8aa}
+
+
+Datagram used for D\-C synchronisation monitoring. 
+
+
+
+Definition at line 245 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!dc\-\_\-ref\-\_\-config@{dc\-\_\-ref\-\_\-config}}
+\index{dc\-\_\-ref\-\_\-config@{dc\-\_\-ref\-\_\-config}!ec_master@{ec\-\_\-master}}
+\subsubsection[{dc\-\_\-ref\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-config\-\_\-t}$\ast$ ec\-\_\-master\-::dc\-\_\-ref\-\_\-config}\label{structec__master_ac4017bf50536c4aef75cfbbc97cf5c1f}
+
+
+Application-\/selected D\-C reference clock slave config. 
+
+
+
+Definition at line 247 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!dc\-\_\-ref\-\_\-clock@{dc\-\_\-ref\-\_\-clock}}
+\index{dc\-\_\-ref\-\_\-clock@{dc\-\_\-ref\-\_\-clock}!ec_master@{ec\-\_\-master}}
+\subsubsection[{dc\-\_\-ref\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-master\-::dc\-\_\-ref\-\_\-clock}\label{structec__master_a8bce8836632ebb3a467480e4ea80b897}
+
+
+D\-C reference clock slave. 
+
+
+
+Definition at line 249 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!scan\-\_\-busy@{scan\-\_\-busy}}
+\index{scan\-\_\-busy@{scan\-\_\-busy}!ec_master@{ec\-\_\-master}}
+\subsubsection[{scan\-\_\-busy}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::scan\-\_\-busy}\label{structec__master_a51de6aed4f6ef7b4d876083d778e7267}
+
+
+Current scan state. 
+
+
+
+Definition at line 251 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!allow\-\_\-scan@{allow\-\_\-scan}}
+\index{allow\-\_\-scan@{allow\-\_\-scan}!ec_master@{ec\-\_\-master}}
+\subsubsection[{allow\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::allow\-\_\-scan}\label{structec__master_ad09f588b08a5271c5c6a5e2b303f2f20}
+
+
+{\itshape True}, if slave scanning is allowed. 
+
+
+
+Definition at line 252 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!scan\-\_\-sem@{scan\-\_\-sem}}
+\index{scan\-\_\-sem@{scan\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{scan\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::scan\-\_\-sem}\label{structec__master_ab5b094c742e650a1a691e9e4d5499185}
+
+
+Semaphore protecting the {\itshape scan\-\_\-busy} variable and the {\itshape allow\-\_\-scan} flag. 
+
+
+
+Definition at line 253 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!scan\-\_\-queue@{scan\-\_\-queue}}
+\index{scan\-\_\-queue@{scan\-\_\-queue}!ec_master@{ec\-\_\-master}}
+\subsubsection[{scan\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}wait\-\_\-queue\-\_\-head\-\_\-t ec\-\_\-master\-::scan\-\_\-queue}\label{structec__master_a4a38824373201b174f0ffa3141eca8a1}
+
+
+Queue for processes that wait for slave scanning. 
+
+
+
+Definition at line 255 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!config\-\_\-busy@{config\-\_\-busy}}
+\index{config\-\_\-busy@{config\-\_\-busy}!ec_master@{ec\-\_\-master}}
+\subsubsection[{config\-\_\-busy}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::config\-\_\-busy}\label{structec__master_a89d9f24a4ffd7e41597449038bb39edc}
+
+
+State of slave configuration. 
+
+
+
+Definition at line 258 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!config\-\_\-sem@{config\-\_\-sem}}
+\index{config\-\_\-sem@{config\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{config\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::config\-\_\-sem}\label{structec__master_a910d06d8a5b7dbe785bdd361181151ae}
+
+
+Semaphore protecting the {\itshape config\-\_\-busy} variable and the allow\-\_\-config flag. 
+
+
+
+Definition at line 259 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!config\-\_\-queue@{config\-\_\-queue}}
+\index{config\-\_\-queue@{config\-\_\-queue}!ec_master@{ec\-\_\-master}}
+\subsubsection[{config\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}wait\-\_\-queue\-\_\-head\-\_\-t ec\-\_\-master\-::config\-\_\-queue}\label{structec__master_ab23c49dc46246de0e9d0b6247d4773fc}
+
+
+Queue for processes that wait for slave configuration. 
+
+
+
+Definition at line 261 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!datagram\-\_\-queue@{datagram\-\_\-queue}}
+\index{datagram\-\_\-queue@{datagram\-\_\-queue}!ec_master@{ec\-\_\-master}}
+\subsubsection[{datagram\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::datagram\-\_\-queue}\label{structec__master_a00814132ac132469cbf6af632cc065c5}
+
+
+Datagram queue. 
+
+
+
+Definition at line 264 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!datagram\-\_\-index@{datagram\-\_\-index}}
+\index{datagram\-\_\-index@{datagram\-\_\-index}!ec_master@{ec\-\_\-master}}
+\subsubsection[{datagram\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-master\-::datagram\-\_\-index}\label{structec__master_a78f6e9a626268ed4747495077e9e704d}
+
+
+Current datagram index. 
+
+
+
+Definition at line 265 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ext\-\_\-datagram\-\_\-queue@{ext\-\_\-datagram\-\_\-queue}}
+\index{ext\-\_\-datagram\-\_\-queue@{ext\-\_\-datagram\-\_\-queue}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ext\-\_\-datagram\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::ext\-\_\-datagram\-\_\-queue}\label{structec__master_a32a5c6ffb12850305eca759c70089ed7}
+
+
+Queue for non-\/application datagrams. 
+
+
+
+Definition at line 267 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ext\-\_\-queue\-\_\-sem@{ext\-\_\-queue\-\_\-sem}}
+\index{ext\-\_\-queue\-\_\-sem@{ext\-\_\-queue\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ext\-\_\-queue\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::ext\-\_\-queue\-\_\-sem}\label{structec__master_af8b2cc465cf630bb51916a4637545d95}
+
+
+Semaphore protecting the {\itshape ext\-\_\-datagram\-\_\-queue}. 
+
+
+
+Definition at line 269 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ext\-\_\-datagram\-\_\-ring@{ext\-\_\-datagram\-\_\-ring}}
+\index{ext\-\_\-datagram\-\_\-ring@{ext\-\_\-datagram\-\_\-ring}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ext\-\_\-datagram\-\_\-ring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t} ec\-\_\-master\-::ext\-\_\-datagram\-\_\-ring[{\bf E\-C\-\_\-\-E\-X\-T\-\_\-\-R\-I\-N\-G\-\_\-\-S\-I\-Z\-E}]}\label{structec__master_ae8207eec28c8add322f0766a1941c678}
+
+
+External datagram ring. 
+
+
+
+Definition at line 272 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ext\-\_\-ring\-\_\-idx\-\_\-rt@{ext\-\_\-ring\-\_\-idx\-\_\-rt}}
+\index{ext\-\_\-ring\-\_\-idx\-\_\-rt@{ext\-\_\-ring\-\_\-idx\-\_\-rt}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ext\-\_\-ring\-\_\-idx\-\_\-rt}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::ext\-\_\-ring\-\_\-idx\-\_\-rt}\label{structec__master_abde2d964e984e4874e200a025deb2d20}
+
+
+Index in external datagram ring for R\-T side. 
+
+
+
+Definition at line 274 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!ext\-\_\-ring\-\_\-idx\-\_\-fsm@{ext\-\_\-ring\-\_\-idx\-\_\-fsm}}
+\index{ext\-\_\-ring\-\_\-idx\-\_\-fsm@{ext\-\_\-ring\-\_\-idx\-\_\-fsm}!ec_master@{ec\-\_\-master}}
+\subsubsection[{ext\-\_\-ring\-\_\-idx\-\_\-fsm}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::ext\-\_\-ring\-\_\-idx\-\_\-fsm}\label{structec__master_a7c216ddb4024fb15599e14d337b38cab}
+
+
+Index in external datagram ring for F\-S\-M side. 
+
+
+
+Definition at line 276 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!send\-\_\-interval@{send\-\_\-interval}}
+\index{send\-\_\-interval@{send\-\_\-interval}!ec_master@{ec\-\_\-master}}
+\subsubsection[{send\-\_\-interval}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::send\-\_\-interval}\label{structec__master_a5f4ea791c6e6c52f636b3888e70c9da3}
+
+
+Interval between two calls to \doxyref{ecrt\-\_\-master\-\_\-send()}{p.}{group__ApplicationInterface_ga453f787866ee66afb98130cf4723762d}. 
+
+
+
+Definition at line 278 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!fsm\-\_\-slave@{fsm\-\_\-slave}}
+\index{fsm\-\_\-slave@{fsm\-\_\-slave}!ec_master@{ec\-\_\-master}}
+\subsubsection[{fsm\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-master\-::fsm\-\_\-slave}\label{structec__master_a9e65179b1519a5c1e7ff229e428501d0}
+
+
+Slave that is queried next for F\-S\-M exec. 
+
+
+
+Definition at line 282 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!fsm\-\_\-exec\-\_\-list@{fsm\-\_\-exec\-\_\-list}}
+\index{fsm\-\_\-exec\-\_\-list@{fsm\-\_\-exec\-\_\-list}!ec_master@{ec\-\_\-master}}
+\subsubsection[{fsm\-\_\-exec\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::fsm\-\_\-exec\-\_\-list}\label{structec__master_a44b44a92fdb968e9e7cff3a210801393}
+
+
+Slave F\-S\-M execution list. 
+
+
+
+Definition at line 283 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!fsm\-\_\-exec\-\_\-count@{fsm\-\_\-exec\-\_\-count}}
+\index{fsm\-\_\-exec\-\_\-count@{fsm\-\_\-exec\-\_\-count}!ec_master@{ec\-\_\-master}}
+\subsubsection[{fsm\-\_\-exec\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::fsm\-\_\-exec\-\_\-count}\label{structec__master_a917c398a16d659c77249f4c77fde6dad}
+
+
+Number of entries in execution list. 
+
+
+
+Definition at line 284 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!debug\-\_\-level@{debug\-\_\-level}}
+\index{debug\-\_\-level@{debug\-\_\-level}!ec_master@{ec\-\_\-master}}
+\subsubsection[{debug\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-master\-::debug\-\_\-level}\label{structec__master_abdecf290f3f7f2af1b2a7bf0d9c7b08d}
+
+
+Master debug level. 
+
+
+
+Definition at line 286 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!stats@{stats}}
+\index{stats@{stats}!ec_master@{ec\-\_\-master}}
+\subsubsection[{stats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-stats\-\_\-t} ec\-\_\-master\-::stats}\label{structec__master_ac10793455069c82bd9c459a596f9a38f}
+
+
+Cyclic statistics. 
+
+
+
+Definition at line 287 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!thread@{thread}}
+\index{thread@{thread}!ec_master@{ec\-\_\-master}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}struct task\-\_\-struct$\ast$ ec\-\_\-master\-::thread}\label{structec__master_a20064971533f5ff3e72933c7c19bad18}
+
+
+Master thread. 
+
+
+
+Definition at line 289 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!eoe\-\_\-thread@{eoe\-\_\-thread}}
+\index{eoe\-\_\-thread@{eoe\-\_\-thread}!ec_master@{ec\-\_\-master}}
+\subsubsection[{eoe\-\_\-thread}]{\setlength{\rightskip}{0pt plus 5cm}struct task\-\_\-struct$\ast$ ec\-\_\-master\-::eoe\-\_\-thread}\label{structec__master_a06e3b89f4c10b690f95a9bdac24eb94a}
+
+
+Eo\-E thread. 
+
+
+
+Definition at line 292 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!eoe\-\_\-handlers@{eoe\-\_\-handlers}}
+\index{eoe\-\_\-handlers@{eoe\-\_\-handlers}!ec_master@{ec\-\_\-master}}
+\subsubsection[{eoe\-\_\-handlers}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::eoe\-\_\-handlers}\label{structec__master_a2758ca69c680c4f5a413820f4ed4cdf7}
+
+
+Ethernet over Ether\-C\-A\-T handlers. 
+
+
+
+Definition at line 293 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!io\-\_\-sem@{io\-\_\-sem}}
+\index{io\-\_\-sem@{io\-\_\-sem}!ec_master@{ec\-\_\-master}}
+\subsubsection[{io\-\_\-sem}]{\setlength{\rightskip}{0pt plus 5cm}struct semaphore ec\-\_\-master\-::io\-\_\-sem}\label{structec__master_a4fb65657efce9d74dae090cd3dd5fba5}
+
+
+Semaphore used in {\itshape I\-D\-L\-E} phase. 
+
+
+
+Definition at line 296 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!send\-\_\-cb@{send\-\_\-cb}}
+\index{send\-\_\-cb@{send\-\_\-cb}!ec_master@{ec\-\_\-master}}
+\subsubsection[{send\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-master\-::send\-\_\-cb)(void $\ast$)}\label{structec__master_af20869619909b7dbdac771eeea64f858}
+
+
+Current send datagrams callback. 
+
+
+
+Definition at line 298 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!receive\-\_\-cb@{receive\-\_\-cb}}
+\index{receive\-\_\-cb@{receive\-\_\-cb}!ec_master@{ec\-\_\-master}}
+\subsubsection[{receive\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-master\-::receive\-\_\-cb)(void $\ast$)}\label{structec__master_a5a4993b021c67b55a153258fbe55fdfd}
+
+
+Current receive datagrams callback. 
+
+
+
+Definition at line 299 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!cb\-\_\-data@{cb\-\_\-data}}
+\index{cb\-\_\-data@{cb\-\_\-data}!ec_master@{ec\-\_\-master}}
+\subsubsection[{cb\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ec\-\_\-master\-::cb\-\_\-data}\label{structec__master_af8863ff09c783ae1322beb9609b23ec0}
+
+
+Current callback data. 
+
+
+
+Definition at line 300 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!app\-\_\-send\-\_\-cb@{app\-\_\-send\-\_\-cb}}
+\index{app\-\_\-send\-\_\-cb@{app\-\_\-send\-\_\-cb}!ec_master@{ec\-\_\-master}}
+\subsubsection[{app\-\_\-send\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-master\-::app\-\_\-send\-\_\-cb)(void $\ast$)}\label{structec__master_a3a42c504e620376e5dcb08d904f1ae80}
+
+
+Application's send datagrams callback. 
+
+
+
+Definition at line 301 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!app\-\_\-receive\-\_\-cb@{app\-\_\-receive\-\_\-cb}}
+\index{app\-\_\-receive\-\_\-cb@{app\-\_\-receive\-\_\-cb}!ec_master@{ec\-\_\-master}}
+\subsubsection[{app\-\_\-receive\-\_\-cb}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-master\-::app\-\_\-receive\-\_\-cb)(void $\ast$)}\label{structec__master_a63b6ede00688a03da97b050bde6f77bc}
+
+
+Application's receive datagrams callback. 
+
+
+
+Definition at line 303 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!app\-\_\-cb\-\_\-data@{app\-\_\-cb\-\_\-data}}
+\index{app\-\_\-cb\-\_\-data@{app\-\_\-cb\-\_\-data}!ec_master@{ec\-\_\-master}}
+\subsubsection[{app\-\_\-cb\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ ec\-\_\-master\-::app\-\_\-cb\-\_\-data}\label{structec__master_a6ffa04311b054c877c9c956b00ae19d3}
+
+
+Application callback data. 
+
+
+
+Definition at line 305 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!sii\-\_\-requests@{sii\-\_\-requests}}
+\index{sii\-\_\-requests@{sii\-\_\-requests}!ec_master@{ec\-\_\-master}}
+\subsubsection[{sii\-\_\-requests}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-master\-::sii\-\_\-requests}\label{structec__master_a45e433c08e51a354f728d1b9a3d0fda5}
+
+
+S\-I\-I write requests. 
+
+
+
+Definition at line 307 of file master.\-h.
+
+\index{ec\-\_\-master@{ec\-\_\-master}!request\-\_\-queue@{request\-\_\-queue}}
+\index{request\-\_\-queue@{request\-\_\-queue}!ec_master@{ec\-\_\-master}}
+\subsubsection[{request\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}wait\-\_\-queue\-\_\-head\-\_\-t ec\-\_\-master\-::request\-\_\-queue}\label{structec__master_a40be6dcab1a714b076a435f58710ed15}
+
+
+Wait queue for external requests from user space. 
+
+
+
+Definition at line 309 of file master.\-h.
+

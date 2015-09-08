@@ -1,0 +1,78 @@
+\section{reg\-\_\-request.\-c File Reference}
+\label{reg__request_8c}\index{reg\-\_\-request.\-c@{reg\-\_\-request.\-c}}
+
+
+Register request functions.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-reg\-\_\-request\-\_\-init} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Register request constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-reg\-\_\-request\-\_\-clear} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg)
+\begin{DoxyCompactList}\small\item\em Register request destructor. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf ecrt\-\_\-reg\-\_\-request\-\_\-data} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg)
+\begin{DoxyCompactList}\small\item\em Access to the register request's data. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-request\-\_\-state\-\_\-t} {\bf ecrt\-\_\-reg\-\_\-request\-\_\-state} (const {\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg)
+\begin{DoxyCompactList}\small\item\em Get the current state of the register request. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-reg\-\_\-request\-\_\-write} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg, uint16\-\_\-t address, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Schedule an register write operation. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-reg\-\_\-request\-\_\-read} ({\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$reg, uint16\-\_\-t address, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Schedule a register read operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Register request functions. 
+
+Definition in file {\bf reg\-\_\-request.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{reg\-\_\-request.\-c@{reg\-\_\-request.\-c}!ec\-\_\-reg\-\_\-request\-\_\-init@{ec\-\_\-reg\-\_\-request\-\_\-init}}
+\index{ec\-\_\-reg\-\_\-request\-\_\-init@{ec\-\_\-reg\-\_\-request\-\_\-init}!reg_request.c@{reg\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-reg\-\_\-request\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-reg\-\_\-request\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$}]{reg, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{reg__request_8c_abb50aa7b7886a25addbf52063faa4abc}
+
+
+Register request constructor. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register request. \\
+\hline
+{\em size} & Memory size. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file reg\-\_\-request.\-c.
+
+\index{reg\-\_\-request.\-c@{reg\-\_\-request.\-c}!ec\-\_\-reg\-\_\-request\-\_\-clear@{ec\-\_\-reg\-\_\-request\-\_\-clear}}
+\index{ec\-\_\-reg\-\_\-request\-\_\-clear@{ec\-\_\-reg\-\_\-request\-\_\-clear}!reg_request.c@{reg\-\_\-request.\-c}}
+\subsubsection[{ec\-\_\-reg\-\_\-request\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-reg\-\_\-request\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$}]{reg}
+\end{DoxyParamCaption}
+)}\label{reg__request_8c_ab5a73a3a36f63ee80aeafacdb3c9e6d2}
+
+
+Register request destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & Register request. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file reg\-\_\-request.\-c.
+

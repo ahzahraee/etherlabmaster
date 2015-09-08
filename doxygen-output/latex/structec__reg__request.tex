@@ -1,0 +1,111 @@
+\section{ec\-\_\-reg\-\_\-request Struct Reference}
+\label{structec__reg__request}\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}}
+
+
+Register request.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em List item. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf mem\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of data memory. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf data}
+\begin{DoxyCompactList}\small\item\em Pointer to data memory. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Direction. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf address}
+\begin{DoxyCompactList}\small\item\em Register address. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf transfer\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Size of the data to transfer. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} {\bf state}
+\begin{DoxyCompactList}\small\item\em Request state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Register request. 
+
+Definition at line 48 of file reg\-\_\-request.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!list@{list}}
+\index{list@{list}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-reg\-\_\-request\-::list}\label{structec__reg__request_a5b7e2c24fe669f62e8d325a3537a1aec}
+
+
+List item. 
+
+
+
+Definition at line 49 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!mem\-\_\-size@{mem\-\_\-size}}
+\index{mem\-\_\-size@{mem\-\_\-size}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{mem\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-reg\-\_\-request\-::mem\-\_\-size}\label{structec__reg__request_a47f808dbe3e2c0eb1931cf5215d5743f}
+
+
+Size of data memory. 
+
+
+
+Definition at line 50 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!data@{data}}
+\index{data@{data}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-reg\-\_\-request\-::data}\label{structec__reg__request_a55590fb9ebef4fad289a981e5e798f29}
+
+
+Pointer to data memory. 
+
+
+
+Definition at line 51 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!dir@{dir}}
+\index{dir@{dir}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-reg\-\_\-request\-::dir}\label{structec__reg__request_ac9e44c1d65dd892c66d1a4f2a4427e48}
+
+
+Direction. 
+
+E\-C\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T means writing to the slave, E\-C\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T means reading from the slave. 
+
+Definition at line 52 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!address@{address}}
+\index{address@{address}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{address}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-reg\-\_\-request\-::address}\label{structec__reg__request_aa6f44f4a9851e291726cbc92f7c099fa}
+
+
+Register address. 
+
+
+
+Definition at line 54 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!transfer\-\_\-size@{transfer\-\_\-size}}
+\index{transfer\-\_\-size@{transfer\-\_\-size}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{transfer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t ec\-\_\-reg\-\_\-request\-::transfer\-\_\-size}\label{structec__reg__request_ae8a1e21e4dfa24c3c0878649f33f4de9}
+
+
+Size of the data to transfer. 
+
+
+
+Definition at line 55 of file reg\-\_\-request.\-h.
+
+\index{ec\-\_\-reg\-\_\-request@{ec\-\_\-reg\-\_\-request}!state@{state}}
+\index{state@{state}!ec_reg_request@{ec\-\_\-reg\-\_\-request}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-internal\-\_\-request\-\_\-state\-\_\-t} ec\-\_\-reg\-\_\-request\-::state}\label{structec__reg__request_adfba6eddfd79740eae02362347093120}
+
+
+Request state. 
+
+
+
+Definition at line 56 of file reg\-\_\-request.\-h.
+

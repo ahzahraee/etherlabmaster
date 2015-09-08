@@ -1,0 +1,98 @@
+\section{fsm\-\_\-slave\-\_\-scan.\-h File Reference}
+\label{fsm__slave__scan_8h}\index{fsm\-\_\-slave\-\_\-scan.\-h@{fsm\-\_\-slave\-\_\-scan.\-h}}
+
+
+Ether\-C\-A\-T slave scanning state machine.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan}
+\begin{DoxyCompactList}\small\item\em Finite state machine for scanning an Ether\-C\-A\-T slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-slave\-\_\-config\-\_\-t} $\ast$, {\bf ec\-\_\-fsm\-\_\-pdo\-\_\-t} $\ast$)\label{fsm__slave__scan_8h_a7912e997b054006bbaead33b64ef4dda}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$)\label{fsm__slave__scan_8h_ad6d93f28242bb84c1e3310b54183bfd5}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{fsm__slave__scan_8h_aecd8f803a19c3d4cbe77e0a25a84c388}
+
+\begin{DoxyCompactList}\small\item\em Start slave scan state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave scanning state machine. 
+
+Definition in file {\bf fsm\-\_\-slave\-\_\-scan.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-slave\-\_\-scan.\-h@{fsm\-\_\-slave\-\_\-scan.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t}!fsm_slave_scan.h@{fsm\-\_\-slave\-\_\-scan.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan} {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t}}\label{fsm__slave__scan_8h_af779dfb24a2c28e995f2080786b5f56f}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-slave\-\_\-scan}{p.}{structec__fsm__slave__scan} 
+\end{DoxySeeAlso}
+
+
+Definition at line 51 of file fsm\-\_\-slave\-\_\-scan.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-slave\-\_\-scan.\-h@{fsm\-\_\-slave\-\_\-scan.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}!fsm_slave_scan.h@{fsm\-\_\-slave\-\_\-scan.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8h_af1d834da98e531e644bbc86b224df697}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle. \begin{DoxyReturn}{Returns}
+false, if state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file fsm\-\_\-slave\-\_\-scan.\-c.
+
+\index{fsm\-\_\-slave\-\_\-scan.\-h@{fsm\-\_\-slave\-\_\-scan.\-h}!ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success@{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}!fsm_slave_scan.h@{fsm\-\_\-slave\-\_\-scan.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-slave\-\_\-scan\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__slave__scan_8h_a9a4806351b9f9497139c248360804408}
+\begin{DoxyReturn}{Returns}
+true, if the state machine terminated gracefully 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & slave state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file fsm\-\_\-slave\-\_\-scan.\-c.
+

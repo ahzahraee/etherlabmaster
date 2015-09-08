@@ -1,0 +1,105 @@
+\section{fsm\-\_\-soe.\-h File Reference}
+\label{fsm__soe_8h}\index{fsm\-\_\-soe.\-h@{fsm\-\_\-soe.\-h}}
+
+
+Ether\-C\-A\-T Co\-E state machines.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-soe}
+\begin{DoxyCompactList}\small\item\em Finite state machines for the Sercos over Ether\-C\-A\-T protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-soe} {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$)\label{fsm__soe_8h_a451a615dc0269059f3ed94f37f7c08c5}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$)\label{fsm__soe_8h_a8613b87fb1105d8a002b13bba3d86dc8}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-soe\-\_\-transfer} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$)\label{fsm__soe_8h_a8eff1b86bc42789a8747d8817914d8be}
+
+\begin{DoxyCompactList}\small\item\em Starts to transfer an I\-D\-N to/from a slave. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-soe\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-soe\-\_\-success} (const {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns, if the state machine terminated with success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T Co\-E state machines. 
+
+Definition in file {\bf fsm\-\_\-soe.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-soe.\-h@{fsm\-\_\-soe.\-h}!ec\-\_\-fsm\-\_\-soe\-\_\-t@{ec\-\_\-fsm\-\_\-soe\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-t@{ec\-\_\-fsm\-\_\-soe\-\_\-t}!fsm_soe.h@{fsm\-\_\-soe.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-soe} {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t}}\label{fsm__soe_8h_a6f2210c6eb570d207312a8ea94a15527}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-soe}{p.}{structec__fsm__soe} 
+\end{DoxySeeAlso}
+
+
+Definition at line 47 of file fsm\-\_\-soe.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-soe.\-h@{fsm\-\_\-soe.\-h}!ec\-\_\-fsm\-\_\-soe\-\_\-exec@{ec\-\_\-fsm\-\_\-soe\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-exec@{ec\-\_\-fsm\-\_\-soe\-\_\-exec}!fsm_soe.h@{fsm\-\_\-soe.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-soe\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8h_aa25b538167720cd04716ce6eb81d0bcc}
+
+
+Executes the current state of the state machine. 
+
+\begin{DoxyReturn}{Returns}
+1 if the datagram was used, else 0. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+{\em datagram} & Datagram to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file fsm\-\_\-soe.\-c.
+
+\index{fsm\-\_\-soe.\-h@{fsm\-\_\-soe.\-h}!ec\-\_\-fsm\-\_\-soe\-\_\-success@{ec\-\_\-fsm\-\_\-soe\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-soe\-\_\-success@{ec\-\_\-fsm\-\_\-soe\-\_\-success}!fsm_soe.h@{fsm\-\_\-soe.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-soe\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-soe\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__soe_8h_a3115df704100f859631f6c4476b3c997}
+
+
+Returns, if the state machine terminated with success. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file fsm\-\_\-soe.\-c.
+

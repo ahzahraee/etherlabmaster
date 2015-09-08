@@ -1,0 +1,130 @@
+\section{ec\-\_\-fsm\-\_\-pdo\-\_\-entry Struct Reference}
+\label{structec__fsm__pdo__entry}\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+
+
+P\-D\-O configuration state machine.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{structec__fsm__pdo__entry_ac55bdbce3537777fc9e3eb5d5e6a244d}
+
+\begin{DoxyCompactList}\small\item\em state function \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} $\ast$ {\bf fsm\-\_\-coe}\label{structec__fsm__pdo__entry_a61449a8e0440b2e79a917d3e8fd96105}
+
+\begin{DoxyCompactList}\small\item\em Co\-E state machine to use. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} {\bf request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}
+\begin{DoxyCompactList}\small\item\em Slave the F\-S\-M runs on. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf target\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O to read the mapping for. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf source\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O with desired mapping. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf cur\-\_\-pdo}
+\begin{DoxyCompactList}\small\item\em P\-D\-O with current mapping (display only). \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-pdo\-\_\-entry\-\_\-t} $\ast$ {\bf entry}
+\begin{DoxyCompactList}\small\item\em Current entry. \end{DoxyCompactList}\item 
+unsigned int {\bf entry\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of entries. \end{DoxyCompactList}\item 
+unsigned int {\bf entry\-\_\-pos}
+\begin{DoxyCompactList}\small\item\em Position in P\-D\-O mapping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-D\-O configuration state machine. 
+
+Definition at line 52 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!request@{request}}
+\index{request@{request}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::request}\label{structec__fsm__pdo__entry_ac0b43d5b10545d11bdb643455a3e8847}
+
+
+S\-D\-O request. 
+
+
+
+Definition at line 57 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!slave@{slave}}
+\index{slave@{slave}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-slave\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::slave}\label{structec__fsm__pdo__entry_a21123d79b0c9c5cde2c646a23c2ebbf6}
+
+
+Slave the F\-S\-M runs on. 
+
+
+
+Definition at line 59 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!target\-\_\-pdo@{target\-\_\-pdo}}
+\index{target\-\_\-pdo@{target\-\_\-pdo}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{target\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::target\-\_\-pdo}\label{structec__fsm__pdo__entry_a3692d0c265514bf9d0723715786d2ca6}
+
+
+P\-D\-O to read the mapping for. 
+
+
+
+Definition at line 60 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!source\-\_\-pdo@{source\-\_\-pdo}}
+\index{source\-\_\-pdo@{source\-\_\-pdo}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{source\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::source\-\_\-pdo}\label{structec__fsm__pdo__entry_a849f98cf92c6e7b30cfae04015f57ddf}
+
+
+P\-D\-O with desired mapping. 
+
+
+
+Definition at line 61 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!cur\-\_\-pdo@{cur\-\_\-pdo}}
+\index{cur\-\_\-pdo@{cur\-\_\-pdo}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{cur\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::cur\-\_\-pdo}\label{structec__fsm__pdo__entry_ab0ff663f6628eb176343945947d5c7bc}
+
+
+P\-D\-O with current mapping (display only). 
+
+
+
+Definition at line 62 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!entry@{entry}}
+\index{entry@{entry}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{entry}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-pdo\-\_\-entry\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::entry}\label{structec__fsm__pdo__entry_a598d8f29602695173c6fe6f4e774cea8}
+
+
+Current entry. 
+
+
+
+Definition at line 63 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!entry\-\_\-count@{entry\-\_\-count}}
+\index{entry\-\_\-count@{entry\-\_\-count}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{entry\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::entry\-\_\-count}\label{structec__fsm__pdo__entry_aa35c32c568b656a84a7931ac415ee15d}
+
+
+Number of entries. 
+
+
+
+Definition at line 64 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+
+\index{ec\-\_\-fsm\-\_\-pdo\-\_\-entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}!entry\-\_\-pos@{entry\-\_\-pos}}
+\index{entry\-\_\-pos@{entry\-\_\-pos}!ec_fsm_pdo_entry@{ec\-\_\-fsm\-\_\-pdo\-\_\-entry}}
+\subsubsection[{entry\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-fsm\-\_\-pdo\-\_\-entry\-::entry\-\_\-pos}\label{structec__fsm__pdo__entry_a9766f580ea3c1ee6fffa28979e9a4087}
+
+
+Position in P\-D\-O mapping. 
+
+
+
+Definition at line 65 of file fsm\-\_\-pdo\-\_\-entry.\-h.
+

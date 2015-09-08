@@ -1,0 +1,184 @@
+\section{sync.\-c File Reference}
+\label{sync_8c}\index{sync.\-c@{sync.\-c}}
+
+
+Ether\-C\-A\-T sync manager methods.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-sync\-\_\-init} ({\bf ec\-\_\-sync\-\_\-t} $\ast$sync, {\bf ec\-\_\-slave\-\_\-t} $\ast$slave)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-sync\-\_\-init\-\_\-copy} ({\bf ec\-\_\-sync\-\_\-t} $\ast$sync, const {\bf ec\-\_\-sync\-\_\-t} $\ast$other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-sync\-\_\-clear} ({\bf ec\-\_\-sync\-\_\-t} $\ast$sync)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-sync\-\_\-page} (const {\bf ec\-\_\-sync\-\_\-t} $\ast$sync, uint8\-\_\-t sync\-\_\-index, uint16\-\_\-t data\-\_\-size, const {\bf ec\-\_\-sync\-\_\-config\-\_\-t} $\ast$sync\-\_\-config, uint8\-\_\-t pdo\-\_\-xfer, uint8\-\_\-t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Initializes a sync manager configuration page. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-sync\-\_\-add\-\_\-pdo} ({\bf ec\-\_\-sync\-\_\-t} $\ast$sync, const {\bf ec\-\_\-pdo\-\_\-t} $\ast$pdo)
+\begin{DoxyCompactList}\small\item\em Adds a P\-D\-O to the list of known mapped P\-D\-Os. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf ec\-\_\-sync\-\_\-default\-\_\-direction} (const {\bf ec\-\_\-sync\-\_\-t} $\ast$sync)
+\begin{DoxyCompactList}\small\item\em Determines the default direction from the control register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T sync manager methods. 
+
+Definition in file {\bf sync.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-init@{ec\-\_\-sync\-\_\-init}}
+\index{ec\-\_\-sync\-\_\-init@{ec\-\_\-sync\-\_\-init}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sync\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync, }
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{sync_8c_ae554464367e3ca0d6c2c402ee52461de}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sync} & Ether\-C\-A\-T sync manager. \\
+\hline
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file sync.\-c.
+
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-init\-\_\-copy@{ec\-\_\-sync\-\_\-init\-\_\-copy}}
+\index{ec\-\_\-sync\-\_\-init\-\_\-copy@{ec\-\_\-sync\-\_\-init\-\_\-copy}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-init\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sync\-\_\-init\-\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync, }
+\item[{const {\bf ec\-\_\-sync\-\_\-t} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\label{sync_8c_a05bfac9d6981a210919a1bed7aa10090}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sync} & Ether\-C\-A\-T sync manager. \\
+\hline
+{\em other} & Sync manager to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file sync.\-c.
+
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-clear@{ec\-\_\-sync\-\_\-clear}}
+\index{ec\-\_\-sync\-\_\-clear@{ec\-\_\-sync\-\_\-clear}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sync\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync}
+\end{DoxyParamCaption}
+)}\label{sync_8c_ad78623bc3b479121c5fa77acacd0c823}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sync} & Ether\-C\-A\-T sync manager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file sync.\-c.
+
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-page@{ec\-\_\-sync\-\_\-page}}
+\index{ec\-\_\-sync\-\_\-page@{ec\-\_\-sync\-\_\-page}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-sync\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync, }
+\item[{uint8\-\_\-t}]{sync\-\_\-index, }
+\item[{uint16\-\_\-t}]{data\-\_\-size, }
+\item[{const {\bf ec\-\_\-sync\-\_\-config\-\_\-t} $\ast$}]{sync\-\_\-config, }
+\item[{uint8\-\_\-t}]{pdo\-\_\-xfer, }
+\item[{uint8\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{sync_8c_addb7fcc84fa000b0b41f4a2801977b21}
+
+
+Initializes a sync manager configuration page. 
+
+The referenced memory ({\itshape data}) must be at least {\itshape E\-C\-\_\-\-S\-Y\-N\-C\-\_\-\-S\-I\-Z\-E} bytes. 
+\begin{DoxyParams}{Parameters}
+{\em sync} & Sync manager. \\
+\hline
+{\em sync\-\_\-index} & Index of the sync manager. \\
+\hline
+{\em data\-\_\-size} & Data size. \\
+\hline
+{\em sync\-\_\-config} & Configuration. \\
+\hline
+{\em pdo\-\_\-xfer} & Non-\/zero, if P\-D\-Os will be transferred via this sync manager. \\
+\hline
+{\em data} & \begin{quotation}
+Configuration memory. \end{quotation}
+\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file sync.\-c.
+
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-add\-\_\-pdo@{ec\-\_\-sync\-\_\-add\-\_\-pdo}}
+\index{ec\-\_\-sync\-\_\-add\-\_\-pdo@{ec\-\_\-sync\-\_\-add\-\_\-pdo}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-add\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-sync\-\_\-add\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync, }
+\item[{const {\bf ec\-\_\-pdo\-\_\-t} $\ast$}]{pdo}
+\end{DoxyParamCaption}
+)}\label{sync_8c_a5cf8d891a77f09cc5dbb820b08bca55c}
+
+
+Adds a P\-D\-O to the list of known mapped P\-D\-Os. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sync} & Ether\-C\-A\-T sync manager. \\
+\hline
+{\em pdo} & P\-D\-O to map. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file sync.\-c.
+
+\index{sync.\-c@{sync.\-c}!ec\-\_\-sync\-\_\-default\-\_\-direction@{ec\-\_\-sync\-\_\-default\-\_\-direction}}
+\index{ec\-\_\-sync\-\_\-default\-\_\-direction@{ec\-\_\-sync\-\_\-default\-\_\-direction}!sync.c@{sync.\-c}}
+\subsubsection[{ec\-\_\-sync\-\_\-default\-\_\-direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-sync\-\_\-default\-\_\-direction (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-sync\-\_\-t} $\ast$}]{sync}
+\end{DoxyParamCaption}
+)}\label{sync_8c_af820aa0417e581742c1ac9b65231c9da}
+
+
+Determines the default direction from the control register. 
+
+\begin{DoxyReturn}{Returns}
+Direction. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sync} & Ether\-C\-A\-T sync manager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file sync.\-c.
+

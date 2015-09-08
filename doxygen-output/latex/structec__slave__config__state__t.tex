@@ -1,0 +1,74 @@
+\section{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t Struct Reference}
+\label{structec__slave__config__state__t}\index{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}}
+
+
+Slave configuration state.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf online}\-: 1
+\begin{DoxyCompactList}\small\item\em The slave is online. \end{DoxyCompactList}\item 
+unsigned int {\bf operational}\-: 1
+\begin{DoxyCompactList}\small\item\em The slave was brought into {\itshape O\-P} state using the specified configuration. \end{DoxyCompactList}\item 
+unsigned int {\bf al\-\_\-state}\-: 4
+\begin{DoxyCompactList}\small\item\em The application-\/layer state of the slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Slave configuration state. 
+
+This is used as an output parameter of \doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-state()}{p.}{group__ApplicationInterface_ga6b99c8912ed48a4ddce3d9470083dee1}.
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-state()}{p.}{group__ApplicationInterface_ga6b99c8912ed48a4ddce3d9470083dee1}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 306 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}!online@{online}}
+\index{online@{online}!ec_slave_config_state_t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}}
+\subsubsection[{online}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t\-::online}\label{structec__slave__config__state__t_a9e2af2cf43358d7abd1fdd04c293493f}
+
+
+The slave is online. 
+
+
+
+Definition at line 307 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}!operational@{operational}}
+\index{operational@{operational}!ec_slave_config_state_t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}}
+\subsubsection[{operational}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t\-::operational}\label{structec__slave__config__state__t_aaadc9c8a1a5ee8b810ceaeed25723e61}
+
+
+The slave was brought into {\itshape O\-P} state using the specified configuration. 
+
+
+
+Definition at line 308 of file ecrt.\-h.
+
+\index{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}!al\-\_\-state@{al\-\_\-state}}
+\index{al\-\_\-state@{al\-\_\-state}!ec_slave_config_state_t@{ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t}}
+\subsubsection[{al\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-slave\-\_\-config\-\_\-state\-\_\-t\-::al\-\_\-state}\label{structec__slave__config__state__t_ae14213eb8fa0145ecf1250e46ff7c4af}
+
+
+The application-\/layer state of the slave. 
+
+
+\begin{DoxyItemize}
+\item 1\-: {\itshape I\-N\-I\-T} 
+\item 2\-: {\itshape P\-R\-E\-O\-P} 
+\item 4\-: {\itshape S\-A\-F\-E\-O\-P} 
+\item 8\-: {\itshape O\-P} 
+\end{DoxyItemize}
+
+Note that each state is coded in a different bit! 
+
+Definition at line 310 of file ecrt.\-h.
+

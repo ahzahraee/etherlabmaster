@@ -1,0 +1,301 @@
+\section{device.\-c File Reference}
+\label{device_8c}\index{device.\-c@{device.\-c}}
+
+
+Ether\-C\-A\-T device methods.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-device\-\_\-init} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, {\bf ec\-\_\-master\-\_\-t} $\ast$master)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-clear} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-attach} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, struct net\-\_\-device $\ast$net\-\_\-dev, {\bf ec\-\_\-pollfunc\-\_\-t} poll, struct module $\ast$module)
+\begin{DoxyCompactList}\small\item\em Associate with net\-\_\-device. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-detach} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Disconnect from net\-\_\-device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-device\-\_\-open} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Opens the Ether\-C\-A\-T device. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-device\-\_\-close} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Stops the Ether\-C\-A\-T device. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf ec\-\_\-device\-\_\-tx\-\_\-data} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the device's transmit memory. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-send} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Sends the content of the transmit socket buffer. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-clear\-\_\-stats} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Clears the frame statistics. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-poll} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Calls the poll function of the assigned net\-\_\-device. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-device\-\_\-update\-\_\-stats} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Update device statistics. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-withdraw} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Withdraws an Ether\-C\-A\-T device from the master. \end{DoxyCompactList}\item 
+int {\bf ecdev\-\_\-open} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Opens the network device and makes the master enter I\-D\-L\-E phase. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-close} ({\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Makes the master leave I\-D\-L\-E phase and closes the network device. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-receive} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, const void $\ast$data, size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em Accepts a received frame. \end{DoxyCompactList}\item 
+void {\bf ecdev\-\_\-set\-\_\-link} ({\bf ec\-\_\-device\-\_\-t} $\ast$device, uint8\-\_\-t state)
+\begin{DoxyCompactList}\small\item\em Sets a new link state. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf ecdev\-\_\-get\-\_\-link} (const {\bf ec\-\_\-device\-\_\-t} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Reads the link state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T device methods. 
+
+Definition in file {\bf device.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-init@{ec\-\_\-device\-\_\-init}}
+\index{ec\-\_\-device\-\_\-init@{ec\-\_\-device\-\_\-init}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-device\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master}
+\end{DoxyParamCaption}
+)}\label{device_8c_a4984e3e354110c1f4694fd521491cc30}
+
+
+Constructor. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+{\em master} & master owning the device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-clear@{ec\-\_\-device\-\_\-clear}}
+\index{ec\-\_\-device\-\_\-clear@{ec\-\_\-device\-\_\-clear}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_ad42f994e302efd7c59fc64bfc84f6037}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 162 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-attach@{ec\-\_\-device\-\_\-attach}}
+\index{ec\-\_\-device\-\_\-attach@{ec\-\_\-device\-\_\-attach}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-attach}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-attach (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{struct net\-\_\-device $\ast$}]{net\-\_\-dev, }
+\item[{{\bf ec\-\_\-pollfunc\-\_\-t}}]{poll, }
+\item[{struct module $\ast$}]{module}
+\end{DoxyParamCaption}
+)}\label{device_8c_a20976f86443d49ebf67caf83d4c0e156}
+
+
+Associate with net\-\_\-device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+{\em net\-\_\-dev} & net\-\_\-device structure \\
+\hline
+{\em poll} & pointer to device's poll function \\
+\hline
+{\em module} & the device's module \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-detach@{ec\-\_\-device\-\_\-detach}}
+\index{ec\-\_\-device\-\_\-detach@{ec\-\_\-device\-\_\-detach}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-detach}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-detach (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_a12e63c43b18c206ba32fdb2a3d668bb8}
+
+
+Disconnect from net\-\_\-device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-open@{ec\-\_\-device\-\_\-open}}
+\index{ec\-\_\-device\-\_\-open@{ec\-\_\-device\-\_\-open}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-device\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_aec3d7ce9ab236b9626efefbc8c2ffd96}
+
+
+Opens the Ether\-C\-A\-T device. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 242 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-close@{ec\-\_\-device\-\_\-close}}
+\index{ec\-\_\-device\-\_\-close@{ec\-\_\-device\-\_\-close}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-device\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_a1d4eadd4b9da0e4298818434e1b78a9a}
+
+
+Stops the Ether\-C\-A\-T device. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-tx\-\_\-data@{ec\-\_\-device\-\_\-tx\-\_\-data}}
+\index{ec\-\_\-device\-\_\-tx\-\_\-data@{ec\-\_\-device\-\_\-tx\-\_\-data}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-tx\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ ec\-\_\-device\-\_\-tx\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_ac301d857a14ce98a79ffb12a7757bd09}
+
+
+Returns a pointer to the device's transmit memory. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the T\-X socket buffer 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-send@{ec\-\_\-device\-\_\-send}}
+\index{ec\-\_\-device\-\_\-send@{ec\-\_\-device\-\_\-send}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-send (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{device_8c_ad46f8a21db1dd635d52bbae01b3f467f}
+
+
+Sends the content of the transmit socket buffer. 
+
+Cuts the socket buffer content to the (now known) size, and calls the start\-\_\-xmit() function of the assigned net\-\_\-device. 
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+{\em size} & number of bytes to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 331 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-clear\-\_\-stats@{ec\-\_\-device\-\_\-clear\-\_\-stats}}
+\index{ec\-\_\-device\-\_\-clear\-\_\-stats@{ec\-\_\-device\-\_\-clear\-\_\-stats}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-clear\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-clear\-\_\-stats (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_ac74ba2bebd2ed2468ec5b7942555ae9d}
+
+
+Clears the frame statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 374 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-poll@{ec\-\_\-device\-\_\-poll}}
+\index{ec\-\_\-device\-\_\-poll@{ec\-\_\-device\-\_\-poll}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-poll}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-poll (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_a6944619b6e1c0f85d5f7d124a0a71af2}
+
+
+Calls the poll function of the assigned net\-\_\-device. 
+
+The master itself works without using interrupts. Therefore the processing of received data and status changes of the network device has to be done by the master calling the I\-S\-R \char`\"{}manually\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 478 of file device.\-c.
+
+\index{device.\-c@{device.\-c}!ec\-\_\-device\-\_\-update\-\_\-stats@{ec\-\_\-device\-\_\-update\-\_\-stats}}
+\index{ec\-\_\-device\-\_\-update\-\_\-stats@{ec\-\_\-device\-\_\-update\-\_\-stats}!device.c@{device.\-c}}
+\subsubsection[{ec\-\_\-device\-\_\-update\-\_\-stats}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-device\-\_\-update\-\_\-stats (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-device\-\_\-t} $\ast$}]{device}
+\end{DoxyParamCaption}
+)}\label{device_8c_a158275fbb94b82be5d551044f38981f4}
+
+
+Update device statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Ether\-C\-A\-T device \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 496 of file device.\-c.
+

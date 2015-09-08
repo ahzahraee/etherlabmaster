@@ -1,0 +1,560 @@
+\section{slave.\-h File Reference}
+\label{slave_8h}\index{slave.\-h@{slave.\-h}}
+
+
+Ether\-C\-A\-T slave structure.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-slave\-\_\-port\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Slave port. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-sii\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Slave information interface data. \end{DoxyCompactList}\item 
+struct {\bf ec\-\_\-slave}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O}(slave, fmt, args...)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing slave-\/specific information to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R}(slave, fmt, args...)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing slave-\/specific errors to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N}(slave, fmt, args...)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing slave-\/specific warnings to syslog. \end{DoxyCompactList}\item 
+\#define {\bf E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G}(slave, level, fmt, args...)
+\begin{DoxyCompactList}\small\item\em Convenience macro for printing slave-\/specific debug messages to syslog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-slave\-\_\-init} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-master\-\_\-t} $\ast$, {\bf ec\-\_\-device\-\_\-index\-\_\-t}, uint16\-\_\-t, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Slave constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-clear} ({\bf ec\-\_\-slave\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Slave destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-clear\-\_\-sync\-\_\-managers} ({\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{slave_8h_a75ddcc7d265095322850d243007602b2}
+
+\begin{DoxyCompactList}\small\item\em Clear the sync manager array. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-request\-\_\-state} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-state\-\_\-t})\label{slave_8h_a8b3d447dd21d0888959a5a3691597e77}
+
+\begin{DoxyCompactList}\small\item\em Request a slave state and resets the error flag. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-set\-\_\-state} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-state\-\_\-t})\label{slave_8h_aaede3967b1b6c24a513006654b85ca8a}
+
+\begin{DoxyCompactList}\small\item\em Sets the application state of a slave. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Fetches data from a S\-T\-R\-I\-N\-G category. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Fetches data from a G\-E\-N\-E\-R\-A\-L category. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Fetches data from a S\-Y\-N\-C M\-A\-N\-A\-G\-E\-R category. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, const uint8\-\_\-t $\ast$, size\-\_\-t, {\bf ec\-\_\-direction\-\_\-t})
+\begin{DoxyCompactList}\small\item\em Fetches data from a [R\-T]x\-P\-D\-O category. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sync\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-get\-\_\-sync} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, uint8\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Get the sync manager given an index. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-sdo\-\_\-dict\-\_\-info} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, unsigned int $\ast$, unsigned int $\ast$)\label{slave_8h_a42809dba180f305491cc16c036c22f0a}
+
+\begin{DoxyCompactList}\small\item\em Counts the total number of S\-D\-Os and entries in the dictionary. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-get\-\_\-sdo} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Get an S\-D\-O from the dictionary. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-sdo\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Get an S\-D\-O from the dictionary. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-sdo\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Get an S\-D\-O from the dictionary, given its position in the list. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf ec\-\_\-slave\-\_\-sdo\-\_\-count} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get the number of S\-D\-Os in the dictionary. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-pdo\-\_\-t} $\ast$ {\bf ec\-\_\-slave\-\_\-find\-\_\-pdo} (const {\bf ec\-\_\-slave\-\_\-t} $\ast$, uint16\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Finds a mapped P\-D\-O. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-attach\-\_\-pdo\-\_\-names} ({\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{slave_8h_a19149abe080d35cfd2e6bd6f6bef00b1}
+
+\begin{DoxyCompactList}\small\item\em Attach P\-D\-O names. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-calc\-\_\-port\-\_\-delays} ({\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{slave_8h_abe9fa7fdd6ee65108792f13eaa574d76}
+
+\begin{DoxyCompactList}\small\item\em Calculates the port transmission delays. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-slave\-\_\-calc\-\_\-transmission\-\_\-delays\-\_\-rec} ({\bf ec\-\_\-slave\-\_\-t} $\ast$, uint32\-\_\-t $\ast$)\label{slave_8h_aaecc00aabed001fb1b7ec6249007c0dd}
+
+\begin{DoxyCompactList}\small\item\em Recursively calculates transmission delays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T slave structure. 
+
+Definition in file {\bf slave.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\index{slave.\-h@{slave.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O}}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O}!slave.h@{slave.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-I\-N\-F\-O(
+\begin{DoxyParamCaption}
+\item[{}]{slave, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}\label{slave_8h_af7d7537e5ba790ca327223cb92318eed}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+printk(KERN\_INFO \textcolor{stringliteral}{"EtherCAT %u-%u: "} fmt, slave->master->index, \(\backslash\)
+            slave->ring\_position, ##args)
+\end{DoxyCode}
+
+
+Convenience macro for printing slave-\/specific information to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$-\/$<$\-P\-O\-S\-I\-T\-I\-O\-N$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index and P\-O\-S\-I\-T\-I\-O\-N is the slave's ring position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file slave.\-h.
+
+\index{slave.\-h@{slave.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R}}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R}!slave.h@{slave.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-E\-R\-R(
+\begin{DoxyParamCaption}
+\item[{}]{slave, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a39519c3172e4196e40fa9006fb801612}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+printk(KERN\_ERR \textcolor{stringliteral}{"EtherCAT ERROR %u-%u: "} fmt, slave->master->index, \(\backslash\)
+            slave->ring\_position, ##args)
+\end{DoxyCode}
+
+
+Convenience macro for printing slave-\/specific errors to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$-\/$<$\-P\-O\-S\-I\-T\-I\-O\-N$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index and P\-O\-S\-I\-T\-I\-O\-N is the slave's ring position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file slave.\-h.
+
+\index{slave.\-h@{slave.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N}}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N}!slave.h@{slave.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-W\-A\-R\-N(
+\begin{DoxyParamCaption}
+\item[{}]{slave, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}\label{slave_8h_aae2995e6509df66255d8f7fcdb5eb5bb}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+printk(KERN\_WARNING \textcolor{stringliteral}{"EtherCAT WARNING %u-%u: "} fmt, \(\backslash\)
+            slave->master->index, slave->ring\_position, ##args)
+\end{DoxyCode}
+
+
+Convenience macro for printing slave-\/specific warnings to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$-\/$<$\-P\-O\-S\-I\-T\-I\-O\-N$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index and P\-O\-S\-I\-T\-I\-O\-N is the slave's ring position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file slave.\-h.
+
+\index{slave.\-h@{slave.\-h}!E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G}}
+\index{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G@{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G}!slave.h@{slave.\-h}}
+\subsubsection[{E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-C\-\_\-\-S\-L\-A\-V\-E\-\_\-\-D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{slave, }
+\item[{}]{level, }
+\item[{}]{fmt, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a349fb5dcd0bac7fc2324d3da89aa4751}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+        if (slave->master->debug\_level >= level) \{ \(\backslash\)
+            printk(KERN\_DEBUG \textcolor{stringliteral}{"EtherCAT DEBUG %u-%u: "} fmt, \(\backslash\)
+                    slave->master->index, slave->ring\_position, ##args); \(\backslash\)
+        \} \(\backslash\)
+    \} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+
+
+Convenience macro for printing slave-\/specific debug messages to syslog. 
+
+This will print the message in {\itshape fmt} with a prefixed \char`\"{}\-Ether\-C\-A\-T $<$\-I\-N\-D\-E\-X$>$-\/$<$\-P\-O\-S\-I\-T\-I\-O\-N$>$\-: \char`\"{}, where I\-N\-D\-E\-X is the master index and P\-O\-S\-I\-T\-I\-O\-N is the slave's ring position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em level} & Debug level. Master's debug level must be $>$= {\itshape level} for output. \\
+\hline
+{\em fmt} & format string (like in printf()) \\
+\hline
+{\em args} & arguments (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file slave.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-init@{ec\-\_\-slave\-\_\-init}}
+\index{ec\-\_\-slave\-\_\-init@{ec\-\_\-slave\-\_\-init}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-slave\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{{\bf ec\-\_\-device\-\_\-index\-\_\-t}}]{dev\-\_\-idx, }
+\item[{uint16\-\_\-t}]{ring\-\_\-position, }
+\item[{uint16\-\_\-t}]{station\-\_\-address}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a30d1f46dd9536cd249c3d5010262ffda}
+
+
+Slave constructor. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em master} & Ether\-C\-A\-T master \\
+\hline
+{\em dev\-\_\-idx} & Device index. \\
+\hline
+{\em ring\-\_\-position} & ring position \\
+\hline
+{\em station\-\_\-address} & station address to configure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-clear@{ec\-\_\-slave\-\_\-clear}}
+\index{ec\-\_\-slave\-\_\-clear@{ec\-\_\-slave\-\_\-clear}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-slave\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{slave_8h_ac408923ca73c5e811edbe3ca9026cad7}
+
+
+Slave destructor. 
+
+Clears and frees a slave object. 
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings}}
+\index{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-strings (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{slave_8h_aae4c4f075c98de7dc270649e95b8c51e}
+
+
+Fetches data from a S\-T\-R\-I\-N\-G category. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]range checking \end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em data} & category data \\
+\hline
+{\em data\-\_\-size} & number of bytes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general}}
+\index{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-general (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{slave_8h_abdf593b5573d120f6246519dcf6e3be7}
+
+
+Fetches data from a G\-E\-N\-E\-R\-A\-L category. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em data} & category data \\
+\hline
+{\em data\-\_\-size} & size in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 368 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs}}
+\index{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-syncs (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a203a4694b2532a0842f194d937652034}
+
+
+Fetches data from a S\-Y\-N\-C M\-A\-N\-A\-G\-E\-R category. 
+
+Appends the sync managers described in the category to the existing ones.
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+{\em data} & Category data. \\
+\hline
+{\em data\-\_\-size} & Number of bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 419 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos}}
+\index{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos@{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-slave\-\_\-fetch\-\_\-sii\-\_\-pdos (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{{\bf ec\-\_\-direction\-\_\-t}}]{dir}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a15d3455e6776aed45550510c6eb69385}
+
+
+Fetches data from a [R\-T]x\-P\-D\-O category. 
+
+\begin{DoxyReturn}{Returns}
+0 in case of success, else $<$ 0 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em data} & category data \\
+\hline
+{\em data\-\_\-size} & number of bytes \\
+\hline
+{\em dir} & P\-D\-O direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 485 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-get\-\_\-sync@{ec\-\_\-slave\-\_\-get\-\_\-sync}}
+\index{ec\-\_\-slave\-\_\-get\-\_\-sync@{ec\-\_\-slave\-\_\-get\-\_\-sync}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-get\-\_\-sync}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sync\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-get\-\_\-sync (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint8\-\_\-t}]{sync\-\_\-index}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a0739ace7f4222952c5c539b8a508c994}
+
+
+Get the sync manager given an index. 
+
+\begin{DoxyReturn}{Returns}
+pointer to sync manager, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+{\em sync\-\_\-index} & Sync manager index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 590 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-get\-\_\-sdo@{ec\-\_\-slave\-\_\-get\-\_\-sdo}}
+\index{ec\-\_\-slave\-\_\-get\-\_\-sdo@{ec\-\_\-slave\-\_\-get\-\_\-sdo}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-get\-\_\-sdo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-get\-\_\-sdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a2f99eebce71e4d7b4d5df85b6ff4af77}
+
+
+Get an S\-D\-O from the dictionary. 
+
+\begin{DoxyReturn}{Returns}
+The desired S\-D\-O, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em index} & S\-D\-O index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 636 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const@{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const}}
+\index{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const@{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-sdo\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a3de8de7255e5d8eecb3f09260b5c3202}
+
+
+Get an S\-D\-O from the dictionary. 
+
+const version.
+
+\begin{DoxyReturn}{Returns}
+The desired S\-D\-O, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave \\
+\hline
+{\em index} & S\-D\-O index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 662 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}}
+\index{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const@{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-sdo\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-get\-\_\-sdo\-\_\-by\-\_\-pos\-\_\-const (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{sdo\-\_\-position}
+\end{DoxyParamCaption}
+)}\label{slave_8h_aadf6c239dfe7541b45ae606c113b12b8}
+
+
+Get an S\-D\-O from the dictionary, given its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+The desired S\-D\-O, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+{\em sdo\-\_\-position} & S\-D\-O list position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 684 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-sdo\-\_\-count@{ec\-\_\-slave\-\_\-sdo\-\_\-count}}
+\index{ec\-\_\-slave\-\_\-sdo\-\_\-count@{ec\-\_\-slave\-\_\-sdo\-\_\-count}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-sdo\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-slave\-\_\-sdo\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a199062aeaa6a827c0e1d271d231d42d1}
+
+
+Get the number of S\-D\-Os in the dictionary. 
+
+\begin{DoxyReturn}{Returns}
+S\-D\-O count. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Ether\-C\-A\-T slave. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 706 of file slave.\-c.
+
+\index{slave.\-h@{slave.\-h}!ec\-\_\-slave\-\_\-find\-\_\-pdo@{ec\-\_\-slave\-\_\-find\-\_\-pdo}}
+\index{ec\-\_\-slave\-\_\-find\-\_\-pdo@{ec\-\_\-slave\-\_\-find\-\_\-pdo}!slave.h@{slave.\-h}}
+\subsubsection[{ec\-\_\-slave\-\_\-find\-\_\-pdo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-pdo\-\_\-t}$\ast$ ec\-\_\-slave\-\_\-find\-\_\-pdo (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-slave\-\_\-t} $\ast$}]{slave, }
+\item[{uint16\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}\label{slave_8h_a06a2845458cd7a266fde26a9c406ed36}
+
+
+Finds a mapped P\-D\-O. 
+
+\begin{DoxyReturn}{Returns}
+The desired P\-D\-O object, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em slave} & Slave. \\
+\hline
+{\em index} & P\-D\-O index to find. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 725 of file slave.\-c.
+

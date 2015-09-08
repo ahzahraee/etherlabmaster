@@ -1,0 +1,87 @@
+\section{ec\-\_\-sync\-\_\-info\-\_\-t Struct Reference}
+\label{structec__sync__info__t}\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+
+
+Sync manager configuration information.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t {\bf index}
+\begin{DoxyCompactList}\small\item\em Sync manager index. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-direction\-\_\-t} {\bf dir}
+\begin{DoxyCompactList}\small\item\em Sync manager direction. \end{DoxyCompactList}\item 
+unsigned int {\bf n\-\_\-pdos}
+\begin{DoxyCompactList}\small\item\em Number of P\-D\-Os in {\itshape pdos}. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-pdo\-\_\-info\-\_\-t} $\ast$ {\bf pdos}
+\begin{DoxyCompactList}\small\item\em Array with P\-D\-Os to assign. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-watchdog\-\_\-mode\-\_\-t} {\bf watchdog\-\_\-mode}
+\begin{DoxyCompactList}\small\item\em Watchdog mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Sync manager configuration information. 
+
+This can be use to configure multiple sync managers including the P\-D\-O assignment and P\-D\-O mapping. It is used as an input parameter type in \doxyref{ecrt\-\_\-slave\-\_\-config\-\_\-pdos()}{p.}{group__ApplicationInterface_ga7bc2683699a5c0c551f0cfdc90c1a559}. 
+
+Definition at line 477 of file ecrt.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}!index@{index}}
+\index{index@{index}!ec_sync_info_t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-sync\-\_\-info\-\_\-t\-::index}\label{structec__sync__info__t_a87956061ffbec80e40b2aa7a3c65791c}
+
+
+Sync manager index. 
+
+Must be less than \doxyref{E\-C\-\_\-\-M\-A\-X\-\_\-\-S\-Y\-N\-C\-\_\-\-M\-A\-N\-A\-G\-E\-R\-S}{p.}{group__ApplicationInterface_gab737cd2955a397ebd0df13e9148cec9f} for a valid sync manager, but can also be {\itshape 0xff} to mark the end of the list. 
+
+Definition at line 478 of file ecrt.\-h.
+
+\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}!dir@{dir}}
+\index{dir@{dir}!ec_sync_info_t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-direction\-\_\-t} ec\-\_\-sync\-\_\-info\-\_\-t\-::dir}\label{structec__sync__info__t_a30a8f40bfcbda77239378f0cef039c70}
+
+
+Sync manager direction. 
+
+
+
+Definition at line 481 of file ecrt.\-h.
+
+\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}!n\-\_\-pdos@{n\-\_\-pdos}}
+\index{n\-\_\-pdos@{n\-\_\-pdos}!ec_sync_info_t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+\subsubsection[{n\-\_\-pdos}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-sync\-\_\-info\-\_\-t\-::n\-\_\-pdos}\label{structec__sync__info__t_a25e3f4601c01b018bef363e3f3a3d38d}
+
+
+Number of P\-D\-Os in {\itshape pdos}. 
+
+
+
+Definition at line 482 of file ecrt.\-h.
+
+\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}!pdos@{pdos}}
+\index{pdos@{pdos}!ec_sync_info_t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+\subsubsection[{pdos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-pdo\-\_\-info\-\_\-t}$\ast$ ec\-\_\-sync\-\_\-info\-\_\-t\-::pdos}\label{structec__sync__info__t_a1a9322a8f1da38ce383542374108b76d}
+
+
+Array with P\-D\-Os to assign. 
+
+This must contain at least {\itshape n\-\_\-pdos} P\-D\-Os. 
+
+Definition at line 483 of file ecrt.\-h.
+
+\index{ec\-\_\-sync\-\_\-info\-\_\-t@{ec\-\_\-sync\-\_\-info\-\_\-t}!watchdog\-\_\-mode@{watchdog\-\_\-mode}}
+\index{watchdog\-\_\-mode@{watchdog\-\_\-mode}!ec_sync_info_t@{ec\-\_\-sync\-\_\-info\-\_\-t}}
+\subsubsection[{watchdog\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-watchdog\-\_\-mode\-\_\-t} ec\-\_\-sync\-\_\-info\-\_\-t\-::watchdog\-\_\-mode}\label{structec__sync__info__t_abeb91973efe10dd69ce8fb57135e8253}
+
+
+Watchdog mode. 
+
+
+
+Definition at line 485 of file ecrt.\-h.
+

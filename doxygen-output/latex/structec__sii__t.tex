@@ -1,0 +1,384 @@
+\section{ec\-\_\-sii\-\_\-t Struct Reference}
+\label{structec__sii__t}\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}}
+
+
+Slave information interface data.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t {\bf alias}
+\begin{DoxyCompactList}\small\item\em Configured station alias. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf vendor\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Vendor I\-D. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf product\-\_\-code}
+\begin{DoxyCompactList}\small\item\em Vendor-\/specific product code. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf revision\-\_\-number}
+\begin{DoxyCompactList}\small\item\em Revision number. \end{DoxyCompactList}\item 
+uint32\-\_\-t {\bf serial\-\_\-number}
+\begin{DoxyCompactList}\small\item\em Serial number. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf boot\-\_\-rx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Bootstrap receive mailbox address. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf boot\-\_\-rx\-\_\-mailbox\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Bootstrap receive mailbox size. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf boot\-\_\-tx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Bootstrap transmit mailbox address. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf boot\-\_\-tx\-\_\-mailbox\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Bootstrap transmit mailbox size. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf std\-\_\-rx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Standard receive mailbox address. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf std\-\_\-rx\-\_\-mailbox\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Standard receive mailbox size. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf std\-\_\-tx\-\_\-mailbox\-\_\-offset}
+\begin{DoxyCompactList}\small\item\em Standard transmit mailbox address. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf std\-\_\-tx\-\_\-mailbox\-\_\-size}
+\begin{DoxyCompactList}\small\item\em Standard transmit mailbox size. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf mailbox\-\_\-protocols}
+\begin{DoxyCompactList}\small\item\em Supported mailbox protocols. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ {\bf strings}
+\begin{DoxyCompactList}\small\item\em Strings in S\-I\-I categories. \end{DoxyCompactList}\item 
+unsigned int {\bf string\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of S\-I\-I strings. \end{DoxyCompactList}\item 
+unsigned int {\bf has\-\_\-general}
+\begin{DoxyCompactList}\small\item\em General category present. \end{DoxyCompactList}\item 
+char $\ast$ {\bf group}
+\begin{DoxyCompactList}\small\item\em Group name. \end{DoxyCompactList}\item 
+char $\ast$ {\bf image}
+\begin{DoxyCompactList}\small\item\em Image name. \end{DoxyCompactList}\item 
+char $\ast$ {\bf order}
+\begin{DoxyCompactList}\small\item\em Order number. \end{DoxyCompactList}\item 
+char $\ast$ {\bf name}
+\begin{DoxyCompactList}\small\item\em Slave name. \end{DoxyCompactList}\item 
+uint8\-\_\-t {\bf physical\-\_\-layer} [{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-P\-O\-R\-T\-S}]
+\begin{DoxyCompactList}\small\item\em Port media. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sii\-\_\-coe\-\_\-details\-\_\-t} {\bf coe\-\_\-details}
+\begin{DoxyCompactList}\small\item\em Co\-E detail flags. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sii\-\_\-general\-\_\-flags\-\_\-t} {\bf general\-\_\-flags}
+\begin{DoxyCompactList}\small\item\em General flags. \end{DoxyCompactList}\item 
+int16\-\_\-t {\bf current\-\_\-on\-\_\-ebus}
+\begin{DoxyCompactList}\small\item\em Power consumption in m\-A. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sync\-\_\-t} $\ast$ {\bf syncs}
+\begin{DoxyCompactList}\small\item\em S\-Y\-N\-C M\-A\-N\-A\-G\-E\-R categories. \end{DoxyCompactList}\item 
+unsigned int {\bf sync\-\_\-count}
+\begin{DoxyCompactList}\small\item\em Number of sync managers. \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf pdos}
+\begin{DoxyCompactList}\small\item\em S\-I\-I [R\-T]X\-P\-D\-O categories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Slave information interface data. 
+
+Definition at line 132 of file slave.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!alias@{alias}}
+\index{alias@{alias}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{alias}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::alias}\label{structec__sii__t_a1f222ffbedb48380a833e94fe9a08a8b}
+
+
+Configured station alias. 
+
+
+
+Definition at line 134 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!vendor\-\_\-id@{vendor\-\_\-id}}
+\index{vendor\-\_\-id@{vendor\-\_\-id}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{vendor\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sii\-\_\-t\-::vendor\-\_\-id}\label{structec__sii__t_ad185baf2f7711424507c20f6e96b7014}
+
+
+Vendor I\-D. 
+
+
+
+Definition at line 135 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!product\-\_\-code@{product\-\_\-code}}
+\index{product\-\_\-code@{product\-\_\-code}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{product\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sii\-\_\-t\-::product\-\_\-code}\label{structec__sii__t_a69a301c8203300eddd299807a617ad03}
+
+
+Vendor-\/specific product code. 
+
+
+
+Definition at line 136 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!revision\-\_\-number@{revision\-\_\-number}}
+\index{revision\-\_\-number@{revision\-\_\-number}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{revision\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sii\-\_\-t\-::revision\-\_\-number}\label{structec__sii__t_aa79fdd16cea2f20a85510260d76005b2}
+
+
+Revision number. 
+
+
+
+Definition at line 137 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!serial\-\_\-number@{serial\-\_\-number}}
+\index{serial\-\_\-number@{serial\-\_\-number}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{serial\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t ec\-\_\-sii\-\_\-t\-::serial\-\_\-number}\label{structec__sii__t_a439dea178e64634c3821493384d8d9e1}
+
+
+Serial number. 
+
+
+
+Definition at line 138 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!boot\-\_\-rx\-\_\-mailbox\-\_\-offset@{boot\-\_\-rx\-\_\-mailbox\-\_\-offset}}
+\index{boot\-\_\-rx\-\_\-mailbox\-\_\-offset@{boot\-\_\-rx\-\_\-mailbox\-\_\-offset}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{boot\-\_\-rx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::boot\-\_\-rx\-\_\-mailbox\-\_\-offset}\label{structec__sii__t_abdcbea468841ca94492bae78207b1282}
+
+
+Bootstrap receive mailbox address. 
+
+
+
+Definition at line 139 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!boot\-\_\-rx\-\_\-mailbox\-\_\-size@{boot\-\_\-rx\-\_\-mailbox\-\_\-size}}
+\index{boot\-\_\-rx\-\_\-mailbox\-\_\-size@{boot\-\_\-rx\-\_\-mailbox\-\_\-size}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{boot\-\_\-rx\-\_\-mailbox\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::boot\-\_\-rx\-\_\-mailbox\-\_\-size}\label{structec__sii__t_aa5e4828a5bb2ea45194de12fe48608ed}
+
+
+Bootstrap receive mailbox size. 
+
+
+
+Definition at line 140 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!boot\-\_\-tx\-\_\-mailbox\-\_\-offset@{boot\-\_\-tx\-\_\-mailbox\-\_\-offset}}
+\index{boot\-\_\-tx\-\_\-mailbox\-\_\-offset@{boot\-\_\-tx\-\_\-mailbox\-\_\-offset}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{boot\-\_\-tx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::boot\-\_\-tx\-\_\-mailbox\-\_\-offset}\label{structec__sii__t_a91d2fc76e5e4b634e130aa9e51e71bfc}
+
+
+Bootstrap transmit mailbox address. 
+
+
+
+Definition at line 141 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!boot\-\_\-tx\-\_\-mailbox\-\_\-size@{boot\-\_\-tx\-\_\-mailbox\-\_\-size}}
+\index{boot\-\_\-tx\-\_\-mailbox\-\_\-size@{boot\-\_\-tx\-\_\-mailbox\-\_\-size}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{boot\-\_\-tx\-\_\-mailbox\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::boot\-\_\-tx\-\_\-mailbox\-\_\-size}\label{structec__sii__t_a65ead35255e661f345c9d15033347b10}
+
+
+Bootstrap transmit mailbox size. 
+
+
+
+Definition at line 142 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!std\-\_\-rx\-\_\-mailbox\-\_\-offset@{std\-\_\-rx\-\_\-mailbox\-\_\-offset}}
+\index{std\-\_\-rx\-\_\-mailbox\-\_\-offset@{std\-\_\-rx\-\_\-mailbox\-\_\-offset}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{std\-\_\-rx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::std\-\_\-rx\-\_\-mailbox\-\_\-offset}\label{structec__sii__t_a0172b2d04dcbc56d75abc1efa76dd392}
+
+
+Standard receive mailbox address. 
+
+
+
+Definition at line 143 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!std\-\_\-rx\-\_\-mailbox\-\_\-size@{std\-\_\-rx\-\_\-mailbox\-\_\-size}}
+\index{std\-\_\-rx\-\_\-mailbox\-\_\-size@{std\-\_\-rx\-\_\-mailbox\-\_\-size}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{std\-\_\-rx\-\_\-mailbox\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::std\-\_\-rx\-\_\-mailbox\-\_\-size}\label{structec__sii__t_abcdfe5aa59f2fcbf9deaa4d1a9c954fe}
+
+
+Standard receive mailbox size. 
+
+
+
+Definition at line 144 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!std\-\_\-tx\-\_\-mailbox\-\_\-offset@{std\-\_\-tx\-\_\-mailbox\-\_\-offset}}
+\index{std\-\_\-tx\-\_\-mailbox\-\_\-offset@{std\-\_\-tx\-\_\-mailbox\-\_\-offset}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{std\-\_\-tx\-\_\-mailbox\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::std\-\_\-tx\-\_\-mailbox\-\_\-offset}\label{structec__sii__t_aa5c8f21c36995d272bc456266e035815}
+
+
+Standard transmit mailbox address. 
+
+
+
+Definition at line 145 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!std\-\_\-tx\-\_\-mailbox\-\_\-size@{std\-\_\-tx\-\_\-mailbox\-\_\-size}}
+\index{std\-\_\-tx\-\_\-mailbox\-\_\-size@{std\-\_\-tx\-\_\-mailbox\-\_\-size}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{std\-\_\-tx\-\_\-mailbox\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::std\-\_\-tx\-\_\-mailbox\-\_\-size}\label{structec__sii__t_a47eb676cee305c53f5fec378bc95c68d}
+
+
+Standard transmit mailbox size. 
+
+
+
+Definition at line 146 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!mailbox\-\_\-protocols@{mailbox\-\_\-protocols}}
+\index{mailbox\-\_\-protocols@{mailbox\-\_\-protocols}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{mailbox\-\_\-protocols}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-sii\-\_\-t\-::mailbox\-\_\-protocols}\label{structec__sii__t_a7740732efd267741b956b8912502d8a1}
+
+
+Supported mailbox protocols. 
+
+
+
+Definition at line 147 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!strings@{strings}}
+\index{strings@{strings}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{strings}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ ec\-\_\-sii\-\_\-t\-::strings}\label{structec__sii__t_a74ade311e8937d005c486a1a68cd8744}
+
+
+Strings in S\-I\-I categories. 
+
+
+
+Definition at line 150 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!string\-\_\-count@{string\-\_\-count}}
+\index{string\-\_\-count@{string\-\_\-count}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{string\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-sii\-\_\-t\-::string\-\_\-count}\label{structec__sii__t_a4bfc0157c4dfaad31b7330aa5f515c5a}
+
+
+Number of S\-I\-I strings. 
+
+
+
+Definition at line 151 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!has\-\_\-general@{has\-\_\-general}}
+\index{has\-\_\-general@{has\-\_\-general}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{has\-\_\-general}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-sii\-\_\-t\-::has\-\_\-general}\label{structec__sii__t_ac9a082bcb14f1d40aa7a2ee278a4a912}
+
+
+General category present. 
+
+
+
+Definition at line 154 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!group@{group}}
+\index{group@{group}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{group}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-sii\-\_\-t\-::group}\label{structec__sii__t_a0ac2c5757ef583a6b3e8a8c0ddffbd9f}
+
+
+Group name. 
+
+
+
+Definition at line 155 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!image@{image}}
+\index{image@{image}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-sii\-\_\-t\-::image}\label{structec__sii__t_a505df193133b999f2c073260648b5359}
+
+
+Image name. 
+
+
+
+Definition at line 156 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!order@{order}}
+\index{order@{order}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{order}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-sii\-\_\-t\-::order}\label{structec__sii__t_a26e505154880d387b75d4d9f52181223}
+
+
+Order number. 
+
+
+
+Definition at line 157 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!name@{name}}
+\index{name@{name}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ec\-\_\-sii\-\_\-t\-::name}\label{structec__sii__t_ae4a7f50f715570d1cbfce538ab7828d9}
+
+
+Slave name. 
+
+
+
+Definition at line 158 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!physical\-\_\-layer@{physical\-\_\-layer}}
+\index{physical\-\_\-layer@{physical\-\_\-layer}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{physical\-\_\-layer}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t ec\-\_\-sii\-\_\-t\-::physical\-\_\-layer[{\bf E\-C\-\_\-\-M\-A\-X\-\_\-\-P\-O\-R\-T\-S}]}\label{structec__sii__t_afa995764cc295a2de209b27f2ac07f85}
+
+
+Port media. 
+
+
+
+Definition at line 159 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!coe\-\_\-details@{coe\-\_\-details}}
+\index{coe\-\_\-details@{coe\-\_\-details}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{coe\-\_\-details}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sii\-\_\-coe\-\_\-details\-\_\-t} ec\-\_\-sii\-\_\-t\-::coe\-\_\-details}\label{structec__sii__t_a7896df4d79afdb971b9817d41fbb847e}
+
+
+Co\-E detail flags. 
+
+
+
+Definition at line 160 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!general\-\_\-flags@{general\-\_\-flags}}
+\index{general\-\_\-flags@{general\-\_\-flags}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{general\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sii\-\_\-general\-\_\-flags\-\_\-t} ec\-\_\-sii\-\_\-t\-::general\-\_\-flags}\label{structec__sii__t_a7ff70e83d0e1870bc344218f53f85aaf}
+
+
+General flags. 
+
+
+
+Definition at line 161 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!current\-\_\-on\-\_\-ebus@{current\-\_\-on\-\_\-ebus}}
+\index{current\-\_\-on\-\_\-ebus@{current\-\_\-on\-\_\-ebus}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{current\-\_\-on\-\_\-ebus}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t ec\-\_\-sii\-\_\-t\-::current\-\_\-on\-\_\-ebus}\label{structec__sii__t_a67585e573f37806a5c34923354874838}
+
+
+Power consumption in m\-A. 
+
+
+
+Definition at line 162 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!syncs@{syncs}}
+\index{syncs@{syncs}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{syncs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sync\-\_\-t}$\ast$ ec\-\_\-sii\-\_\-t\-::syncs}\label{structec__sii__t_a1cfcfe4bdca850f302cbb8938affa7b9}
+
+
+S\-Y\-N\-C M\-A\-N\-A\-G\-E\-R categories. 
+
+
+
+Definition at line 165 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!sync\-\_\-count@{sync\-\_\-count}}
+\index{sync\-\_\-count@{sync\-\_\-count}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{sync\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int ec\-\_\-sii\-\_\-t\-::sync\-\_\-count}\label{structec__sii__t_add5337cd03f09660a3bfe91e4047ed2c}
+
+
+Number of sync managers. 
+
+
+
+Definition at line 166 of file slave.\-h.
+
+\index{ec\-\_\-sii\-\_\-t@{ec\-\_\-sii\-\_\-t}!pdos@{pdos}}
+\index{pdos@{pdos}!ec_sii_t@{ec\-\_\-sii\-\_\-t}}
+\subsubsection[{pdos}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-sii\-\_\-t\-::pdos}\label{structec__sii__t_a769c826981c5b3d1ee52245131537b15}
+
+
+S\-I\-I [R\-T]X\-P\-D\-O categories. 
+
+
+
+Definition at line 169 of file slave.\-h.
+

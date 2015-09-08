@@ -1,0 +1,682 @@
+\section{fsm\-\_\-master.\-c File Reference}
+\label{fsm__master_8c}\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}}
+
+
+Ether\-C\-A\-T master state machine.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf E\-C\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-T\-I\-M\-E\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E\-\_\-\-N\-S}~1000000\label{fsm__master_8c_a997e9f2ec2485eb23e2ff0831547b772}
+
+\begin{DoxyCompactList}\small\item\em Time difference [ns] to tolerate without setting a new system time offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: S\-T\-A\-R\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: B\-R\-O\-A\-D\-C\-A\-S\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: R\-E\-A\-D S\-T\-A\-T\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: A\-C\-K\-N\-O\-W\-L\-E\-D\-G\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: C\-O\-N\-F\-I\-G\-U\-R\-E S\-L\-A\-V\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: C\-L\-E\-A\-R A\-D\-D\-R\-E\-S\-S\-E\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: D\-C M\-E\-A\-S\-U\-R\-E D\-E\-L\-A\-Y\-S. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: S\-C\-A\-N S\-L\-A\-V\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: D\-C R\-E\-A\-D O\-F\-F\-S\-E\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: D\-C W\-R\-I\-T\-E O\-F\-F\-S\-E\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: W\-R\-I\-T\-E S\-I\-I. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: S\-D\-O D\-I\-C\-T\-I\-O\-N\-A\-R\-Y. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master state\-: S\-D\-O R\-E\-Q\-U\-E\-S\-T. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Start clearing slave addresses. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Start writing D\-C system times. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm, {\bf ec\-\_\-master\-\_\-t} $\ast$master, {\bf ec\-\_\-datagram\-\_\-t} $\ast$datagram)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-reset} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Reset state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-idle} (const {\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-restart} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Restarts the master state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for pending S\-I\-I write requests and process one. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Check for pending S\-D\-O requests and process one. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master action\-: I\-D\-L\-E. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master action\-: Get state of next slave. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm)
+\begin{DoxyCompactList}\small\item\em Master action\-: Configure. \end{DoxyCompactList}\item 
+u64 {\bf ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm, u64 system\-\_\-time, u64 old\-\_\-offset, unsigned long jiffies\-\_\-since\-\_\-read)
+\begin{DoxyCompactList}\small\item\em Configure 32 bit time offset. \end{DoxyCompactList}\item 
+u64 {\bf ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64} ({\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$fsm, u64 system\-\_\-time, u64 old\-\_\-offset, unsigned long jiffies\-\_\-since\-\_\-read)
+\begin{DoxyCompactList}\small\item\em Configure 64 bit time offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T master state machine. 
+
+Definition in file {\bf fsm\-\_\-master.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-start (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_ad88c4db14716023743578741d24ef356}
+
+
+Master state\-: S\-T\-A\-R\-T. 
+
+Starts with getting slave count and slave states. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-broadcast (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_aaedaccf13386cf2fd4d210d2b0de49d2}
+
+
+Master state\-: B\-R\-O\-A\-D\-C\-A\-S\-T. 
+
+Processes the broadcast read slave count and slaves states. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 214 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-read\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a6f450d1021bf89f229fd39cc2aad8ea2}
+
+
+Master state\-: R\-E\-A\-D S\-T\-A\-T\-E. 
+
+Fetches the A\-L state of a slave. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 627 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-acknowledge (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a334ce30106dc39dc565a258a83abaa5c}
+
+
+Master state\-: A\-C\-K\-N\-O\-W\-L\-E\-D\-G\-E. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 682 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-configure\-\_\-slave (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_aaf40137bf5c31dc6a5c664ab10933d09}
+
+
+Master state\-: C\-O\-N\-F\-I\-G\-U\-R\-E S\-L\-A\-V\-E. 
+
+Starts configuring a slave. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 889 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-clear\-\_\-addresses (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a61be059802776f90560a2b3af6bc6efa}
+
+
+Master state\-: C\-L\-E\-A\-R A\-D\-D\-R\-E\-S\-S\-E\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 720 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-measure\-\_\-delays (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a22d13892f43d288406c5c08bd30bf2fd}
+
+
+Master state\-: D\-C M\-E\-A\-S\-U\-R\-E D\-E\-L\-A\-Y\-S. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 764 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-scan\-\_\-slave (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a0e4c985906d0e036c4039305621db63e}
+
+
+Master state\-: S\-C\-A\-N S\-L\-A\-V\-E. 
+
+Executes the sub-\/statemachine for the scanning of a slave. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 817 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-read\-\_\-offset (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_ad625d5b77974efd8b81ad28cebc76ca9}
+
+
+Master state\-: D\-C R\-E\-A\-D O\-F\-F\-S\-E\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1045 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-dc\-\_\-write\-\_\-offset (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a411d3aafe085c64e7f5d8aad7b4cf231}
+
+
+Master state\-: D\-C W\-R\-I\-T\-E O\-F\-F\-S\-E\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1098 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-write\-\_\-sii (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_ab45ec9b9296a9d89c5c69bfd1a131f22}
+
+
+Master state\-: W\-R\-I\-T\-E S\-I\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1133 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-dictionary (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a51be12a2333f0ce6a1ecde4bed85c648}
+
+
+Master state\-: S\-D\-O D\-I\-C\-T\-I\-O\-N\-A\-R\-Y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1187 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request@{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-state\-\_\-sdo\-\_\-request (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a36ee13ebfe148e663f3c33ca6e408d1f}
+
+
+Master state\-: S\-D\-O R\-E\-Q\-U\-E\-S\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1222 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses@{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses@{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-clear\-\_\-addresses (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a8b28c82e05cda964aaf088b49c0544b8}
+
+
+Start clearing slave addresses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 704 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times@{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times@{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-enter\-\_\-write\-\_\-system\-\_\-times (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a66d11aeef350f72a207d329c9e617d1b}
+
+
+Start writing D\-C system times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 917 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-init@{ec\-\_\-fsm\-\_\-master\-\_\-init}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-init@{ec\-\_\-fsm\-\_\-master\-\_\-init}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{{\bf ec\-\_\-datagram\-\_\-t} $\ast$}]{datagram}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a488579eaa191d91cfc1fe034d4995cd2}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+{\em master} & Ether\-C\-A\-T master. \\
+\hline
+{\em datagram} & Datagram object to use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-clear@{ec\-\_\-fsm\-\_\-master\-\_\-clear}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-clear@{ec\-\_\-fsm\-\_\-master\-\_\-clear}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_ad6cb9c34903756062ea8bb72469e9cee}
+
+
+Destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-reset@{ec\-\_\-fsm\-\_\-master\-\_\-reset}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-reset@{ec\-\_\-fsm\-\_\-master\-\_\-reset}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_afbc118dc57b717b9ef64481d279c95af}
+
+
+Reset state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-exec@{ec\-\_\-fsm\-\_\-master\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-exec@{ec\-\_\-fsm\-\_\-master\-\_\-exec}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a00fbd64d7585868b5b505a591cc1b508}
+
+
+Executes the current state of the state machine. 
+
+If the state machine's datagram is not sent or received yet, the execution of the state machine is delayed to the next cycle.
+
+\begin{DoxyReturn}{Returns}
+true, if the state machine was executed 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 150 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-idle}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-idle}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-idle (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a585646e7a108608984e8abaef1925b19}
+\begin{DoxyReturn}{Returns}
+true, if the state machine is in an idle phase 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-restart@{ec\-\_\-fsm\-\_\-master\-\_\-restart}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-restart@{ec\-\_\-fsm\-\_\-master\-\_\-restart}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-restart}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-restart (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a767682798697586629a255018156b3f0}
+
+
+Restarts the master state machine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sii (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a726e0bdb4393a1734a77a59d4ade4210}
+
+
+Check for pending S\-I\-I write requests and process one. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero, if an S\-I\-I write request is processed. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 391 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-process\-\_\-sdo (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a3db66b3ce0e026d06f3db18abcafc85a}
+
+
+Check for pending S\-D\-O requests and process one. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero, if an S\-D\-O request is processed. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 429 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-idle (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_af44b55bff43485d6169b6009b4fc3afb}
+
+
+Master action\-: I\-D\-L\-E. 
+
+Does secondary work. 
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 483 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-next\-\_\-slave\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a4b4466fd641681334322d7b6185ea041}
+
+
+Master action\-: Get state of next slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 541 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure@{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-fsm\-\_\-master\-\_\-action\-\_\-configure (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a6d48740d5f6acef41028d1328c8b6135}
+
+
+Master action\-: Configure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 569 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32@{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32@{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset32 (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm, }
+\item[{u64}]{system\-\_\-time, }
+\item[{u64}]{old\-\_\-offset, }
+\item[{unsigned long}]{jiffies\-\_\-since\-\_\-read}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_a82f8ab1a2257e91c822222422f2d00c6}
+
+
+Configure 32 bit time offset. 
+
+\begin{DoxyReturn}{Returns}
+New offset. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+{\em system\-\_\-time} & System time register. \\
+\hline
+{\em old\-\_\-offset} & Time offset register. \\
+\hline
+{\em jiffies\-\_\-since\-\_\-read} & Jiffies for correction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 965 of file fsm\-\_\-master.\-c.
+
+\index{fsm\-\_\-master.\-c@{fsm\-\_\-master.\-c}!ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64@{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64}}
+\index{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64@{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64}!fsm_master.c@{fsm\-\_\-master.\-c}}
+\subsubsection[{ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64}]{\setlength{\rightskip}{0pt plus 5cm}u64 ec\-\_\-fsm\-\_\-master\-\_\-dc\-\_\-offset64 (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-master\-\_\-t} $\ast$}]{fsm, }
+\item[{u64}]{system\-\_\-time, }
+\item[{u64}]{old\-\_\-offset, }
+\item[{unsigned long}]{jiffies\-\_\-since\-\_\-read}
+\end{DoxyParamCaption}
+)}\label{fsm__master_8c_ac6cb5800d165b3f077ae89caac207471}
+
+
+Configure 64 bit time offset. 
+
+\begin{DoxyReturn}{Returns}
+New offset. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Master state machine. \\
+\hline
+{\em system\-\_\-time} & System time register. \\
+\hline
+{\em old\-\_\-offset} & Time offset register. \\
+\hline
+{\em jiffies\-\_\-since\-\_\-read} & Jiffies for correction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1007 of file fsm\-\_\-master.\-c.
+

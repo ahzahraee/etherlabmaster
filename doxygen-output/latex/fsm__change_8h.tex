@@ -1,0 +1,136 @@
+\section{fsm\-\_\-change.\-h File Reference}
+\label{fsm__change_8h}\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}}
+
+
+Ether\-C\-A\-T state change F\-S\-M.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf ec\-\_\-fsm\-\_\-change}
+\begin{DoxyCompactList}\small\item\em Ether\-C\-A\-T state change F\-S\-M. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf ec\-\_\-fsm\-\_\-change} {\bf ec\-\_\-fsm\-\_\-change\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t} \{ {\bf E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L}, 
+{\bf E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y}
+ \}
+\begin{DoxyCompactList}\small\item\em Mode of the change state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-fsm\-\_\-change\-\_\-init} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)\label{fsm__change_8h_a9b93c6163e34fd65a4fe44ab28bf5df3}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-change\-\_\-clear} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$)\label{fsm__change_8h_ae14cce5cbfe182e8b7f3b334bcf43abf}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-change\-\_\-start} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-state\-\_\-t})\label{fsm__change_8h_a05075c9695464e542905a634ceb071bd}
+
+\begin{DoxyCompactList}\small\item\em Starts the change state machine. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-fsm\-\_\-change\-\_\-ack} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$, {\bf ec\-\_\-slave\-\_\-t} $\ast$)\label{fsm__change_8h_a2c30215c50becd54d3ac1d1ee2b0a96a}
+
+\begin{DoxyCompactList}\small\item\em Starts the change state machine to only acknowlegde a slave's state. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-change\-\_\-exec} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Executes the current state of the state machine. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-fsm\-\_\-change\-\_\-success} ({\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns, if the state machine terminated with success. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T state change F\-S\-M. 
+
+Definition in file {\bf fsm\-\_\-change.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!ec\-\_\-fsm\-\_\-change\-\_\-t@{ec\-\_\-fsm\-\_\-change\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-change\-\_\-t@{ec\-\_\-fsm\-\_\-change\-\_\-t}!fsm_change.h@{fsm\-\_\-change.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-change\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ec\-\_\-fsm\-\_\-change} {\bf ec\-\_\-fsm\-\_\-change\-\_\-t}}\label{fsm__change_8h_a15cddef62f7f6fa51e07fa06242b7659}
+\begin{DoxySeeAlso}{See Also}
+\doxyref{ec\-\_\-fsm\-\_\-change}{p.}{structec__fsm__change} 
+\end{DoxySeeAlso}
+
+
+Definition at line 58 of file fsm\-\_\-change.\-h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t@{ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t}}
+\index{ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t@{ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t}!fsm_change.h@{fsm\-\_\-change.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ec\-\_\-fsm\-\_\-change\-\_\-mode\-\_\-t}}\label{fsm__change_8h_afca7005acad1cbd2221d92dfbf4a608b}
+
+
+Mode of the change state machine. 
+
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L@{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L}!fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}}\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L@{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L}}\item[{\em 
+E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-F\-U\-L\-L\label{fsm__change_8h_afca7005acad1cbd2221d92dfbf4a608baab98fc747b7ddcbd70755c03bf31122e}
+}]full state change \index{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y@{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y}!fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}}\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y@{E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y}}\item[{\em 
+E\-C\-\_\-\-F\-S\-M\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-M\-O\-D\-E\-\_\-\-A\-C\-K\-\_\-\-O\-N\-L\-Y\label{fsm__change_8h_afca7005acad1cbd2221d92dfbf4a608bace4d82f3fb6f59f56e3d4f60a77bb78d}
+}]only state acknowledgement \end{description}
+\end{Desc}
+
+
+
+Definition at line 50 of file fsm\-\_\-change.\-h.
+
+
+
+\subsection{Function Documentation}
+\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!ec\-\_\-fsm\-\_\-change\-\_\-exec@{ec\-\_\-fsm\-\_\-change\-\_\-exec}}
+\index{ec\-\_\-fsm\-\_\-change\-\_\-exec@{ec\-\_\-fsm\-\_\-change\-\_\-exec}!fsm_change.h@{fsm\-\_\-change.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-change\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-change\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__change_8h_a0dc0b7823d8a0440797fb93fda8a5b86}
+
+
+Executes the current state of the state machine. 
+
+\begin{DoxyReturn}{Returns}
+false, if the state machine has terminated 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 124 of file fsm\-\_\-change.\-c.
+
+\index{fsm\-\_\-change.\-h@{fsm\-\_\-change.\-h}!ec\-\_\-fsm\-\_\-change\-\_\-success@{ec\-\_\-fsm\-\_\-change\-\_\-success}}
+\index{ec\-\_\-fsm\-\_\-change\-\_\-success@{ec\-\_\-fsm\-\_\-change\-\_\-success}!fsm_change.h@{fsm\-\_\-change.\-h}}
+\subsubsection[{ec\-\_\-fsm\-\_\-change\-\_\-success}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-fsm\-\_\-change\-\_\-success (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-fsm\-\_\-change\-\_\-t} $\ast$}]{fsm}
+\end{DoxyParamCaption}
+)}\label{fsm__change_8h_a00d02215e861290d5fd7da1d0bc0d64b}
+
+
+Returns, if the state machine terminated with success. 
+
+\begin{DoxyReturn}{Returns}
+non-\/zero if successful. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fsm} & Finite state machine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file fsm\-\_\-change.\-c.
+

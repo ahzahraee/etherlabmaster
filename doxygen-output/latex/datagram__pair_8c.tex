@@ -1,0 +1,110 @@
+\section{datagram\-\_\-pair.\-c File Reference}
+\label{datagram__pair_8c}\index{datagram\-\_\-pair.\-c@{datagram\-\_\-pair.\-c}}
+
+
+Ether\-C\-A\-T datagram pair methods.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf ec\-\_\-datagram\-\_\-pair\-\_\-init} ({\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$pair, {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, uint32\-\_\-t logical\-\_\-offset, uint8\-\_\-t $\ast$data, size\-\_\-t data\-\_\-size, const unsigned int used[$\,$])
+\begin{DoxyCompactList}\small\item\em Datagram pair constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-datagram\-\_\-pair\-\_\-clear} ({\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$pair)
+\begin{DoxyCompactList}\small\item\em Datagram pair destructor. \end{DoxyCompactList}\item 
+uint16\-\_\-t {\bf ec\-\_\-datagram\-\_\-pair\-\_\-process} ({\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$pair, uint16\-\_\-t wc\-\_\-sum[$\,$])
+\begin{DoxyCompactList}\small\item\em Process received data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T datagram pair methods. 
+
+Definition in file {\bf datagram\-\_\-pair.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{datagram\-\_\-pair.\-c@{datagram\-\_\-pair.\-c}!ec\-\_\-datagram\-\_\-pair\-\_\-init@{ec\-\_\-datagram\-\_\-pair\-\_\-init}}
+\index{ec\-\_\-datagram\-\_\-pair\-\_\-init@{ec\-\_\-datagram\-\_\-pair\-\_\-init}!datagram_pair.c@{datagram\-\_\-pair.\-c}}
+\subsubsection[{ec\-\_\-datagram\-\_\-pair\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-datagram\-\_\-pair\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$}]{pair, }
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint32\-\_\-t}]{logical\-\_\-offset, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{const unsigned int}]{used[$\,$]}
+\end{DoxyParamCaption}
+)}\label{datagram__pair_8c_a0b3a11d04d7bcb1f5db4187ff628d4bd}
+
+
+Datagram pair constructor. 
+
+\begin{DoxyReturn}{Returns}
+Zero on success, otherwise a negative error code. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pair} & Datagram pair. \\
+\hline
+{\em domain} & Parent domain. \\
+\hline
+{\em logical\-\_\-offset} & Logical offset. \\
+\hline
+{\em data} & Data pointer. \\
+\hline
+{\em data\-\_\-size} & Data size. \\
+\hline
+{\em used} & input/output use count. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file datagram\-\_\-pair.\-c.
+
+\index{datagram\-\_\-pair.\-c@{datagram\-\_\-pair.\-c}!ec\-\_\-datagram\-\_\-pair\-\_\-clear@{ec\-\_\-datagram\-\_\-pair\-\_\-clear}}
+\index{ec\-\_\-datagram\-\_\-pair\-\_\-clear@{ec\-\_\-datagram\-\_\-pair\-\_\-clear}!datagram_pair.c@{datagram\-\_\-pair.\-c}}
+\subsubsection[{ec\-\_\-datagram\-\_\-pair\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-datagram\-\_\-pair\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$}]{pair}
+\end{DoxyParamCaption}
+)}\label{datagram__pair_8c_ac6dfb578451de0209688b3e500234c5b}
+
+
+Datagram pair destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pair} & Datagram pair. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file datagram\-\_\-pair.\-c.
+
+\index{datagram\-\_\-pair.\-c@{datagram\-\_\-pair.\-c}!ec\-\_\-datagram\-\_\-pair\-\_\-process@{ec\-\_\-datagram\-\_\-pair\-\_\-process}}
+\index{ec\-\_\-datagram\-\_\-pair\-\_\-process@{ec\-\_\-datagram\-\_\-pair\-\_\-process}!datagram_pair.c@{datagram\-\_\-pair.\-c}}
+\subsubsection[{ec\-\_\-datagram\-\_\-pair\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t ec\-\_\-datagram\-\_\-pair\-\_\-process (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-datagram\-\_\-pair\-\_\-t} $\ast$}]{pair, }
+\item[{uint16\-\_\-t}]{wc\-\_\-sum[$\,$]}
+\end{DoxyParamCaption}
+)}\label{datagram__pair_8c_a073fc0e7c0806c498bc0ea4bf869fdf5}
+
+
+Process received data. 
+
+\begin{DoxyReturn}{Returns}
+Working counter sum over all devices. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em pair} & Datagram pair. \\
+\hline
+{\em wc\-\_\-sum} & Working counter sums. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file datagram\-\_\-pair.\-c.
+

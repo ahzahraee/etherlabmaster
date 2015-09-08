@@ -1,0 +1,166 @@
+\section{ec\-\_\-fsm\-\_\-slave Struct Reference}
+\label{structec__fsm__slave}\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}}
+
+
+Finite state machine of an Ether\-C\-A\-T slave.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ec\-\_\-slave\-\_\-t} $\ast$ {\bf slave}\label{structec__fsm__slave_aa94f51d82b6c14baa831f68999fbc6a7}
+
+\begin{DoxyCompactList}\small\item\em slave the F\-S\-M runs on \end{DoxyCompactList}\item 
+struct list\-\_\-head {\bf list}
+\begin{DoxyCompactList}\small\item\em Used for execution list. \end{DoxyCompactList}\item 
+void($\ast$ {\bf state} )({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)
+\begin{DoxyCompactList}\small\item\em State function. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-datagram\-\_\-t} $\ast$ {\bf datagram}
+\begin{DoxyCompactList}\small\item\em Previous state datagram. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-sdo\-\_\-request\-\_\-t} $\ast$ {\bf sdo\-\_\-request}
+\begin{DoxyCompactList}\small\item\em S\-D\-O request to process. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-reg\-\_\-request\-\_\-t} $\ast$ {\bf reg\-\_\-request}
+\begin{DoxyCompactList}\small\item\em Register request to process. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-foe\-\_\-request\-\_\-t} $\ast$ {\bf foe\-\_\-request}
+\begin{DoxyCompactList}\small\item\em Fo\-E request to process. \end{DoxyCompactList}\item 
+off\-\_\-t {\bf foe\-\_\-index}
+\begin{DoxyCompactList}\small\item\em Index to Fo\-E write request data. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-soe\-\_\-request\-\_\-t} $\ast$ {\bf soe\-\_\-request}
+\begin{DoxyCompactList}\small\item\em So\-E request to process. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} {\bf fsm\-\_\-coe}
+\begin{DoxyCompactList}\small\item\em Co\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-foe\-\_\-t} {\bf fsm\-\_\-foe}
+\begin{DoxyCompactList}\small\item\em Fo\-E state machine. \end{DoxyCompactList}\item 
+{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} {\bf fsm\-\_\-soe}
+\begin{DoxyCompactList}\small\item\em So\-E state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Finite state machine of an Ether\-C\-A\-T slave. 
+
+Definition at line 54 of file fsm\-\_\-slave.\-h.
+
+
+
+\subsection{Field Documentation}
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!list@{list}}
+\index{list@{list}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{list}]{\setlength{\rightskip}{0pt plus 5cm}struct list\-\_\-head ec\-\_\-fsm\-\_\-slave\-::list}\label{structec__fsm__slave_ae393c328b5fe12f06f19f05fe140a643}
+
+
+Used for execution list. 
+
+
+
+Definition at line 56 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!state@{state}}
+\index{state@{state}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ ec\-\_\-fsm\-\_\-slave\-::state)({\bf ec\-\_\-fsm\-\_\-slave\-\_\-t} $\ast$, {\bf ec\-\_\-datagram\-\_\-t} $\ast$)}\label{structec__fsm__slave_a4e1432b74dca46446094400fff326c6f}
+
+
+State function. 
+
+
+
+Definition at line 58 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!datagram@{datagram}}
+\index{datagram@{datagram}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{datagram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-datagram\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-::datagram}\label{structec__fsm__slave_a180a65aa95ddc2f8260c8d59a9ca9251}
+
+
+Previous state datagram. 
+
+
+
+Definition at line 59 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!sdo\-\_\-request@{sdo\-\_\-request}}
+\index{sdo\-\_\-request@{sdo\-\_\-request}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{sdo\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-sdo\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-::sdo\-\_\-request}\label{structec__fsm__slave_a5f8b15e16a43555f5bc984380096d129}
+
+
+S\-D\-O request to process. 
+
+
+
+Definition at line 60 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!reg\-\_\-request@{reg\-\_\-request}}
+\index{reg\-\_\-request@{reg\-\_\-request}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{reg\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-reg\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-::reg\-\_\-request}\label{structec__fsm__slave_a337fc81f36562866d9cdc92e78ef4fdc}
+
+
+Register request to process. 
+
+
+
+Definition at line 61 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!foe\-\_\-request@{foe\-\_\-request}}
+\index{foe\-\_\-request@{foe\-\_\-request}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{foe\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-foe\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-::foe\-\_\-request}\label{structec__fsm__slave_a3fa15bb678542863b36f3e79081df19a}
+
+
+Fo\-E request to process. 
+
+
+
+Definition at line 62 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!foe\-\_\-index@{foe\-\_\-index}}
+\index{foe\-\_\-index@{foe\-\_\-index}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{foe\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}off\-\_\-t ec\-\_\-fsm\-\_\-slave\-::foe\-\_\-index}\label{structec__fsm__slave_aad54bfb331ddd0f5de61d24b415b03fe}
+
+
+Index to Fo\-E write request data. 
+
+
+
+Definition at line 63 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!soe\-\_\-request@{soe\-\_\-request}}
+\index{soe\-\_\-request@{soe\-\_\-request}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{soe\-\_\-request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-soe\-\_\-request\-\_\-t}$\ast$ ec\-\_\-fsm\-\_\-slave\-::soe\-\_\-request}\label{structec__fsm__slave_a927d20b1685eea5160c96ca9f8748d12}
+
+
+So\-E request to process. 
+
+
+
+Definition at line 64 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!fsm\-\_\-coe@{fsm\-\_\-coe}}
+\index{fsm\-\_\-coe@{fsm\-\_\-coe}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{fsm\-\_\-coe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-coe\-\_\-t} ec\-\_\-fsm\-\_\-slave\-::fsm\-\_\-coe}\label{structec__fsm__slave_ac9f6c23ca16927be8dab824caf95878f}
+
+
+Co\-E state machine. 
+
+
+
+Definition at line 66 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!fsm\-\_\-foe@{fsm\-\_\-foe}}
+\index{fsm\-\_\-foe@{fsm\-\_\-foe}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{fsm\-\_\-foe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-foe\-\_\-t} ec\-\_\-fsm\-\_\-slave\-::fsm\-\_\-foe}\label{structec__fsm__slave_ac4d096c83edc90e10998d0581ac2b90e}
+
+
+Fo\-E state machine. 
+
+
+
+Definition at line 67 of file fsm\-\_\-slave.\-h.
+
+\index{ec\-\_\-fsm\-\_\-slave@{ec\-\_\-fsm\-\_\-slave}!fsm\-\_\-soe@{fsm\-\_\-soe}}
+\index{fsm\-\_\-soe@{fsm\-\_\-soe}!ec_fsm_slave@{ec\-\_\-fsm\-\_\-slave}}
+\subsubsection[{fsm\-\_\-soe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ec\-\_\-fsm\-\_\-soe\-\_\-t} ec\-\_\-fsm\-\_\-slave\-::fsm\-\_\-soe}\label{structec__fsm__slave_a631509da2c5d1a4ac23eecf89afea74e}
+
+
+So\-E state machine. 
+
+
+
+Definition at line 68 of file fsm\-\_\-slave.\-h.
+

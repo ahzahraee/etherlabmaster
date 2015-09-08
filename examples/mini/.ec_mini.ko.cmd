@@ -1,0 +1,1 @@
+cmd_/home/sybot/devel/etherlabmaster/examples/mini/ec_mini.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-4-common/scripts/module-common.lds --build-id  -o /home/sybot/devel/etherlabmaster/examples/mini/ec_mini.ko /home/sybot/devel/etherlabmaster/examples/mini/ec_mini.o /home/sybot/devel/etherlabmaster/examples/mini/ec_mini.mod.o

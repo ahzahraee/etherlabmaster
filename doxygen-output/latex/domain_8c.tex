@@ -1,0 +1,281 @@
+\section{domain.\-c File Reference}
+\label{domain_8c}\index{domain.\-c@{domain.\-c}}
+
+
+Ether\-C\-A\-T domain methods.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\-E\-B\-U\-G\-\_\-\-R\-E\-D\-U\-N\-D\-A\-N\-C\-Y}~0\label{domain_8c_a06f1befc7d03dbef13e823d26863aec4}
+
+\begin{DoxyCompactList}\small\item\em Extra debug output for redundancy functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ec\-\_\-domain\-\_\-clear\-\_\-data} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em Frees internally allocated memory. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-domain\-\_\-init} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, {\bf ec\-\_\-master\-\_\-t} $\ast$master, unsigned int index)
+\begin{DoxyCompactList}\small\item\em Domain constructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-domain\-\_\-clear} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em Domain destructor. \end{DoxyCompactList}\item 
+void {\bf ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$fmmu)
+\begin{DoxyCompactList}\small\item\em Adds an F\-M\-M\-U configuration to the domain. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, uint32\-\_\-t logical\-\_\-offset, size\-\_\-t data\-\_\-size, uint8\-\_\-t $\ast$data, const unsigned int used[$\,$])
+\begin{DoxyCompactList}\small\item\em Allocates a domain datagram pair and appends it to the list. \end{DoxyCompactList}\item 
+int {\bf shall\-\_\-count} (const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$cur\-\_\-fmmu, const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$first\-\_\-fmmu)
+\begin{DoxyCompactList}\small\item\em Domain finish helper function. \end{DoxyCompactList}\item 
+int {\bf ec\-\_\-domain\-\_\-finish} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, uint32\-\_\-t base\-\_\-address)
+\begin{DoxyCompactList}\small\item\em Finishes a domain. \end{DoxyCompactList}\item 
+unsigned int {\bf ec\-\_\-domain\-\_\-fmmu\-\_\-count} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$domain)\label{domain_8c_a7af777c7a15fc667d283794dcf2cc498}
+
+\begin{DoxyCompactList}\small\item\em Get the number of F\-M\-M\-U configurations of the domain. \end{DoxyCompactList}\item 
+const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$ {\bf ec\-\_\-domain\-\_\-find\-\_\-fmmu} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, unsigned int pos)
+\begin{DoxyCompactList}\small\item\em Get a certain F\-M\-M\-U configuration via its position in the list. \end{DoxyCompactList}\item 
+int {\bf ecrt\-\_\-domain\-\_\-reg\-\_\-pdo\-\_\-entry\-\_\-list} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, const {\bf ec\-\_\-pdo\-\_\-entry\-\_\-reg\-\_\-t} $\ast$regs)
+\begin{DoxyCompactList}\small\item\em Registers a bunch of P\-D\-O entries for a domain. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf ecrt\-\_\-domain\-\_\-size} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em Returns the current size of the domain's process data. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-domain\-\_\-external\-\_\-memory} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain, uint8\-\_\-t $\ast$mem)
+\begin{DoxyCompactList}\small\item\em Provide external memory to store the domain's process data. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ {\bf ecrt\-\_\-domain\-\_\-data} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em Returns the domain's process data. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-domain\-\_\-process} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em Determines the states of the domain's datagrams. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-domain\-\_\-queue} ({\bf ec\-\_\-domain\-\_\-t} $\ast$domain)
+\begin{DoxyCompactList}\small\item\em (Re-\/)queues all domain datagrams in the master's datagram queue. \end{DoxyCompactList}\item 
+void {\bf ecrt\-\_\-domain\-\_\-state} (const {\bf ec\-\_\-domain\-\_\-t} $\ast$domain, {\bf ec\-\_\-domain\-\_\-state\-\_\-t} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Reads the state of a domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T domain methods. 
+
+Definition in file {\bf domain.\-c}.
+
+
+
+\subsection{Function Documentation}
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-clear\-\_\-data@{ec\-\_\-domain\-\_\-clear\-\_\-data}}
+\index{ec\-\_\-domain\-\_\-clear\-\_\-data@{ec\-\_\-domain\-\_\-clear\-\_\-data}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-clear\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-domain\-\_\-clear\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain}
+\end{DoxyParamCaption}
+)}\label{domain_8c_acdb99d1f2a267eae55d21b2eb5ff0d06}
+
+
+Frees internally allocated memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-init@{ec\-\_\-domain\-\_\-init}}
+\index{ec\-\_\-domain\-\_\-init@{ec\-\_\-domain\-\_\-init}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-domain\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{{\bf ec\-\_\-master\-\_\-t} $\ast$}]{master, }
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}\label{domain_8c_a541742767f0adada4d91f56f26d4250c}
+
+
+Domain constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em master} & Parent master. \\
+\hline
+{\em index} & Index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-clear@{ec\-\_\-domain\-\_\-clear}}
+\index{ec\-\_\-domain\-\_\-clear@{ec\-\_\-domain\-\_\-clear}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-domain\-\_\-clear (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain}
+\end{DoxyParamCaption}
+)}\label{domain_8c_af4dd81f20a9fdb52e15b802afefd47d3}
+
+
+Domain destructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config@{ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config}}
+\index{ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config@{ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void ec\-\_\-domain\-\_\-add\-\_\-fmmu\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{{\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$}]{fmmu}
+\end{DoxyParamCaption}
+)}\label{domain_8c_a5bd01575864546e8f5929752e54456b6}
+
+
+Adds an F\-M\-M\-U configuration to the domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em fmmu} & F\-M\-M\-U configuration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair@{ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair}}
+\index{ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair@{ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-domain\-\_\-add\-\_\-datagram\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint32\-\_\-t}]{logical\-\_\-offset, }
+\item[{size\-\_\-t}]{data\-\_\-size, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{const unsigned int}]{used[$\,$]}
+\end{DoxyParamCaption}
+)}\label{domain_8c_aff1ea02398e17bf036e69a594844da85}
+
+
+Allocates a domain datagram pair and appends it to the list. 
+
+The datagrams' types and expected working counters are determined by the number of input and output fmmus that share the datagrams.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success. \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em logical\-\_\-offset} & Logical offset. \\
+\hline
+{\em data\-\_\-size} & Size of the data. \\
+\hline
+{\em data} & Process data. \\
+\hline
+{\em used} & Slave config counter for in/out. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!shall\-\_\-count@{shall\-\_\-count}}
+\index{shall\-\_\-count@{shall\-\_\-count}!domain.c@{domain.\-c}}
+\subsubsection[{shall\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int shall\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$}]{cur\-\_\-fmmu, }
+\item[{const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t} $\ast$}]{first\-\_\-fmmu}
+\end{DoxyParamCaption}
+)}\label{domain_8c_acb9f97fed0d3173fb741b64afd115602}
+
+
+Domain finish helper function. 
+
+Detects, if a slave configuration has already been taken into account for a datagram's expected working counter calculation.
+
+Walks through the list of all F\-M\-M\-U configurations for the current datagram and ends before the current datagram.
+
+\begin{DoxyReturn}{Returns}
+Non-\/zero if slave connfig was already counted. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em cur\-\_\-fmmu} & Current F\-M\-M\-U with direction to search for. \\
+\hline
+{\em first\-\_\-fmmu} & Datagram's first F\-M\-M\-U. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-finish@{ec\-\_\-domain\-\_\-finish}}
+\index{ec\-\_\-domain\-\_\-finish@{ec\-\_\-domain\-\_\-finish}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-finish}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-\_\-domain\-\_\-finish (
+\begin{DoxyParamCaption}
+\item[{{\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{uint32\-\_\-t}]{base\-\_\-address}
+\end{DoxyParamCaption}
+)}\label{domain_8c_a2d8b30e08d2cd063b5e55e07e54c8852}
+
+
+Finishes a domain. 
+
+This allocates the necessary datagrams and writes the correct logical addresses to every configured F\-M\-M\-U.
+
+\begin{DoxyRefDesc}{Todo}
+\item[{\bf Todo}]Check for F\-M\-M\-Us that do not fit into any datagram.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Success \\
+\hline
+{\em $<$0} & Error code. \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em base\-\_\-address} & Logical base address. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 226 of file domain.\-c.
+
+\index{domain.\-c@{domain.\-c}!ec\-\_\-domain\-\_\-find\-\_\-fmmu@{ec\-\_\-domain\-\_\-find\-\_\-fmmu}}
+\index{ec\-\_\-domain\-\_\-find\-\_\-fmmu@{ec\-\_\-domain\-\_\-find\-\_\-fmmu}!domain.c@{domain.\-c}}
+\subsubsection[{ec\-\_\-domain\-\_\-find\-\_\-fmmu}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ec\-\_\-fmmu\-\_\-config\-\_\-t}$\ast$ ec\-\_\-domain\-\_\-find\-\_\-fmmu (
+\begin{DoxyParamCaption}
+\item[{const {\bf ec\-\_\-domain\-\_\-t} $\ast$}]{domain, }
+\item[{unsigned int}]{pos}
+\end{DoxyParamCaption}
+)}\label{domain_8c_a3f9bffd81ad553290bf06b7406d08e6b}
+
+
+Get a certain F\-M\-M\-U configuration via its position in the list. 
+
+\begin{DoxyReturn}{Returns}
+F\-M\-M\-U at position {\itshape pos}, or N\-U\-L\-L. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & Ether\-C\-A\-T domain. \\
+\hline
+{\em pos} & List position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file domain.\-c.
+
